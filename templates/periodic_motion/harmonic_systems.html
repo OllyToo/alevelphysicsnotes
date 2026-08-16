@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+
+{% block title %}Simple harmonic systems{% endblock %}
+{% block page_h1 %}Simple harmonic systems{% endblock %}
+
+{% block meta_description %}A Level Physics notes and worked examples to help students with their exams and learning. On this page we look at two simple harmonic systems, the pendulum and the spring.{% endblock %}
+{% block meta_keywords %}simple harmonic motion, pendulums, springs, worked examples, exam questions, A level, physics{% endblock %}
+
+{% block extra_head %}
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/quiz.css') }}">
+{% endblock %}
+
+{% block page_boxes %}
+	<a href="#1"><button class="button">The simple pendulum</button></a>
+	<a href="#2"><button class="button">Mass-Spring systems</button></a>
+	<a href="#3"><button class="button">Test yourself</button></a>
+{% endblock %}
+
+{% block spec %}
+<div id="spec">
+	<p class="spec_ref"><b>3.6.1.3 Simple harmonic systems</b></p>
+	<p class="spec_box">Study of mass-spring system:
+	$$T=2\pi \sqrt{\frac{m}{k}}$$</p>
+	<p class="spec_box">Study of simple pendulum: $$T=2\pi \sqrt{\frac{l}{g}}$$</p>
+	<p class="spec_box">Questions may involve other harmonic oscillators (eg liquid in U-tube) but full information will be provided in questions where necessary.</p>
+	<p class="spec_box">Variation of E<sub>k</sub>, E<sub>p</sub>, and total energy with both displacement and time.</p>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<section class="top_section" id="1">
+	<h3>The simple pendulum</h3>
+	<p>A simple pendulum with a mass m and attached to a string with length <i>L</i> is suspended from a fixed point <i>O</i> with an angle &theta; to the vertical.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/periodic_motion/pendulum.svg') }}" class="size400" alt="a simple pendulum showing the angle and forces acting on it">
+		<figcaption><b>Figure 1:</b>&nbsp;The forces acting on a simple pendulum.</figcaption>
+	</figure>
+	<p>The forces acting on the pendulum are its weight, <i>mg</i> and the tension acting towards <i>O</i>. When the pendulum is displaced and oscillates about the point of equilibrium its weight, <i>mg</i> has the components:</p>
+	<ul class="page_list">
+		<li>$mg\cos\theta$ perpendicular to the path of the oscillation.</li>
+		<li>$mg\sin\theta$ along the path of oscillation and is the restoring force acting on the pendulum when written as $-mg\sin\theta$</li>
+	</ul>
+	<p>From Newton&rsquo;s second law, acceleration $a=\frac{F}{m}$, so including the equation from above $a=\frac{-mg\sin\theta}{m}$ which reduces to:</p>
+	<div class="formula">$$a=-g\sin\theta$$</div>
+	<p>When &theta; is &le; 10&deg; then $\sin\theta=\frac{s}{L}$ and acceleration is:</p>
+	<div class="formula">$$a=\frac{-gs}{L}=-\left ( 2\pi f \right )^{2}x$$</div>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>This whole derivation relies on the small-angle approximation $\sin\theta\approx\theta$, which only holds for angles up to about $10\degree$. Beyond that, the motion is still oscillatory but is <b>no longer simple harmonic</b> &mdash; $T=2\pi\sqrt{\frac{l}{g}}$ becomes progressively less accurate as the swing angle increases. Don't assume a large-amplitude pendulum swing is SHM.</p>
+	</div>
+	<p>When the angle &theta; is small, the arc length <i>s</i> &asymp; <i>x</i> so the two terms cancel out form the equations. We can use this equation to find the period <i>T</i> of the pendulum,</p>
+	<div class="formula">$$T=\frac{1}{f}$$</div>
+	<p>Combined with the equation above we get:</p>
+	<div class="formula">$$\large T=2\pi\sqrt{\frac{l}{g}}$$</div>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>When measuring $l$ for this equation in a practical, it's the distance from the pivot to the <b>centre of mass of the bob</b> &mdash; not to the top of the bob, or to wherever the string happens to end. For a bob of significant size, forgetting to add the bob's radius to the string length is a common source of systematic error in pendulum experiments.</p>
+	</div>
+	<p>This is an important equation for pendulums and shows that the period can be increased by increasing the length of the pendulum and how we could determine a value of g with a pendulum. If we square the above equation to give:</p>
+	<div class="formula">$$T^{2}=4\pi^{2}{\frac{l}{g}}$$</div>
+	<p>A plot of <i>T<sup>2</sup></i> against <i>L</i> we would get a linear relationship with a gradient of $\frac{4\pi^{2}}{g}$ and so we could use this to determine the value of <i>g</i>.</p>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>Plot $T^{2}$ against $L$, not $T$ against $L$ &mdash; only the squared version gives a straight line through the origin. And once you have the gradient, remember it equals $\frac{4\pi^{2}}{g}$, not $g$ itself &mdash; you still need to rearrange to find $g=\frac{4\pi^{2}}{\text{gradient}}$.</p>
+	</div>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="2">
+	<h3>Mass-Spring systems</h3>
+	<p>We can apply similar logic to a spring system, by combining the following three equations:</p>
+	<div class="formula">
+		$$\large F=ma$$
+		$$\large F=ke$$
+		$$\large a=-\left ( 2\pi f \right )^{2}x$$
+	</div>
+	<p>These three produce the following:</p>
+	<div class="formula">$$\large -ke=-m\left ( 2\pi f \right )^{2}x$$</div>
+	<p>Both the extension, <i>e</i>, and the displacement, <i>x</i>, have the dimension of length, so these two terms cancel out of the equation. This can then be rearranged into a similar format as the equation for a pendulum:</p>
+	<div class="formula">$$\large T=2\pi\sqrt{\frac{m}{k}}$$</div>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>These two systems behave oppositely when it comes to mass: a <b>pendulum's</b> period ($T=2\pi\sqrt{\frac{l}{g}}$) does <b>not</b> depend on mass at all, while a <b>mass-spring system's</b> period ($T=2\pi\sqrt{\frac{m}{k}}$) does. Mixing these two up &mdash; e.g. assuming a heavier pendulum bob swings slower, or that a spring's period is independent of the mass attached &mdash; is one of the most common errors in this topic.</p>
+	</div>
+	<p>It can be seen that, unlike the pendulum, the time period does depend on the mass of the oscillating system. Mass-spring systems can be used to find the mass of objects, and can even be used in space. This in fact is one of the few ways to truly measure mass, and not weight.</p>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="3">
+	<h3>Test yourself</h3>
+	<p>Try the questions below to check your understanding of this topic. Numerical questions use different numbers each time, so you can attempt them more than once.</p>
+	<div id="quiz-root"></div>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+
+{% endblock %}
+
+{% block prev_link %}
+	<a href="{{ url_for('shm') }}"><i class="fas fa-chevron-circle-left"></i><span class="nav_link">Previous topic</span></a>
+{% endblock %}
+
+{% block resources_heading %}One page summary{% endblock %}
+
+{% block resources %}
+	<li><a href="{{ url_for('static', filename='summaries/periodic_motion/harmonic_systems_summary.html') }}" target="_blank"><i class="fas fa-file-alt"></i> Printable revision sheet</a></li>
+{% endblock %}
+
+{% block next_link %}
+	<a href="/periodic-motion/damping"><span class="nav_link">Next topic</span><i class="fas fa-chevron-circle-right"></i></a>
+{% endblock %}
+
+{% block extra_scripts %}
+	<script src="{{ url_for('static', filename='js/quiz.js') }}"></script>
+	<script src="{{ url_for('static', filename='quizzes/harmonic_systems_questions.js') }}"></script>
+	<script>
+		new PhysicsQuiz(document.getElementById('quiz-root'), harmonicSystemsQuestions, {
+			storageKey: 'harmonic_systems'
+		});
+	</script>
+{% endblock %}

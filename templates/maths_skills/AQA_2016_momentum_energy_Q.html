@@ -1,0 +1,36 @@
+{% extends "maths_skills/_mathsbox_base.html" %}
+
+{% block title %}Combining energy and momentum{% endblock %}
+
+{% block content %}
+<h3>Combining energy and momentum</h3>
+
+<p>The following question appeared on the AQA A2, Unit 4 paper in 2016. Only about 30% of students gained more than two marks for the second part of the question. It's worthwhile looking at some of the techniques required to solve a problem like this, whilst at the same time hoping that they don't ask a question quite like it again!</p>
+<figure>
+	<img src="{{ url_for('static', filename='images/mechanics/conservation_of_e_and_p_question.svg') }}" alt="AQA Unit 4 2016 question 4" class="size500">
+	<figcaption><b>Figure 1:</b>&nbsp;AQA Unit 4 2016 question 4</figcaption>
+</figure>
+
+<p>The first part is relatively easy, and was discussed in the main text; it's included here as it's important for solving the second part of the question. The expression should be:</p>
+<div class="formula">$$\large V=(-)\frac{mv}{N}$$</div>
+
+<p>The second part of the question requires us to take this and use it to derive the given equation. We're told in the question that all the energy in the decay is conserved as kinetic energy, which is very important, and gives us our starting point.</p>
+<div class="formula">$$E=E_{N}+E_{\alpha }=\frac{1}{2}NV^{2}+\frac{1}{2}mv^{2}$$</div>
+
+<p>We keep the term $E_{\alpha}$, since it's needed in the final equation, but the term $E_N$ isn't required, so we can eliminate it by using the full equation for kinetic energy. We can now substitute in our expression from the first part of the question for $V$:</p>
+<div class="formula">$$E=\frac{1}{2}N\left (\frac{mv}{N} \right )^{2}+E_{\alpha}$$</div>
+
+<p>Getting this far would have earned two marks, but the next step requires a good understanding of algebra and using units to build equations. We need to multiply out the bracket and cancel terms to give:</p>
+<div class="formula">$$E=\frac{1}{2}\frac{m^{2}v^{2}}{N}+E_{\alpha}$$</div>
+
+<p>If we write this equation as $E={\color{red}{\frac{1}{2}}}\frac{\color{red}{m}\,m\,{\color{red} {v v}}}{N}+E_{\alpha}$, we can see that the terms in red can be substituted for $E_{\alpha}$. This key step won the third mark, and leaves us with:</p>
+<div class="formula">$$E=\left ( \frac{m}{N} \right )E_{\alpha}+E_{\alpha}$$</div>
+
+<p>Which can be factorised as:</p>
+<div class="formula">$$E=E_{\alpha}\left ( \frac{m}{N} +1\right)$$</div>
+
+<p>Looking at the equation we were given to derive, we can see that we need an $N$ term added to $m$, and we need to get rid of the 1. Substituting $\frac{N}{N}$ for the 1 gives:</p>
+<div class="formula">$$\large E=E_{\alpha}\left ( \frac{m}{N} +\frac{N}{N}\right)=E_{\alpha}\left ( \frac{m+N}{N} \right )$$</div>
+
+<p>This is the last step required to gain the fourth mark, and it should now be clear how to rearrange the equation to equal the one provided.</p>
+{% endblock %}

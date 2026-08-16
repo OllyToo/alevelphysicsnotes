@@ -1,0 +1,379 @@
+{% extends "base.html" %}
+
+{% block title %}Work, energy and power{% endblock %}
+{% block page_h1 %}Work, energy and power{% endblock %}
+
+{% block meta_description %}A Level Physics notes and worked examples to help students with their exams and learning. Here we learn about work, power, efficiency, and the conservation of energy.{% endblock %}
+{% block meta_keywords %}energy, work, power, efficiency, kinetic, gravitational, potential, elastic, conservation, resistive forces, worked examples, exam questions, A level, physics{% endblock %}
+
+{% block extra_head %}
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/quiz.css') }}">
+{% endblock %}
+
+{% block page_boxes %}
+		<a href="#1"><button class="button">Conservation of energy</button></a>
+		<a href="#2"><button class="button">Work</button></a>
+		<a href="#3"><button class="button">Stretching Objects</button></a>
+		<a href="#4"><button class="button">Force-Displacement Graphs</button></a>
+		<a href="#5"><button class="button">Energy</button></a>
+		<a href="#6"><button class="button">Gravitational Potential Energy</button></a>
+		<a href="#7"><button class="button">Energy Changes</button></a>
+		<a href="#8"><button class="button">Power</button></a>
+		<a href="#9"><button class="button">Efficiency</button></a>
+		<a href="#10"><button class="button">Worked example</button></a>
+		<a href="#11"><button class="button">Test yourself</button></a>
+{% endblock %}
+
+{% block spec %}
+	<div id="spec">
+		<p class="spec_ref"><b>3.4.1.7 Work, energy and power</b></p>
+
+		<p class="spec_box">Energy transferred, $W=Fs\cos \theta$</p>
+		<p class="spec_box"><i>Rate of doing work = rate of energy transfer,</i> $P=\frac{\Delta W}{\Delta t}=Fv$</p>
+		<p class="spec_box">Quantitative questions may be set on variable forces.</p>
+		<p class="spec_box">Significance of the area under a force–displacement graph.</p>
+		<div class="formula">
+			$$\small efficiency=\frac{useful\: output\: power}{input\:power}$$
+		</div>
+		<p class="spec_box">Efficiency can be expressed as a percentage.</p>
+
+		<p class="spec_ref">3.4.1.8 Conservation of energy</p>
+
+		<p class="spec_box">Principle of conservation of energy.</p>
+		<div class="formula">
+			$\Delta E_{p}=mg\Delta h$ and $E_{k}=\frac{1}{2}mv^{2}$
+		</div>
+		<p class="spec_box">Quantitative and qualitative application of energy conservation to examples involving gravitational potential energy, kinetic energy, and work done against resistive forces.</p>
+	</div>
+{% endblock %}
+
+{% block content %}
+
+		<section class="top_section" id="1">
+			<h3>Conservation of energy</h3>
+
+			<p>Energy is never lost. This can be a difficult idea to accept, since we constantly see things "using up" and "losing" their energy, and it took a long time for scientists to arrive at this conclusion. This is the <i>principle of conservation of energy</i>:</p>
+			<p class="equation">Energy cannot be created or destroyed, only transferred from one form to another. In any change, the total energy before the change equals the total energy after it.</p>
+			<p>The total amount of energy in a closed system is constant. This is one of the most important ideas in the whole of physics, and it's worth being able to apply it to a wide range of situations. Many quantities in nature are conserved in this way, including mass, charge, momentum, angular momentum, and baryon number; some of these are covered elsewhere in this course.</p>
+			<p>There are two main forms of mechanical energy: <b>kinetic energy</b>, the energy of movement, calculated from:</p>
+
+			<div class="formula">
+				$$\large E_{k}=\frac{1}{2}mv^{2}$$
+			</div>
+
+			<p>and <b>gravitational potential energy</b>, the energy <i>stored</i> in an object due to its position in a gravitational field:</p>
+
+			<div class="formula">
+				$$\large \Delta E_{p}=mg\Delta h$$
+			</div>
+
+			<p>Because energy is conserved, a loss of one form is always matched by a gain elsewhere. A neat illustration: two toy cars, one twice the mass of the other, are released from rest at the top of the same frictionless slope. Since all the GPE lost converts to KE:</p>
+
+			<div class="formula">
+				$$mgh=\frac{1}{2}mv^{2} \quad \Longrightarrow \quad v=\sqrt{2gh}$$
+			</div>
+
+			<p>The mass cancels out completely, so both cars reach the bottom with exactly the same speed, however different their masses are.</p>
+			<p>Beyond mechanical energy, there's also <b>radiant energy</b>, the energy carried by electromagnetic radiation, found from $E=hf$ (where $f$ is frequency and $h$ is the Planck constant); this is covered in more detail elsewhere in the course. Other common types of energy include:</p>
+			<ul class="page_list">
+				<li><i>Thermal or internal energy</i> - energy associated with the temperature of an object.</li>
+				<li><i>Electrical energy</i> - energy associated with charged objects.</li>
+				<li><i>Chemical and nuclear energy</i> - energy associated with chemical or nuclear reactions.</li>
+				<li><i>Elastic energy</i> - energy stored when an object is stretched or compressed.</li>
+			</ul>
+			<p>All energy is measured in <b>joules</b>.</p>
+			<p style="text-align: center;"><i>One joule is the amount of energy needed to lift a 1 N weight through a height of 1 m.</i></p>
+			<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>	
+		</section>
+	<br>
+	<br>
+	<hr>
+		<section id="2">
+			<h3>Work</h3>
+
+			<p>Energy is a measure of an object's ability to do <b>work</b>, and energy can be transferred by either <i>working</i> or <i>heating</i>. These differ in how they make particles move:</p>
+			<ul class="page_list">
+			<li><b>Working</b> makes all the particles in something move together, in the same way and at the same speed (<i>organised energy</i>). It's an energy transfer that happens whenever an applied force causes something to move.</li>
+			<li><b>Heating</b> makes particles move in a disordered way (<i>disordered energy</i>). It's an energy transfer resulting from a temperature difference.</li>
+			</ul>
+			<p>Work is the product of the force applied and the displacement in the direction of that force:</p>
+
+			<p class="equation">Work = Force applied &times; Displacement in the direction of the force</p>
+
+			<p>If a force is applied at an angle to an object's direction of movement, only the component of the force acting <i>in</i> that direction, $F\cos\theta$, contributes to the work done; the rest of the force does no work at all. If a force acts at 90° to the displacement, the work done is zero. This gives the full equation for work:</p>
+
+			<div class="formula">
+				$$\large W=Fs\cos \theta$$
+			</div>
+
+			<p>The unit of work is the <span>$\units{Nm}$</span>, or <i>joule</i> (J).</p>
+			<p>A good example of this is a cargo ship assisted by a sail, with the cable pulling at an angle to the ship's direction of travel. If the tension in the cable is 170 kN at 40° to the direction of travel, and the ship moves 1.0 km, the work done by the sail is:</p>
+
+			<div class="formula">
+				$$W=Fs\cos\theta=170\,000\times1000\times\cos40°\approx\quantity{1.3\times10^{8}}{J}$$
+			</div>
+
+			<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>	
+		</section>
+	<br>
+	<br>
+	<hr>
+		<section id="3">
+			<h3>Stretching Objects</h3>
+
+			<p>As an object is stretched, the force needed to stretch it further generally increases too. If the object obeys <b>Hooke's law</b>, the force required is directly proportional to the extension, $e$:</p>
+
+			<div class="formula">
+				$$\large F=ke$$
+			</div>
+
+			<p>where $k$ is the <b>spring constant</b>: the force needed to produce one metre of extension.</p>
+			<p>The work done in stretching such an object from no extension up to a maximum extension $e$ is equal to the <i>average</i> force multiplied by $e$, since the force grows steadily from zero. This is equivalent to $\frac{1}{2}Fe$, and substituting $F=ke$ gives:</p>
+
+			<div class="formula">
+				$$\large W=\frac{1}{2}ke^{2}$$
+			</div>
+
+			<p>This same result can be reached graphically, as shown in the next section: for a Hooke's law spring, a graph of force against extension is a straight line through the origin, and the area of the triangle underneath it is exactly $\frac{1}{2}Fe$.</p>
+			<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+		</section>
+	<br>
+	<br>
+	<hr>
+		<section id="4">
+			<h3>Force-Displacement Graphs</h3>
+
+			<p>Work done can also be found graphically, by plotting force against displacement, with displacement on the <i>x</i>-axis. The area under the graph is equal to the work done.</p>
+
+			<figure>
+				<img src="{{ url_for('static', filename='images/mechanics/force_displacement_graph.svg') }}" alt="force displacement graph" class="size500">
+				<figcaption><b>Figure 1:</b>&nbsp;A force-displacement graph.</figcaption>
+			</figure>
+
+			<p>For a simple straight-line graph, such as the Hooke's law spring in the previous section, finding the area (and hence the work done) is straightforward: it's just the area of a triangle or rectangle. If the force varies with distance in a more complicated way, calculating the work done is harder. The graph can either be split into smaller strips, with the area of each individual strip calculated and added together, or, if the equation of the line is known, the force can be integrated with respect to distance:</p>
+
+			<div class="formula">
+				$$\large W=\int_{a}^{b}F\,\mathrm{d}s$$
+			</div>
+
+			<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+		</section>
+	<br>
+	<br>
+	<hr>
+		<section id="5">
+			<h3>Energy</h3>
+
+			<p>The amount of energy an object has is directly related to the amount of work done on it: the more work done, the more energy it gains. The equations for kinetic and gravitational potential energy have already been used above, but it's worth seeing where they come from.</p>
+			<p>The equation for kinetic energy can be derived from the work needed to accelerate an object from rest up to some final velocity, $v$. The work done is the force applied multiplied by the distance moved while accelerating, both of which can be found from the equations of motion. Taking the initial velocity as $u=0$:</p>
+
+			<div class="formula">
+				$$s=\frac{1}{2}\left ( u+v \right )t=\frac{1}{2}vt$$
+			</div>
+
+			<p>and the acceleration is:</p>
+
+			<div class="formula">
+				$$a=\frac{v-u}{t}=\frac{v}{t}$$
+			</div>
+
+			<p>Substituting this into $F=ma$ gives $F=\frac{mv}{t}$. The work done, $W=Fs$, then becomes:</p>
+
+			<div class="formula">
+				$$\large W=\frac{mv}{t}\times \frac{vt}{2}=\frac{1}{2}mv^{2}$$
+			</div>
+
+			<p>Since the joule is the unit for both energy <i>and</i> work, any equation for calculating an amount of energy can equally be read as the work done in giving an object that energy.</p>
+			<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+		</section>
+	<br>
+	<br>
+	<hr>
+		<section id="6">
+			<h3>Gravitational Potential Energy</h3>
+
+			<p>This too can be derived from the work equation. Lifting an object through a vertical height means doing work against a gravitational field. The force applied is equal to the object's weight, $mg$, and the displacement is the height through which it's raised, $h$. So, as:</p>
+
+			<div class="formula">
+				$$\large F=mg \qquad s=h$$
+			</div>
+
+			<p>we get the familiar:</p>
+
+			<div class="formula">
+				$$\large E_{p}=mgh$$
+			</div>
+
+			<p>It's important to recognise that it's the <i>change</i> in height that matters here, not the absolute height above some arbitrary reference point, so this equation is more accurately written as the change in gravitational potential energy:</p>
+
+			<div class="formula">
+				$$\large \Delta E_{p}=mg\Delta h$$
+			</div>
+
+			<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+		</section>
+	<br>
+	<br>
+	<hr>
+		<section id="7">
+			<h3>Energy Changes</h3>
+
+			<p>Every calculation so far has assumed no energy is "lost" to resistive forces such as friction or air resistance. In reality, work is very often done against these forces too, transferring energy away, usually as heat, rather than leaving it as useful kinetic or potential energy.</p>
+			<p>Conservation of energy still applies, it just needs an extra term to account for this:</p>
+
+			<p class="equation">GPE lost = KE gained + work done against resistive forces</p>
+
+			<p>This approach is especially useful when the acceleration of an object isn't constant, since the suvat equations can't be applied directly in that case (see <a href="{{ url_for('motion') }}">When can we use SUVAT?</a>), but conservation of energy holds throughout the motion regardless.</p>
+
+			<p>For example, a skier of mass 70 kg descends a slope, losing 40 m in height, and reaches a speed of 20 m s<sup>−1</sup> at the bottom. The work done against resistive forces such as air resistance and friction with the snow can be found from the energy lost that <i>didn't</i> end up as kinetic energy:</p>
+
+			<div class="formula">
+				$$\Delta E_{p}=mg\Delta h=70\times9.81\times40\approx\quantity{27\,500}{J}$$
+			</div>
+			<div class="formula">
+				$$E_{k}=\frac{1}{2}mv^{2}=\frac{1}{2}\times70\times20^{2}=\quantity{14\,000}{J}$$
+			</div>
+			<div class="formula">
+				$$W_{resistive}=\Delta E_{p}-E_{k}=27\,500-14\,000\approx\quantity{1.35\times10^{4}}{J}$$
+			</div>
+
+			<p>The same idea applies whenever several forces act on an object as it moves, whether they help or hinder the motion: the work done by each force can be found individually, using $W=Fs\cos\theta$ for each, and then combined to find the total energy transferred.</p>
+			<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+		</section>
+	<br>
+	<br>
+	<hr>
+		<section id="8">
+			<h3>Power</h3>
+
+			<p>Energy and work can be transferred by many different means, so it's often more useful to consider <i>how fast</i> energy is transferred, or how quickly work is done. <b>The rate at which energy is transferred is called power</b>.</p>
+
+			<div class="formula">
+				$$\large P=\frac{W}{t}$$
+			</div>
+
+			<p>One <b>watt</b> of power transfers one <b>joule</b> of energy every second. The equation above can also be written as $P=\frac{Fs}{t}$; since $\frac{s}{t}=v$, this gives another useful form of the equation for power:</p>
+
+			<div class="formula">
+				$$\large P=Fv$$
+			</div>
+
+			<p>This equation is important, and often overlooked. Think about wading through water: whether moving quickly or slowly, the resistive force from the water is roughly the same, but moving quickly requires generating far more power than moving slowly.</p>
+			<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+		</section>
+	<br>
+	<br>
+	<hr>
+		<section id="9">
+			<h3>Efficiency</h3>
+
+			<p>Whenever work is done against resistive forces, some of the input energy is inevitably transferred somewhere other than where it was intended, usually as heat or sound. The <b>efficiency</b> of a process describes what fraction of the energy (or power) put in is usefully transferred:</p>
+
+			<div class="formula">
+				$$\large efficiency=\frac{useful\: output\: power}{input\:power}$$
+			</div>
+
+			<p>The same relationship holds using energy in place of power, since power is just energy transferred per second. Efficiency is a ratio, so it has no units, but it's very often expressed as a percentage instead, by multiplying by 100.</p>
+			<p>For example, an electric motor is supplied with 500 W of input power, but only 350 W of this is usefully transferred to lifting a load; the rest is lost, mostly as heat in the motor and resistive forces in its moving parts. The efficiency of the motor is:</p>
+
+			<div class="formula">
+				$$efficiency=\frac{350}{500}=0.70=\quantity{70}{\%}$$
+			</div>
+
+			<p>Because energy is always conserved, no process can ever be more than 100% efficient; a lower efficiency simply means more of the input energy is being transferred somewhere other than the useful output.</p>
+			<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+		</section>
+	<br>
+	<br>
+	<hr>
+		<section id="10">
+			<h3>Worked example</h3>
+
+			<figure>
+				<img src="{{ url_for('static', filename='images/mechanics/cyclist_hill.svg') }}" alt="a cyclist going up a hill at a constant angle theta" class="size700">
+				<figcaption><b>Figure 2:</b>&nbsp;Cyclists going up a hill of constant angle $\theta$.</figcaption>
+			</figure>
+
+			<p>Figure 2 shows cyclists going up a hill at a constant angle $\theta$. The total mass of one of the cyclist and bicycle is 65 kg.</p>
+
+			<div>
+				<ol class="page_list" type="A">
+					<li>Write an expression for the component of the total weight parallel to the slope.</li>
+					<p class="workex">The weight, $mg$, acts vertically downwards; resolving it parallel to the slope, exactly as with the inclined-plane problems met in <a href="{{ url_for('statics') }}">Statics</a>, gives:</p>
+					<div class="formula">
+						$$mg\sin\theta=65\times9.81\times\sin\theta=637.65\sin\theta\;\textrm{N}$$
+					</div>
+
+					<li>The cyclist's useful power output is 310 W, at a steady speed of 1.63 m s<sup>−1</sup>. Assuming air resistance is negligible at this speed, calculate $\theta$.</li>
+					<p class="workex">At a steady speed, the cyclist is in equilibrium, so the driving force must equal the component of weight found in part A. Using $P=Fv$ to find that driving force:</p>
+					<div class="formula">
+						$$F=\frac{P}{v}=\frac{310}{1.63}\approx\quantity{190.2}{N}$$
+					</div>
+					<p class="workex">Setting this equal to the expression from part A:</p>
+					<div class="formula">
+						$$637.65\sin\theta=190.2 \quad \Longrightarrow \quad \theta=\sin^{-1}\left(\frac{190.2}{637.65}\right)\approx17.4°$$
+					</div>
+
+					<li>The cyclist instead takes a "zig-zag" path up the same hill, at the same steady speed of 1.63 m s<sup>−1</sup>. Discuss how her useful power output on this path compares with part B.</li>
+					<figure>
+						<img src="{{ url_for('static', filename='images/mechanics/cyclist_zigzag.svg') }}" alt="the cyclist taking a zig-zag path up the same hill" class="size700">
+						<figcaption><b>Figure 3:</b>&nbsp;The same hill, climbed by a longer, shallower zig-zag path.</figcaption>
+					</figure>
+					<p class="workex">This is worth reasoning through in stages, rather than jumping to a conclusion. The height gained overall is the same either way, since it's still the same hill, so the total gravitational potential energy gained is also the same. But the zig-zag path is longer, so at the same speed, it takes longer to climb. Since power is energy transferred per second, transferring the same amount of energy over a longer time means a <i>lower</i> power output.</p>
+					<p class="workex">This makes sense from the angle, too: the zig-zag path has a shallower <i>effective</i> angle to the horizontal than the direct route, so the component of weight the cyclist must overcome, $mg\sin\theta$, is smaller. Since she's travelling at the same speed either way, $P=Fv$ shows that a smaller force means a smaller power output. In short, the zig-zag path needs a lower useful power output, which is exactly why it feels easier, even though it covers a greater distance.</p>
+
+					<li>The cyclist reaches the top, then freewheels back down in a straight line, without pedalling or braking. Figure 4 shows how her velocity varies with time. Determine her acceleration 10.0 s after she begins to descend.</li>
+					<figure>
+						<img src="{{ url_for('static', filename='images/mechanics/cyclist_velocity_time.svg') }}" alt="velocity time graph of the cyclist descending the hill, curving to a plateau" class="size500">
+						<figcaption><b>Figure 4:</b>&nbsp;The cyclist's velocity while freewheeling down the hill.</figcaption>
+					</figure>
+					<p class="workex">The graph curves rather than forming a straight line, which immediately tells us the acceleration isn't constant, so an equation like $v=u+at$ can't be used here (a common mistake). Instead, as with any curved <a href="{{ url_for('motion') }}">displacement or velocity-time graph</a>, the acceleration at a specific moment must be found from the <i>gradient of a tangent</i> to the curve at that point.</p>
+					<p class="workex">Drawing a tangent to the curve at $t=10.0$ s, and finding its gradient using two well-spaced points along it, gives an acceleration of approximately:</p>
+					<div class="formula">
+						$$a\approx\quantity{0.21}{ms^{-2}}$$
+					</div>
+					<p class="workex">Values anywhere between roughly 0.15 and 0.27 m s<sup>−2</sup> are accepted here, since reading a tangent accurately always carries some uncertainty; what matters most is the method, not hitting an exact value.</p>
+
+					<li>Outline how energy transfers explain the shape of this graph.</li>
+					<p class="workex">As the cyclist freewheels downhill, gravitational potential energy is continuously transferred to kinetic energy, speeding her up, but air resistance and other resistive forces increase as her speed increases, exactly as with the <a href="{{ url_for('projectiles') }}">terminal velocity</a> discussed earlier in this course.</p>
+					<p class="workex">Early in the descent, while she's still moving slowly, resistive forces are small, so nearly all of the GPE transferred per second goes into increasing her kinetic energy; this is why the graph is steep, and the acceleration is high, near $t=0$. As her speed increases, resistive forces increase too, so a larger share of the GPE transferred per second is instead transferred to the surrounding air, rather than to kinetic energy, so the graph becomes less steep, matching the decreasing acceleration. Eventually, the resistive forces become large enough to balance the component of her weight down the slope; at this point, all of the GPE transferred per second is transferred away by resistive forces, none is left over to increase her kinetic energy further, and she travels at a constant terminal velocity, shown by the graph levelling off.</p>
+				</ol>
+			</div>
+
+			<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+		</section>
+	<br>
+	<br>
+	<hr>
+		<section id="11">
+			<h3>Test yourself</h3>
+			<p>Try the questions below to check your understanding of this topic. Numerical questions use different numbers each time, so you can attempt them more than once.</p>
+			<div id="quiz-root"></div>
+			<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+		</section>
+
+	{% endblock %}
+
+	{% block resources_heading %}One page summary{% endblock %}
+
+{% block resources %}
+	<li><a href="{{ url_for('static', filename='summaries/mechanics/energy_summary.html') }}" target="_blank"><i class="fas fa-file-alt"></i> Printable revision sheet</a></li>
+{% endblock %}
+
+{% block prev_link %}
+	<a href="{{ url_for('newtonlaws') }}"><i class="fas fa-chevron-circle-left"></i><span class="nav_link">Previous topic</span></a>
+{% endblock %}
+
+{% block next_link %}
+	<a href="{{ url_for('momentum') }}"><span class="nav_link">Next topic</span><i class="fas fa-chevron-circle-right"></i></a>
+{% endblock %}
+
+{% block extra_scripts %}
+	<script src="{{ url_for('static', filename='js/quiz.js') }}"></script>
+	<script src="{{ url_for('static', filename='quizzes/energy_questions.js') }}"></script>
+	<script>
+		new PhysicsQuiz(document.getElementById('quiz-root'), energyQuestions, {
+			storageKey: 'energy'
+		});
+	</script>
+{% endblock %}

@@ -1,0 +1,1140 @@
+/*Classes and Ids for main page structures such as backgrounds, header, footer and main etc.*/
+body{
+	
+}
+
+
+
+#header{
+ 	font-family:'Titillium Web', sans-serif;
+ 	font-size: 105%;
+	color: white;
+	padding-left: 10%;
+	padding-right: 10%;	
+	min-height: 130px;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#009ec3+0,00b7ea+100 */
+	background: #009ec3; /* Old browsers */
+	background: -moz-linear-gradient(top, #009ec3 0%, #00b7ea 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, #009ec3 0%,#00b7ea 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, #009ec3 0%,#00b7ea 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#009ec3', endColorstr='#00b7ea',GradientType=0 ); /* IE6-9 */
+	box-shadow: 0 4px 10px 0 rgba(0,0,0,0.4);
+}
+
+
+.banner{
+	display: block;
+	padding-top: 42px;
+	max-height: 350px;
+}
+.intro{
+	padding-top: 2%;
+	display: inline-block;
+	margin-top: 0px;
+	padding-bottom: 40px;
+	font-family: 'Noto Sans', sans-serif;
+	font-size: 110%;
+	text-align: justify;	
+}
+/*adds padding to the intro class on wide screens*/
+@media screen and (max-width: 1300px)
+{
+	.intro{
+		padding-top: 2%;
+	}
+}
+/*class for the wrapper on the home page*/
+.gradient{
+	padding-left: 10%;
+	padding-right: 10%;
+	margin-bottom: 15px;
+	box-shadow: 0 4px 10px 0 rgba(0,0,0,0.4);
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,e5e5e5+100;White+3D */
+	background: rgb(255,255,255); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(229,229,229,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
+}
+
+
+.bio{
+	/*padding-top: 60px;*/
+	padding-bottom: 40px;
+	font-family: 'Noto Sans', sans-serif;
+	font-size: 110%;
+	text-align: justify;	
+}
+
+.blurb{
+	/*padding-top: 60px;*/
+	padding-bottom: 40px;
+	font-family: 'Noto Sans', sans-serif;
+	font-size: 95%;
+	text-align: justify;	
+}
+  
+ #spec {
+ 	background: #ffffff;
+	display: inline-box;
+	float: left;
+    /*margin-top: 20px;*/
+   	margin-right: 20px;
+    width: 	280px;
+   	margin-bottom: 10px;
+    padding: 10px;
+	border: 1px solid black;
+	box-shadow: 0 4px 10px 0 rgba(0,0,0,0.4);	
+}
+#specTopic {
+ 	background: #ffffff;
+	display: block;
+	margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 15px;
+   	padding: 10px;
+	border: 1px solid black;
+	box-shadow: 0 4px 10px 0 rgba(0,0,0,0.4);	
+}
+
+#page-contents{
+	border:1px solid black;
+	display: inline-box;
+	float: left;
+	width: 300px;
+	/*margin-top: 20px;*/
+   	margin-right: 20px;
+	margin-bottom: 10px;
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.4);	
+}
+
+
+
+.boxes{
+	display: block;
+	margin: auto;
+}
+.button {
+  background: #a4d3eb;
+  background-image: -webkit-linear-gradient(top, #a4d3eb, #346a8c);
+  background-image: -moz-linear-gradient(top, #a4d3eb, #346a8c);
+  background-image: -ms-linear-gradient(top, #a4d3eb, #346a8c);
+  background-image: -o-linear-gradient(top, #a4d3eb, #346a8c);
+  background-image: linear-gradient(to bottom, #a4d3eb, #346a8c);
+  -webkit-border-radius: 5;
+  -moz-border-radius: 5;
+  border-radius: 5px;
+  font-family: 'Do Hyeon', sans-serif;
+  
+  font-size: 16px;
+
+  padding: 10px 10px 10px 10px;
+  border: solid #78b5db 2px;
+  text-decoration: none;
+  margin-top: 0px;
+  margin-bottom: 4px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 250px;
+
+}
+
+.button:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+
+.button a{
+	color: #37383a;
+	text-decoration: none;
+	display: block;
+}
+
+
+#main{
+	font-size: 100%;
+	font-family: 'Noto Sans', sans-serif;	
+	margin-top: 60px;
+}
+.mainTxt{
+	font-size: 100%;
+	font-family: 'Noto Sans', sans-serif;	
+}
+.topicBlurb{
+	margin-left: 15px;
+	margin-right: 15px;
+}
+
+section.top_section{
+
+}
+section > p{
+	line-height: 150%;
+}
+
+article {
+	max-width: 100%;
+	margin-right: 50px;
+	margin-left: 50px;
+	min-height: 700px;
+}
+ sup{
+ 	vertical-align: super;
+ 	font-size: 70%;
+ 	font-style:normal;
+ }
+ sub{
+ 	vertical-align: sub;
+ 	font-size: 70%;
+ 	font-style:normal;
+ }
+ em{
+ 	font-style: italic;
+ }
+
+/*page set up for extension pages*/
+
+#extension{
+	background-color:#f4cf8d;
+	padding:5px;
+	text-align:justify;
+	font-size: 100%;
+	font-family: 'Noto Sans', sans-serif;
+}
+/*page set up for maths box pages*/
+
+#mathsbox{
+	background-color:#a6d9ea;
+	border-style: groove;
+	padding:5px;
+	text-align:justify;
+	font-size: 100%;
+	font-family: 'Noto Sans', sans-serif;
+}
+/*----------------------------------------*/
+.logo{
+	float: left;
+	max-width: 100px;
+	margin-top: 15px;
+	margin-left: 10px;
+}
+
+.search{
+	float: right;
+	margin-top: 7px;
+	margin-bottom: 3px;
+	/*max-width: 350px;*/
+	padding: 0px;
+}
+.search_box{
+	width: 200px;
+	height: 20px;
+	box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16);
+	margin-top: 0px;
+}
+
+.myButton {
+	-moz-box-shadow:inset 0px 1px 3px 0px #91b8b3;
+	-webkit-box-shadow:inset 0px 1px 3px 0px #91b8b3;
+	box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16);
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #768d87), color-stop(1, #6c7c7c));
+	background:-moz-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
+	background:-webkit-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
+	background:-o-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
+	background:-ms-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
+	background:linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#768d87', endColorstr='#6c7c7c',GradientType=0);
+	background-color:#768d87;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	border:1px solid #566963;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:14px;
+	font-weight:bold;
+	padding:3px 10px;
+	text-decoration:none;
+	text-shadow:0px -1px 0px #2b665e;
+}
+.myButton:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #6c7c7c), color-stop(1, #768d87));
+	background:-moz-linear-gradient(top, #6c7c7c 5%, #768d87 100%);
+	background:-webkit-linear-gradient(top, #6c7c7c 5%, #768d87 100%);
+	background:-o-linear-gradient(top, #6c7c7c 5%, #768d87 100%);
+	background:-ms-linear-gradient(top, #6c7c7c 5%, #768d87 100%);
+	background:linear-gradient(to bottom, #6c7c7c 5%, #768d87 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#6c7c7c', endColorstr='#768d87',GradientType=0);
+	background-color:#6c7c7c;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+
+/*Nav bar top menu*/
+.clearfix:after{
+	display: block;
+	clear: both;
+}
+.clearfix1::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/*----- Menu Outline -----*/
+.menu-wrap{
+	width: 100%;
+	background-color: #008080;
+	box-shadow:0px 1px 3px rgba(0,0,0,0.2);
+	
+}
+.menu{
+	width: 100%;
+	margin: 0px auto;	
+}
+.menu li{
+	margin: 0px;
+	list-style: none;
+	font-family: 'Noto Sans', sans-serif;
+}
+.menu a{
+	transition: all linear 0.15s;
+	color: white;
+}
+.menu li:hover > a, .menu .current-item > a{
+	text-decoration: none;
+	color: #800040;
+}
+.menu .arrow{
+	font-size: 11px;
+	line-height: 0%;
+}
+
+/*----- Top Level -----*/
+.menu > ul > li {
+	float: left;
+	display: inline-block;
+	position: relative;
+	font-size: 19px;
+	width: 25%;
+}
+
+.menu > ul > li > a{
+	padding: 10px 0px;
+	display: inline-block;
+	width: 100%;
+	text-shadow: 0px 1px 0px rgba(0,0,0,0.4);
+	text-align: center;
+	box-shadow: 0 4px 4px 0 rgba(0,0,0,0.4);*/
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#00b7ea+0,009ec3+100;Blue+3D+%2315 */
+	background: #00b7ea; /* Old browsers */
+	background: -moz-linear-gradient(top, #00b7ea 0%, #009ec3 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, #00b7ea 0%,#009ec3 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, #00b7ea 0%,#009ec3 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00b7ea', endColorstr='#009ec3',GradientType=0 ); /* IE6-9 */
+}
+.menu > ul > li:hover > a, .menu > ul > .current-item > a{
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#356aa0+0,356aa0+100;Blue+Flat */
+	background: #356aa0; /* Old browsers */
+	background: -moz-linear-gradient(-45deg, #356aa0 0%, #356aa0 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(-45deg, #356aa0 0%,#356aa0 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(135deg, #356aa0 0%,#356aa0 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#356aa0', endColorstr='#356aa0',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+/*----- Bottom Level -----*/
+.menu Li:hover .sub-menu{
+	z-index: 1;
+	opacity: 1;
+}
+.sub-menu{
+	width: 93.5%;
+	padding: 10px 10px;
+	position: absolute;
+	top: 100%;
+	left: 0px;
+	z-index: -1;
+	opacity: 0;
+	transition: opacity linear 0,15s;
+	box-shadow: 0 4px 10px 0 rgba(0,0,0,0.4);*/
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#356aa0+0,356aa0+100;Blue+Flat */
+	background: #356aa0; /* Old browsers */
+	background: -moz-linear-gradient(-45deg, #356aa0 0%, #356aa0 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(-45deg, #356aa0 0%,#356aa0 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(135deg, #356aa0 0%,#356aa0 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#356aa0', endColorstr='#356aa0',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+.sub-menu li{
+	display: block;
+	font-size: 16px;
+}
+.sub-menu li a{
+	padding: 5px 5px;
+	display: block;
+}
+
+
+/*Headings and paragraph classes*/
+h1	{
+	 /*font-family: helvetica;*/
+	 font: 'Titillium Web', sans-serif;
+	 font-size: 300%;
+	 text-align: right;
+	 text-shadow: 0px 1px 0px rgba(0,0,0,0.4);
+	 padding-top: 55px;
+	 padding-bottom: 1px;
+	 padding-right: 0px;
+ }
+ 
+ .sub_heading{
+	 font-family: helvetica;
+	 font-size: 100%;
+	 text-align: right;
+	 text-shadow: 0px 1px 0px rgba(0,0,0,0.4);
+	 padding-top: 5px;
+	 padding-bottom: 10px;
+	 padding-right: 2px;
+	 font-style: italic;
+ }
+ /*Title on the topic pages*/
+ h2{
+ 	font-family:  'Titillium Web', sans-serif;
+	 font-size:200%;
+	 text-align:  center;
+	 margin-top: 50px;
+}
+/*Title for the sections on each page*/
+h3 {
+	 font-family: 'Titillium Web', sans-serif;
+	 font-size:130%;
+	 text-align:  center;
+	 font-weight: bold;
+	 margin-top: 20px;
+	 margin-bottom: 30px;
+ }
+/*Title for the main nav bar on each page*/
+h4{
+	font-family: 'Titillium Web', sans-serif;
+	 font-size:150%;
+	 text-align:  center;
+	 padding: 15px;
+}
+/*h5 is used in the footer*/
+/*h6 is on the drop down menu*/
+h6{
+	font-family: 'Titillium Web', sans-serif;
+	color: #ffffff;
+	 font-size:100%;
+	 text-align:  center;
+	 padding: 15px;
+}
+
+
+
+
+li + h4{
+	margin-top: 10px;
+}
+ 
+p + p {
+	margin-top: 15px;
+}
+
+ .spec_box{
+ 	font-family: arial;
+ 	font-size: 100%;
+ } 
+ .spec_ref{
+ 	font-weight: bold;
+ 	font-family: arial;
+ 	font-size: 100%;
+ } 
+ .spec_head{
+ 	font-weight: bold;
+ 	font-family: arial;
+ 	font-size: 100%;
+ 	padding-top: 5px;
+ 	padding-bottom: 5px;
+ } 
+ .spec_body{
+ 	margin-bottom: 20px;
+ }
+.Topictext{
+	float: left;
+	max-width: 50%;
+	margin: 15px;
+}
+
+/*class for MathJax formatting*/
+.formula{
+	overflow-x: auto;
+}
+/*class for equations written as text*/
+.equation {
+	 font-family: 'Enriqueta', serif;
+	 font-size: 115%;	 
+	 text-align: center;
+	 font-style: italic;
+	 font-weight: bold;
+ }
+ /*class for working for all worked examples*/
+ .workex{
+ 	margin-top: 15px;
+ 	margin-bottom: 15px;
+ 	font-family: 'Roboto Slab', serif;
+ 	font-size: 105%;
+ 	font-style: italic;
+ 	line-height: 120%;
+ }
+ 
+ .back{
+ 	padding-top: 20px;
+ 	padding-bottom: 20px;
+ 	float: left;
+ }
+ .forward{
+ 	padding-top: 20px;
+ 	padding-bottom: 20px;
+ 	float: right;
+ }
+ .nav_link{
+ 	margin-left: 10px;
+ 	margin-right: 10px;
+ }
+ .page_navigation{
+ 	margin-top: 20px;
+ 	font-family: 'Do Hyeon', sans-serif;
+ 	font-size:130%;
+ }
+ .back-to-top{
+ 	font-family: 'Do Hyeon', sans-serif;
+ 	text-align: right;
+ }
+ .back2top{
+ 	margin-right: 10px;
+ }
+ /*Obsolete class, sets italics to look like maths text. Use MathJax or .equation class instead*/
+ /*i{
+	 font-family: Latin Modern;
+	 font-size:110%;
+ }
+ .important{font-size: 100%;
+	 font-family: 'Noto Sans', sans-serif;
+	 text-align: center;
+}
+*/
+.downloadHead {
+	 font-family: 'Titillium Web', sans-serif;
+	 font-size:130%;
+	 text-align:  left;
+	 margin-top: 20px;
+	 margin-bottom: 10px;
+ }
+
+ /*----------------------------------------*/
+
+.navlist {
+	list-style-type: none;
+	font-family: 'Titillium Web', sans-serif;
+	font-size: 120%;
+	margin-left: 20px;
+	margin-right: 20px;	
+	overflow: hidden;		
+}
+.navlist li{
+	display: block;	
+	text-align: center;
+}
+.navlist li a{
+	padding: 5px 5px;
+	display: block;
+	color: white;
+	text-decoration: none;
+	font-style: italic;
+}
+.navlist li a:hover{
+	color: #800040;
+}
+
+.navlistTopic {
+	list-style-type: none;
+	font-family: 'Titillium Web', sans-serif;
+	font-size: 120%;
+	overflow: hidden;		
+}
+.navlistTopic li{
+	display: block;	
+	text-align: left;
+}
+.navlistTopic li a{
+	padding-top: 10px;
+	display: block;
+	color: black;
+	text-decoration: none;
+}
+.navlistTopic li a:hover{
+	color: #800040;
+}
+
+.page_resources {
+	
+	font-family: 'Titillium Web', sans-serif;
+	font-size: 120%;
+	margin-left: 20px;
+	margin-right: 20px;	
+	overflow: hidden;		
+}
+.page_resources li{
+	display: block;	
+	text-align: left;
+}
+.page_resources li a{
+	padding: 5px 5px;
+	display: block;
+	color: black;
+	text-decoration: none;	
+}
+.page_resources li a:hover{
+	color: #800040;
+}
+
+/*
+#topmenu {
+	list-style-type: none;
+	font-family: 'Titillium Web', sans-serif;
+	font-size: 120%;
+	margin-top: 0;
+	margin-left: 20px;
+	margin-right: 20px;
+	padding: 0;
+	overflow: hidden;	
+}
+/*Lists*/
+.page_list{
+	margin-top: 15px;
+	margin-bottom: 15px;
+	margin-left: 35px;
+}
+ul.page_list{
+	 font-size: 100%;
+	 font-family: 'Noto Sans', sans-serif;
+ }
+ol.page_list{
+	font-size: 100%;
+	font-family: 'Noto Sans', sans-serif;
+}
+
+.downloads{
+	margin-left: 20px;	
+}
+.downloads li{
+	padding-bottom: 10px;
+	font-family: 'Roboto Mono', monospace;
+}
+
+/*
+li a {
+	display: block;
+	color: black;
+	padding: 8px 16px;	
+	border-right: 1px solid white;
+	text-decoration: none;
+}
+li a:hover {
+	background-color: teal;
+	color: orange;
+	border-top: 1px solid white;
+}
+/*----------------------------------------*/
+hr{
+	border: 0;
+    height: 3px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 80, 80, 0.75), rgba(0, 0, 0, 0));
+}
+/*
+.clear {
+    height: 0;
+    line-height: 0;
+    overflow: hidden;
+    font-size: 0;
+    clear: left;
+}
+*/
+.floating-box{
+	/*background: #ffffff;*/
+	min-width:30%;
+	max-width: 300px;
+	min-height: 200px;
+	border: 5px;
+	padding: 10px;
+	box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16);
+	margin-left:auto;
+	margin-right:auto;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffaf4b+0,ff920a+100;Orange+3D+%231 */
+	background: rgb(255,175,75); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(255,175,75,1) 0%, rgba(255,146,10,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(255,175,75,1) 0%,rgba(255,146,10,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(255,175,75,1) 0%,rgba(255,146,10,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffaf4b', endColorstr='#ff920a',GradientType=0 ); /* IE6-9 */
+}
+.trayTitle{
+	font-weight: bold;
+	color: white;
+}
+
+/*
+.floating-box2{
+	background: #ffffff;
+	display: inline-box;
+	float: left;
+	min-width:94%;
+	max-width: 400px;
+	min-height: 300px;
+	margin: 6px;
+	border: 5px;
+	padding: 10px;
+	box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16);
+	margin-left:auto;
+	margin-right:auto;
+}
+*/
+
+.tray{
+	padding-top: 10px;
+	padding-bottom: 10px;
+	display: flex;
+	justify-content: center;
+}
+.topic_tray{
+}
+
+/*All tables and associated classes*/
+
+table, th, td {
+	padding: 5px;
+	text-align: center;
+	font-size: 100%;
+	font-family: 'Noto Sans', sans-serif;
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+th{
+	font-weight: bold;
+	font-size: 110%;
+}
+
+table.center {
+	margin-left: auto;
+	margin-right: auto; 
+	margin-top: 20px;
+	margin-bottom: 20px;
+	
+}
+.results_spacer{
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+.evenspread{
+	width:50%;
+}
+/*The following 4 are for the SI units table*/
+
+.Dimension {
+	width:15%;
+}
+
+.Unit {
+	width:14%;
+}
+
+.Symbol {
+	width:6%;
+}
+
+.Definition {
+	width:45%;
+}
+.column30{
+	width:30%;
+}
+.column25{
+	width:25%;
+}
+
+/*Degrees to seconds table*/
+
+.lens{
+	width: 200px;
+}
+.angles{
+	height: 50px; 
+}
+
+/*Spectral class table*/
+
+.spectralclass{
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+}
+.spectralheading{
+	height: 50px;
+}
+.Oclass{
+	background-color: #624AEA;
+	height: 40px;
+}
+.Bclass{
+	background-color: #346CCA;
+	height: 40px;
+}
+.Aclass{
+	background-color: #4EAFDC;
+	height: 40px;
+}
+.Fclass{
+	background-color: #FFFFFF;
+	height: 40px;
+}
+.Gclass{
+	background-color: #FFF85D;
+	height: 40px;
+}
+.Kclass{
+	background-color: #F1830E;
+	height: 40px;
+}
+.Mclass{
+	background-color: #F13B0E;
+	height: 40px;
+}
+
+/*Data tables for practical task pages*/
+.top_row{
+	height: 60px;
+}
+.data_table{
+	height: 40px;
+}
+.column10{
+	width: 10%;
+}
+/*----------------------------------------*/
+/*classes for laying out images and videos*/
+figure{
+	display: block;
+	margin-top: 20px;
+	margin-bottom: 40px;
+}
+figcaption{
+	display: block;
+	text-align: center;
+	font-style: italic;
+	font-family: 'Noto Serif', serif;
+	font-size: 90%;
+}
+
+img.graph{
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+	max-width: 600px;
+	max-height: auto;	
+	margin-bottom: 10px;
+}
+img.topicHomeimg{
+	margin: 15px;
+	float: left;
+	max-width: 40%;
+	box-shadow: 0 4px 10px 0 rgba(0,0,0,0.4);
+}
+/*to create different sized images in order to bring all styling into the CSS file*/
+img.size50{
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+	max-width: 50px;
+	max-height: auto;
+	margin-bottom: 10px;
+}
+img.size100{
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+	max-width: 100px;
+	max-height: auto;
+	margin-bottom: 10px;
+}
+img.size150{
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+	max-width: 150px;
+	max-height: auto;
+	margin-bottom: 10px;
+}
+img.size200{
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+	max-width: 200px;
+	max-height: auto;
+	margin-bottom: 10px;
+}
+img.size250{
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+	max-width: 250px;
+	max-height: auto;
+	margin-bottom: 10px;
+}
+img.size300{
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+	max-width: 300px;
+	max-height: auto;
+	margin-bottom: 10px;
+}
+img.size350{
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+	max-width: 350px;
+	max-height: auto;
+	margin-bottom: 10px;
+}
+img.size400{
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+	max-width: 400px;
+	max-height: auto;
+	margin-bottom: 10px;
+}
+img.size450{
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+	max-width: 450px;
+	max-height: auto;
+	margin-bottom: 10px;
+}
+img.size500{
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+	max-width: 500px;
+	max-height: auto;
+	margin-bottom: 10px;
+}
+img.size550{
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+	max-width: 550px;
+	max-height: auto;
+	margin-bottom: 10px;
+}
+img.size600{
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+	max-width: 600px;
+	max-height: auto;
+	margin-bottom: 10px;
+}
+img.size650{
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+	max-width: 650px;
+	max-height: auto;
+	margin-bottom: 10px;
+}
+img.size700{
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+	max-width: 700px;
+	max-height: auto;
+	margin-bottom: 10px;
+}
+img.size750{
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+	max-width: 750px;
+	max-height: auto;
+	margin-bottom: 10px;
+}
+img.size800{
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+	max-width: 800px;
+	max-height: auto;
+	margin-bottom: 10px;
+}
+img.size850{
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+	max-width: 850px;
+	max-height: auto;
+	margin-bottom: 10px;
+}
+img.size900{
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+	max-width: 900px;
+	max-height: auto;
+	margin-bottom: 10px;
+}
+img.size950{
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+	max-width: 950px;
+	max-height: auto;
+	margin-bottom: 10px;
+}
+img.size1000{
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+	max-width: 1000px;
+	max-height: auto;
+	margin-bottom: 10px;
+}
+
+iframe{
+	box-shadow: 0 4px 10px 0 rgba(0,0,0,0.4);
+}
+.video-tray{
+	max-width: 60%;
+	max-height: auto;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+.video-container {
+position: relative;
+padding-bottom: 56.25%;
+padding-top: 30px; height: 0; overflow: hidden;
+}
+
+.video-container iframe,
+.video-container object,
+.video-container embed {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+}
+
+.downArrow{
+	padding-left: 10px;
+}
+ /*----------------------------------------*/
+
+
+
+/*worked examples*/
+.RobotoSlab{
+	font-family: 'Roboto Slab', serif;
+}
+/*general text and layout*/
+.NotoSans{
+	font-family: 'Noto Sans', sans-serif;
+}
+/*Headers*/
+.Titillium{
+	font-family: 'Titillium Web', sans-serif;
+}
+/*buttons and page navigation*/
+.Hyeon{
+	font-family: 'Do Hyeon', sans-serif;
+}
+/*Latin modern style for equations*/
+.Enriqueta{
+	font-family: 'Enriqueta', serif;
+}
+/*USed for list on the download page*/
+.RobotoMono{
+	font-family: 'Roboto Mono', monospace;
+}
+
+/* --- Mega-menu (Topics dropdown) --- */
+.sub-menu.mega{
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	max-height: 70vh;
+	overflow-y: auto;
+}
+.mega-group h6{
+	text-align: left;
+	padding-left: 5px;
+	margin-bottom: 5px;
+}
+.mega-columns{
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+	gap: 15px 25px;
+}
+.mega-topic{
+	font-family: 'Titillium Web', sans-serif;
+	font-size: 15px;
+	margin: 0 0 6px 0;
+	padding-bottom: 4px;
+	border-bottom: 1px solid rgba(255,255,255,0.3);
+}
+.mega-topic a{
+	color: #ffffff;
+}
+.mega-topic.soon{
+	color: #a9b7c6;
+}
+.soon-label{
+	font-size: 12px;
+	color: #a9b7c6;
+	margin: 0;
+}
+.mega-col ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.mega-col li{
+	font-size: 14px;
+}
+.mega-col li a{
+	padding: 3px 0;
+	display: block;
+}
+
+.intro-list{
+	margin: 10px 0 15px 20px;
+}
+.intro-list li{
+	margin-bottom: 8px;
+}

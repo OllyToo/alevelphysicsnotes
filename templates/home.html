@@ -1,0 +1,179 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+{% block page_h1 %}{% endblock %}
+
+{% block meta_description %}Class notes and materials for A level and AS level physics with Mr Toogood at LCS{% endblock %}
+{% block meta_keywords %}Mr Toogood, Physics, A2 level, AS level, A level, LCS, A level physics notes, particles, quantum, mechanics, electricity, circular motion, simple harmonic motion, thermal physics, astrophysics{% endblock %}
+
+{% block page_body %}
+
+<div class="banner">
+	<img src="{{ url_for('static', filename='images/banner.svg') }}">
+</div>
+
+<div class="gradient">
+	<div class="intro">
+		<p>Everything on this site is written to support the AS and A level Physics lessons I teach, matched closely to the AQA specification.</p>
+		<ul class="intro-list">
+			<li><strong>Full notes</strong> for each topic, with the exact spec points so you know what you need to know — and what you don't.</li>
+			<li><strong>Worked examples</strong> and common exam mistakes, based on real feedback from AQA examiners.</li>
+			<li><strong>Extension pages</strong> on some topics if you want to go beyond the spec — physics is genuinely interesting!</li>
+			<li><strong>Videos</strong> for some of the trickier topics and exam skills, with more on the way.</li>
+		</ul>
+		<p>You'll also find homework resources, revision materials, equation sheets and past papers below. I don't post answers to homework or class tests, but if there's anything else you'd like to see on the site, get in touch using the link above.</p>
+	</div>
+</div>
+
+<div class="gradient">
+	<div class="topic_tray">
+		<h4>Year 12 topics</h4>
+		<div class="blurb">
+			<p>There are five topics taught in Year 12, shared between your two teachers. You will also complete six CAPs during this year. Here you will find notes covering these five topics, however, as I only teach the electricity and mechanics topics, you may have to wait for me to write the notes on the other sections, but they are on their way!</p>
+			<p>The AS exam at the end of Year 12 will consist of two papers. Paper 1 will be on the topics that you have studied, and paper 2 will be practical questions, applied questions and multiple choice questions on the topics.</p>
+		</div>
+		<div class="tray">
+			<div class="floating-box">
+				<h3 class="trayTitle">Mechanics</h3>
+				<ul class="navlist">
+					<li><a href="{{ url_for('vectors') }}">Vectors</a></li>
+					<li><a href="{{ url_for('statics') }}">Statics and forces in equilibrium</a></li>
+					<li><a href="{{ url_for('moments') }}">Moments</a></li>
+					<li><a href="{{ url_for('motion') }}">Motion in a straight line</a></li>
+					<li><a href="{{ url_for('projectiles') }}">Projectile motion</a></li>
+					<li><a href="{{ url_for('newtonlaws') }}">Newton's laws of motion</a></li>
+					<li><a href="{{ url_for('energy') }}">Energy</a></li>
+					<li><a href="{{ url_for('momentum') }}">Momentum</a></li>
+				</ul>
+			</div>
+
+			<div class="floating-box">
+				<h3 class="trayTitle">Particles and quantum physics</h3>
+				<ul class="navlist">
+					<li>Coming soon</li>
+				</ul>
+			</div>
+
+			<div class="floating-box">
+				<h3 class="trayTitle">Electricity</h3>
+				<ul class="navlist">
+					<li><a href="{{ url_for('charge_and_current') }}">Electricity basics</a></li>
+					<li><a href="{{ url_for('resistors') }}">Resistors and resistance</a></li>
+					<li><a href="{{ url_for('resistivity') }}">Resistivity</a></li>
+					<li><a href="{{ url_for('power_and_resistance') }}">Power in resistive circuits</a></li>
+					<li><a href="{{ url_for('emf_and_internal_resistance') }}">EMF and Internal resistance</a></li>
+					<li><a href="{{ url_for('potential_dividers') }}">Potential Dividers</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="tray">
+			<div class="floating-box">
+				<h3 class="trayTitle">Waves</h3>
+				<ul class="navlist">
+					<li>Coming soon</li>
+				</ul>
+			</div>
+
+			<div class="floating-box">
+				<h3 class="trayTitle">Materials</h3>
+				<ul class="navlist">
+					<li>Coming soon</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="gradient">
+	<div class="topic_tray">
+		<h4>Year 13 topics</h4>
+		<div class="blurb">
+			<p>There are four topics and one extra optional topic studied in Year 13. The optional topic taught at LCS is astrophysics (so not really an option!) You will also complete six more CAPs. You will of course be expected to be able to recall the Year 12 content and apply it to the Year 13 work.</p>
+			<p>The A level exam at the end of Year 13 will consist of three papers. Paper 1 is all the Year 12 work AND the periodic motion topic. Paper 2 consists of the other three topics (not the optional topic). These papers contain both long questions and multiple choice questions. Paper 3 has practical questions, and questions on the optional topic.</p>
+		</div>
+		<div class="tray">
+			<div class="floating-box">
+				<h3 class="trayTitle">Periodic motion</h3>
+				<ul class="navlist">
+					<li><a href="{{ url_for('circular_motion') }}">Circular motion</a></li>
+					<li><a href="{{ url_for('applying_circular_motion') }}">Applying circular motion concepts</a></li>
+					<li><a href="/periodic_motion/shm.php">Simple harmonic motion</a></li>
+					<li><a href="/periodic_motion/harmonic_systems.php">Simple harmonic systems</a></li>
+					<li><a href="/periodic_motion/damping.php">Damping</a></li>
+					<li><a href="/periodic_motion/resonance.php">Resonance</a></li>
+				</ul>
+			</div>
+
+			<div class="floating-box">
+				<h3 class="trayTitle">Fields</h3>
+				<ul class="navlist">
+					<li>Coming soon</li>
+				</ul>
+			</div>
+
+			<div class="floating-box">
+				<h3 class="trayTitle">Thermal physics</h3>
+				<ul class="navlist">
+					<li><a href="{{ url_for('specific_heat') }}">Specific heat capacity</a></li>
+					<li><a href="/thermal_physics/latent_heat.php">Specific latent heat</a></li>
+					<li><a href="/thermal_physics/gas_laws.php">The experimental gas laws</a></li>
+					<li><a href="/thermal_physics/kinetic_theory.php">Kinetic theory</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="tray">
+			<div class="floating-box">
+				<h3 class="trayTitle">Astrophysics</h3>
+				<ul class="navlist">
+					<li><a href="/astrophysics/lenses.php">Lenses</a></li>
+					<li><a href="/astrophysics/telescopes.php">Telescopes and their limitations</a></li>
+					<li><a href="/astrophysics/non_optical_telescopes.php">Non-optical telescopes</a></li>
+					<li><a href="/astrophysics/classification.php">Classification of stars by luminosity</a></li>
+					<li><a href="/astrophysics/black_body_rad.php">Classification of stars by temperature</a></li>
+					<li><a href="/astrophysics/hr_diagrams.php">The Hertzsprung-Russell diagram</a></li>
+					<li><a href="/astrophysics/deadstars.php">The life and death of stars</a></li>
+					<li><a href="/astrophysics/doppler_effect.php">The Doppler effect, binary stars and exoplanets</a></li>
+					<li><a href="/astrophysics/big_bang.php">The big bang, Quasars and cosmology</a></li>
+				</ul>
+			</div>
+
+			<div class="floating-box">
+				<h3 class="trayTitle">Nuclear physics</h3>
+				<ul class="navlist">
+					<li>Coming soon</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="gradient">
+	<div class="topic_tray">
+		<h4>Experimental physics</h4>
+		<div class="blurb">
+			<p>As part of the A level course you will carry out 12 CAPs, 6 in Year 12 and 6 in Year 13. These will either be practicals where you will follow a method and collect data before analysing it, or there will be methods that you will have planned yourself. You will collect data, make notes, write up, and analyse these practicals in a formal logbook that will be assessed at the end of the course, at which point you will (hopefully) gain a practical accreditation alongside your A level grade.</p>
+		</div>
+		<div class="tray">
+			<div class="floating-box">
+				<h3 class="trayTitle">Experimental physics</h3>
+				<ul class="navlist">
+					<li><a href="/measurements/units.php">SI and derived units</a></li>
+					<li><a href="/measurements/measurements.php">Measurements and their uncertainties</a></li>
+					<li><a href="/measurements/graphs.php">Using data and graphs</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="gradient">
+	<h4>Who am I?</h4>
+	<div class="bio">
+		<p>Oliver Toogood is Head of Physics and has taught the subject at Littleover Community School for over 15 years, seeing the department through new GCSE specifications and new A level courses. Before teaching, he trained as an electronic engineer and spent four years working as an audio engineer. He's enthusiastic about practical work, and tries to give students real opportunities to experiment, make discoveries, and understand the physics for themselves.</p>
+		<p>Outside the classroom, he runs the school's Duke of Edinburgh's Award and organises the <a href="https://www.physics.ox.ac.uk/olympiad/" target="_blank">British Physics Olympiad</a>, encouraging students into enrichment projects and competitions. He's a keen mountaineer and cyclist, and has two children.</p>
+	</div>
+</div>
+
+{% endblock %}

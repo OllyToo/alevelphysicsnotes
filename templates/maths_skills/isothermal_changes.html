@@ -1,0 +1,31 @@
+{% extends "maths_skills/_mathsbox_base.html" %}
+
+{% block title %}Isothermal changes and work done by a gas{% endblock %}
+
+{% block content %}
+<h3>Isothermal changes and work done by a gas</h3>
+<p>When a gas expands so that its pressure drops with the increasing volume, but the temperature remains constant, it is called an isothermal change. The gas is still doing work, but the equation $W=p\Delta V$ cannot be used as the pressure is not constant. This change can be represented by the graph below:</p>
+<figure>
+	<img src="{{ url_for('static', filename='images/thermal_physics/work_done_by_a_gas_3.svg') }}" alt="work done by a gas expanding, isothermal case" class="size600">
+	<figcaption><b>Figure 1:</b>&nbsp;The work done by a gas is represented by the area under the line.</figcaption>
+</figure>
+<p>The work done is still represented by the area under the graph, but the area either has to be estimated by counting squares, or the area can be broken into small strips, such as the one shown as <i>&delta;V</i> and applying this across the area required, or by using integration. The equation that links pressure and volume is:</p>
+<div class="formula">$$pV=nRT$$</div>
+<p>or</p>
+<div class="formula">$$p=\frac{nRT}{V}$$</div>
+<p>This equation describes the relationship seen in the line above, so that $p\propto\frac{1}{V}$. As the gas is doing work on its surroundings as it expands it is losing internal energy and, by convention we say that the amount of work done is negative. If the gas was being compressed, we would give the work done on it a positive sign. Integrating with respect to <i>V</i> gives:</p>
+<div class="formula">$$-\int \frac{nRT}{V}\,dV$$</div>
+<p>As $nRT$ is a constant it can be brought outside the integral so that:</p>
+<div class="formula">$$-nRT\int \frac{1}{V}\,dV=-nRT\ln{V}$$</div>
+<p>In the case of the graph above we are looking for the work done between volumes <i>V<sub>1</sub></i> and <i>V<sub>2</sub></i>, so the integration becomes:</p>
+<div class="formula">
+	$$-\int_{V_{1}}^{V_{2}}\frac{nRT}{V}\,dV=-nRT\left[\ln\left(V_{2}\right)-\ln\left(V_{1}\right)\right]$$
+	$$=-nRT\ln\left(\frac{V_{2}}{V_{1}}\right)$$
+</div>
+<p>For a cycle of compression and expansion, where the gas is alternately doing work and being worked on, the graph may look like this:</p>
+<figure>
+	<img src="{{ url_for('static', filename='images/thermal_physics/work_done_by_a_gas_4.svg') }}" alt="work done by a gas expanding and compressing, showing a loop" class="size600">
+	<figcaption><b>Figure 2:</b>&nbsp;When a gas is compressed and then allowed to expand the area <i>between</i> the two lines represents the work done.</figcaption>
+</figure>
+<p>In this case the net work done, the difference between the work done to compress it and the work it does in expansion is represented by the area within the loop on the graph.</p>
+{% endblock %}

@@ -1,0 +1,252 @@
+{% extends "base.html" %}
+
+{% block title %}The life and death of stars{% endblock %}
+{% block page_h1 %}Life cycle of Stars, Supernovae, black holes, and neutron stars{% endblock %}
+
+{% block meta_description %}A Level Physics notes and worked examples to help students with their exams and learning. Bringing together everything we have learnt to understand the birth, life and death of stars, including some of their bizarre end products such as black holes and neutron stars.{% endblock %}
+{% block meta_keywords %}stars, neutron, black hole, white dwarf, supernova, red giant, worked examples, exam questions, A level, physics{% endblock %}
+
+{% block extra_head %}
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/quiz.css') }}">
+{% endblock %}
+
+{% block page_boxes %}
+	<a href="#1"><button class="button">Life cycle of stars</button></a>
+	<a href="#2"><button class="button">Formation</button></a>
+	<a href="#3"><button class="button">The main sequence</button></a>
+	<a href="#4"><button class="button">After the main sequence - Low mass stars</button></a>
+	<a href="#5"><button class="button">After the main sequence - High mass stars</button></a>
+	<a href="#6"><button class="button">Neutron stars</button></a>
+	<a href="#7"><button class="button">Gamma-ray bursts</button></a>
+	<a href="#8"><button class="button">Black holes</button></a>
+	<a href="#9"><button class="button">Worked example</button></a>
+	<a href="#10"><button class="button">Test yourself</button></a>
+{% endblock %}
+
+{% block spec %}
+<div id="spec">
+	<p class="spec_ref"><b>3.9.2.6 Supernovae, neutron stars and black holes</b></p>
+	<p class="spec_box">Defining properties: rapid increase in absolute magnitude of supernovae; composition and density of neutron stars; escape velocity $> c$ for black holes.</p>
+	<p class="spec_box">Gamma ray bursts due to the collapse of supergiant stars to form neutron stars or black holes.</p>
+	<p class="spec_box">Comparison of energy output with total energy output of the Sun.</p>
+	<p class="spec_box">Use of type 1a supernovae as standard candles to determine distances. Controversy concerning accelerating Universe and dark energy.</p>
+	<p class="spec_box">Students should be familiar with the light curve of typical type 1a supernovae.</p>
+	<p class="spec_box">Supermassive black holes at the centre of galaxies.</p>
+	<p class="spec_box">Calculation of the radius of the event horizon for a black hole, Schwarzschild radius (R<sub>s</sub>),</p>
+	<div class="formula">$$R_{s}\approx \frac{2GM}{c^{2}}$$</div>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<section class="top_section" id="1">
+	<h3>Life cycle of stars</h3>
+	<p>The exact path that a star takes depends on its mass, but the early stages are similar for all stars.</p>
+	<figure>
+		<a href="{{ url_for('static', filename='images/astrophysics/life_cycle_of_stars.jpg') }}" target="_blank"><img src="{{ url_for('static', filename='images/astrophysics/life_cycle_of_stars_low_res.svg') }}" alt="the life cycle of stars" class="size500"></a>
+		<figcaption><b>Figure 1:</b>&nbsp;The life cycle of both low mass and high mass stars.</figcaption>
+	</figure>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="2">
+	<h3>Formation</h3>
+	<p>All stars are formed from large cold clouds of gas and dust called <i>nebulae</i>. These clouds of mainly hydrogen can be huge, hundreds of light years across. In some areas of the nebula, with slightly higher densities, gravity will begin &lsquo;clumping&rsquo; the gas together, which in turn attracts more and more matter. As this happens, any slight rotation that the cloud had will accelerate as the mass is concentrated at the centre.</p>
+	<p>This spinning cloud of gas will flatten out into a disc, which may go on to form planetesimals and create a solar system. The image below shows the disc of dust around several young stars.</p>
+	<figure>
+		<a href="http://www.eso.org/public/images/eso1811a/" target="_blank"><img src="{{ url_for('static', filename='images/astrophysics/discs_around_young_stars.svg') }}" alt="Discs of gas around young stars" class="size500"></a>
+		<figcaption><b>Figure 2:</b>&nbsp;Discs of gas around young stars. Some of them show the tell-tale signs of the formation of planets.</figcaption>
+	</figure>
+	<p>As the gas at the centre of this collapsing cloud falls inwards its temperature increases rapidly a forms a <b>protostar</b>. If this protostar has enough mass it will continue to heat up until it reaches a critical temperature around <span>$\quantity{10^{7}}{K}$</span> at which point thermonuclear reactions will start at the centre of the newly born star. When these reactions huge amounts of energy are released which causes the expansion the hot gas. The photons released from these reactions also produce an outwards pressure. Both of these factors are enough to prevent the further gravitational collapse of the protostar, and a <b>hydrostatic equilibrium</b> is created and the star moves onto the main sequence.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/hydrostatic_equilibrium.svg') }}" alt="hydrostatic equilibrium in a star" class="size600">
+		<figcaption><b>Figure 3:</b>&nbsp;Hydrostatic equilibrium inside a main sequence star.</figcaption>
+	</figure>
+	<p>If the protostar does not have enough mass, these reactions will not start and the protostar will turn into a brown dwarf, which will remain hot, due to the contracting gases, but not get any hotter.</p>
+	<p>This process, from nebula to star typically takes around 1 million years.</p>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="3">
+	<h3>The main sequence</h3>
+	<p>The main sequence in where stars spend 90% of their lifetimes. For the most massive stars, this may only be a few tens of millions of years, but for low mass stars such as the Sun, it may be tens of billions of years. Whilst the star is on the main sequence it is in hydrostatic equilibrium, and is dominated by nuclear fusion processes, the details of which you should also be studying in your A level nuclear module.</p>
+	<p>The main fusion process in a star is called the proton-proton chain, and you won&rsquo;t be expected to recall the <a href="{{ url_for('sun_fusion') }}" target="_blank">details</a> of this in an exam. The proton-proton chain, which occurs mainly in smaller stars, brings together protons in three stages to form helium-4. Each stage releases more and more energy. The total energy released from this process is around <span>$\quantity{25}{MeV}$</span>.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/star_fusion.svg') }}" alt="proton-proton chain fusion in the Sun" class="size700">
+		<figcaption><b>Figure 4:</b>&nbsp;The proton-proton chain of fusion that releases energy inside a main sequence star.</figcaption>
+	</figure>
+	<p>This fusion process will only take place in the <a href="{{ url_for('is_the_sun_hot_enough') }}" target="_blank">super hot core</a> of the sun, which makes up only around 10% of the star itself. Photons released by this process will gradually make their way outwards, but they are constantly being absorbed, and re-emitted by atoms within the star. They have a very short <b>mean free path</b>, this results in photons taking millions of years to make their way through the dense plasma before being allowed to travel quickly through the star's photosphere. On average each re-emission of a photon takes place at a lower energy, so there is a temperature gradient from the core to the outer layers of the star, degrading photons created as high energy gamma photons to those within the visible spectrum. This process also releases ghostly neutrinos, which only react very weakly with matter, so they travel (almost at the speed of light) straight through the star&rsquo;s dense interior. Therefore all stars also have a high neutrino flux. A solar mass star will continue this fusion process for around 10<sup>10</sup> years.</p>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="4">
+	<h3>After the main sequence - Low mass stars</h3>
+	<p>The fate of the Sun is similar to that of all low mass stars, under 6 solar masses. When the Sun runs out of its hydrogen fuel it will no longer be releasing enough heat to counteract the gravitational force trying to collapse it. As this happens the star&rsquo;s core collapses and heats up even more, to <span>$\quantity{10^{8}}{K}$</span>, which begins the fusion of helium nuclei. This process brings together three helium nuclei to make carbon in what is called the triple alpha process. This in turn releases so much heat that the outer layers of the Sun, which are mainly hydrogen and were never hot enough to be involved in fusion, expand outwards a huge distance. As they do so, they appear redder, and the Sun will have become a <b>red giant</b>.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/sun_as_a_red_giant.svg') }}" alt="the Sun now and as a red giant" class="size800">
+		<figcaption><b>Figure 5:</b>&nbsp;When the Sun runs out of hydrogen fuel, it will swell to a huge red giant.</figcaption>
+	</figure>
+	<p>No one knows just how much the Sun will expand when it becomes a red giant, and it could become large enough for its outer layers to reach all the way to Earth&rsquo;s orbit. The Sun will remain in this red giant phase of its life for around one fifth of its life, or 2 billion years.</p>
+	<p>When it runs out of helium, it will contract again, but this time it cannot generate enough heat to start the next stage of fusion. It will lose gravitational control of its outer layers which will be shed as what is known as a planetary nebula.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/planetary_nebula.svg') }}" alt="planetary nebula" class="size500">
+		<figcaption><b>Figure 6:</b>&nbsp;The remains of a Sun-like star, a planetary nebula.</figcaption>
+	</figure>
+	<p>The remaining hot core will form a burnt out, super hot core called a <b>white dwarf</b>. These are made from ionised carbon and oxygen surrounded by a sea of electrons which prevent further gravitational collapse. A white dwarf is around the size of earth, but have huge densities, around <span>$\quantity{10^{9}}{kg\,m^{-3}}$</span>. White dwarfs are extremely hot, B class objects, and they will very slowly radiate their heat away to eventually become black dwarfs, but this process is thought to take several dozen billion years!</p>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>White dwarf density ($\quantity{10^{9}}{kg\,m^{-3}}$) and neutron star density ($\quantity{10^{17}}{kg\,m^{-3}}$, further down this page) are both extreme, but they're eight orders of magnitude apart &mdash; don't mix these two numbers up. A white dwarf is roughly Earth-sized; a neutron star is roughly city-sized, packing more mass into a far smaller volume.</p>
+	</div>
+	<figure>
+		<a href="https://commons.wikimedia.org/wiki/File:Sirius_A_and_B_Hubble_photo.editted.PNG" target="_blank"><img src="{{ url_for('static', filename='images/astrophysics/sirius_b.svg') }}" alt="Sirius A and B Hubble photo" class="size400"></a>
+		<figcaption><b>Figure 7:</b>The white dwarf Sirius B.</figcaption>
+	</figure>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="5">
+	<h3>After the main sequence - High mass stars</h3>
+	<p>In stars with much more mass than the Sun, the fusion process can restart after the end of the red giant phase. When the helium runs out the core collapses, but this time there is enough mass to cause the temperature of the core to get high enough to start fusion between carbon atoms. Just as before the re-ignition of fusion prevents any further collapse. This <em>third</em> round of fusion creates nuclei of magnesium, neon, sodium, and aluminium. The star swells even more and becomes a <b>red supergiant</b>. This is followed by further collapse, re-ignition and fusion for a <em>fourth</em> round which creates silicon, sulfur, and argon. The star goes through several stages of collapse, heating, expansion, and fusion with each round of fusion continuing for less and less time until the star is layered up with different layers, rich in the elements that it has fused together, and with a core of solid iron.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/layers_in_an_old_star.svg') }}" alt="layers in an old star" class="size800">
+		<figcaption><b>Figure 8:</b>&nbsp;Layers of newly fused elements and ongoing fusion in an old massive star.</figcaption>
+	</figure>
+	<p>When the core of the star is iron no further fusion can occur. You will have learnt in you A level module on nuclear physics why this is the case, but you will not be expected to explain this in the astrophysics exam.</p>
+	<p>Once the process of fusion stops in the core of the star there is nothing left to hold it up against the force of gravity, so catastrophic collapse is inevitable. The star falls in on itself and the falling gases rebound off the super dense iron core, creating a huge explosion called a <b>type II supernova</b>. From Earth, the supernova would appear as a star rapidly changing its magnitude as it became brighter, and it could potentially be as <a href="{{ url_for('betelgeuse_supernova') }}" target="_blank">bright as the full moon</a>, even from a distance of several parsecs. The shockwave from the supernova causes small areas of the expanding cloud of debris to fuse and create nuclei heavier than iron which are then scattered into space to form a nebula. The picture below show the remnants of a supernova viewed in 1987. The neutrinos released from an event like this escape the maelstrom much more easily than the photons, so are often detected before the light from the supernova, as was the case for the event below.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/sn1987a.svg') }}" alt="the remnants of supernova SN1987A" class="size500">
+		<figcaption><b>Figure 9:</b>&nbsp;The expanding remnants of a type II supernova.</figcaption>
+	</figure>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="6">
+	<h3>Neutron stars</h3>
+	<p>As the core of the giant star collapses after the initial supernova the nuclei and electrons present get squeezed into a smaller and smaller volume. Eventually the electron are absorbed by the protons and create a dense ball of neutrons.</p>
+	<div class="formula">$$\mathrm{p+e\rightarrow n+\nu_{e}}$$</div>
+	<p>Further collapse is prevented by <em>neutron degeneracy pressure</em>, which effectively prevents two fermions occupying the same space.</p>
+	<p>These <b>neutron stars</b> are very strange objects and are composed almost entirely of neutrons. They may have an atmosphere of hot plasma and a crust of heavy nuclei, and possibly a core of other unknown exotic matter, but their defining property is their neutron composition.</p>
+	<p>Their other defining property is their enormous density. A neutron star has a density similar to that of an atomic nucleus, <span>$\quantity{10^{17}}{kg\,m^{-3}}$</span>. A neutron star with 1.4 solar masses would have a diameter of around <span>$\quantity{10}{km}$</span>, or to put it another way, a single teaspoon of neutron star would have a mass of 100 million tonnes!</p>
+	<p>Neutron stars also spin on their axis extremely quickly as a consequence of the the conservation of angular momentum. The slow rotation of the original star is sped up as its mass is concentrated into a smaller and smaller radius. They can also have extreme magnetic fields which accelerate charged particles to great speeds and create high intensity radio waves emitted from the star&rsquo;s north and south magnetic poles. If these waves are emitted on the same plane as the Earth we can detect them as extremely regular radio pulses. These types of neutron stars are called <b>pulsars</b> and were first discovered by <em>Jocelyn Bell Burnell</em> in 1967. They are so regular that they are more accurate than atomic clocks and have periods ranging from 4 seconds to milliseconds.</p>
+	<div class="callout callout-definition">
+		<p class="callout-label"><i class="fas fa-lightbulb"></i> Worth remembering</p>
+		<p>The mass of the original star broadly determines the final remnant: <b>below 6 solar masses</b> &rarr; white dwarf; <b>higher mass, but not the very largest</b> &rarr; neutron star (after a type II supernova); <b>above around 10 solar masses</b> &rarr; black hole. This mass ordering is a useful anchor for remembering how the three remnant types relate to each other.</p>
+	</div>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="7">
+	<h3>Gamma-ray bursts</h3>
+	<p>Gamma-ray bursts are the most <em>energetic electromagnetic events</em> known in the universe. They appear as bright gamma sources at a great distance, and can produce, in a short period of time, as much energy as the total energy output of the Sun. To produce such high energy electromagnetic radiation, a very destructive process must be going on. They are thought to be caused by large supernova or <em>hypernova</em> events from the death of the very largest supergiant stars, or from the collision of two neutron stars in a binary system. This energy is usually highly focused, or <em>collimated</em>, in narrow beams from the poles of the exploding star.</p>
+	<p>Although thousands of gamma-ray burst have been observed, ranging in duration from a flash lasting a few milliseconds to several days of continuous output, no gamma-ray bursts have ever been observed in our galaxy. This is fortunate for us as it has been hypothesised that if a local gamma-ray burst directed at Earth it could cause a mass extinction of life!</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/gamma_ray_bursts.svg') }}" alt="intensity vs time for GRB events" class="size500">
+		<figcaption><b>Figure 10:</b>&nbsp;Gamma-ray bursts.</figcaption>
+	</figure>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="8">
+	<h3>Black holes</h3>
+	<p>When the core of a star with a mass greater than 10 solar masses collapses, not even the neutron degeneracy pressure the holds up neutron stars can prevent further collapse. The whole core of the star falls towards a point with infinite density. This creates a region of space with an infinite gravitational pull. This point is called a <em>singularity</em>. Although only very large stars form black holes, any amount of matter could be squeezed into a small enough volume of space to create a black hole.</p>
+	<p>The defining property of a black hole is its escape velocity, or the velocity an object would need to be projected at in order to move out of the gravitational well of the black hole. For a black hole the <b>escape velocity is greater than the speed of light</b>. As the speed of light is a sort of universal speed limit, and nothing can exceed it, it means that nothing can escape from the gravitational pull of a black hole, not even light itself.</p>
+	<p>This may sound odd, as we think of gravity only acting on mass, and light has no mass, but gravity actually warps the space around it, and light follows the shortest path through space. If that space is curved then the path that the light travels is also curved. If the curvature is infinite, as it is around a black hole, then light will be directed towards the singularity. This, however is well beyond the scope of an A level course.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/black_holes.svg') }}" alt="regions around a black hole" class="size400">
+		<figcaption><b>Figure 11:</b>&nbsp;The warped space, and event horizon, around a black hole.</figcaption>
+	</figure>
+	<p>However you do need to understand that although the gravitational force of a black hole drops off according to the inverse square law, there is a point, as discussed above, that the force is so great that the escape velocity is greater than <span>$c$</span>. This boundary, where the escape velocity is equal to <span>$c$</span>, is called the <b>event horizon</b> and it defines the edge of the black hole. The radius of a black hole&rsquo;s event horizon is called the <b>Schwarzschild radius</b> and is given by the equation:</p>
+	<div class="formula">$$R_{s}\approx\frac{2GM}{c^{2}}$$</div>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>Outside the event horizon, a black hole's gravity is completely ordinary for its mass &mdash; it still follows the inverse square law, just like any other object. Black holes don't "suck in" everything nearby with some extra mysterious force; if the Sun were somehow replaced by a black hole of the same mass, Earth's orbit wouldn't change at all. The extreme effects are only relevant within (or right at) the Schwarzschild radius itself.</p>
+	</div>
+	<p>This can be <a href="/maths-skills/schwarzschild-radius-derivation" target="_blank">derived</a> from the equation for universal gravitation. In fact if any amount of mass is compressed within its Schwarzschild radius it will become a black hole. For a star with a mass of 10 solar masses (<span>$10\,M_{\odot}$</span>) the Schwarzschild radius would be:</p>
+	<div class="formula">
+		\begin{align}
+		R_{s}&\approx\frac{2G\times 10 M_{\odot}}{c^{2}}\\
+		R_{s}&\approx\frac{2\times 6.67\times 10^{-11}\times 10\times 1.99\times 10^{30}}{\left(3.00\times 10^{8}\right)^{2}}\\
+		\\
+		R_{s}&\approx\quantity{295}{m}
+		\end{align}
+	</div>
+	<p>Black holes are a fascinating state of exotic matter and are definitely worth reading about, but the their details, and weird and wonderful properties are not required in for exam.</p>
+	<p>This process would create what is called a <em>stellar mass black hole</em>, however, lurking at the centre of almost all galaxies are black holes that have the mass of millions of suns. These are called <b>supermassive black holes</b>. They have a Schwarzschild radius of hundreds or thousands of kilometres. The supermassive black hole at the centre of our galaxy is called Sagittarius A*. Although it is not visible, it is a strong radio source due to the radiation released from matter falling into it, and we are able to observe several stars local to it orbiting a very massive, but compact object.</p>
+	<figure>
+		<a href="https://commons.wikimedia.org/wiki/File:Galactic_centre_orbits.svg" target="_blank"><img src="{{ url_for('static', filename='images/astrophysics/supermassive_black_hole.svg') }}" alt="Galactic centre orbits" class="size400"></a>
+		<figcaption><b>Figure 12:</b>&nbsp;The very eccentric orbits of stars around what is thought to be a supermassive black hole at the centre of our galaxy.</figcaption>
+	</figure>
+	<p>Our supermassive black hole is relatively quiet, but some distant galaxies have huge black holes which are in the middle of feeding frenzies, as huge amounts of matter fall into their event horizons. This causes an <em>accretion disc</em> to form which in turn gets very hot. These become very bright objects known as <b>quasars</b>. All quasars are very distant, therefore very ancient, which suggests that quasars were common in an older epoch of the universe&rsquo;s history, when galaxies were themselves younger, but are rare in today&rsquo;s universe.</p>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="9">
+	<h3>Worked example</h3>
+	<p>Centaurus A is the nearest example of an active galactic nucleus. Many astronomers believe a supermassive black hole at the centre of such a galaxy produces a quasar as it consumes the material of its nearby stars.</p>
+	<ol class="page_list" type="A">
+		<li>Explain what is meant by the event horizon of a black hole.</li>
+		<p class="workex">This is a simple question, but it is important to be clear. The event horizon is the <b>boundary</b> where the escape velocity = c. Many students write that the event horizon is a point, or a distance, but this is not correct. The question has not asked you explain any properties of a black hole, so it is wise to avoid doing so unnecessarily in case you confuse yourself and negate any mark that you have already got.</p>
+		<div class="callout callout-mistake">
+			<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+			<p>The event horizon is a <b>boundary</b> (a spherical surface at the Schwarzschild radius), not a point and not just "a distance". Describing it as either of those loses marks even if the rest of your understanding is correct.</p>
+		</div>
+		<li>
+			<ol class="page_list" type="i">
+				<li>The mass of the black hole is 60 million times the mass of the Sun. Calculate the radius of its event horizon.</li>
+				<p class="workex">However it is important to notice that the mass of the black hole is 60 <b>million</b> times the Sun&rsquo;s mass and you must copy the Sun&rsquo;s mass correctly from the data booklet.</p>
+				<div class="callout callout-mistake">
+					<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+					<p>It's easy to drop the &times;10<sup>6</sup> multiplier when a mass is given as "60 million solar masses" &mdash; make sure it's actually included in your substitution, not just mentally noted and then forgotten.</p>
+				</div>
+				<div class="formula">$$R_{s}=\frac{2\times 6.67\times 10^{-11}\times 60\times 10^{6} \times 1.99 \times 10^{30}}{\left(3.00\times 10^{8}\right)^{2}}=\quantity{1.8\times 10^{11}}{m}$$</div>
+				<li>Calculate the average density of the matter within its event horizon.</li>
+				<p class="workex">We know the mass of the black hole, and we know the radius of its event horizon, so we can use the density equation, but we must remember that a black hole is a three dimensional object, so it would be spherical. Therefore we will need to calculate its volume as a sphere. This equation can be found on the data booklet also:</p>
+				<div class="formula">$$V=\frac{4}{3}\pi r^{3}=\quantity{2.44290244743\times 10^{34}}{m^{3}}$$</div>
+				<p class="workex">I have written out the whole calculator display here, so that I do not get any rounding errors on the next stage of the calculation.</p>
+				<p class="workex">Density equals:</p>
+				<div class="formula">$$\rho=\frac{m}{V}=\frac{60\times 10^{6} \times 1.99 \times 10^{30}}{\quantity{2.44290244743\times 10^{34}}{m^{3}}}=\quantity{4.8\times 10^{3}}{kg\,m^{-3}}$$</div>
+			</ol>
+		</li>
+	</ol>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="10">
+	<h3>Test yourself</h3>
+	<p>Try the questions below to check your understanding of this topic. Numerical questions use different numbers each time, so you can attempt them more than once.</p>
+	<div id="quiz-root"></div>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+
+{% endblock %}
+
+{% block resources %}
+	<li><a href="{{ url_for('static', filename='summaries/astrophysics/deadstars_summary.html') }}" target="_blank"><i class="fas fa-file-alt"></i> Printable revision sheet</a></li>
+{% endblock %}
+
+{% block prev_link %}
+	<a href="{{ url_for('hr_diagram') }}"><i class="fas fa-chevron-circle-left"></i><span class="nav_link">Previous topic</span></a>
+{% endblock %}
+
+{% block next_link %}
+	<a href="/astrophysics/doppler-effect"><span class="nav_link">Next topic</span><i class="fas fa-chevron-circle-right"></i></a>
+{% endblock %}
+
+{% block extra_scripts %}
+	<script src="{{ url_for('static', filename='js/quiz.js') }}"></script>
+	<script src="{{ url_for('static', filename='quizzes/deadstars_questions.js') }}"></script>
+	<script>
+		new PhysicsQuiz(document.getElementById('quiz-root'), deadstarsQuestions, {
+			storageKey: 'deadstars'
+		});
+	</script>
+{% endblock %}

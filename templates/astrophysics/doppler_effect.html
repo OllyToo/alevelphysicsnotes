@@ -1,0 +1,227 @@
+{% extends "base.html" %}
+
+{% block title %}The Doppler effect, binary stars and exoplanets{% endblock %}
+{% block page_h1 %}The Doppler effect, binary stars and exoplanets{% endblock %}
+
+{% block meta_description %}A Level Physics notes and worked examples to help students with their exams and learning. We now turn our attention to cosmology, and the study of the universe as a whole. Using the Doppler effect we are able to examine the motion of stars and galaxies as well as discover planets that orbit distant stars.{% endblock %}
+{% block meta_keywords %}Doppler, red-shift, exo-planets, binary stars, eclipsing, worked examples, exam questions, A level, physics{% endblock %}
+
+{% block extra_head %}
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/quiz.css') }}">
+{% endblock %}
+
+{% block page_boxes %}
+	<a href="#1"><button class="button">The Doppler effect</button></a>
+	<a href="#2"><button class="button">Worked example</button></a>
+	<a href="#3"><button class="button">Binary stars</button></a>
+	<a href="#4"><button class="button">Exoplanets</button></a>
+	<a href="#5"><button class="button">Test yourself</button></a>
+{% endblock %}
+
+{% block spec %}
+<div id="spec">
+	<p class="spec_ref">3.9.3.1 Doppler effect</p>
+	<p class="spec_box">$\frac{\Delta f}{f}=\frac{v}{c}$ and $z=\frac{\Delta \lambda}{\lambda}=-\frac{v}{c}$ for $v\ll c$ applied to optical and radio frequencies.</p>
+	<p class="spec_box">Calculations on binary stars viewed in the plane of orbit.</p>
+	<p class="spec_box">Galaxies and quasars.</p>
+	<p class="spec_ref">3.9.3.4 Detection of exoplanets</p>
+	<p class="spec_box">Difficulties in the direct detection of exoplanets.</p>
+	<p class="spec_box">Detection techniques will be limited to variation in Doppler shift (radial velocity method) and the transit method.</p>
+	<p class="spec_box">Typical light curve.</p>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<section class="top_section" id="1">
+	<h3>The Doppler effect</h3>
+	<p>So far within this module we have examined how we find out about the composition, distance to, and the temperature of stars by observing their colour and brightness. However it is also possible to discover information about the motion of stars, and other astronomical bodies by making careful observations of their light.</p>
+	<p>When a stationary object emits light, or has light reflected off its surface, that light spreads out uniformly so that wherever an observer receives the light it would appear to have the same wavelength. However, if the source of light is moving relative to the observer, the observed wavelength changes depending on whether the motion of the light source is towards or away from the observer.</p>
+	<p>If the light source is moving towards the observer, as the source emits a wavefront, it continues moving. The wavefront moves out at equal speeds in all directions, but as the source moves, its relative speed to the wavefront in the direction of its motion is lower. As the source still emits at the same frequency the observer will see a shorter wavelength than when observing the stationary source. As the wavelength would move towards the blue end of the visible spectrum this is called <b>blue shift</b>.</p>
+	<p>When the source is moving away from the observer the relative speed between the source and the wavefront is greater, and the observed wavelength also increases. As this would move the wavelength towards the red end of the spectrum this is called <b>red shift</b>.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/doppler_effect.svg') }}" class="size800" alt="The doppler effect">
+		<figcaption><b>Figure 1:</b>&nbsp;The Doppler effect. Wavelengths in the direction of the object's motion are compressed and appear 'bluer'.</figcaption>
+	</figure>
+	<p>As the amount that the wavelength changes is directly proportional to the speed of the source, observations in the shift of spectral lines can be used to determine its speed. The fractional change in the wavelength is called the red shift, whether or not the object is moving towards or away from the observer, and is given the symbol <span>$z$</span>.</p>
+	<p>The equation for the amount of red shift can be derived if we imagine a star, moving away from Earth with a velocity, <span>$v$</span>, which is emitting light of a wavelength <span>$\lambda$</span> and speed <span>$c$</span>.</p>
+	<p>The time between two consecutive peaks on the wave can be given by:</p>
+	<div class="formula">$$t=\frac{\lambda}{c}$$</div>
+	<p>Which we can see has the units of:</p>
+	<div class="formula">$$t=\frac{\left[\units{m}\right]}{\left[\units{m\,s^{-1}}\right]}=\left[\units{s}\right]$$</div>
+	<p>By the time the next wave crest is emitted, the first will have travelled a distance of <span>$\lambda$</span> and the star will have travelled:</p>
+	<div class="formula">$$s=v\times\left(\frac{\lambda}{c}\right)$$</div>
+	<p>The two crests of the wave are separated by a distance of:</p>
+	<div class="formula">$$\lambda+ v \left(\frac{\lambda}{c}\right)$$</div>
+	<p>As the <i>change</i> in the wavelength is equal to the amount that the source has moved between emitting the two crests we can say that:</p>
+	<div class="formula">$$\Delta\lambda=v\times\frac{\lambda}{c}$$</div>
+	<p>So,</p>
+	<div class="formula">$$\frac{\Delta\lambda}{\lambda}=\frac{v}{c}=z$$</div>
+	<p>This equation only applies to objects travelling at speeds much much less than the speed of light, otherwise <i>relativistic</i> effects have to be taken into account. If the red-shift, <span>$z$</span> is positive the the object is moving away from the observer, and if it is negative then the object is moving towards the observer.</p>
+	<p>The fractional change in the frequency can also be used to find the red shift:</p>
+	<div class="formula">$$\frac{\Delta f}{f}=\frac{v}{c}=z$$</div>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/redshift.svg') }}" alt="Hydrogen spectrum/Balmer series redshifted" class="size800">
+		<figcaption><b>Figure 2:</b>&nbsp;When the hydrogen spectrum from an object moving away from us is viewed, the emission lines are shifted towards the red end of the spectrum.</figcaption>
+	</figure>
+	<p>Most working astronomers, and books calculate <span>$\Delta\lambda$</span> as <span>$\Delta\lambda=\lambda_{obs}-\lambda_{lab}$</span> where the observed wavelength from the moving source is (<span>$\lambda_{obs}$</span>) and the wavelength observed in a laboratory (<span>$\lambda_{lab}$</span>), and calculate <span>$\Delta f$</span> the other way around as <span>$\Delta f=f_{lab}-f_{obs}$</span>. But AQA suggest calculating both <span>$\Delta\lambda$</span> and <span>$\Delta f$</span> as:</p>
+	<div>
+		<ul class="page_list">
+			<li><span>$\Delta\lambda=\lambda_{lab}-\lambda_{obs}$</span></li>
+			<li><span>$\Delta f=f_{lab}-f_{obs}$</span></li>
+		</ul>
+	</div>
+	<p>And then calculate the redshift using:</p>
+	<div class="formula">$$\large{\frac{\Delta f}{f}=-\frac{\Delta\lambda}{\lambda}=\frac{v}{c}=z}$$</div>
+	<p>Notice the negative sign in front of the first term, this ensures that negative values of <span>$z$</span> are still moving towards the observer and positive values of <span>$z$</span> are moving away.</p>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>Two different sign conventions exist for $\Delta\lambda$ &mdash; most astronomy textbooks use $\lambda_{obs}-\lambda_{lab}$, but <b>AQA specifically wants $\lambda_{lab}-\lambda_{obs}$</b> (and $\Delta f=f_{lab}-f_{obs}$ either way). Mixing the two conventions mid-calculation is a very easy way to end up with the wrong sign on your final velocity. Pick the AQA convention and stick with it consistently through a whole question.</p>
+	</div>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>Remember the sign meaning once you've calculated $z$: <b>positive $z$ means moving away</b> (redshifted), <b>negative $z$ means moving towards</b> (blueshifted). And these equations are a non-relativistic approximation, only valid for speeds much smaller than $c$ &mdash; they're not appropriate for anything moving at a significant fraction of the speed of light.</p>
+	</div>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="2">
+	<h3>Worked example</h3>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/sun_cme.svg') }}" alt="The Sun" class="size400">
+		<figcaption><b>Figure 3:</b>&nbsp;The Sun!</figcaption>
+	</figure>
+	<p>The Doppler effect can be used to make measurements of the Sun and how fast it is rotating on its axis. One edge of the Sun is approaching the Earth and the other is moving away. A line in the Hydrogen spectrum taken from the eastern limb (left side) is measured to have a wavelength of <span>$\quantity{434.044}{nm}$</span> and the same line taken from the western limb (right side) is found to have a wavelength of <span>$\quantity{434.050}{nm}$</span></p>
+	<p>The rest wavelength of the same line in the hydrogen spectrum was found to be <span>$\quantity{434.0472}{nm}$</span>.</p>
+	<div class="callout callout-definition">
+		<p class="callout-label"><i class="fas fa-lightbulb"></i> Worth remembering</p>
+		<p>Rather than comparing each limb separately to the rest wavelength, this technique compares the <b>two limbs to each other</b>. This is a neat trick: since both limbs are being measured with the same instrument at the same time, comparing them directly cancels out any systematic error in the equipment, giving a cleaner measurement of the rotational Doppler shift.</p>
+	</div>
+	<div>
+		<ol class="page_list" type="A">
+			<li>Calculate the rotational velocity of the Sun.</li>
+			<p class="workex">We have been told the observed wavelength on either side of the Sun, and we can use these values to calculate the average change in wavelength, <span>$\Delta\lambda$</span>:</p>
+			<div class="formula">$$\Delta\lambda=\frac{\lambda_{left}-\lambda_{right}}{2}=\frac{\quantity{434.044}{nm}-\quantity{434.050}{nm}}{2}=\quantity{-0.003}{nm}$$</div>
+			<p class="workex">We can now use the Doppler equation to calculate the Sun&rsquo;s rotational speed:</p>
+			<div class="formula">
+				$$-\frac{\Delta\lambda}{\lambda}=\frac{v}{c}$$
+				$$v=-\frac{\Delta\lambda\,c}{\lambda}=-\frac{\quantity{-0.003}{nm}\times \quantity{3.00\times 10^{8}}{ms^{-1}}}{\quantity{434.0472}{nm}}=\quantity{2\,074}{ms^{-1}}$$
+			</div>
+			<li>Which side of the Sun is approaching us? Explain why.</li>
+			<p class="workex">The eastern limb of the Sun has a hydrogen line which is observed to be at a shorter wavelength that of the stationary hydrogen spectrum, so it has been <i>blue-shifted</i> and therefore must be moving towards us.</p>
+			<li>Calculate the rotational period of the Sun.<br>
+			The Sun&rsquo;s radius is <span>$\quantity{6.955\times10^{8}}{m}$</span></li>
+			<p>We can solve this by using the equations of circular motion,</p>
+			<div class="formula">$$\omega=\frac{v}{r}$$</div>
+			<p>And</p>
+			<div class="formula">$$\omega=2\pi f$$</div>
+			<p>The time period is <span>$\frac{1}{T}$</span> so we can rearrange the above equations to get:</p>
+			<div class="formula">
+				\begin{align}
+				T&=\frac{2\pi r}{v}\\
+				T&=\frac{2\pi\times \quantity{6.955\times 10^{8}}{m}}{\quantity{2\,074}{ms^{-1}}}\\
+				T&=\quantity{2\,107\,519}{s}\\
+				\\
+				T&=\quantity{24}{days}
+				\end{align}
+			</div>
+		</ol>
+	</div>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="3">
+	<h3>Binary stars</h3>
+	<p>It is now thought that around 50% of stars do not exist on their own, like the Sun, but in fact come in pairs, called binary systems. Some stars even exist in three star systems! Binary stars orbit a <b>common centre of mass</b>, with the more massive star orbiting closer to the centre of mass. By making observations of the Doppler shift in the spectra from these stars we are able to deduce information about the stars&rsquo; mass and speed. In fact this method is the only reliable way of calculating stellar masses, single star systems have their mass estimated by matching the stars properties to those found in binary systems.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/binary_stars_1.svg') }}" alt="binary stars orbiting a common centre of mass" class="size400">
+		<figcaption><b>Figure 4:</b>&nbsp;Binary stars orbiting a common centre of mass.</figcaption>
+	</figure>
+	<p>If the two stars&rsquo; angular separation is large enough, the individual stars can both be resolved using a telescope. These systems are called visual binaries. However, most binary systems are too far away to be able to resolve the individual stars. These systems are called spectroscopic binaries and they can only be identified by looking at their spectra, or their <i>light curves</i>.</p>
+	<p>In the diagram below, two stars orbiting each other are observed using a spectrometer to view their spectral lines. A position a. neither star is moving relative to the observer on Earth, so the spectral lines form each appear at the same wavelength. At position b. the red star is moving away from Earth, so its spectral line is red-shifted and the blue star is moving towards Earth, so its spectral line is blue-shifted. As a result, two separate lines can be viewed, and the amount of shift can be used to determine the speed of the stars using <span>$v=-\frac{\Delta\lambda}{\lambda}$</span>. This is called the radial velocity method. The constantly shifting pattern of spectral lines can also be used to find the period of the stars&rsquo; orbit and the mass of the system.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/binary_light_curve_2.svg') }}" alt="Binary star velocity and red shift curves" class="size800">
+		<figcaption><b>Figure 5:</b>&nbsp;As two binary stars orbit each other spectral lines are shifted depending on whether they are approaching or receding.</figcaption>
+	</figure>
+	<p>Binary systems can also be investigated looking at how the apparent magnitude of the two star varies over a long period of time. As one star transits in front of the other, some of its light is absorbed and the apparent magnitude is reduced. When the more luminous star is partially eclipsed the reduction in brightness is larger than when the dimmer star is eclipsed. This <i>transit method</i> produces light curves similar to the one below with periodic dimming, which again can be used to measure the orbital period and radii of the stars.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/binary_light_curve.svg') }}" alt="light curve for a binary star system" class="size800">
+		<figcaption><b>Figure 6:</b>&nbsp;The light curve from two binary stars, one much brighter than the other.</figcaption>
+	</figure>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>Don't mix up what the two methods for studying binaries (or exoplanets, further down this page) actually measure. The <b>radial velocity method</b> (Doppler shift) tells you about <b>speed</b>, and from that, orbital period and mass. The <b>transit method</b> (light curve dimming) tells you about <b>relative size</b> &mdash; how much light is blocked depends on the radius of the eclipsing object, not directly its speed or mass.</p>
+	</div>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="4">
+	<h3>Exoplanets</h3>
+	<p>Our Solar system contains eight planets, several dwarf-planets, thousands of asteroids and comets, but it seems that our system is not unique, and in fact most other stars also have planets orbiting them. As of 2018, <a href="https://exoplanetarchive.ipac.caltech.edu/" target="_blank">3,735</a> <i>exoplanets</i> have been discovered orbiting around other stars. Hundreds of them being in multiple planetary systems.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/number_of_exoplanets.svg') }}" alt="graph showing the number of exoplanets discovered by year" class="size600">
+		<figcaption><b>Figure 7:</b>&nbsp;The total number of exoplanets discovered has increased hugely in recent years.</figcaption>
+	</figure>
+	<p>Exoplanets are hard to spot as they are very small compared to their stars and are far enough away to make resolving them difficult. They can, however, be discovered in many ways, the main techniques used being:</p>
+	<div>
+		<ul class="page_list">
+			<li>The transit method</li>
+			<li>The radial velocity method</li>
+			<li>Direct Imaging</li>
+			<li>Gravitational microlensing (<i>you will not be asked about this method in your exams</i>)</li>
+		</ul>
+	</div>
+	<p>The transit method is the most common method of exoplanet detection, and one that produces so much data that much of it is released so that members of the public can join in the <a href="https://www.planethunters.org/" target="_blank">search</a> for extrasolar worlds. Over 78% of planets are discovered in this way.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/exoplanet_pie_chart.svg') }}" alt="pie chart of exoplanet discovery methods" class="size700">
+		<figcaption><b>Figure 8:</b>&nbsp;The various methods for detecting exoplanets.</figcaption>
+	</figure>
+	<p>This method is the same as the method for detecting binary stars, but the light curve has a slightly different shape, as the planet will absorb the star&rsquo;s light, but doesn&rsquo;t produce any of its own.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/exoplanet_light_curve.svg') }}" alt="light curve of an exoplanet passing in front of a star" class="size600">
+		<figcaption><b>Figure 9:</b>&nbsp;The light curve produced by an eclipsing exoplanet.</figcaption>
+	</figure>
+	<p>This method is only suitable for planets with a short orbital period, otherwise observations need to be made over very long periods of time. Nevertheless, this method has discovered some very strange planets, such as &lsquo;hot Jupiters&rsquo; that orbit their star very quickly. This method is also suitable for detecting smaller, Earth sized planets.</p>
+	<p>The radial velocity method has also discovered many exoplanets. This relies on the gravitational interaction between the star and the planet, as between two binary stars. Obviously this effect is much smaller due to the small mass of the exoplanet. Nevertheless, using very sensitive spectrometers, a periodic Doppler shift can be seen as the planet orbits the star.</p>
+	<p>In recent years it has been possible to even take direct images of exoplanets, as in the picture below. This can only be done for larger planets, which orbit at large distances from their stars, due to the small angular size. The parent star would also be so much brighter than the planet as to make detection impossible.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/directly_imaged_exoplanets.svg') }}" alt="directly imaged exoplanets" class="size700">
+		<figcaption><b>Figure 10:</b>&nbsp;The first ever picture of a directly imaged exoplanet!</figcaption>
+	</figure>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="5">
+	<h3>Test yourself</h3>
+	<p>Try the questions below to check your understanding of this topic. Numerical questions use different numbers each time, so you can attempt them more than once.</p>
+	<div id="quiz-root"></div>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+
+{% endblock %}
+
+{% block resources %}
+	<li><a href="{{ url_for('static', filename='summaries/astrophysics/doppler_effect_summary.html') }}" target="_blank"><i class="fas fa-file-alt"></i> Printable revision sheet</a></li>
+{% endblock %}
+
+{% block prev_link %}
+	<a href="{{ url_for('deadstars') }}"><i class="fas fa-chevron-circle-left"></i><span class="nav_link">Previous topic</span></a>
+{% endblock %}
+
+{% block next_link %}
+	<a href="/astrophysics/big-bang-and-cosmology"><span class="nav_link">Next topic</span><i class="fas fa-chevron-circle-right"></i></a>
+{% endblock %}
+
+{% block extra_scripts %}
+	<script src="{{ url_for('static', filename='js/quiz.js') }}"></script>
+	<script src="{{ url_for('static', filename='quizzes/doppler_effect_questions.js') }}"></script>
+	<script>
+		new PhysicsQuiz(document.getElementById('quiz-root'), dopplerEffectQuestions, {
+			storageKey: 'doppler_effect'
+		});
+	</script>
+{% endblock %}

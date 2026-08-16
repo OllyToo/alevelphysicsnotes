@@ -1,0 +1,154 @@
+{% extends "base.html" %}
+
+{% block title %}Circular motion{% endblock %}
+{% block page_h1 %}Circular motion{% endblock %}
+
+{% block meta_description %}A Level Physics notes and worked examples to help students with their exams and learning. This page offers an introduction to the periodic motion module and focuses on motion in a circle.{% endblock %}
+{% block meta_keywords %}circular motion, centripetal force, radians, centripetal acceleration, angular speed, worked examples, exam questions, A level, physics{% endblock %}
+
+{% block extra_head %}
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/quiz.css') }}">
+{% endblock %}
+
+{% block page_boxes %}
+	<a href="#1"><button class="button">Intro</button></a>
+	<a href="#2"><button class="button">Circular motion basics</button></a>
+	<a href="#3"><button class="button">Centripetal Force and Acceleration</button></a>
+	<a href="#4"><button class="button">Test yourself</button></a>
+{% endblock %}
+
+{% block spec %}
+<div id="spec">
+	<p class="spec_ref"><b>3.6.1.1 Circular motion</b></p>
+	<p class="spec_box">Motion in a circular path at constant speed implies there is an acceleration and requires a centripetal force.</p>
+	<p class="spec_box">Magnitude of angular speed,</p>
+	<div class="formula">$$\omega=\frac{v}{r}=2\pi f$$</div>
+	<p class="spec_box">Radian measure of angle.</p>
+	<p class="spec_box">Direction of angular velocity will not be considered.</p>
+	<p class="spec_box">Centripetal acceleration,</p>
+	<div class="formula">$$a=\frac{v^{2}}{r}=\omega^{2}r$$</div>
+	<p class="spec_box">The derivation of the centripetal acceleration formula will not be examined.</p>
+	<p class="spec_box">Centripetal force,</p>
+	<div class="formula">$$F=\frac{mv^{2}}{r}=m\omega^{2}r$$</div>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<section class="top_section" id="1">
+
+</section>
+<br><br><hr>
+
+<section id="2">
+	<h3>Circular motion basics</h3>
+	<p>At the beginning of this topic it is important to understand and define a few key ideas and to link them to the linear motion that you have already studied.</p>
+	<p>Looking at the animation of the bicycle below you can see that there is a clear link between linear and circular motion.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/periodic_motion/bike2.gif') }}" alt="bike gif" class="size400">
+		<figcaption><b>Figure 1:</b>&nbsp;Circular motion is everywhere, and bikes are a very good example of this.</figcaption>
+	</figure>
+	<p>The pedals and the wheels are moving in circles, and this is causing the bike to move in a straight line. If we try to work out the speed of the bike we have a two options, using an external reference such as a known distance or GPS satellites, or we could look at the speed that the wheels are rotations. This is how a lot of bicycle computers work. It is clear that the faster the wheels are moving in a circle, the faster the bike travels in a straight line. So if we can work out the speed that the edge of the wheel is moving we will know the linear speed of the bike.</p>
+	<p>As speed is $\frac{\Delta s}{\Delta t}$ we can find the speed from the circumference of the wheel and the time for one rotation.</p>
+	<div class="formula">
+		$$\large v=\frac{2\,\pi r}{T}$$
+	</div>
+	<p>Where <i>T</i> is the time taken for one rotation in <i>s</i>.</p>
+	<p>What they have worked out is the <i>tangential velocity</i> of the wheel. The bike would be propelled at this speed if it were being ridden. The tangential velocity is velocity parallel to the tangent of the path of the wheel. A point on the wheel will have no <i>radial velocity</i> (velocity perpendicular to the tangent) as the motion is circular.</p>
+	<p>The speed is measured in <i>ms<sup>-1</sup></i> so what if the wheels were smaller? The circumference would be smaller, so for the same time period the speed would also be smaller. But if the time period is the same, then both the small wheels and the larger wheels will be rotating at the same rate. The rate of rotation is called the <i>angular speed</i> or <i>angular velocity</i>.</p>
+	<p><b>Definitions</b></p>
+	<ul class="page_list">
+		<li><b>Period of Rotation (<i>T</i>)</b> &ndash; The time (<i>s</i>) to complete one whole revolution about some axis.</li>
+		<li><b>Frequency (<i>f</i>)</b> &ndash; The number of revolutions in one second (Hz).</li>
+		<li><b>Angular Displacement (<i>&theta;</i>)</b> &ndash; The angle in radians intersected in some time t.</li>
+		<li><b>Angular Velocity (<i>&omega;</i>)</b> &ndash; The rate of change of angular displacement (rad s-1)</li>
+	</ul>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>Period ($T$, in seconds) and frequency ($f$, in Hz) are reciprocals of each other, $f=\frac{1}{T}$, and it's easy to substitute the wrong one into an equation. If a question gives you rpm, revolutions per minute, or "revolutions per second", check carefully whether that's really $f$ before using it &mdash; and remember $T$ gets <i>smaller</i> as something spins <i>faster</i>, which can feel counterintuitive.</p>
+	</div>
+	<p>Note that angular velocity is measured in radians per second (<i>rad s<sup>-1</sup></i>)</p>
+	<p>The frequency $f=\frac{1}{T}$ where <i>T</i> is the time for one revolution is seconds.</p>
+	<p>The angular velocity <i>&omega;</i> is similar to $v=\frac{\mathrm{d}s}{\mathrm{d}t}$ in linear mechanics. If we let <i>&omega;</i> be the time taken for an angular displacement of <i>2&pi; rad</i> (one complete revolution) then we get the following formula for angular velocity:</p>
+	<div class="formula">$$\large \omega=\frac{2\pi}{T}=2{\pi}f$$</div>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>Make sure your calculator is in <b>radians</b> mode, not degrees, for any circular motion calculation. Angular velocity $\omega$ is always defined in $\units{rad\,s^{-1}}$, and mixing degree-mode trigonometry into these equations gives answers that are wrong by a large, easy-to-miss factor. If you ever need to convert: $2\pi\,\units{rad}=360^\circ $.</p>
+	</div>
+	<p><a href="{{ url_for('what_is_a_radian') }}" target="_blank">What is a radian?</a></p>
+	<p>Using this equation and the equation for finding the linear velocity earlier, we can relate the angular velocity of a rotating object to the linear velocity of some point at radius <i>r</i> on that object:</p>
+	<div class="formula">
+		$$\large v=\omega r$$
+	</div>
+	<div class="callout callout-definition">
+		<p class="callout-label"><i class="fas fa-lightbulb"></i> Worth remembering</p>
+		<p>$v$ (tangential/linear speed, $\units{m\,s^{-1}}$) and $\omega$ (angular velocity, $\units{rad\,s^{-1}}$) are related but not interchangeable &mdash; they have different units and depend on different things. Two points at different radii on the same rotating object share the same $\omega$, but have different $v$. Check which one an equation actually asks for before substituting.</p>
+	</div>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="3">
+	<h3>Centripetal Force and Acceleration</h3>
+	<p>You should be able to remember Newton&rsquo;s 1st law of motion:</p>
+	<p><b>An object will continue with a constant velocity unless a result force acts on it</b></p>
+	<p>So when an object travels in a circular path the velocity is constantly changing, therefore there must be a resultant force acting on the object. This resultant force therefore creates a constant acceleration.</p>
+	<p>When an object is moving in <i>uniform circular motion</i> although its velocity is constantly changing, its tangential velocity at any two points will be equal.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/periodic_motion/centripetal_acceleration.svg') }}" alt="centripetal velocity" class="size450">
+		<figcaption><b>Figure 2:</b>&nbsp;Understanding the velocity vectors for an object moving in a circular path.</figcaption>
+	</figure>
+	<p>In the diagram the length of the arc (<i>s</i>) subtended by the angle <i>&delta;&theta;</i> can be described by the time taken for an object with the velocity <i>v<sub>a</sub></i> to move through that angle, <i>v&delta;t</i>.</p>
+	<p>The angle (<i>&delta;&theta;</i>) can be described, using the definition of radians as:</p>
+	<div class="formula">
+		$$\large \delta\theta=\frac{v\delta t}{r}$$
+	</div>
+	<p>Using the vector diagram above <i>&delta;&theta;</i> can be shown to be $\delta\theta=\frac{\delta v}{v}$.</p>
+	<p>These two equations can be brought together,</p>
+	<div class="formula">
+		$$\large \frac{\delta v}{v}=\frac{v\delta t}{r}$$
+	</div>
+	<p>Within these two terms we have a change in velocity (<i>&delta;v</i>) and a change in time (<i>&delta;t</i>), a change in velocity over time is acceleration, so the above equation can rearranged to show us the acceleration of an object with uniform circular motion or the <i>centripetal acceleration</i>.</p>
+	<div class="formula">
+		$$\large a=\frac{v^{2}}{r}=\omega^{2}r$$
+	</div>
+	<p>We can now use this equation to show the force acting inwards on the object using Newton's second law, <i>F=ma</i>.</p>
+	<div class="formula">$$\large F=\frac{mv^{2}}{r}=m\omega^{2}r$$</div>
+	<p>This is the centripetal force acting towards the centre of the circle, and is the resultant force keeping the object in its circular path.</p>
+	<p>It can be easily demonstrated that without this force the object would move tangentially to the circle. Centripetal force is not a true force, but is an adjectival force supplied by other forces such as gravity in the case of satellites, electrostatic forces between atoms in the case of tethered objects being spun, frictional forces etc.</p>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>Centripetal force is <b>not</b> a separate force to add to a free-body diagram &mdash; it's the name given to whichever resultant force (or combination of forces, such as tension, gravity, friction, or normal contact force) happens to be pointing towards the centre and keeping the object on its circular path. Drawing an extra "centripetal force" arrow alongside the real forces on a diagram is a common way to lose marks; instead, identify which existing force (or forces) is providing it.</p>
+	</div>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="4">
+	<h3>Test yourself</h3>
+	<p>Try the questions below to check your understanding of this topic. Numerical questions use different numbers each time, so you can attempt them more than once.</p>
+	<div id="quiz-root"></div>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+
+{% endblock %}
+
+{% block resources_heading %}One page summary{% endblock %}
+
+{% block resources %}
+	<li><a href="{{ url_for('static', filename='summaries/periodic_motion/circular_motion_summary.html') }}" target="_blank"><i class="fas fa-file-alt"></i> Printable revision sheet</a></li>
+{% endblock %}
+
+{% block next_link %}
+	<a href="/periodic-motion/applying-circular-motion"><span class="nav_link">Next topic</span><i class="fas fa-chevron-circle-right"></i></a>
+{% endblock %}
+
+{% block extra_scripts %}
+	<script src="{{ url_for('static', filename='js/quiz.js') }}"></script>
+	<script src="{{ url_for('static', filename='quizzes/circular_motion_questions.js') }}"></script>
+	<script>
+		new PhysicsQuiz(document.getElementById('quiz-root'), circularMotionQuestions, {
+			storageKey: 'circular_motion'
+		});
+	</script>
+{% endblock %}

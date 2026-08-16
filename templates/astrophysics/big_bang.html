@@ -1,0 +1,290 @@
+{% extends "base.html" %}
+
+{% block title %}Hubble's law and the big bang{% endblock %}
+{% block page_h1 %}Hubble's law and the big bang{% endblock %}
+
+{% block meta_description %}A Level Physics notes and worked examples to help students with their exams and learning. In the last part of this topic we look at Hubble's law and how we have gathered evidence for the origins of the universe itself, and we also take a brief look at the mysterious dark energy which is driving universal expansion.{% endblock %}
+{% block meta_keywords %}big bang, hubble, redshift, red shift, cosmic microwave background radiation, CMBR, quasars, dark energy, worked examples, exam questions, A level, physics{% endblock %}
+
+{% block extra_head %}
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/quiz.css') }}">
+{% endblock %}
+
+{% block page_boxes %}
+	<a href="#1"><button class="button">Intro</button></a>
+	<a href="#2"><button class="button">The expansion of the universe</button></a>
+	<a href="#3"><button class="button">Worked Example</button></a>
+	<a href="#4"><button class="button">The big bang</button></a>
+	<a href="#5"><button class="button">Cosmic Microwave Background Radiation</button></a>
+	<a href="#6"><button class="button">Evidence from hydrogen and helium</button></a>
+	<a href="#7"><button class="button">Dark energy</button></a>
+	<a href="#8"><button class="button">Quasars</button></a>
+	<a href="#9"><button class="button">Test yourself</button></a>
+{% endblock %}
+
+{% block spec %}
+<div id="spec">
+	<p class="spec_ref"><b>3.9.3.2 Hubble's law and the big bang</b></p>
+	<p class="spec_box">Red shift $v = Hd$</p>
+	<p class="spec_box">Simple interpretation as expansion of universe; estimation of age of universe, assuming <i>H</i> is constant.</p>
+	<p class="spec_box">Qualitative treatment of Big Bang theory including evidence from cosmological microwave background radiation, and relative abundance of hydrogen and helium.</p>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<section class="top_section" id="1">
+	<h3>Intro</h3>
+	<p>One of the amazing things about this branch of Physics, is that we are able to make observations here on Earth, or at least quite close to it, and through the application of Physics deduce the structure, lives, and process of a vast range of amazing astronomical objects. However astronomical observations still have the ability to show up the unexpected, which has, on several occasions in the last 100 years forced us to accept that there is still a lot that we do not know about the universe, and that there is still much for us to discover.</p>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="2">
+	<h3>The expansion of the universe</h3>
+	<p>The first of these major discoveries took place in 1929, when the American astronomer, Edwin Hubble related the redshifts of galaxies and their distances. He has already made important contributions to the field of astronomy, as his observations of variable stars in nebula had shown that they were in fact other galaxies as large as our own, but far beyond it. This discovery had opened up the size of the universe, from hundreds of thousands of light-years, to millions of light years.</p>
+	<p>At the time it had thought that the universe was either static, and unchanging, and had always been so, with no beginning and no end, or that the all pervasive force of gravity would be causing galaxies to move towards each other due to their mutual attraction. A few scientists, such as Georges Lemaitre, had suggested that the universe might be expanding, and might have some sort of origin, but up until Hubble&rsquo;s work, there was no experimental evidence for this. Hubble took redshift data, collected by Vesto Slipher, who use photographic plates, such as the one in the image below, and plotted it against his distance measurements.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/redshift_of_galaxies.svg') }}" class="size500" alt="The red shift of various galaxies">
+		<figcaption><b>Figure 1:</b>&nbsp;A classic print showing the relation between the distance to a galaxy and the red shift. The spectral lines can be seen as two dark stripes in the smeared out spectrum from each galaxy.</figcaption>
+	</figure>
+	<p>As can be seen from the images above, the greater the distance to the galaxy, the greater the redshift, shown by the amount that the two spectral lines are moved to the right. Hubble plotted <i>recessional velocity vs distance</i> using the relationship <span>$z=\frac{v}{c}$</span>, and produced the graph below which shows a roughly proportional relationship between distance and velocity.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/hubble_plot.svg') }}" alt="Edwin Hubble's original plot of the red shift of galaxies" class="size600">
+		<figcaption><b>Figure 2:</b>&nbsp;Hubble's original 1929 plot. Note that even real scientists draw worst lines of fit!</figcaption>
+	</figure>
+	<p>The data on this graph do look a little un-correlated, and some local galaxies, such as Andromeda, are approaching us. This is due to the gravitational interaction between local galaxies, however when we look at galaxies further away the pattern becomes more correlated as you can see from the other graph of velocity against distance further below.</p>
+	<p>The conclusion from looking at these two graphs is that the greater the distance to the galaxy, the greater is its redshift, and the faster its recessional velocity. From this Hubble was able to use it to make a startling conclusion that backed up Lemaitre&rsquo;s work, that the universe itself was in fact expanding. To understand why it is worth thinking about a couple of analogies.</p>
+	<p>Imagine a person measuring the speed of traffic by the roadside.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/car_redshift.svg') }}" alt="car red analogy" class="size600">
+		<figcaption><b>Figure 3:</b>&nbsp;Measuring the speed of a car using red shift, or the Doppler effect.</figcaption>
+	</figure>
+	<p>As each car goes past they measure its speed with a radar speed gun. Each car is moving at <span>$\quantity{17}{ms^{-1}}$</span> as it passes the person, and then continues at the same speed. After three cars have passed, and all continued with zero acceleration, the person can conclude that all the cars have the same velocity and the distance to the car does not have any effect on its speed. The same would be true for galaxies moving <i>through</i> space, it wouldn&rsquo;t matter the distance to the galaxy, they would all either be moving at the same speed, or at random speeds, with no overall trend and would therefore display the same redshifts, or completely random redshifts.</p>
+	<p>Whereas the trend identified by Hubble is more like a balloon, as in the photos below. The stars represent galaxies, or more correctly clusters of galaxies, at two times, $t\,=\,1$ which could be the distant past and <span>$t\,=\,2$</span> which is the present day. At <span>$t\,=\,1$</span> the silver galaxy (a) emits some light which then travels out in all directions with the same wavelength. At this point in time, the red galaxy (b) is <span>$\quantity{1}{Mpc}$</span> away, and the blue galaxy is <span>$\quantity{5}{Mpc}$</span> The balloon is inflated, which represents the universe expanding with time. The space between the galaxies starts to stretch as new space is created. As the light travels away from galaxy a, the expanding space stretches out the light and redshifts it to longer wavelengths. The greater the distance it travels, the more expanding space it passes through and the greater the redshift.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/balloon_expansion_2.svg') }}" alt="redshift balloon analogy" class="size700">
+		<figcaption><b>Figure 4:</b>&nbsp;Galactic redshift is more like a balloon expanding. The light rays are stretched not because the source is moving away, but because the space through which the light travels is expanding.</figcaption>
+	</figure>
+	<p>We can see that when light reaches galaxy b in the present day it has a much shorter wavelength than the light that has travelled further to reach galaxy c. We can even do some simple calculations with this simple analogy. In the present day galaxy b is <span>$\quantity{2}{Mpc}$</span> away and galaxy c is <span>$\quantity{10}{Mpc}$</span>. They have both doubled their distance from galaxy a, but as this has taken the interval of time we can see that observers in galaxy c would see galaxy a recede with a greater velocity than an observer in galaxy b.</p>
+	<p>So the only conclusion from the observation that the further the distance to the galaxy the greater the redshift is that the whole universe is expanding and getting larger. As the relationship is proportional it can be expressed in the form <span>$y=mx$</span></p>
+	<div class="formula">$$v=Hd$$</div>
+	<p>Where:</p>
+	<div>
+		<ul class="page_list">
+			<li><span>$v$</span> is the velocity of the galaxy in <span>$\units{km\,s^{-1}}$</span></li>
+			<li><span>$H$</span> is a quantity known as the Hubble constant and has the value of <span>$\quantity{65}{km\,s^{-1}\,Mpc^{-1}}$</span>. The Hubble constant is the ratio of a galaxy&rsquo;s recessional velocity to its distance from Earth.</li>
+			<li><span>$d$</span> is the distance to the galaxy in <span>$\units{Mpc}$</span></li>
+		</ul>
+	</div>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>Galactic redshift is <b>not</b> caused by the Doppler effect &mdash; it's caused by the expansion of space itself stretching the light as it travels. The balloon analogy above captures this: galaxies aren't necessarily moving <i>through</i> space away from each other, the space between them is expanding. This distinction is worth stating explicitly in an explain-style answer rather than describing it as a simple Doppler shift.</p>
+	</div>
+	<p>The Hubble constant can also be found from the gradient of a graph of recessional velocity vs distance such as the one below:</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/velocity_vs_distance_local_galaxies.svg') }}" alt="graph of velocity vs distance for local galaxies" class="size600">
+		<figcaption><b>Figure 5:</b>&nbsp;A graph showing the recessional velocity vs distance for galaxies closer than <span>$\quantity{500}{Mpc}$</span>.</figcaption>
+	</figure>
+	<p>The value of the Hubble constant has varied a lot, Hubble himself measured it as <span>$\quantity{50}{km\,s^{-1}\,Mpc^{-1}}$</span>, and today it varies depending on how it is measured, but it is accepted that it is between <span>$\quantity{60-70}{km\,s^{-1}\,Mpc^{-1}}$</span>.</p>
+	<p>This relationship between redshift and distance can be used to calculate the distance to astronomical objects that might not be measurable using other methods such as parallax or standard candles. It is important to remember that the redshifts are not caused by the Doppler effect, but by the fact that the space through which the light is travelling is actually expanding.</p>
+	<p>If the universe is going to be larger in the future, then it follows that it was smaller in the past, and if we go back far enough we can get to a universe that had no spatial dimensions, a universal origin. We can use the Hubble constant to estimate the age of the universe.</p>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>Estimating the age of the universe as $\frac{1}{H}$ assumes the Hubble constant has been <b>constant throughout cosmic history</b> &mdash; in reality the expansion rate has changed over time (it's currently accelerating, as discussed further down this page), so this simple calculation only gives a rough estimate, not an exact age.</p>
+	</div>
+	<p>The Hubble constant has units of <span>$\units{km\,s^{-1}\,Mpc^{-1}}$</span> which have the dimensions:</p>
+	<div class="formula">$$\frac{\left[\units{Length}\right]}{\left[\units{Time}\right]\times\left[\units{Length}\right]}=\frac{1}{\left[\units{Time}\right]}$$</div>
+	<p>A distance of <span>$\quantity{1}{Mpc}=\quantity{3.08\times 10^{19}}{km}$</span> so <span>$H$</span> can be expressed as <span>$\quantity{2.11\times 10^{-18}}{km\,s^{-1}\,km^{-1}}$</span> or <span>$\quantity{2.11\times 10^{-18}}{s^{-1}}$</span>. The reciprocal of this value will give the age of the universe in seconds:</p>
+	<div class="formula">$$\frac{1}{2.11\times 10^{-18}}=\quantity{4.74\times 10^{17}}{s}=\quantity{15.0}{billion\:years}$$</div>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="3">
+	<h3>Worked Example</h3>
+	<div>
+		<ol class="page_list" type="a">
+			<li>Light arriving at the Earth from a distant galaxy is observed to be red shifted.<br>
+			Explain, in terms of spectral lines, what the term red shift means.</li>
+			<p class="workex">This question does not ask you to explain how the spectral lines are shifted, but just what red shift means in this context. In a question like this it is important to explain clearly and use the correct scientific terminology. When spectral lines are red shifted, they are moved to a longer wavelength, or towards the red end of the spectrum.</p>
+			<li>The wavelength of a given line in the spectrum is <span>$\quantity{5.40\times 10^{-7}}{m}$</span> when measured using a light source in a laboratory on Earth. When the light from the distant galaxy is used for the measurement, the wavelength is found to be <span>$\quantity{5.61\times 10^{-7}}{m}$</span>.</li>
+			<ol class="page_list" type="i">
+				<li>Show that this wavelength change corresponds to a frequency shift of about <span>$\quantity{2.1\times 10^{13}}{Hz}$</span>.<br>
+					speed of light in a vacuum, <span>$c = \quantity{3.0\times 10^{8}}{m\,s^{-1}}$</span></li>
+					<p class="workex">Frequency and wavelength are related by the equation <span>$c=f\lambda$</span></p>
+					<p class="workex">The frequency shift is the difference between the observed frequency and the laboratory frequency.</p>
+					<div class="callout callout-mistake">
+						<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+						<p>This worked example chains together several unit conversions (m/s &rarr; km/s, then Mpc &rarr; m at the end). Work through each conversion deliberately and check the units at every step &mdash; it's very easy to substitute a value in the wrong units partway through a multi-stage calculation like this one.</p>
+					</div>
+					<div class="formula">
+						\begin{align}
+						\Delta f&=f_{obs}-f_{lab}\\
+						\Delta f&=\frac{c}{\lambda_{obs}}-\frac{c}{\lambda_{lab}}\\
+						\Delta f&=\frac{c}{\quantity{5.61\times 10^{-7}}{m}}-\frac{c}{\quantity{5.40\times 10^{-7}}{m}}\\
+						\Delta f&=\left(5.348-5.556\right)\times 10^{14}\\
+						\\
+						\Delta f&=\quantity{-2.08\times 10^{13}}{Hz}
+						\end{align}
+					</div>
+					<p class="workex">The frequency shift is absolute, so the minus sign is not really important in this context.</p>
+					<p class="workex">As this is a show that question, it is important that the answer is given to one more significant figure than the data stated in the question.</p>
+					<li>Calculate the speed of the galaxy relative to Earth.</li>
+					<p class="workex">The speed of the galaxy can be calculated from the Doppler relation:</p>
+					<div class="formula">$$\frac{\Delta f}{f}=\frac{v}{c}$$</div>
+					<p class="workex">We have already calculated the lab frequency as part of the previous question, <span>$\quantity{5.556\times 10^{14}}{Hz}$</span>. So we can substitute this and the figure for frequency shift from the previous part into the Doppler formula:</p>
+					<div class="formula">
+						\begin{align}
+						v&=\frac{c\Delta f}{f}\\
+						v&=\frac{\quantity{3.0\times 10^{8}}{m\,s^{-1}}\times\quantity{2.08\times 10^{13}}{Hz}}{\quantity{5.556\times 10^{14}}{Hz}}\\
+						v&=\quantity{11\,321\,102}{m\,s^{-1}}\\
+						\\
+						v&=\quantity{1.12\times 10^{7}}{m\,s^{-1}}
+						\end{align}
+					</div>
+					<li>Estimate the distance, in m, between the galaxy and the Earth.<br>
+					Hubble constant = <span>$\quantity{65}{km\,s^{-1}\,Mpc^{-1}}$</span><br>
+					<span>$\quantity{1}{pc}$ (parsec) = $\quantity{3\times 10^{16}}{m}$</span></li>
+					<p class="workex">We now know the velocity and, given the Hubble constant, we can estimate the distance to the galaxy. As <span>$H$</span> is given in units of <span>$\units{km\,s^{-1}\,Mpc^{-1}}$</span> we must first convert the calculated speed into <span>$\units{km\,s^{-1}}$</span>.</p>
+					<div class="formula">$$\quantity{1.12\times 10^{7}}{m\,s^{-1}}=\quantity{1.12\times 10^{4}}{km\,s^{-1}}$$</div>
+					<div class="formula">
+						\begin{align}
+						d&=\frac{v}{H}\\
+						d&=\frac{\quantity{1.12\times 10^{4}}{km\,s^{-1}}}{\quantity{65}{km\,s^{-1}\,Mpc^{-1}}}\\
+						\\
+						d&=\quantity{172}{Mpc}
+						\end{align}
+					</div>
+					<p class="workex">We must now convert the calculated distance from <span>$\units{Mpc}$</span> to <span>$\units{m}$</span>.</p>
+					<p class="workex">A distance of <span>$\quantity{1}{pc}$</span> (parsec) = <span>$\quantity{3\times 10^{16}}{m}$</span> so <span>$\quantity{172}{Mpc}$</span> is:</p>
+					<div class="formula">$$172\times 1\,000\,000 \times \quantity{3\times 10^{16}}{m}=\quantity{5.2\times 10^{24}}{m}$$</div>
+			</ol>
+		</ol>
+	</div>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="4">
+	<h3>The big bang</h3>
+	<p>If the universe has a finite age then it suggests that at some point around 15 billion years ago it must have had an origin. The universe is a closed system, which means that there is no more matter/energy in it now than there was in the past. So if the universe was smaller in the past, that amount of matter must have been squeezed into a smaller volume. Remembering the relationship <span>$V\propto T$</span> it also follows that a smaller universe must have been a hotter universe.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/big_bang_timeline.svg') }}" alt="Big bang timeline NASA" class="size700">
+		<figcaption><b>Figure 6:</b>A timeline of the universe.</figcaption>
+	</figure>
+	<p>Therefore scientists working at the time of Hubble&rsquo;s discovery came to the conclusion, that if the universe did indeed have a beginning, it must have been a very hot one! The term big bang was coined as a derisive term, but it has stuck. The theory suggests that the universe started from a single infinitely dense point that began to expand rapidly outwards, cooling as it expanded. In its early history (the first 3-4 minutes!) it went through several epochs (some lasting just a small fraction of a second) which saw matter coalesce out of pure energy, the four fundamental forces become de-unified, free quarks confined inside hadrons, antimatter annihilating with normal matter and the first simple nuclei form. Although it is a fascinating subject, you do not need to know the details of the big bang, or its moment by moment timeline, although there are many good books on the subject if you want to explore it further.</p>
+	<p>What you do have to know however is the evidence that supports the theory that the universe came into being in a hot big bang event. Many working scientists did not like the big bang theory, instead arguing that the universe had been around forever. They put forward a <i>steady state theory</i> which said that space was expanding, which explained Hubble&rsquo;s law, but new matter was constantly being created to keep the density of the universe constant. Big bang theorists needed to provide evidence that the universe did indeed start with a super-hot fireball.</p>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="5">
+	<h3>Cosmic Microwave Background Radiation</h3>
+	<p>As the early universe was theorised to have emitted radiation at the rate it absorbed it, it is a very good approximation to a perfect blackbody. Scientists calculated, by considering the <i>relative proportions of hydrogen and helium</i>, and applying the same physical principles of <a href="{{ url_for('sun_fusion') }}" target="_blank">nuclear fusion as in the core of a star</a>, predicted that the temperature of the universe when these simple nuclei formed was around $\quantity{10^{9}}{K}$ and then by applying the gas laws and Wien's law it was predicted that the universe should have a current blackbody temperature of $\quantity{3.68}{K}$ with a peak wavelength of $\quantity{7.87\times 10^{-2}}{cm}$.</p>
+	<p>In 1964 two scientists, Arno Penzias and Robert Wilson, who were working at the Bell Laboratories in the USA, <a href="https://www.nobelprize.org/nobel_prizes/physics/laureates/1978/wilson-lecture.pdf" target="_blank">discovered</a> a constant static noise where-ever they pointed their telescope. After accounting for all sources of noise including, electrical, atmospheric, as well as evicting a family of nesting pigeons and cleaning out a &ldquo;white material familiar to all city dwellers&rdquo; they determined that this noise had a blackbody spectrum with an equivalent temperature of <span>$\quantity{3.5}{K}$</span>. This spectrum had its peak wavelength in the microwave part of the electromagnetic spectrum.</p>
+	<figure>
+		<a href="http://www.astro.ucla.edu/~wright/CMB.html" target="_blank"><img src="{{ url_for('static', filename='images/astrophysics/cmb_spectrum.svg') }}" alt="Black body spectrum of the CMBR" class="size600"></a>
+		<figcaption><b>Figure 7:</b>&nbsp;The blackbody spectrum of the CMB.</figcaption>
+	</figure>
+	<p>This noise which was in the microwave spectrum was the heavily red-shifted remnants of the early universe, and the first direct piece of evidence of a hot big bang. It is thought that this radiation originates from around 100,000 years after the big bang when the universe became cool enough for electrons to bind to the hydrogen and helium nuclei to form the first atoms. This is called <i>recombination</i>, and is the first time that the universe became transparent to light. It would be impossible to see further back in time than this using light, as before recombination, all of the universe&rsquo;s photons had a very short <i>mean free path</i> between absorption and emission. Importantly this noise was incredibly uniform, fluctuating by as little as <span>$\pm\quantity{0.003}{K}$</span>, and was the same in all parts of the sky. This tells us that the universe is both homogeneous (the same at all points) and isotropic (looks the same in all directions), which are both important conditions of the big bang theory.</p>
+	<p>Since then, this <b>Cosmic Microwave Background Radiation</b> (CMBR) has been measured more and more precisely, and calculations with it have narrowed down the age of the universe to around 13.82 billion years. Below are three images of the CMBR taken in increasing detail by the satellites, COBE, WMAP, and Planck. However, as is often the case with cosmology, the more we find out with the CMBR, the more new questions we have about the structure and origins of the universe.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/background_radiation_1.svg') }}" class="size600" alt="CMBR taken by COBE">
+		<img src="{{ url_for('static', filename='images/astrophysics/background_radiation_2.svg') }}" class="size600" alt="CMBR taken by WMAP">
+		<img src="{{ url_for('static', filename='images/astrophysics/background_radiation_3.svg') }}" class="size600" alt="CMBR taken by Planck">
+		<figcaption><b>Figure 8:</b>&nbsp;Changing faces of the CMB. Images of the Cosmic Microwave Background taken by (from the top) COBE, WMAP, and Planck missions.</figcaption>
+	</figure>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="6">
+	<h3>Evidence from hydrogen and helium</h3>
+	<p>When we look around us, we see that the objects around us are made from quite a few different elements including, iron, carbon, oxygen, silicon and aluminium. However astrophysicists would consider these elements to be trace pollutants as they make up less than 1% of the atoms in the universe. Over 90% of the matter is made up from just hydrogen and helium, and the proportions of hydrogen and helium provide more evidence for the hot big bang.</p>
+	<p>Neutrons are slightly heavier than protons, and are therefore more unstable. An isolated neutron has a lifetime of around 15 minutes. In the early universe the temperature was so hot that neutrons were decaying into protons at the same rate that they were being created. As the universe cooled neutrons started to decay faster than they were created and the proportions of protons to neutrons changed in favour of protons. Free neutrons were quickly bound into nuclei of deuterium and then helium. The period of time is called <i>big bang nucleosynthesis</i> and took place when the universe was around <span>$\quantity{100}{s}$</span> old. Calculations suggest that the ratio of protons to neutrons should be around 7:1. If the universe had cooled quicker then the ratio would favour more protons, and if it had cooled slower it would have favoured neutrons. Other competing theories predicted a much lower proportion of neutrons.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/big_bang_hydrogen_and_helium.svg') }}" alt="relative proportion of protons to neutrons" class="size700">
+		<figcaption><b>Figure 9:</b>&nbsp;The relative proportions of hydrogen and helium in the universe can be used for evidence of a hot big bang.</figcaption>
+	</figure>
+	<p>This ratio would produce 12 hydrogen nuclei for every 1 helium nucleus, which has a mass ratio of 3:1 hydrogen to helium. This was a clear prediction of the big bang theory and its confirmation by observation is one of the theory&rsquo;s biggest achievements.</p>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="7">
+	<h3>Dark energy</h3>
+	<p>Although the value of the Hubble constant is hard to pin down, (there are different values depending on what is being measured) measurements from astronomical objects up to a relatively large distance (<span>$\quantity{500}{Mpc}$</span>) shows a linear relationship between the redshift and the distance. The graph below shows the distance to several type 1a supernova and their redshifts. The green best fit line is for the plotted data, and the orange line shows the trend for a Hubble constant of <span>$\quantity{65}{km\,s^{-1}\,Mpc^{-1}}$</span>.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/sn1a_data_dark_energy_less_than_500mpc.svg') }}" alt="Sn1a data for objects closer than 500Mpc" class="size600">
+		<figcaption><b>Figure 10:</b>&nbsp;Distance vs redshift for galaxies up to <span>$\quantity{500}{Mpc}$</span> showing a linear relationship. The green line is the best fit for these data, and the orange line shows a Hubble constant of <span>$\quantity{65}{km\,s^{-1}\,Mpc^{-1}}$</span>.</figcaption>
+	</figure>
+	<p>However in the late 1990s, observations made by the <a href="http://www-supernova.lbl.gov/" target="_blank">Supernova Cosmology Project</a> uncovered something surprising. It was thought that the gravitational interaction between clusters of galaxies on a large scale would be slowing the rate of expansion, and scientists at the SCP were looking for evidence of this. They were making observations of type 1a supernovae at great distances, and they discovered that at large distances these supernovae were dimmer than they should have been for their observed redshifts. Their results are shown in the graph below, which was plotted using the original data. The green and orange lines represent what they did in the previous chart, and the blue line is the best fit for these data.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/sn1a_data_dark_energy.svg') }}" alt="Sn1a data from the Supernova Cosmology Project" class="size600">
+		<figcaption><b>Figure 11:</b>&nbsp;Distance vs redshift for galaxies up to <span>$\quantity{140\,000}{Mpc}$</span> showing that the more distant galaxies are moving away faster than local ones.</figcaption>
+	</figure>
+	<p>After accounting for dust, and other sources of interference they came to the conclusion that these distant galaxies (which contained the supernovae) were moving away faster than local ones, and that the rate of universal expansion was in fact <i>accelerating</i> and not slowing down. This was a groundbreaking discovery, as no mechanism known to science could explain it. Scientists suggested some mysterious anti-gravitating substance that was dubbed <b>dark energy</b>.</p>
+	<p>This conclusion has since been backed up by other lines of research, however no one really knows what dark energy is.</p>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p><b>Dark energy</b> and <b>dark matter</b> are easy to conflate, but they're different mysteries. Dark energy is associated with the <i>accelerating expansion</i> of the universe (an anti-gravitating effect). Dark matter is associated with <i>gravitational</i> effects that hold galaxies and clusters together (extra gravitating mass we can't directly see). Don't use the two terms interchangeably &mdash; dark matter isn't on the AQA specification, but it's easy to mix the two up if you've encountered both terms.</p>
+	</div>
+	<p>You may have also heard of <i>dark matter</i>, but it is important not to get these confused. Dark matter is also a mystery to modern physics, but is involved with gravitation and holding galaxies, and clusters together. (You do not need to know about dark matter for your A levels.) There are many suggestions as to what the source of dark energy might be, including <i>quantum fluctuations</i> of space itself, or a new as yet undetected <i>fundamental force</i>. What we do know, however, is that the mass equivalent of dark energy accounts for over 68% of the entire mass of the universe, with ordinary matter (quarks, leptons and photons) making up just 5%. Whatever dark energy turns out to be, it is very mysterious.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/matter_and_energy_in_the_universe.svg') }}" alt="What makes up the universe" class="size600">
+		<figcaption><b>Figure 12:</b>&nbsp;The matter that we see around us in fact only makes up around 5% of the entire known universe!</figcaption>
+	</figure>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="8">
+	<h3>Quasars</h3>
+	<p>Quasars are very bright compact objects that exhibit huge redshifts.</p>
+	<p>When first observed in the 1950s, quasars appeared to be very bright point like sources of light which emitted a strong radio signal, very much like stars. The only thing that differentiated them was a strange spectrum. It turned out that these strange spectra was due to hydrogen and magnesium lines that had been hugely redshifted. Hence they were called <i>quasi-stellar radio sources</i> or <b>quasars</b>. The large redshifts meant that they must have been at vast distances from Earth, but their relatively bright apparent magnitudes (around 12) meant that they must also have been very bright. The picture below, taken by the Hubble Space Telescope is of the first quasar to be discovered. It is at a distance of <span>$\quantity{580}{Mpc}$</span> or <span>$\quantity{1.9\times 10^{9}}{ly}$</span>, but has an apparent magnitude of 12. However its absolute magnitude is -26, which is about the same as the Sun&rsquo;s apparent magnitude. So if this quasar was placed at a distance of <span>$\quantity{10}{pc}$</span> it would appear as bright as the Sun!</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/quasar_3c_273.svg') }}" alt="quasar 3C 273" class="size600">
+		<figcaption><b>Figure 13:</b>&nbsp;Two images of quasars.</figcaption>
+	</figure>
+	<p>The sources of all this energy remained a mystery. They were bright, but compact, and very far away. It was soon discovered that they were all at the centre of ancient galaxies, leading to the theory that quasars were supermassive black holes at the centre of young galaxies. Their brightness came from matter falling into them and heating up as it lost its gravitational energy. The quasar above has a mass of nearly a thousand million Suns. They are considered to be a type of <i>active galactic nuclei</i> (<i>AGN</i>), of which the different types are identified by their different spectra.</p>
+	<p>Quasars can also shine brightly in other parts of the spectrum. The photo below shows two images of the same quasar, one in the visible spectrum (left), where the quasar is the brightest object in the photo (bottom right corner) and one in the x-ray spectrum (right) in which the quasar still glows very brightly.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/quasar_pks_1127-145.svg') }}" alt="quasar PKS 1127-145" class="size600">
+		<figcaption><b>Figure 14:</b>&nbsp;Quasars can also shine very brightly in other parts of the spectrum. On the right the quasar can be seen glowing brightly in the x-ray spectrum.</figcaption>
+	</figure>
+	<p>Quasars also support the big bang theory of the universe. As there are no local quasars, it suggests that they only existed in the early universe. Therefore the universe has changed as it has aged, something that cannot be explained by the steady state model.</p>
+	<div class="callout callout-definition">
+		<p class="callout-label"><i class="fas fa-lightbulb"></i> Worth remembering</p>
+		<p>The absence of <i>local</i> quasars is itself the evidence: since light from distant quasars took billions of years to reach us, seeing quasars only at great distances means we're only seeing them as they were in the young universe. If the universe looked the same at all times (as the steady state model claimed), we'd expect to find quasars nearby too. Their absence nearby shows the universe has genuinely changed over time.</p>
+	</div>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="9">
+	<h3>Test yourself</h3>
+	<p>Try the questions below to check your understanding of this topic. Numerical questions use different numbers each time, so you can attempt them more than once.</p>
+	<div id="quiz-root"></div>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+
+{% endblock %}
+
+{% block resources %}
+	<li><a href="{{ url_for('static', filename='summaries/astrophysics/big_bang_summary.html') }}" target="_blank"><i class="fas fa-file-alt"></i> Printable revision sheet</a></li>
+{% endblock %}
+
+{% block prev_link %}
+	<a href="{{ url_for('doppler_effect') }}"><i class="fas fa-chevron-circle-left"></i><span class="nav_link">Previous topic</span></a>
+{% endblock %}
+
+{% block extra_scripts %}
+	<script src="{{ url_for('static', filename='js/quiz.js') }}"></script>
+	<script src="{{ url_for('static', filename='quizzes/big_bang_questions.js') }}"></script>
+	<script>
+		new PhysicsQuiz(document.getElementById('quiz-root'), bigBangQuestions, {
+			storageKey: 'big_bang'
+		});
+	</script>
+{% endblock %}

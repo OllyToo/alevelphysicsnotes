@@ -1,0 +1,217 @@
+{% extends "base.html" %}
+
+{% block title %}EMF and internal resistance{% endblock %}
+{% block page_h1 %}EMF and internal resistance{% endblock %}
+
+{% block meta_description %}A Level Physics notes and worked examples to help students with their exams and learning. This page looks at the idea of emf and how energy transfers in cells lead to the model of internal resistance.{% endblock %}
+{% block meta_keywords %}internal resistance, resistance, emf, electro motive force, energy, power, resistance, heat, worked examples, exam questions, A level, physics{% endblock %}
+
+{% block extra_head %}
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/quiz.css') }}">
+{% endblock %}
+
+{% block page_boxes %}
+	<a href="#1"><button class="button">Internal resistance</button></a>
+	<a href="#2"><button class="button">Worked example</button></a>
+	<a href="#3"><button class="button">Internal resistance and the flow of current</button></a>
+	<a href="#4"><button class="button">Worked example</button></a>
+	<a href="#5"><button class="button">Test yourself</button></a>
+{% endblock %}
+
+{% block spec %}
+<div id="spec">
+	<p class="spec_ref"><b>3.5.1.6 Electromotive force and internal resistance</b></p>
+	<p class="spec_box">$\varepsilon=\frac{E}{Q}$</p>
+	<p class="spec_box">$\varepsilon=I\left (R + r \right )$</p>
+	<p class="spec_box">Terminal pd; emf</p>
+	<p class="spec_box">Students will be expected to understand and perform calculations for circuits in which the internal resistance of the supply is not negligible.</p>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<section class="top_section" id="1">
+	<h3>Internal resistance</h3>
+	<p>Cells and batteries transfer chemical energy into electrical potential, which is then used up around a circuit. However, no cell is $100\%$ efficient with this transfer. No energy transfer is $100\%$ efficient, and electrical cells and power supplies are no different. An electrical cell consists of three parts, an anode, a cathode and an electrolyte. The anode and the cathode are made from two different metals, or one metal and a film of carbon, and the electrolyte is an ionic liquid such as potassium hydroxide. When the cell is connected in a circuit chemical reaction start to take place at the anode and the cathode. At the anode, an oxidation reaction removes electrons from the metal and they begin to flow into the circuit. This leaves the anode positively charged, which attracts more electrons from the electrolyte. The anode in the negative terminal of a cell. Returning electrons are collected at the cathode and it is reduced. The cathode is the positive terminal. After a while the anode will have lost almost all of its electrons and the electrolyte is unable to supply any more so the reaction slows down, and the emf of the cell drops.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/electricity/construction_of_a_cell.svg') }}" alt="simple schematic of the construction of a cell" class="size300">
+		<figcaption><b>Figure 1:</b>&nbsp;A simplified example of how a cell works.</figcaption>
+	</figure>
+	<p>When the chemical reactions take place, as well as producing electricity, the cell produces a small amount of heat which radiates away from the system and is lost. As the energy lost from a cell is heat, it can be modelled as if it was a resistor generating heat, and is called the <em>internal resistance</em> (<i>r</i>) of the cell. The rate of energy lost from a cell is of course measured in $\units{watts}$ and the equations of power for a resistor can be used to describe it.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/electricity/internal_resistance.svg') }}" alt="internal resistance generating heat" class="size400">
+		<figcaption><b>Figure 2:</b>&nbsp;When a cell generates a current it also produces heat.</figcaption>
+	</figure>
+	<p>Sometimes in circuit diagrams a resistor is drawn in series with a cell to represent the internal resistance; of course there is not actually a resistor inside of a cell, it is just a useful way of describing the energy lost from the circuit. Internal resistance is an analogy for the efficiency of the cell. The greater the internal resistance, the more heat it creates as it produces electricity and the less efficient it is. The internal resistance will also have a potential difference across it, which means that the voltage measured across the terminals when a current is flowing is lower than the actual true value of emf of the cell. The true emf of the cell is these <em>&lsquo;lost volts&rsquo;</em> plus the <em>terminal voltage</em>.</p>
+	<p class="equation">emf = terminal p.d. + lost volts</p>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>Terminal p.d. only equals emf when <b>no current is flowing</b> (open circuit, or measured with an ideal/high-resistance voltmeter that draws negligible current). As soon as current flows, some of the emf is "lost" across the internal resistance, so the terminal p.d. you'd measure is always <i>less</i> than the emf. Don't treat the two as interchangeable once a circuit is switched on and drawing current.</p>
+	</div>
+	<figure>
+		<img src="{{ url_for('static', filename='images/electricity/internal_resistance_lost_volts.svg') }}" alt="internal resistance lost volts and terminal pd" class="size400">
+		<figcaption><b>Figure 3:</b>&nbsp;emf is equal to the terminal p.d. plus the 'lost volts'.</figcaption>
+	</figure>
+	<p>We can state this mathematically as:</p>
+	<div class="formula">$$\varepsilon=IR+Ir$$</div>
+	<p>Where:</p>
+	<ul class="page_list">
+		<li><i>&epsilon;</i> is the emf in $\units{V}$</li>
+		<li><i>I</i> is the current in $\units{A}$</li>
+		<li><i>R</i> is the total resistance of the circuit in $\units{\Omega}$</li>
+		<li><i>r</i> is the internal resistance of the cell in $\units{\Omega}$</li>
+	</ul>
+	<p>The term $IR$ represents the terminal p.d. and the term $Ir$ is the lost volts. The above equation can be simplified to:</p>
+	<div class="formula">$$\large \varepsilon=I\left(R+r\right)$$</div>
+	<p>Often in examples of circuits, the internal resistance is neglected, and an ideal cell with no internal resistance is assumed. However at A-level you will be expected to perform calculations on circuits that have a significant internal resistance. Typical internal resitances for modern cells are in the region of $\quantity{100}{m\Omega}$ to $\quantity{900}{m\Omega}$.</p>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="2">
+	<h3>Worked example</h3>
+	<p>A battery is connected to a $\quantity{10}{\Omega}$ resistor and a switch in series. A voltmeter is connected across the battery. When the switch is open (off) the voltmeter reads $\quantity{1.45}{V}$. When the switch is closed the reading is $\quantity{1.26}{V}$.</p>
+	<p>What is the internal resistance of the battery?</p>
+	<ol class="page_list" type="A">
+		<li>$\quantity{0.66}{\Omega}$</li>
+		<li>$\quantity{0.76}{\Omega}$</li>
+		<li>$\quantity{1.3}{\Omega}$</li>
+		<li>$\quantity{1.5}{\Omega}$</li>
+	</ol>
+	<p class="workex">This multiple choice question involves a relatively simple calculation, but it is important in these multiple choice questions to work efficiently so that you don&rsquo;t waste time.</p>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>Always find the current first, using the closed-switch (loaded) reading with the known external resistor &mdash; you can't find the lost volts or internal resistance without it. Trying to shortcut straight to the internal resistance without calculating the current first is a common source of errors here.</p>
+	</div>
+	<p class="workex">We know the emf of the cell is $\quantity{1.45}{V}$ (the open-circuit reading, since no current flows through the voltmeter) and the terminal p.d. falls to $\quantity{1.26}{V}$ when a current flows through the $\quantity{10}{\Omega}$ resistor, so the current through the resistor can be calculated as:</p>
+	<div class="formula">
+		\begin{align}
+		I&=\frac{V}{R}\\
+		I&=\frac{\quantity{1.26}{V}}{\quantity{10}{\Omega}}\\
+		\\
+		I&=\quantity{0.126}{A}
+		\end{align}
+	</div>
+	<p class="workex">The potential difference across the internal resistance (the lost volts) is $\quantity{1.45}{V} - \quantity{1.26}{V} = \quantity{0.19}{V}$</p>
+	<p class="workex">We can now use that value of current and the value of the lost volts to find the value of the internal resistance:</p>
+	<div class="formula">$$r=\frac{V}{I}=\frac{\quantity{0.19}{V}}{\quantity{0.126}{A}}=\quantity{1.5}{\Omega}$$</div>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="3">
+	<h3>Internal resistance and the flow of current</h3>
+	<p>As more current flows from a cell the rate of reaction in the cell increases and more heat is generated, and correspondingly the higher the <em>lost volts</em>. There is a directly proportional relationship between the current and the energy lost by the internal resistance.</p>
+	<p>When no current flows there is no energy lost by the internal resistance and the terminal p.d. will equal the emf. In practice the emf of cell can be found by using a multimeter, which typically have very high resistances and measuring the terminal p.d., which will be the emf as no current will flow through the meter.</p>
+	<p>The greater the current flowing through the cell, the greater the difference between the emf and the terminal p.d.. If a graph of terminal p.d. and current is plotted the emf can be found from the y-intercept, and the gradient would represent the internal resistance.</p>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>The terminal p.d.&ndash;current graph slopes <b>downward</b> (since $V=\varepsilon-Ir$), so the gradient itself is <i>negative</i>. The internal resistance is the <b>magnitude</b> of that gradient, not the gradient's signed value &mdash; don't quote a negative number for $r$. Also double check you're reading the <b>y-intercept</b> for the emf, not the x-intercept.</p>
+	</div>
+	<figure>
+		<img src="{{ url_for('static', filename='images/electricity/internal_resistance_graph.svg') }}" alt="graph of voltage vs current" class="size600">
+		<figcaption><b>Figure 4:</b>&nbsp;A graph of the terminal p.d. against the current for a cell. The internal resistance can be found from the gradient.</figcaption>
+	</figure>
+	<p>You will carry out this practical for your CAP, but you will need to design a circuit and suggest a suitable range of resistances over which to test.</p>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="4">
+	<h3>Worked example</h3>
+	<p>A student investigates how the power dissipated in a variable resistor, Y, varies as the resistance is altered.</p>
+	<p>The diagram below shows the circuit the student uses. Y is connected to a battery of emf <i>&epsilon;</i> and internal resistance <i>r</i>.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/electricity/internal_resistance_worked_example_1.svg') }}" alt="circuit diagram of one cell with a resitance and one resistor" class="size400">
+		<figcaption><b>Figure 5:</b>&nbsp;A simple circuit with a cell and a variable resistor.</figcaption>
+	</figure>
+	<p>The graph shows the results obtained by the student as the resistance of Y is varied from $\quantity{0.5}{\Omega}$ to $\quantity{6.5}{\Omega}$.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/electricity/internal_resistance_worked_example_2.svg') }}" alt="graph of power versus resistance" class="size400">
+		<figcaption><b>Figure 6:</b>&nbsp;A graph showing how the power dissipated by the variable resistor changes with its resistance.</figcaption>
+	</figure>
+	<ol class="page_list" type="a">
+		<li>Describe how the power dissipated in Y varies as its resistance is increased from $\quantity{0.5}{\Omega}$ to $\quantity{6.5}{\Omega}$.</li>
+		<p class="workex">The key word in this question is <b>describe</b>, so we just have to say what we see, but to get full credit we have to use data from the graph. As we can see the power increases until the resistance is $\quantity{3}{\Omega}$ and $\quantity{3}{W}$ and then starts to decrease as the resistance continues to increase.</p>
+		<p class="workex">This is because the cell has a significant internal resistance, so there will be significant proportion of the cell&rsquo;s emf used across it, and it will dissipate heat according to $P=\frac{V^{2}}{R}$. When the external resistance is less than the internal resistance, it will have a smaller p.d. across it, so it will have less power than the internal resistance. When the external resistance equals the internal resistance, they will both have the same potential difference, and therefore they will have the same power. As the variable resistor increase so that it is larger than the internal resistance the power decreases again as power is inversely proportional to the resistance.</p>
+		<p class="workex">This is known as the maximum power theorem, i.e. the maximum power from the supply (the cell in this case) is obtained when the load, or the external resistance is equal to the internal resistance of the power supply.</p>
+		<li>The emf of the battery is $\quantity{6.0}{V}$ and the resistance of Y is set at $\quantity{0.80}{\Omega}$.</li>
+		<ol class="page_list" type="i">
+			<li>Use data <b>from the graph</b> to calculate the current through the battery.</li>
+			<p class="workex">When reading data from a graph, it is good practice to annotate the diagram carefully with a pencil and a ruler to ensure that the values that you read are accurate.</p>
+			<p class="workex">From this graph when the the resistance is $\quantity{0.80}{\Omega}$ the power is $\quantity{1.95}{W}$. We can use the equation $P=I^{2}R$ to find the current:</p>
+			<div class="callout callout-mistake">
+				<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+				<p>When rearranging $P=I^{2}R$ to find $I$, it's easy to forget the square root and just divide $P$ by $R$. Remember: $I=\sqrt{\dfrac{P}{R}}$, not $\dfrac{P}{R}$ &mdash; take extra care with your calculator on this step.</p>
+			</div>
+			<div class="formula">
+				\begin{align}
+				I&=\sqrt{\frac{P}{R}}\\
+				I&=\sqrt{\frac{\quantity{1.95}{W}}{\quantity{0.80}{\Omega}}}\\
+				\\
+				I&=\quantity{1.56}{A}
+				\end{align}
+			</div>
+			<li>Calculate the voltage across Y.</li>
+			<p class="workex">As we now know the current and the resistance we can use Ohm&rsquo;s law, $V=IR$, to find the voltage or p.d. across Y.</p>
+			<div class="formula">$$V=\quantity{1.56}{A}\times\quantity{0.80}{\Omega}=\quantity{1.2}{V}$$</div>
+			<li>Calculate the internal resistance of the battery.</li>
+			<p class="workex">This can either be calculated from the equation $\varepsilon=V+Ir$ or it can be read from the graph, using the maximum power theorem as described above. We have already calculated the values of $V$ and $I$ so using the equation, and making $r$ the subject:</p>
+			<div class="formula">
+				\begin{align}
+				r&=\frac{\left(\varepsilon-V\right)}{I}\\
+				r&=\frac{\left(\quantity{6.0}{V}-\quantity{1.2}{V}\right)}{\quantity{1.56}{A}}\\
+				\\
+				r&=\quantity{3.1}{\Omega}
+				\end{align}
+			</div>
+			<p class="workex">Even if you have been unable to calculate the earlier values for current and potential difference, you can read the value for the resistance at the peak of the graph, so long as you quote that the maximum power will be dissipated when $Y=r$ and clearly annotate the graph.</p>
+		</ol>
+		<li>The student repeats the experiment with a battery of the same emf but negligible internal resistance. State and explain how you would now expect the power dissipated in Y to vary as the resistance of Y is increased from $\quantity{0.5}{\Omega}$ to $\quantity{6.5}{\Omega}$.</li>
+		<div class="callout callout-mistake">
+			<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+			<p>This question is answered poorly very often. It's tempting to assume the graph keeps the same peaked shape, just shifted up or sideways. In fact, with negligible internal resistance the p.d. across Y becomes essentially constant (equal to the emf), so the relationship changes completely: $P=\frac{V^{2}}{R}$ now decreases continuously as $R$ increases, with <b>no peak at all</b> &mdash; not a shifted version of the original curve.</p>
+		</div>
+		<p class="workex">When there is a negligible internal resistance, the p.d. across Y will equal the emf of the cell. As the p.d. is now constant and the relationship between power and resistance, for a constant voltage is inverse, the power would decrease as the value of Y increases.</p>
+		<p class="workex">It is important to remember that when the p.d. is constant we use the equation $P=\frac{V^{2}}{R}$ so as the resistance increases, the power decreases and the graph would look like this:</p>
+		<figure>
+			<img src="{{ url_for('static', filename='images/electricity/internal_resistance_worked_example_4.svg') }}" alt="graph of power versus resistance 3" class="size400">
+			<figcaption><b>Figure 8:</b>&nbsp;A graph showing how the power dissipated by the variable resistor changes with its resistance when the internal resitance of the cell is negligible.</figcaption>
+		</figure>
+	</ol>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="5">
+	<h3>Test yourself</h3>
+	<p>Try the questions below to check your understanding of this topic. Numerical questions use different numbers each time, so you can attempt them more than once.</p>
+	<div id="quiz-root"></div>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+
+{% endblock %}
+
+{% block resources_heading %}One page summary{% endblock %}
+
+{% block resources %}
+	<li><a href="{{ url_for('static', filename='summaries/electricity/emf_and_internal_resistance_summary.html') }}" target="_blank"><i class="fas fa-file-alt"></i> Printable revision sheet</a></li>
+{% endblock %}
+
+{% block prev_link %}
+	<a href="{{ url_for('power_and_resistance') }}"><i class="fas fa-chevron-circle-left"></i><span class="nav_link">Previous topic</span></a>
+{% endblock %}
+
+{% block next_link %}
+	<a href="/electricity/potential-dividers"><span class="nav_link">Next topic</span><i class="fas fa-chevron-circle-right"></i></a>
+{% endblock %}
+
+{% block extra_scripts %}
+	<script src="{{ url_for('static', filename='js/quiz.js') }}"></script>
+	<script src="{{ url_for('static', filename='quizzes/emf_and_internal_resistance_questions.js') }}"></script>
+	<script>
+		new PhysicsQuiz(document.getElementById('quiz-root'), emfAndInternalResistanceQuestions, {
+			storageKey: 'emf_and_internal_resistance'
+		});
+	</script>
+{% endblock %}

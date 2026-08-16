@@ -1,0 +1,362 @@
+{% extends "base.html" %}
+
+{% block title %}Power in resistive circuits{% endblock %}
+{% block page_h1 %}Power in resistive circuits{% endblock %}
+
+{% block meta_description %}A Level Physics notes and worked examples to help students with their exams and learning. This page looks at power in circuits and how energy is used up around series and parallel circuits, including a discussion of the conservation of energy.{% endblock %}
+{% block meta_keywords %}electricity, power, energy, heat, resistance, series, parallel, worked examples, exam questions, A level, physics{% endblock %}
+
+{% block extra_head %}
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/quiz.css') }}">
+{% endblock %}
+
+{% block page_boxes %}
+	<a href="#1"><button class="button">Electrical power</button></a>
+	<a href="#2"><button class="button">Worked example</button></a>
+	<a href="#3"><button class="button">Power and resistance</button></a>
+	<a href="#4"><button class="button">Cells in series and parallel</button></a>
+	<a href="#5"><button class="button">Conservation of energy in circuits</button></a>
+	<a href="#6"><button class="button">Worked example</button></a>
+	<a href="#7"><button class="button">Test yourself</button></a>
+{% endblock %}
+
+{% block spec %}
+<div id="spec">
+	<p class="spec_ref"><b>3.5.1.4 Circuits</b></p>
+	<p class="spec_box">Energy and power equations:</p>
+	<div class="formula">
+		$$E=IVt$$
+	</div>
+	<div class="formula">
+		$$P = IV = I^{2}R = \frac{V^{2}}{R}$$
+	</div>
+	<p class="spec_box">The relationships between currents, voltages and resistances in series and parallel circuits, including cells in series and identical cells in parallel.</p>
+	<p class="spec_box">Conservation of charge and conservation of energy in dc circuits.</p>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<section class="top_section" id="1">
+	<h3>Electrical power</h3>
+	<p>We have already learnt that a resistor dissipates electric potential energy as a current passes through it, and this energy is in the form of heat. In fact, if you leave a current flowing through a resistor for a period of time and feel it, it will often be quite warm to the touch due to the electrical energy being converted to heat. This is usually more apparent in components such as filament bulb where the electrical energy is converted into heat and light, and the component can get very hot, but it applies to all resistive components.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/electricity/power_of_a_resistor.svg') }}" alt="heat dissipated from a resistor" class="size400">
+		<figcaption><b>Figure 1:</b>&nbsp;Resistors dissipate heat energy.</figcaption>
+	</figure>
+	<p>We know that the rate of energy transfer, or the rate of work is called power and is defined as:</p>
+	<div class="formula">
+		$$P=\frac{W}{t}$$
+	</div>
+	<p>Power is always measured in watts ($\units{W}$), where $\quantity{1}{W}$ is $\quantity{1}{J\,s^{-1}}$</p>
+	<p>We also know that the current flowing through a resistor is the rate of flow of charge, $I=\frac{Q}{t}$ and the potential difference is the work done per unit if charge, $V=\frac{W}{Q}$. These two equations can be rearranged and to make t and W the subjects and substituted into the equation for power to give an expression for the rate of electrical work:</p>
+	<div class="formula">
+		$$\large P=IV$$
+	</div>
+	<p>This equation feels very intuitive, the greater the current, the greater the power of the circuit, the greater the p.d. the greater the power. It can be usefully applied to whole circuits, if you know the emf of the cell, or to individual components, if you know the p.d. across that individual component.</p>
+	<p>It is also worth noting that as power is the rate of work, the total energy supplied is the product of the power and time, which for an electrical circuit can be stated as:</p>
+	<div class="formula">
+		$$\large E=IVt$$
+	</div>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="2">
+	<h3>Worked example</h3>
+	<p>The heater in a kettle, designed to operate from the $\quantity{12}{V}$ battery in a car, has a power rating of $\quantity{130}{W}$.</p>
+	<ol class="page_list" type="a">
+		<li>Calculate the current drawn from the battery by the kettle.</li>
+		<p class="workex">We have been given everything that we need in the question., and it is just a matter of rearranging the equation for power given above:</p>
+		<div class="formula">$$P=IV$$</div>
+		<p class="workex">So</p>
+		<div class="formula">
+			\begin{align}
+			I&=\frac{P}{V}\\
+			I&=\frac{\quantity{130}{W}}{\quantity{12}{V}}\\
+			\\
+			I&=\quantity{10.8}{A}
+			\end{align}
+		</div>
+		<li>The energy needed to raise the temperature of two cups of cold water to boiling point is $\quantity{170}{kJ}$.<br>
+		Calculate the minimum time, in minutes, that it would take to raise the temperature of this water to its boiling point.</li>
+		<p class="workex">Firstly we need to make sure that we convert $\units{kJ}$ into $\units{J}$, so $\quantity{170}{kJ}=\quantity{1.70\times 10^{5}}{J}$. We know that the kettle delivers $\quantity{130}{J\,s^{-1}}$ and we know that $E=Pt$ so the time taken to boil the kettle is:</p>
+		<div class="callout callout-mistake">
+			<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+			<p>Two unit conversions are hiding in this question: kJ &rarr; J (&times;1000) before using the energy in $P=\frac{E}{t}$, and seconds &rarr; minutes (&divide;60) at the end, since the question specifically asks for the answer in minutes. Missing either conversion is a very easy way to lose marks even when your physics and method are completely correct.</p>
+		</div>
+		<div class="formula">$$t=\frac{E}{P}=\frac{\quantity{1.70\times 10^{5}}{J}}{\quantity{130}{W}}=\quantity{1308}{s}$$</div>
+		<p class="workex">Which we need to state in minutes as $\quantity{21.8}{minutes}$.</p>
+	</ol>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="3">
+	<h3>Power and resistance</h3>
+	<p>Clearly, as components with a resistance dissipate energy in the form of heat, it would be useful to be able to calculate their power in terms of their resistance.</p>
+	<p>We can substitute either $V=IR$ or $I=\frac{V}{R}$ into the electrical power equation to produce two equations that link power, resistance, and either current or potential difference:</p>
+	<div class="formula">$$\large P= I^{2}R$$</div>
+	<p>And</p>
+	<div class="formula">$$\large P=\frac{V^{2}}{R}$$</div>
+	<p>At first glance it may seem that these two equations are contradictory, one says that power is directly proportional to the resistance and the other says that power is inversely proportional to resistance; how can they both be correct?</p>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>Both equations are always true, but they're only <i>useful</i> once you know what's being held constant. If the p.d. across a component is fixed (e.g. a single resistor across a fixed-emf cell), use $P=\frac{V^{2}}{R}$. If the current through a component is fixed (e.g. resistors sharing a series loop), use $P=I^{2}R$. Picking the equation that matches the fixed quantity in the question avoids the apparent contradiction entirely.</p>
+	</div>
+	<p>If we consider the circuit below we can see that the potential difference across the resistance <em>R</em> is $\quantity{3.0}{V}$.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/electricity/power_and_pd.svg') }}" alt="potential difference across one resistor" class="size400">
+		<figcaption><b>Figure 2:</b>&nbsp;A single resistor in a circuit will have a p.d. which is equal to the emf of the cell.</figcaption>
+	</figure>
+	<p>If the value of <em>R</em> decreases then more current will flow through it and as the p.d. will remain constant there will be more energy dissipated each second, therefore the power increases. This gives us the inverse relationship we have in the second equation, $P=\frac{V^{2}}{R}$</p>
+	<p>However, in this circuit, the two resistors, <em>R<sub>1</sub></em> and <em>R<sub>2</sub></em> start of with the same resistance, and the battery supplies a constant current of <em>I</em>.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/electricity/power_and_current.svg') }}" alt="potential difference across two resistors" class="size400">
+		<figcaption><b>Figure 3:</b>&nbsp;Two reseistors in a series circuit will share the emf of the cell.</figcaption>
+	</figure>
+	<p>Initially the p.d. across the two resistors is equal, as they have the same resistance, If the value of <em>R<sub>2</sub></em> increases then there will be a greater p.d. across it compared to <em>R<sub>1</sub></em> for the same value of current. Therefore, as the p.d. is greater the power dissipated is also greater for an increased resistance. This is clearly the directly proportional relationship seen in $P=I^{2}R$.</p>
+	<p>The power dissipated by resistors is in the form of heat, and this can be usefully harnessed in heaters, such as kettles and other heating elements, such as those in car windscreens, or electric cookers. These will generally have high resistance, as part of a circuit, so that there is a large p.d. across the element. If the resistor was placed across the power supply alone, with a very low value, the high current draw could melt a fuse or create a short circuit, damaging the electric supply.</p>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="4">
+	<h3>Cells in series and parallel</h3>
+	<p>It is possible to combine multiple cells together in a circuit to produce a battery. The properties of the battery depend on how the cells are connected together.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/electricity/cells_in_series.svg') }}" alt="cells in series with a hill diagram" class="size400">
+		<figcaption><b>Figure 4:</b>&nbsp;When cells are connected in series, each will contribute to the total emf delivered to the circuit.</figcaption>
+	</figure>
+	<p>If the cells are connected in series, the charges will gain electrical potential each time they pass through a cell. So the total emf of several cells in series is the sum of the individual emfs of each cell. In this case, as the charges are all flowing through the same series circuit, the current in the circuit is the same as it would have been for one cell</p>
+	<p>When cells are arranged in parallel, the charges each pass through one cell only, so they only gain electric potential in one cell, therefore the emf of the circuit is equal to the individual emf of any of the cells (assuming that they are all the same value). However, as each cell is delivering charge to the circuit, the current supplied to that circuit will be the sum of the individual currents supplied.</p>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>The "parallel cells share the current, emf stays the same" rule only applies to <b>identical</b> cells connected the same way round. Don't apply it to cells with different emfs &mdash; mismatched cells in parallel isn't something the spec asks you to calculate, and assuming it behaves like the identical-cell case is a common overreach in exam answers.</p>
+	</div>
+	<figure>
+		<img src="{{ url_for('static', filename='images/electricity/cells_in_parallel.svg') }}" alt="cells in parallel" class="size500">
+		<figcaption><b>Figure 5:</b>&nbsp;When cells are connected in parallel, each contributes to the current.</figcaption>
+	</figure>
+	<p>Very large currents can be produced by arranging several cells in parallel, and arranging them in parallel can also increase the capacity in $\units{mAh}$</p>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="5">
+	<h3>Conservation of energy in circuits</h3>
+	<p>When a cell converts chemical energy into electrical potential it does so at a rate of $P=IV$. The energy delivered by the cell is transferred by the resistances of the components and the wires as heat, light or other useful work. Electrical circuits are, of course, subject to the law of the conservation of energy, so every single joule of energy the cells converts needs to be used around the circuit. We can demonstrate this by looking at the power delivered by a cell and then comparing it to the power being transferred by the resistors within the circuit.</p>
+	<p>In the circuit below the energy being transferred by the cell is turned into light and heat by the bulb and heat by the two resistors.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/electricity/energy_conservation_in_a_circuit.svg') }}" alt="power in a parallel circuit conservation of energy" class="size500">
+		<figcaption><b>Figure 6:</b>&nbsp;The energy from the cell is distributed around a circuit so that the total energy dissipated by the components is equal to the energy supplied by the cell.</figcaption>
+	</figure>
+	<p>The emf of the cell is $\quantity{6.0}{V}$, and it it delivering $\quantity{1.49}{A}$ of current. The power being delivered to the whole circuit is:</p>
+	<div class="formula">
+		\begin{align}
+		P&=IV\\
+		P&=\quantity{1.49}{A}\times\quantity{6.0}{V}\\
+		\\
+		P&=\quantity{8.9}{W}
+		\end{align}
+	</div>
+	<p>We know that the current flowing through the bulb is $\quantity{1.49}{A}$, so the power it is transferring is:</p>
+	<div class="formula">
+		\begin{align}
+		P&=I^{2}R\\
+		P&=\left(\quantity{1.49}{A}\right)^{2}\times\quantity{2.0}{\Omega}\\
+		\\
+		P&=\quantity{4.4402}{W}
+		\end{align}
+	</div>
+	<p>To easiest way find the power being transferred by the two parallel resistors is to find the potential difference across the the two resistors. This will be the difference between the emf of the cell and the p.d. across the bulb.</p>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>It's tempting to reuse the $\quantity{1.49}{A}$ total current for the parallel resistors too &mdash; but that current only flows through the bulb. Each parallel branch has its <b>own</b> current and its own share of the p.d.; you need to work those out separately (as below) rather than reusing values from a different part of the circuit.</p>
+	</div>
+	<p>The p.d. across the bulb is:</p>
+	<div class="formula">
+		\begin{align}
+		V&=IR\\
+		V&=\quantity{1.49}{A}\times\quantity{2.0}{\Omega}\\
+		\\
+		V&=\quantity{2.98}{V}
+		\end{align}
+	</div>
+	<p>So the potential difference across the parallel resistors will be:</p>
+	<div class="formula">$$\quantity{6.0}{V}-\quantity{2.98}{V}=\quantity{3.02}{V}$$</div>
+	<p>We can now calculate the power of each of the two parallel resistors,</p>
+	<ul class="page_list">
+		<li>R<sub>2</sub></li>
+		<div class="formula">
+			\begin{align}
+			P&=\frac{V^{2}}{R}\\
+			P&=\frac{\left(\quantity{3.02}{V}\right)^{2}}{\quantity{3.6}{\Omega}}\\
+			\\
+			P&=\quantity{2.5334}{W}
+			\end{align}
+		</div>
+		<li>R<sub>3</sub></li>
+		<div class="formula">
+			\begin{align}
+			P&=\frac{V^{2}}{R}\\
+			P&=\frac{\left(\quantity{3.02}{V}\right)^{2}}{\quantity{4.7}{\Omega}}\\
+			\\
+			P&=\quantity{1.9405}{W}
+			\end{align}
+		</div>
+	</ul>
+	<p>If we add the power developed by each resistor we can see that it is equal to the power being transferred by the cell and thus confirm that energy has been conserved in the circuit:</p>
+	<div class="formula">
+		$$\quantity{4.4402}{W}+\quantity{2.5334}{W}+\quantity{1.9405}{W}=\quantity{8.9141}{W}$$
+		$$P=\quantity{8.9}{W}$$
+	</div>
+	<p class="equation">Power delivered by the cell = power developed by resistors</p>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="6">
+	<h3>Worked example</h3>
+	<p>The diagram below shows the circuit for a small convector heater. Heater elements can be switched in and out of the circuit using switches <b>X</b> and <b>Y</b>. Each element has a resistance <em>R</em> and the power supply has an emf <em>V</em>.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/electricity/power_worked_example_2.svg') }}" alt="worked example for three resistors and switches - power in circuits" class="size600">
+		<figcaption><b>Figure 7:</b>&nbsp;Circuit with three heaters</figcaption>
+	</figure>
+	<ol class="page_list" type="a">
+		<li>The table shows the possible combinations of open and closed switches. When a switch is closed, charge can flow through it.<br>
+		Complete the table. Assume that the internal resistance of the power supply is negligible. The first row of the table has been done for you.</li>
+		<br>
+		<table class="center">
+			<tr>
+				<th>switch combination</th>
+				<th>total resistance in circuit</th>
+			</tr>
+			<tr>
+				<td><b>X</b> open, <b>Y</b> closed</td>
+				<td>R</td>
+			</tr>
+			<tr>
+				<td><b>X</b> closed, <b>Y</b> open</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td><b>X</b> open, <b>Y</b> open</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td><b>X</b> closed, <b>Y</b> closed</td>
+				<td></td>
+			</tr>
+		</table>
+		<br>
+		<ol class="page_list" type="i">
+			<li class="workex">For the first row when X is open and Y is closed, the current only flows through one resistor as switch Y acts like a short circuit around one of the resistors, so the total value of the circuit&rsquo;s resistance is R.</li>
+			<br>
+			<li class="workex">When X is closed and Y is open the current flows through all of the resistors. As the resistances are all given as R, our answer must be in terms of R, and as there is no data in the question, we must work algebraically.</li>
+			<p class="workex">Using the equation for resistors in parallel we get:</p>
+			<div class="formula">
+				$$\frac{1}{R_{T}}=\frac{1}{R}+\frac{1}{2R}$$
+			</div>
+			<p class="workex">We can now add the two fractions that are on the right hand side of the equation, for which the step by step solution goes:</p>
+			<div class="formula">
+				$$\frac{1}{R}+\frac{1}{2R}$$
+			</div>
+			<p class="workex">We need to make both of the denominators the same, so we double the first term as $\frac{1}{R}=\frac{2}{2R}$:</p>
+			<div class="formula">
+				$$\frac{2}{2R}+\frac{1}{2R}$$
+			</div>
+			<p class="workex">We now add the two numerators $\left(2+1=3\right)$ and place the result over the common denominator:</p>
+			<div class="formula">
+				$$\frac{1}{R_{T}}=\frac{3}{2R}$$
+			</div>
+			<p class="workex">However, as this equals $\frac{1}{R_{T}}$ we need to find the reciprocal of $\frac{3}{2R}$ which simply involves flipping the fraction, so the total value for the resistance of the circuit for the second row is:</p>
+			<div class="formula">
+				$$\large\frac{2R}{3}$$
+			</div>
+			<p class="workex">If you know how to add fractions well, or can see other short-cuts, then there is no need to do all of this working, but I am showing it here for clarity.</p>
+			<br>
+			<li class="workex">The third row shows the switches as X open and Y open. In this case the current only flows through the two resistors in the bottom branch, and none flows through the top resistor. Therefore the total resistance of the circuit is $\large 2R$.</li>
+			<br>
+			<li class="workex">The final row of the table shows the switches as X closed Y closed. Now the current is flowing through the top resistor and only one of the bottom resistors. The two branches of the parallel network have the same resistance so we can state that as:</li>
+			<div class="formula">
+				$$\frac{1}{R_{T}}=\frac{1}{R}+\frac{1}{R}$$
+			</div>
+			<p class="workex">Again adding the two fractions on the right hand side we get:</p>
+			<div class="formula">
+				$$\frac{1}{R}+\frac{1}{R}$$
+				$$\frac{2}{R}$$
+			</div>
+			<p class="workex">Finally flipping the fraction to find RT:</p>
+			<div class="formula">
+				$$\large R_{T}=\frac{R}{2}$$
+			</div>
+			<p class="workex">So our final table will look like this:</p>
+			<br>
+			<table class="center">
+			<tr>
+				<th>switch combination</th>
+				<th>total resistance in circuit</th>
+			</tr>
+			<tr>
+				<td><b>X</b> open, <b>Y</b> closed</td>
+				<td>R</td>
+			</tr>
+			<tr>
+				<td><b>X</b> closed, <b>Y</b> open</td>
+				<td>$\frac{2R}{3}$</td>
+			</tr>
+			<tr>
+				<td><b>X</b> open, <b>Y</b> open</td>
+				<td>$2R$</td>
+			</tr>
+			<tr>
+				<td><b>X</b> closed, <b>Y</b> closed</td>
+				<td>$\frac{R}{2}$</td>
+			</tr>
+			</table>
+			<br>
+		</ol>
+		<li>State and explain which switch combination will dissipate least energy.</li>
+		<div class="callout callout-mistake">
+			<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+			<p>With four different resistance values but the <i>same</i> emf across all of them, use $P=\frac{V^{2}}{R}$ to compare &mdash; not $P=I^{2}R$, since the current is different in each case and hasn't been calculated. Students who instinctively reach for $P=I^{2}R$ here end up needing an extra unnecessary step to find each current first.</p>
+		</div>
+		<p class="workex">For each combination of switches, the total potential difference across the circuit is the same, V. Therefore we can consider each of the combinations in terms of $P=\frac{V^{2}}{R}$. As this is an inverse relationship the largest value for the total resistance of the circuit will have the least power, and therefore dissipates the least energy. The largest value for total resistance is when X is open and Y is open, so this will dissipate the least energy.</p>
+	</ol>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="7">
+	<h3>Test yourself</h3>
+	<p>Try the questions below to check your understanding of this topic. Numerical questions use different numbers each time, so you can attempt them more than once.</p>
+	<div id="quiz-root"></div>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+
+{% endblock %}
+
+{% block resources_heading %}One page summary{% endblock %}
+
+{% block resources %}
+	<li><a href="{{ url_for('static', filename='summaries/electricity/power_and_resistance_summary.html') }}" target="_blank"><i class="fas fa-file-alt"></i> Printable revision sheet</a></li>
+{% endblock %}
+
+{% block prev_link %}
+	<a href="{{ url_for('resistivity') }}"><i class="fas fa-chevron-circle-left"></i><span class="nav_link">Previous topic</span></a>
+{% endblock %}
+
+{% block next_link %}
+	<a href="/electricity/emf-and-internal-resistance"><span class="nav_link">Next topic</span><i class="fas fa-chevron-circle-right"></i></a>
+{% endblock %}
+
+{% block extra_scripts %}
+	<script src="{{ url_for('static', filename='js/quiz.js') }}"></script>
+	<script src="{{ url_for('static', filename='quizzes/power_and_resistance_questions.js') }}"></script>
+	<script>
+		new PhysicsQuiz(document.getElementById('quiz-root'), powerAndResistanceQuestions, {
+			storageKey: 'power_and_resistance'
+		});
+	</script>
+{% endblock %}

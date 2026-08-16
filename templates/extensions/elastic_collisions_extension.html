@@ -1,0 +1,93 @@
+{% extends "extensions/_extension_base.html" %}
+
+{% block title %}Elastic collisions{% endblock %}
+
+{% block content %}
+<h3>Elastic collisions</h3>
+
+<p>You can derive a pair of equations to describe the velocities of objects with masses $m$ and $M$ and initial velocities $u_{a}$ and $u_{b}$ involved in an elastic collision.</p>
+
+<p>In elastic collisions, both momentum and kinetic energy are conserved. The conservation of momentum is:</p>
+<p class="equation">Total momentum before = Total momentum after</p>
+<div class="formula">
+	$$p_{a\,initial}+p_{b\,initial}=p_{a\,final}+p_{b\,final}$$
+	$$mu_{a}+Mu_{b}=mv_{a}+Mv_{b} \tag{1}$$
+</div>
+
+<p>And the conservation of kinetic energy is:</p>
+<p class="equation">Total kinetic energy before = Total kinetic energy after</p>
+<div class="formula">
+	$$E_{a\,initial}+E_{b\,initial}=E_{a\,final}+E_{b\,final}$$
+	$$m{u_{a}}^{2}+M{u_{b}}^{2}=m{v_{a}}^{2}+M{v_{b}}^{2} \tag{2}$$
+</div>
+
+<p>Taking the conservation of momentum, we can rearrange it to bring all the $m$ and $M$ terms to the same side, and factorise each side:</p>
+<div class="formula">$$m\left(u_{a}-v_{a}\right)=M\left(v_{b}-u_{b}\right) \tag{3}$$</div>
+
+<p>And doing the same for the conservation of energy:</p>
+<div class="formula">$$m\left({u_{a}}^{2}-{v_{a}}^{2}\right)=M\left({v_{b}}^{2}-{u_{b}}^{2}\right) \tag{4}$$</div>
+
+<p>As we have the terms $\left({u_{a}}^{2}-{v_{a}}^{2}\right)$ and $\left({v_{b}}^{2}-{u_{b}}^{2}\right)$, we can use the difference of two squares:</p>
+<div class="formula">$$a^{2}-b^{2}=\left(a+b\right)\times\left(a-b\right)$$</div>
+
+<p>To produce:</p>
+<div class="formula">$$m\left(u_{a}+v_{a}\right)\times\left(u_{a}-v_{a}\right)=M\left(v_{b}+u_{b}\right)\times\left(v_{b}-u_{b}\right) \tag{5}$$</div>
+
+<p>Now divide equation <b>5</b> by equation <b>3</b>. On the left, $m$ and the whole factor $\left(u_a-v_a\right)$ both appear in the numerator and denominator, so they cancel; the same happens with $M$ and $\left(v_b-u_b\right)$ on the right:</p>
+<div class="formula">
+	$$\frac{m\left(u_{a}+v_{a}\right)\times\left(u_{a}-v_{a}\right)} {m\left(u_{a}-v_{a}\right)} =\frac{M\left(v_{b}+u_{b}\right)\times\left(v_{b}-u_{b}\right)} {M\left(v_{b}-u_{b}\right)}$$
+</div>
+<p>Which leaves us with:</p>
+<div class="formula">$$u_{a}+v_{a}=v_{b}+u_{b}$$</div>
+<p>Or:</p>
+<div class="formula">$$v_{a}=v_{b}+u_{b}-u_{a} \tag{6}$$</div>
+
+<p>This is an interesting equation, as it tells us that in an elastic collision, the relative speed of the two objects as they approach, $u_{a}-u_{b}$, is equal to the relative speed of the two objects as they separate, $v_{b}-v_{a}$, i.e.:</p>
+<p class="equation">the speed of approach = the speed of separation</p>
+
+<p>We are now able to substitute equation <b>6</b> into the conservation of momentum equation, equation <b>1</b>:</p>
+<div class="formula">$$mu_{a}+Mu_{b}=m\left(v_{b}+u_{b}-u_{a}\right)+Mv_{b}$$</div>
+
+<p>The bracket can be multiplied out, and all the terms containing a $u$ brought to the same side:</p>
+<div class="formula">
+	\begin{align}
+	mu_{a}+Mu_{b}&=m\left(v_{b}+u_{b}-u_{a}\right)+Mv_{b}\\
+	\\
+	mu_{a}+Mu_{b}&=mv_{b}+mu_{b}-mu_{a}+Mv_{b}\\
+	\\
+	mu_{a}+Mu_{b}-mu_{b}+mu_{a}&=mv_{b}+Mv_{b}
+	\end{align}
+</div>
+
+<p>The right hand side can now be factored, and the left simplified:</p>
+<div class="formula">$$2mu_{a}+u_{b}\left(M-m\right)=v_{b}\left(m+M\right)$$</div>
+
+<p>Therefore:</p>
+<div class="formula">$$v_{b}=\frac{2mu_{a}}{\left(m+M\right)}+\frac{u_{b}\left(M-m\right)}{\left(m+M\right)} \tag{7}$$</div>
+
+<p>If one of the objects is initially stationary when the two collide, this simplifies to:</p>
+<div class="formula">$$v_{b}=\frac{2mu_{a}}{\left(m+M\right)} \tag{8}$$</div>
+
+<p>To find the final velocity of the other object, we can either use the relative speeds of approach and separation, or substitute equation <b>7</b> into equation <b>6</b>:</p>
+<div class="formula">$$v_{a}=\frac{2mu_{a}}{\left(m+M\right)}+\frac{u_{b}\left(M-m\right)}{\left(m+M\right)}+u_{b}-u_{a}$$</div>
+
+<p>We can now factor for $u_{a}$ and $u_{b}$ to get:</p>
+<div class="formula">$$v_{a}=\left(\frac{2m}{m+M}-1\right)u_{a}+\left(\frac{M-m}{m+M}+1\right)u_{b}$$</div>
+
+<p>We need to get rid of the 1s, and bring both terms in the brackets over a common denominator of $\left(m+M\right)$, using:</p>
+<div class="formula">$$1=\frac{\left(m+M\right)}{\left(m+M\right)}$$</div>
+
+<p>The equation becomes:</p>
+<div class="formula">$$v_{a}=\left(\frac{2m-\left(m+M\right)}{m+M}\right)u_{a}+\left(\frac{M-m+\left(m+M\right)}{m+M}\right)u_{b}$$</div>
+
+<p>Which simplifies to:</p>
+<div class="formula">$$v_{a}=\left(\frac{m-M}{m+M}\right)u_{a}+\left(\frac{2M}{m+M}\right)u_{b} \tag{9}$$</div>
+
+<p>And, if one of the objects is stationary in the collision, this becomes:</p>
+<div class="formula">$$v_{a}=\left(\frac{m-M}{m+M}\right)u_{a} \tag{10}$$</div>
+
+<p>Equations <b>8</b> and <b>10</b> also help explain some of the examples of momentum you've studied, such as a Newton's cradle, or the collision between two objects of the same mass on an air track, where the initial velocity of one of them is zero:</p>
+<div class="formula">$$v_{b}=\frac{2mu_{a}}{\left(m+M\right)}\quad \mathrm{and}\quad v_{a}=\left(\frac{m-M}{m+M}\right)u_{a}$$</div>
+
+<p>In equation <b>8</b>, if the masses are the same, they cancel out entirely, leaving $v_{b}=u_{a}$: the second object continues with exactly the same velocity the first one had. And in equation <b>10</b>, if $m-M=0$, then $v_{a}=0$: the first object simply stops in the collision, which is exactly what's observed.</p>
+{% endblock %}

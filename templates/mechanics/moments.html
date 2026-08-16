@@ -1,0 +1,247 @@
+{% extends "base.html" %}
+
+{% block title %}Moments{% endblock %}
+{% block page_h1 %}Moments{% endblock %}
+
+{% block meta_description %}A Level Physics notes and worked examples to help students with their exams and learning. Here we apply the ideas studied about equilibrium to objects which could rotate.{% endblock %}
+{% block meta_keywords %}moments, equilibrium, rotation, perpendicular, couples, principle of moments, worked examples, exam questions, A level, physics{% endblock %}
+
+{% block extra_head %}
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/quiz.css') }}">
+{% endblock %}
+
+{% block page_boxes %}
+		<a href="#1"><button class="button">Moments</button></a>
+		<a href="#2"><button class="button">The Principle of Moments</button></a>
+		<a href="#3"><button class="button">Couples</button></a>
+		<a href="#4"><button class="button">Stability</button></a>
+		<a href="#5"><button class="button">Worked example</button></a>
+		<a href="#6"><button class="button">Test yourself</button></a>
+{% endblock %}
+
+{% block spec %}
+	<div id="spec">
+		<p class="spec_ref"><b>3.4.1.2 Moments</b></p>
+
+		<p class="spec_box">Moment of a force about a point.</p>
+		<p class="spec_box">Moment defined as: <br><b>force × perpendicular distance from the point to the line of action of the force</b>.</p>
+		<p class="spec_box">Couple as a pair of equal and opposite coplanar forces.</p>
+		<p class="spec_box">Moment of couple defined as:<br> <b>force × perpendicular distance between the lines of action of the forces</b>.</p>
+		<p class="spec_box">Principle of moments.</p>
+		<p class="spec_box">Centre of mass.</p>
+		<p class="spec_box">Knowledge that the position of the centre of mass of uniform regular solid is at its centre.</p>
+	</div>	
+{% endblock %}
+
+{% block content %}
+
+		<section class="top_section" id="1">
+			<h3>Moments</h3>
+			<p>Forces can have translational effects, such as pushing a block across a tabletop, or they can have rotational effects. The turning effect of a force about an axis is called its <b>moment</b>. It can be thought of as the <i>leverage</i> of the force, and it's increased by increasing either the magnitude of the force or its distance from the point of rotation.</p>
+
+			<p>A moment is defined as:</p>
+
+			<p class="equation">Moment = magnitude of the force	×	perpendicular distance of the line of action of the force from the axis of rotation</p>
+			
+			<figure>
+				<img src="{{ url_for('static', filename='images/mechanics/moments_definitions.svg') }}" alt="defining moments" class="size850">
+				<figcaption><b>Figure 1:</b>&nbsp;How to calculate the moment of a force.</figcaption>
+			</figure>
+
+			<p>The units for the moment of a force are <span>$\units{Nm}$</span>. The moment of a force is sometimes called <b>torque</b>.</p>
+			<p>Calculating a single moment is straightforward, but it gets more complicated once two or more moments or forces start to interact. Moments are a powerful tool for solving equilibrium problems, but the phrase "perpendicular distance from the point of rotation" is important, and is one of the most common sources of error in these questions. In some cases, as below, it may even be necessary to resolve a force into components first.</p>
+
+			<div class="callout callout-mistake">
+				<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+				<p>The distance in $M=Fd$ must be measured <b>perpendicular</b> to the line of action of the force, not along whatever line happens to be convenient. If a force acts at an angle to the object, you can't just multiply it by the object's length; either resolve the force into a component perpendicular to the object first, or find the true perpendicular distance from the pivot to the force's line of action. Using the "wrong" distance is probably the single most common mistake in moments questions.</p>
+			</div>
+
+			<figure>
+				<img src="{{ url_for('static', filename='images/mechanics/perpendicular_force_moment.svg') }}" alt="what is meant by perpendicular distance" class="size850">
+				<figcaption><b>Figure 2:</b>&nbsp;Sometimes a force must be resolved so that it is perpendicular to another force.</figcaption>
+			</figure>
+
+			<p>In the example above, the weight of the bar (<span>$mg$</span>) acts straight down, with its line of action shown by the black dashed line. Because the bar is uniform, its centre of mass is in the middle, and this is where we assume the weight to act from. The perpendicular distance to the axis of rotation is simply measured along the bar, and is clearly half its length.</p>
+			<p>The tension is a little harder to deal with. We could extend its line of action right back until we could draw a line at 90&deg; that passes through the axis of rotation, but there's a much simpler approach: if we resolve the tension into a component perpendicular to the bar, we can use the length of the bar directly to find the moment it provides.</p>
+			<p>As this bar is in equilibrium, we can now apply the <i>principle of moments</i> to find any unknown values.</p>
+			<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+		</section>
+	<br>
+	<br>
+	<hr>
+		<section id="2">
+			<h3>The Principle of Moments</h3>
+			<p>The principle of moments describes how moments interact when a system is in equilibrium, and it's one of the most useful relationships in this whole topic.</p>
+
+			<p class="equation">For an object in equilibrium the sum of clockwise moments equals the sum of anticlockwise moments about the same point.</p>
+
+			<p>Moments questions can look very different from one another, from ladders leaning against walls to shelves fixed to a bracket, but they can all be approached with the same four-step method:</p>
+			<ol class="page_list">
+			<li><b>Draw the weight.</b> For a uniform object, such as a plank or a shelf, draw the weight vector acting through its exact centre.</li>
+			<li><b>Choose a "smart" pivot.</b> Pick a point where an unknown force acts, such as a hinge, or the base of a ladder. Taking moments about this point removes that force from the equation entirely, since its perpendicular distance from the pivot is zero.</li>
+			<li><b>Identify each direction.</b> Label every remaining force as either clockwise or anticlockwise about your chosen pivot.</li>
+			<li><b>Resolve, or find the line of action.</b> If a force isn't acting at 90° to the object, you'll need to either resolve it into a component perpendicular to the object, or find the perpendicular distance to its line of action, before its moment can be calculated.</li>
+			</ol>
+
+			<div class="callout callout-definition">
+				<p class="callout-label"><i class="fas fa-lightbulb"></i> Worth remembering</p>
+				<p>Choosing the pivot is the single most powerful step in this method. Taking moments about a point where an unknown force acts makes that force vanish from the equation entirely ($d=0$, so its moment is zero), regardless of how large or small it actually is. This is often the difference between a problem with one unknown and a problem with two or three &mdash; look for an unknown force to pivot about before starting any calculation.</p>
+			</div>
+
+			<p>Using the example above, we can see how this method is applied:</p>
+			<ol class="page_list">
+			<li>Identify and calculate the known moment. In this case we may already know the weight of the bar, giving us the anticlockwise moment.</li>
+			<div class="formula">
+				$$\large \bar{M}=mg\left ( \frac{l}{2} \right )$$				
+			</div>
+			<li>Because the system is in equilibrium, this value for the anticlockwise moment ($\bar{M}$) must also equal the clockwise moment. This lets us calculate the component of the force ($F$) acting perpendicular to the bar.</li>
+			<div class="formula">
+				$$\large F=\frac{\bar{M}}{l}=T\cos\theta$$
+			</div>
+			<li>We can now calculate the value of $T$.</li>
+			<div class="formula">
+				$$\large T=\frac{F}{\cos \theta }$$
+			</div>
+			</ol>
+
+			<p>Almost all moments problems can be solved using this method, and in fact the example just described is harder than most you'll encounter.</p>
+			<p>It's important to select an appropriate point around which to resolve the forces. If a force passes through the point chosen, it will have no moment about that point, since $d=0$.</p>
+			<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>	
+		</section>
+	<br>
+	<br>
+	<hr>
+		<section id="3">
+			<h3>Couples</h3>
+
+			<p>A single force acting on an object will generally cause both rotation and movement in the direction of the force, known as <b>translation</b>. If pure rotation is required instead, two equal and opposite forces should be applied to the object, acting along parallel but different lines. This arrangement is called a <b>couple</b>.</p>
+			<p>Because the two forces are equal and opposite, they produce no resultant force, so a couple can never cause an object to move as a whole; its only effect is to turn it. This also means that, unlike a single force, the moment of a couple is the same about <i>any</i> point on the object, not just about one particular pivot.</p>
+
+			<div class="callout callout-mistake">
+				<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+				<p>Two facts about couples are easy to forget under exam pressure: a couple produces <b>zero resultant force</b> (since the two forces are equal and opposite), so it can never make an object move as a whole, only turn it; and its moment is the <b>same about any point</b> on the object, unlike a single force, whose moment depends on which pivot you choose.</p>
+			</div>
+
+			<p>The moment of a couple is defined as:</p>
+			<p class="equation">Moment of a couple = magnitude of one force	×	perpendicular distance between the lines of action of the two forces</p>
+
+			<figure>
+				<img src="{{ url_for('static', filename='images/mechanics/couple_steering_wheel.svg') }}" alt="two equal and opposite forces applied to a steering wheel by each hand, forming a couple" class="size650">
+				<figcaption><b>Figure 3:</b>&nbsp;Turning a steering wheel with both hands is a good example of a couple.</figcaption>
+			</figure>
+
+			<p>In a couple, both forces have the same magnitude, and it's the distance <i>between</i> the two forces, rather than the distance to any pivot, that's used to calculate the moment. Couples are common whenever something needs to be turned on the spot: turning a steering wheel with both hands, twisting a tap, or turning a key in a lock are all everyday examples.</p>
+			<p>Sometimes only a single force is applied, but a resistive force is offered by the object's pivot, producing the same turning effect as a couple: using a spanner to loosen a nut, or pushing a roundabout in a playground, are both examples of this.</p>
+			<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+		</section>
+	<br>
+	<br>
+	<hr>
+		<section id="4">
+			<h3>Stability</h3>
+
+			<p>The idea of a moment also explains why some objects are easy to knock over, while others are almost impossible to tip.</p>
+			<p>Every object's weight acts as a single force through its <b>centre of mass</b>. Whether an object topples over depends on where the line of action of this weight falls relative to its <b>base of support</b>, the area of contact between the object and the ground.</p>
+
+			<figure>
+				<img src="{{ url_for('static', filename='images/mechanics/stability_toppling.svg') }}" alt="an object tilted at increasing angles, showing the point at which the weight's line of action moves outside its base of support and it topples" class="size800">
+				<figcaption><b>Figure 4:</b>&nbsp;An object stays stable as long as the line of action of its weight passes through its base of support.</figcaption>
+			</figure>
+
+			<p>As long as a vertical line dropped from the centre of mass falls within the base of support, the moment of the weight about the edge of the base acts to rotate the object back down, and it remains stable. Once the object is tilted far enough that this line falls outside the base, the moment of the weight instead acts to rotate the object further over, and it topples.</p>
+
+			<p>Two factors determine how stable an object is:</p>
+			<ul class="page_list">
+			<li>A <b>wider base of support</b> makes an object more stable, since it has to be tilted through a larger angle before its centre of mass passes outside the base.</li>
+			<li>A <b>lower centre of mass</b> makes an object more stable, for the same reason: it takes a larger tilt angle to carry a low centre of mass outside the base than a high one.</li>
+			</ul>
+
+			<div class="callout callout-mistake">
+				<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+				<p>Stability depends on <b>both</b> base width and centre of mass height together, not just one of them. An object with a wide base but a very high centre of mass can still be unstable, and vice versa. When asked to explain why one object is more stable than another, make sure your answer addresses both factors, not just the one that seems most obvious from the diagram.</p>
+			</div>
+
+			<p>This is why racing cars are built low and wide, why double-decker buses are tested to make sure they can tilt to around 28° without toppling, and why you instinctively widen your stance on a moving train rather than standing with your feet together.</p>
+			<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+		</section>
+	<br>
+	<br>
+	<hr>
+		<section id="5">
+			<h3>Worked example</h3>
+
+			<p>Figure 5 shows an athlete holding a vaulting pole at an angle of 40° to the horizontal.</p>
+			<figure>
+				<img src="{{ url_for('static', filename='images/mechanics/moments_pole_vault_worked_example_a.svg') }}" alt="forces D, U and weight acting on a vaulting pole held at 40 degrees to the horizontal" class="size500">
+				<figcaption><b>Figure 5:</b>&nbsp;The forces acting on the pole while it's held at 40° to the horizontal.</figcaption>
+			</figure>
+			<p>Forces $D$ and $U$ are exerted on the pole by the athlete's right and left hands respectively, at points $X$ and $Y$. $U$ is applied at $Y$ at an angle $\theta$ to the vertical, and $D$ is applied at $X$, at 90° to the pole, with a magnitude of 53 N. The uniform pole is in equilibrium, and has a weight of 31 N.</p> 
+
+			<figure>
+				<img src="{{ url_for('static', filename='images/mechanics/moments_pole_vault_worked_example_b.svg') }}" alt="forces D, U and weight acting on a vaulting pole held at 40 degrees to the horizontal" class="size500">
+				<figcaption><b>Figure 6:</b>&nbsp;The forces acting on the pole while it's held at 40° to the horizontal.</figcaption>
+			</figure>
+
+			<div>
+				<ol class="page_list" type="A">
+					<li>Determine, using a scale diagram, $\theta$ and the magnitude of $U$.</li>
+					<p class="workex">Because the pole is in equilibrium, the three forces, $D$, the weight and $U$, must sum to zero, so they can be arranged into a <i>closed triangle of forces</i>. Choosing a sensible scale (at least 1 cm to represent 10 N), draw $D$ and the weight nose-to-tail, in the directions given in Figures 5 and 6. The remaining side of the triangle, drawn back to the start of $D$, gives the force $U$ needed to close it. Measuring this final side with a ruler and protractor, and converting using your scale, gives:</p>
+					<div class="formula">
+						$$\theta \approx 25° \qquad U\approx\quantity{79}{N}$$
+					</div>
+					<p class="workex">Marks for this kind of question are awarded for the diagram itself as well as the final answer, so it's worth taking the time to draw it accurately, on a scale generous enough to read off values with confidence, rather than rushing to a numerical answer. As a check, resolving horizontally and vertically gives the same result: the horizontal component of $U$ must balance the horizontal component of $D$, and the vertical component of $U$ must balance both the vertical component of $D$ and the weight.</p>
+
+					<div class="callout callout-definition">
+						<p class="callout-label"><i class="fas fa-lightbulb"></i> Worth remembering</p>
+						<p>Whenever you've measured an answer from a scale diagram, it's good practice to sanity-check it by resolving horizontally and vertically, as done here. If the two methods disagree by more than a small amount, it's a strong sign that either the diagram was drawn inaccurately or a mistake was made somewhere &mdash; catching that before submitting an answer is far better than losing marks silently.</p>
+					</div>
+
+					<li>The athlete now moves the pole to a horizontal position, and holds it stationary in this new position. The athlete's right hand now applies a force $S$ vertically downwards at $X$, and the left hand applies a force $V$ at $Y$, as shown in Figure 7. Discuss the differences between the magnitude and direction of force $U$ in the first case, and force $V$ in this new position.</li>
+
+					<figure>
+						<img src="{{ url_for('static', filename='images/mechanics/moments_pole_vault_worked_example_c.svg') }}" alt="forces S, V and weight acting on a horizontal vaulting pole" class="size500">
+						<figcaption><b>Figure 7:</b>&nbsp;The forces acting on the pole once it's held horizontally.</figcaption>
+					</figure>
+
+					<p class="workex">With the pole horizontal, both $S$ and the pole's weight act straight down, so there's no horizontal force left for $V$ to balance. This means $V$ acts entirely vertically, unlike $U$, which had to act at an angle $\theta$ to counter the horizontal component of $D$. In terms of magnitude, vertical equilibrium requires $V$ to support the full weight of the pole as well as all of $S$, so $V=S+\quantity{31}{N}$; because $V$ is now carrying the whole of $S$'s effect rather than just a component of it, it ends up greater than $U$ was.</p>
+					<p class="workex">A "discuss the differences" question like this is marked on the physics, not just the conclusion, so a strong answer states what has changed (direction, magnitude) and links each change back to the forces involved, rather than simply asserting that one force is "bigger" or "different".</p>
+				</ol>
+			</div>
+
+			<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+		</section>
+	<br>
+	<br>
+	<hr>
+		<section id="6">
+			<h3>Test yourself</h3>
+			<p>Try the questions below to check your understanding of this topic. Numerical questions use different numbers each time, so you can attempt them more than once.</p>
+			<div id="quiz-root"></div>
+			<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+		</section>
+
+	{% endblock %}
+
+	{% block resources_heading %}One page summary{% endblock %}
+
+{% block resources %}
+	<li><a href="{{ url_for('static', filename='summaries/mechanics/moments_summary.html') }}" target="_blank"><i class="fas fa-file-alt"></i> Printable revision sheet</a></li>
+{% endblock %}
+
+{% block prev_link %}
+	<a href="{{ url_for('statics') }}"><i class="fas fa-chevron-circle-left"></i><span class="nav_link">Previous topic</span></a>
+{% endblock %}
+
+{% block next_link %}
+	<a href="{{ url_for('motion')}}"><span class="nav_link">Next topic</span><i class="fas fa-chevron-circle-right"></i></a>
+{% endblock %}
+
+{% block extra_scripts %}
+	<script src="{{ url_for('static', filename='js/quiz.js') }}"></script>
+	<script src="{{ url_for('static', filename='quizzes/moments_questions.js') }}"></script>
+	<script>
+		new PhysicsQuiz(document.getElementById('quiz-root'), momentsQuestions, {
+			storageKey: 'moments'
+		});
+	</script>
+{% endblock %}

@@ -1,0 +1,136 @@
+{% extends "base.html" %}
+
+{% block title %}Damping{% endblock %}
+{% block page_h1 %}Damping{% endblock %}
+
+{% block meta_description %}A Level Physics notes and worked examples to help students with their exams and learning. Here we look at how damping affects oscillating systems.{% endblock %}
+{% block meta_keywords %}damping, damped oscillations, light damping, critical damping, heavy damping, decay constant, worked examples, exam questions, A level, physics{% endblock %}
+
+{% block extra_head %}
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/quiz.css') }}">
+{% endblock %}
+
+{% block page_boxes %}
+	<a href="#1"><button class="button">Damping</button></a>
+	<a href="#2"><button class="button">Damped Oscillations</button></a>
+	<a href="#3"><button class="button">An example of a damped oscillator</button></a>
+	<a href="#4"><button class="button">Test yourself</button></a>
+{% endblock %}
+
+{% block spec %}
+<div id="spec">
+	<p class="spec_box"><b>3.6.1.3 Simple harmonic systems</b></p>
+	<p class="spec_box">Effects of damping on oscillations.</p>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<section class="top_section" id="1">
+	<h3>Damping</h3>
+	<p>All oscillators experience friction. This frictional force will eventually reduce the amplitude of the oscillations down to zero. However over a short period of oscillations the amplitude does not change so we can discount friction.</p>
+	<p>Within the oscillator, energy is constantly being transferred between kinetic and potential energy. Overall the total amount of energy in conserved.</p>
+	<div class="formula">$$\large Total\;energy=E_{k}+E_{P}$$</div>
+	<p>The potential energy of the oscillator will be 0 when it is at its equilibrium position, where it has its maximum velocity. The potential energy will be maximum where the displacement x is maximum. The graph on the right shows how <i>potential energy</i> and <i>kinetic energy</i> vary with displacement. The curves are parabolic in shape and their sum is always the <i>total energy</i>.</p>
+	<div class="formula">$$E_{k}=\frac{1}{2}mv^{2}$$</div>
+	<p>The energy stored (potential energy) in a spring is,</p>
+	<div class="formula">$$E_{P}=\frac{1}{2}ke^{2}$$</div>
+	<p>Where x is the displacement from equilibrium, and k is the spring constant.</p>
+	<p>The total energy of the system is equal to the maximum energy stored when the spring is fully displaced at its amplitude,</p>
+	<div class="formula">$$E_{T}=\frac{1}{2}kA^{2}$$</div>
+	<p>Using this we can show that the kinetic energy of the oscillating spring is,</p>
+	<div class="formula">$$\large E_{k}=E_{T}-E_{P}=\frac{1}{2}k\left(A^{2}-x^{2} \right )$$</div>
+	<p>It is clear that the energy in an oscillator is constantly being transferred between <i>potential</i> and <i>kinetic</i> energy. When it is moving fastest, as it passes through the equilibrium, position, the <i>E<sub>k</sub></i> is maximum, and <i>E<sub>p</sub></i> is minimum. When the oscillator is at the maximum displacement then the <i>E<sub>k</sub></i> is minimum, and <i>E<sub>p</sub></i> is maximum. The total energy, for a free oscillator remains constant.</p>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>Kinetic energy is maximum at the <b>equilibrium position</b> (zero displacement) and zero at maximum displacement; potential energy is the exact opposite &mdash; zero at equilibrium, maximum at the extremes. This mirrors the velocity/acceleration pattern from the SHM page, but it's easy to muddle the two up when a question specifically asks about energy rather than motion.</p>
+	</div>
+	<figure>
+		<img src="{{ url_for('static', filename='images/periodic_motion/energy_in_oscillators.svg') }}" alt="kinetic and potential energy in an oscillator" class="size500">
+		<figcaption><b>Figure 1:</b>&nbsp;This graph shows how the kinetic energy and potential energy of an oscillator varies with time.</figcaption>
+	</figure>
+	<div class="callout callout-definition">
+		<p class="callout-label"><i class="fas fa-lightbulb"></i> Worth remembering</p>
+		<p>The statement "total energy remains constant" above applies to a <b>free</b> (undamped) oscillator, within a single cycle. The rest of this page is about <b>damped</b> oscillators, where friction removes a small amount of energy on every cycle &mdash; so while $E_k+E_p$ still holds true at any given instant, the maximum value of that total (and therefore the amplitude) gradually decreases over many cycles.</p>
+	</div>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="2">
+	<h3>Damped Oscillations</h3>
+	<p>When an object oscillates it will lose energy to frictional forces, eventually the oscillations will diminish to zero. This is usually due to air resistance, by a large surface area to mass ratio or by the oscillator being immersed in a viscous fluid.</p>
+	<p>Often the decay is proportional to the velocity of the oscillator, which leads an exponential decay in the amplitude.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/periodic_motion/damped_oscillators.svg') }}" alt="damped oscillators, amplitude against time" class="size600">
+		<figcaption><b>Figure 2:</b>&nbsp;Three different types of damping, light, critical and heavy.</figcaption>
+	</figure>
+	<ul>
+		<li><b>Light damping</b> (blue line) is when the amplitude of each oscillation is fractionally less than the previous one. All practical oscillators, such as springs and pendulums are in fact lightly damped, and each oscillation is slightly smaller. The amount the oscillation is reduced by is called the damping constant.</li>
+		<li><b>Critical damping</b> (red line) This is when the oscillations return to equilibrium in the shortest possible time. It is used when an oscillating system is not desirable, e.g. suspension systems, compass needles.</li>
+		<li><b>Heavy damping</b> (green line) is when the oscillator very slowly returns to the equilibrium position.</li>
+	</ul>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>More damping is not always "better" &mdash; it's easy to assume heavy damping returns a system to equilibrium fastest, since it sounds the most extreme. In fact <b>critical damping</b> is the fastest return without overshooting; heavy damping is slower than critical, not faster. This is exactly why car suspension and instrument needles are designed to be critically damped rather than heavily damped.</p>
+	</div>
+	<p>Damping oscillators can be very important, especially if that system can easily be made to resonate. These systems, such as bridges or car suspensions need to be damped to protect the structures and the users.</p>
+	<p>As the damped system has a decaying amplitude, it can be described using a decay equation such as:</p>
+	<div class="formula">$$\large A=A_{0}e ^{-\lambda t}$$</div>
+	<p>Where &lambda; is the decay constant. The greater the decay constant the greater the amount of damping. The decay constant can be found by taking <a href="/maths-skills/logarithms" target="_blank">natural logs</a> of both sides of the equation and plotting a graph of ln(<i>A</i>) against <i>t</i>. You will carry out an investigation into this in class.</p>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>Taking natural logs of $A=A_{0}e^{-\lambda t}$ gives $\ln A=\ln A_{0}-\lambda t$ &mdash; a straight line when you plot <b>$\ln A$ against $t$</b> (not against $\ln t$). This is a semi-log plot, not a log-log plot; log-log plots are for power-law relationships like $y=ax^{n}$, which this isn't. The gradient of the $\ln A$ vs $t$ line gives $-\lambda$ directly &mdash; remember the negative sign, since the line slopes downward as the amplitude decays.</p>
+	</div>
+	<figure>
+		<img src="{{ url_for('static', filename='images/periodic_motion/lnA_graph.svg') }}" alt="natural logs and the equation of a straight line" class="size500">
+		<figcaption><b>Figure 3:</b>&nbsp;Using the equation of a straight line to understand logs</figcaption>
+	</figure>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="3">
+	<h3>An example of a damped oscillator</h3>
+	<p>The video below shows a demonstration of how the exponential decay of an oscillating system can be verified</p>
+	<div class="video-tray">
+		<div class="video-container">
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/YQ7qP4teJOk?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+		</div>
+	</div>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="4">
+	<h3>Test yourself</h3>
+	<p>Try the questions below to check your understanding of this topic. Numerical questions use different numbers each time, so you can attempt them more than once.</p>
+	<div id="quiz-root"></div>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+
+{% endblock %}
+
+{% block prev_link %}
+	<a href="{{ url_for('harmonic_systems') }}"><i class="fas fa-chevron-circle-left"></i><span class="nav_link">Previous topic</span></a>
+{% endblock %}
+
+{% block resources_heading %}One page summary{% endblock %}
+
+{% block resources %}
+	<li><a href="{{ url_for('static', filename='summaries/periodic_motion/damping_summary.html') }}" target="_blank"><i class="fas fa-file-alt"></i> Printable revision sheet</a></li>
+{% endblock %}
+
+{% block next_link %}
+	<a href="/periodic-motion/resonance"><span class="nav_link">Next topic</span><i class="fas fa-chevron-circle-right"></i></a>
+{% endblock %}
+
+{% block extra_scripts %}
+	<script src="{{ url_for('static', filename='js/quiz.js') }}"></script>
+	<script src="{{ url_for('static', filename='quizzes/damping_questions.js') }}"></script>
+	<script>
+		new PhysicsQuiz(document.getElementById('quiz-root'), dampingQuestions, {
+			storageKey: 'damping'
+		});
+	</script>
+{% endblock %}

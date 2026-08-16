@@ -1,0 +1,444 @@
+{% extends "base.html" %}
+
+{% block title %}Telescopes and their limitations{% endblock %}
+{% block page_h1 %}Telescopes and their limitations{% endblock %}
+
+{% block meta_description %}A Level Physics notes and worked examples to help students with their exams and learning. Here we look at using lenses in telescopes and the different designs for optical telescopes.{% endblock %}
+{% block meta_keywords %}refracting, reflecting, newtonian, cassegrain, aberration, resolving power, chromatic, spherical, angular magnification, worked examples, exam questions, A level, physics{% endblock %}
+
+{% block extra_head %}
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/quiz.css') }}">
+{% endblock %}
+
+{% block page_boxes %}
+	<a href="#1"><button class="button">Astronomical observations</button></a>
+	<a href="#2"><button class="button">Refracting telescopes</button></a>
+	<a href="#3"><button class="button">Angular magnification</button></a>
+	<a href="#4"><button class="button">Worked example</button></a>
+	<a href="#5"><button class="button">Reflecting telescopes</button></a>
+	<a href="#6"><button class="button">Aberrations</button></a>
+	<a href="#7"><button class="button">Comparison of telescopes</button></a>
+	<a href="#8"><button class="button">Resolving power</button></a>
+	<a href="#9"><button class="button">Worked example</button></a>
+	<a href="#10"><button class="button">Test yourself</button></a>
+{% endblock %}
+
+{% block spec %}
+<div id="spec">
+	<p class="spec_ref"><b>3.9.1.1 Astronomical telescope consisting of two converging lenses</b></p>
+	<p class="spec_box">Ray diagram to show the image formation in normal adjustment.</p>
+	<p class="spec_box">Angular magnification in normal adjustment.</p>
+	<div class="formula">
+		$$\scriptsize M=\frac{angle\,subtended\,by\,image\,at\,eye}{angle\,subtended\,by\,object\,at\,unaided\,eye}$$
+	</div>
+	<p class="spec_box">Focal lengths of the lenses.</p>
+	<div class="formula">$$M=\frac{f_{o}}{f_{e}}$$</div>
+	<p class="spec_box"><b>3.9.1.2 Reflecting telescopes</b></p>
+	<p class="spec_box">Cassegrain arrangement using a parabolic concave primary mirror and convex secondary mirror.</p>
+	<p class="spec_box">Ray diagram to show path of rays through the telescope up to the eyepiece.</p>
+	<p class="spec_box">Relative merits of reflectors and refractors including a qualitative treatment of spherical and chromatic aberration.</p>
+	<p class="spec_box"><b>3.9.1.4 Advantages of large diameter telescopes</b></p>
+	<p class="spec_box">Minimum angular resolution of telescope.</p>
+	<p class="spec_box">Rayleigh criterion,</p>
+	<div class="formula">$$\theta \approx \frac{\lambda}{D}$$</div>
+	<p class="spec_box">Collecting power is proportional to <i>diameter<sup>2</sup></i>.</p>
+	<p class="spec_box">Students should be familiar with the rad as the unit of angle.</p>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<section class="top_section" id="1">
+	<h3>Astronomical observations</h3>
+	<p>So far we have only considered light passing through one lens, being scattered by an object close to the lens. Stars are point sources of light, which are so far away that the light that reaches us is almost exactly parallel. By definition a light source that produces parallel rays of light is said to be at infinity. So although stars are <em>not</em> an infinite distance away, even the closest star is so far from Earth that it appears to be a point source of light.</p>
+	<p>Astronomical telescopes do not magnify stars, they still appear to be barely more than points of light through even the most powerful telescopes. In fact, it wasn&rsquo;t until very recently that images have been able to be made of any stars, and even then the images require multiple telescopes and a lot of computer processing. The image below is the first ever image taken of a star other than the Sun.</p>
+	<figure>
+		<a href="http://www.sci-news.com/astronomy/detailed-image-antares-05156.html" target="_blank"><img src="{{ url_for('static', filename='images/astrophysics/antares_image.svg') }}" alt="Image of Antares taken by the ESA using the VLA" class="size500"></a>
+		<figcaption><b>Figure 1:</b>&nbsp;An image of the star Antares taken by the ESO's Very Large Telescope Interferometer.</figcaption>
+	</figure>
+	<p>Despite the fact that through most telescopes stars still appear as just points of light, we have still managed to learn a huge amount about the universe just be carefully studying the light, and by building better and better telescopes.</p>
+	<p>Astronomical telescopes come in two different types,</p>
+	<ul class="page_list">
+		<li>Refracting telescopes - Constructed from two or more convex lenses.</li>
+		<li>Reflecting telescopes - Constructed from a concave mirror.</li>
+	</ul>
+	<p>Each has their own set of limitations and advantages.</p>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="2">
+	<h3>Refracting telescopes</h3>
+	<p>These telescopes use two lenses to collect light and allow astronomical objects to be viewed. These are the easiest to understand, and were the first to be developed. They consist of an objective lens and an eyepiece lens. The objective lens collects the light from stars and brings it to a focus at its focal length, <span>$f_{o}$</span>. This forms an intermediate real image. The eyepiece lens is placed at a distance of 1F from the intermediate image and produces parallel rays of light.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/telescope_normal_adjustment.svg') }}" alt="An astronomical telescope in normal adjustment with three non-axial rays" class="size800">
+		<figcaption><b>Figure 2:</b>&nbsp;The ray diagram for an astronomical telescope in normal adjustment with three non-axial rays. An important diagram that you need to learn.</figcaption>
+	</figure>
+	<p>It is important that the eyepiece lens produces parallel rays, otherwise the observer&rsquo;s eye would have to work harder to view the light and it would cause fatigue. In this arrangement the observer&rsquo;s eye is relaxed, or unaccommodated. As the emergent rays are parallel, the image created is at infinity. The arrangement is shown below. This is a diagram that you need to learn, and may be expected to reproduce in an exam. In the video below I show you how to draw this important diagram.</p>
+	<div class="video-tray">
+		<div class="video-container">
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/sIrQHpIIoM8?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen class="displayed"></iframe>
+		</div>
+	</div>
+	<p>Some important things to note about this arrangement, called normal adjustment, are that the two lenses are arranged so that their focal points are in the same place. The objective lens has a much longer focal length that the eyepiece lens and that the angle <span>$\beta$</span> is larger than the angle <span>$\alpha$</span>. The focal lengths of the two lenses also define how long the telescope will be.</p>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="3">
+	<h3>Angular magnification</h3>
+	<p>It is these last two points that determine the telescope&rsquo;s magnification, As the angle <span>$\beta$</span> is larger than <span>$\alpha$</span> the image will have a larger angular size. Angular size is the apparent size that an object appears and depends on both its actual size and its distance from the observer. Two objects can be very different sizes, but if they are different distances from the observed, they may appear the same size. For example the moon has a diameter of <span>$\quantity{3474}{km}$</span>, but as it is <span>$\quantity{384400}{km}$</span> from Earth, it has an angular size of:</p>
+	<div class="formula">$$\theta=\frac{\quantity{3474}{km}}{\quantity{384400}{km}}=\quantity{0.00903}{rad}$$</div>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/angular_size.svg') }}" alt="The angular size of the moon" class="size700">
+		<figcaption><b>Figure 3:</b>&nbsp;The angular size of the moon.</figcaption>
+	</figure>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>$\theta=\frac{s}{r}$ and the small-angle approximation $\tan\theta\approx\theta$ used throughout this page only work when $\theta$ is in <b>radians</b>, and only for genuinely small angles. Make sure your calculator is in radians mode for any of these calculations, and don't substitute an angle in degrees directly into these equations.</p>
+	</div>
+	<p>It is unusual to use radians in astronomy; the standard unit of angle is the degree, and its subdivisions, called minutes of arc (<span>$\units{arcmin}$</span>) and seconds of arc (<span>$\units{arcsec}$</span>). There are <span>$\quantity{60}{arcmin}$</span> in one degree, and <span>$\quantity{60}{arcsec}$</span> in one <span>$\units{arcmin}$</span>.</p>
+	<div>
+		<table class="center">
+			<tr class="angles">
+				<th class="column30">Angle in degrees</th>
+				<th class="column30">Angle in arcmin or arcsec</th>
+			</tr>
+			<tr class="angles">
+				<td><span>$1$</span></td>
+				<td><span>$\quantity{60}{arcmin}$</span></td>
+			</tr>
+			<tr class="angles">
+				<td><span>$0.5$</span></td>
+				<td><span>$\quantity{30}{arcmin}$</span></td>
+			</tr>
+			<tr class="angles">
+				<td><span>$0.1$</span></td>
+				<td><span>$\quantity{6}{arcmin}$</span></td>
+			</tr>
+			<tr class="angles">
+				<td><span>$\frac{1}{60}$ or $\quantity{0.01667}{\degree}$</span></td>
+				<td><span>$\quantity{1}{arcmin}$ or $\quantity{60}{arcsec}$</span></td>
+			</tr>
+			<tr class="angles">
+				<td><span>$\frac{1}{1800}$ or $\quantity{0.00056}{\degree}$</span></td>
+				<td><span>$\quantity{30}{arcsec}$</span></td>
+			</tr>
+			<tr class="angles">
+				<td><span>$\frac{1}{3600}$ or $\quantity{0.00028}{\degree}$</span></td>
+				<td><span>$\quantity{1}{arcsec}$</span></td>
+			</tr>
+		</table>
+	</div>
+	<p>It is not unusual in astronomy to measure angular sizes as small as a hundredth of a second of arc! You will not be expected to convert between radians and arcsec, but you may have to convert degrees into minutes or seconds of arc.</p>
+	<p>The moon&rsquo;s angular size, is about <span>$\quantity{0.5}{\degree}$</span> or <span>$\quantity{30}{arcmin}$</span></p>
+	<p>Telescopes magnify the angular size of an object, so that the angle <em>subtended</em> by the object when viewed with the naked eye is much less than the angle <em>subtended</em> by the image when viewed through the telescope.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/angular_magnification.svg') }}" alt="angular magnification in a refracting telescope" class="size700">
+		<figcaption><b>Figure 4:</b>&nbsp;Understanding how a telescope can produce an angular magnification.</figcaption>
+	</figure>
+	<p>The angular magnification can, therefore, be calculated by comparing the size of these two angles, <span>$\alpha$</span> and <span>$\beta$</span>:</p>
+	<div class="formula">$$M=\frac{\beta}{\alpha}=\frac{angle\,subtended\,by\,image\,at\,eye}{angle\,subtended\,by\,object\,at\,unaided\,eye}$$</div>
+	<p>By looking at the diagram below we can also see that the rays of light inside the telescope form two triangle for which the angles <span>$\alpha$</span> and <span>$\beta$</span> can be described as:</p>
+	<p class="equation"><span>$\tan \alpha=\frac{h}{f_{o}}$</span> and <span>$\tan \beta=\frac{h}{f_{e}}$</span></p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/angular_magnification_close_up.svg') }}" alt="angular magnification" class="size700">
+		<figcaption><b>Figure 5:</b>&nbsp;Angular magnification in a refracting telescope.</figcaption>
+	</figure>
+	<p>Where $h$ is the height of the intermediate image. In practice, the two angles will be very small, so using the small angle approximation where <span>$\tan \theta\approx \theta$</span> when <span>$\theta$</span> is measured in radians:</p>
+	<p class="equation"><span>$\alpha=\frac{h}{f_{o}}$</span> and <span>$\beta=\frac{h}{f_{e}}$</span></p>
+	<p>So we can show that the ratio of the two angles is also equal to the ratio of the focal lengths of the two lenses:</p>
+	<div class="formula">$$M=\frac{\beta}{\alpha}=\frac{f_{o}}{f_{e}}$$</div>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>$M=\frac{f_o}{f_e}$ only applies in <b>normal adjustment</b> &mdash; where the two lenses share the same focal point and the eyepiece produces parallel emergent rays. It isn't a general-purpose formula for any two-lens arrangement; if a telescope isn't in normal adjustment, this simplified equation doesn't apply.</p>
+	</div>
+	<p>Therefore telescopes are designed to have very short focal lengths at the eyepiece and a much longer focal length at the objective. This also means that to obtain greater magnifications, much longer telescopes are required. This brings several technical problems, such as the difficulty of producing a structure strong enough to bear the weight of being tilted towards the sky, as well as the need to have the lenses perfectly aligned along the principle axis. Although many very powerful refracting telescopes have been built, these limitations, amongst others, restrict their use in modern day astronomical observations.</p>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="4">
+	<h3>Worked example</h3>
+	<p>An early refracting telescope built by Johannes Hevelius had a length of <span>$\quantity{3.7}{m}$</span> and a magnification of $50$. Calculate the focal lengths of both the objective and the eye piece lenses.</p>
+	<p class="workex">We assume the telescope is in normal adjustment, so if the total length of the telescope is <span>$\quantity{3.7}{m}$</span>, then:</p>
+	<div class="formula">$$f_{o}+f_{e}=\quantity{3.7}{m}$$</div>
+	<p class="workex">And if the magnification is <span>$50$</span> then:</p>
+	<div class="formula">$$\frac{f_{o}}{f_{e}}=50$$</div>
+	<p class="workex">Therefore:</p>
+	<p class="equation"><span>$f_{o}=50 f_{e}$</span> and <span>$f_{o}=\quantity{3.7}{m}-f_{e}$</span></p>
+	<p class="workex">So:</p>
+	<div class="formula">
+		\begin{align}
+		50 f_{e}&=\quantity{3.7}{m}-f_{e}\\
+		51 f_{e}&=\quantity{3.7}{m}\\
+		f_{e}&=\frac{\quantity{3.7}{m}}{51}\\
+		f_{e}&=\quantity{0.073}{m}
+		\end{align}
+	</div>
+	<p class="workex">The objective lens will, therefore, have a focal length of:</p>
+	<div class="formula">$$\quantity{3.7}{m}-\quantity{0.073}{m}=\quantity{3.63}{m}$$</div>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="5">
+	<h3>Reflecting telescopes</h3>
+	<p>Reflecting telescopes use large parabolic mirrors to collect light. Similarly to refracting telescopes, they focus light to an eyepiece, but reflecting telescopes have many advantages over refractors. For astronomical observations, gathering as much light as possible is vital, the majority of objects that are studied are a great distance away, and are dim point objects. Therefore, magnifying a star has little effect, it still appears as a point object, but by gathering more light from it allows us to make brighter images which are more useful to study. The amount of light that can be gathered by a telescope is proportional to the <em>square of the diameter</em> of the telescope.</p>
+	<p>The pupil in the eye may be up to <span>$\quantity{8}{mm}$</span> when fully dilated, but relatively cheap reflecting telescope can be <span>$\quantity{15}{cm}$</span> in diameter, this means that it can collect over 350 times more light:</p>
+	<div class="formula">$$\left(\frac{\quantity{0.15}{m}}{\quantity{0.008}{m}}\right)^{2}=352$$</div>
+	<p>This allows the observer to see more detail in closer objects, but, more importantly, it allows much dimmer objects to be seen. I would encourage all students to try this out by going outside on a clear evening and looking up at the stars with a pair of binoculars and comparing the difference even a small increase in brightness of around 25 times can make.</p>
+	<p>Mirrors can be made to very large sizes, so these telescopes are able to see very dim objects indeed.</p>
+	<p>Reflecting telescopes come in two main forms, Newtonian, and, Cassegrain. The difference between them is in where the eyepiece is situated. Both types consist of one large primary mirror which collects the light and reflects it onto a small secondary mirror. The secondary mirror focuses the light and directs it onto an eyepiece lens.</p>
+	<p>The Newtonian telescope is designed so that the eyepiece is at the top of the telescope, by the main aperture. This makes it more suited to comfortable observations from a standing or seated position. The Cassegrain arrangement, shown below places the eyepiece <em>behind</em> the primary mirror, and the rays are directed through an aperture in it. This makes it more suitable for placing a camera on the lens, and also is much more useful when scaling up telescopes to large sizes. Looking at the arrangement below, you may think that having the secondary mirror in that position would cause a large obstruction in the image, but it is important to remember that both the rays shown are from the same point on the object, no information is lost by placing the mirror here.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/cassegrain_arrangement.svg') }}" alt="Ray diagram for a Cassegrain telescope" class="size600">
+		<figcaption><b>Figure 6:</b>&nbsp;The ray diagram for a Cassegrain telescope. Another one that you need to learn.</figcaption>
+	</figure>
+	<p>You need to be able to draw this ray diagram for a Cassegrain telescope, so some important things to note are:</p>
+	<ul class="page_list">
+		<li>The rays enter the telescope parallel</li>
+		<li>The rays do not cross before the secondary mirror, in fact they should not cross until they reach the aperture in the primary mirror.</li>
+		<li>The secondary mirror is a convex mirror and must clearly be shown as such.</li>
+		<li>Hatching or shading the non-reflective side is a good idea.</li>
+	</ul>
+	<div class="video-tray">
+		<div class="video-container">
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/wIpRUP4665g?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen class="displayed"></iframe>
+		</div>
+	</div>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="6">
+	<h3>Aberrations</h3>
+	<p>Both refracting and reflecting telescopes are precise scientific instruments which are used for making very careful observations of very small points of light, and therefore have to be made to very high specifications. This means that small imperfections in their design can cause large distortions in the images created. These distortions, or <em>aberrations</em> are usually caused by either the shape of the lens or mirror, or by the fundamental physics of refraction through glass.</p>
+	<p>If the mirror or lens is made too spherically it can produce a <em>spherical aberration</em>. This causes rays to be brought to different foci depending on their distance from the principle axis. The further from the principle axis the ray is, the shorter its focal length.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/spherical_aberration_lens.svg') }}" alt="spherical aberration through a lens" class="size400">
+		<figcaption><b>Figure 7:</b>&nbsp;Spherical aberration through a lens.</figcaption>
+	</figure>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/spherical_aberration_mirror.svg') }}" alt="spherical aberration due to a mirror" class="size300">
+		<figcaption><b>Figure 8:</b>&nbsp;Spherical aberration due to a mirror.</figcaption>
+	</figure>
+	<p>These are another set of ray diagrams that you must know how to draw, a useful mnemonic that I use to remember the diagram is that the c<b>L</b>oser the ray is to the principle axis, the <b>L</b>onger its focal length.</p>
+	<div class="video-tray">
+		<div class="video-container">
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/tSyI4Ucjy38?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen class="displayed"></iframe>
+		</div>
+	</div>
+	<p>The optical effect of a spherical aberration is to cause the image to be very blurred as there are many focal points, instead of just one. The image below was taken by the Hubble Space Telescope, which suffered from spherical aberration when it was first launched due to a manufacturing error which had to be corrected whilst the telescope was in orbit.</p>
+	<figure>
+		<a href="http://imgsrc.hubblesite.org/hu/db/1994/08/images/a/formats/print.jpg" target="_blank"><img src="{{ url_for('static', filename='images/astrophysics/spherical_aberration_hst.svg') }}" alt="an image showing the effect of spherical aberration taken by the Hubble Space Telescope" class="size600"></a>
+		<figcaption><b>Figure 9:</b>&nbsp;An example of spherical aberration taken through the Hubble Space Telescope.</figcaption>
+	</figure>
+	<p>The image on the left shows the spherical aberration, and you can easily see how the image is blurred and smeared out into a disc. The image on the right is much more focussed, although some small, unavoidable effects due to diffraction can be seen as rings around the star. Another thing to note about the aberration on the left is that the image has a much wider field of view, <span>$\quantity{2}{arcsec}$</span> compared to the corrected image which is of only <span>$\quantity{0.05}{arcsec}$</span>, 40 times smaller.</p>
+	<p>Spherical aberration can be corrected by using a <em>parabolic</em> mirror or lens, as this will bring rays to a single focus no matter their distance from the principle axis, as in the diagram below:</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/spherical_aberration_mirror_correction.svg') }}" alt="correcting spherical aberration using a parabolic mirror" class="size500">
+		<figcaption><b>Figure 10:</b>Spherical aberration can be corrected by using a parabolic mirror rather than a spherical one.</figcaption>
+	</figure>
+	<p>However parabolic mirrors and lenses are much more expensive to produce, so cheaper telescopes suffer more from this aberration more than expensive ones with higher specification optics.</p>
+	<p>The other type of aberration that telescopes suffer from is <em>chromatic aberration</em>. This is caused by different wavelengths of light being diffracted by a different amount as they pass through a lens. Blue light is brought to a focus closer to the lens and red light will have a longer focal length. This is a fundamental property of refraction, and as such only affects refracting telescopes</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/chromatic_aberration.svg') }}" alt="chromatic aberration in a lens" class="size600">
+		<figcaption><b>Figure 11:</b>&nbsp;Chromatic aberration in a lens</figcaption>
+	</figure>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>Spherical and chromatic aberration are easy to conflate, but they're caused by different things and fixed differently. <b>Spherical aberration</b>: caused by the shape of a spherical lens/mirror, affects both refractors and reflectors, corrected with a parabolic lens or mirror. <b>Chromatic aberration</b>: caused by different wavelengths refracting by different amounts, affects <b>only</b> refracting telescopes (mirrors don't refract), corrected with an achromatic doublet. Mixing up which aberration applies to which telescope type, or which correction method fixes which, is a common way to lose marks in comparison questions.</p>
+	</div>
+	<p>The picture of the moon below is an extreme example of chromatic aberration, and usually the effect isn&rsquo;t so drastic.</p>
+	<figure>
+		<a href="https://scienceatyourdoorstep.com/2017/09/30/refracting-reflecting-telescopes" target="_blank"><img src="{{ url_for('static', filename='images/astrophysics/chromatic_aberration_moon.svg') }}" alt="an image of the moon showing chromatic aberration" class="size300"></a>
+		<figcaption><b>Figure 12:</b>&nbsp;A rather extreme example of chromatic aberration.</figcaption>
+	</figure>
+	<p>Chromatic aberration can be corrected using an <em>achromatic doublet</em> which consists of two lenses, one converging, made of crown glass, which is fixed to a diverging lens made from a different type of glass called flint glass. These lenses refract the light in opposite directions and allows the red light to be brought to a focus at the same point as the blue light.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/chromatic_aberration_corrected.svg') }}" alt="correcting chromatic aberration" class="size600">
+		<figcaption><b>Figure 13:</b>&nbsp;Correcting chromatic by using a second lens.</figcaption>
+	</figure>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="7">
+	<h3>Comparison of telescopes</h3>
+	<p>Most modern observatories use reflecting telescopes because they offer many advantages over refractors. The fact that reflectors do not suffer from chromatic aberration is an important factor. However, there are also several other reasons to choose a reflecting telescope over a refractor. Reflecting telescopes can be designed to observe wavelengths of light outside of the visible spectrum, which allows astronomers to view the universe in detail in areas our eyes cannot directly perceive.</p>
+	<p>Mirrors are much easier to produce than lenses, and as lenses are very heavy, when they get too large, they can distort under their own weight causing a more severe spherical aberration. Large reflecting telescopes can be made from using several smaller mirrors, these are called composite mirrors. This has the advantage that the exact position of each smaller mirror can be controlled which can constantly refine the shape of the overall mirror. The largest refracting telescope ever built was the Yerkes Observatory, built in 1890 and had a diameter on <span>$\quantity{100}{cm}$</span>, which is tiny compared to some of the largest reflecting telescopes currently in use.</p>
+	<figure>
+		<a href="https://commons.wikimedia.org/wiki/File%3AComparison_optical_telescope_primary_mirrors.svg" target="_blank"><img src="{{ url_for('static', filename='images/astrophysics/comparison_optical_telescope_primary_mirrors.svg') }}" alt="a size comparison of optical telescopes" class="size600"></a>
+		<figcaption><b>Figure 14:</b>&nbsp;A comparison of the largest optical telescopes in the world.</figcaption>
+	</figure>
+	<br>
+	<p>The advantages of each type of telescope can be summarised by the points below:</p>
+	<h4>Reflecting telescopes</h4>
+	<ul class="page_list">
+		<li>The diameter of a mirror can be much larger than that of a lens.</li>
+		<li>Mirror surfaces can be made very thin</li>
+		<li>Mirrors cannot produce chromatic aberration.</li>
+		<li>Reflectors use paraboloidal mirrors and therefore so not produce spherical aberration.</li>
+		<li>Reflectors can be used to study wavelengths, such as UV, that glass lenses would absorb.</li>
+		<li>Composite mirrors can be made very large.</li>
+		<li>Lenses need to be edge mounted so their weight can cause them to deform. Difficult to make glass sufficiently clear for refracting telescopes to see in great detail.</li>
+		<li>Lighter and shorter for greater magnifications.</li>
+	</ul>
+	<h4>Refracting telescopes</h4>
+	<ul class="page_list">
+		<li>They are less sensitive to temperature changes than reflectors.</li>
+		<li>They require less maintenance than reflectors because mirrors have to be re-aluminised periodically.</li>
+	</ul>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="8">
+	<h3>Resolving power</h3>
+	<p>When viewing distant objects along the same line, they can appear to be separated by a small angle, even if they are a considerable distance apart. Their angular separation <span>$\theta=\frac{s}{r}$</span></p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/angular_separation.svg') }}" alt="angular separation between objects at different distances" class="size750">
+		<figcaption><b>Figure 15:</b>&nbsp;The angular separation of two objects is affected by the distance to the objects, as well as their distance apart.</figcaption>
+	</figure>
+	<p>As well as the aberrations described earlier, if the angular separation between objects is too small it can limit the detail seen by a telescope. In fact this is fundamental limitation on the level of detail they can see stems from the diffraction of light as it enters the telescope. All light is diffracted when it passes through an aperture, the amount of diffraction is greatest when the size of the aperture is the same as the wavelength of the light. When light is diffracted through a slit it produces a series of bright fringes. You will have carried out investigations into diffraction during Year 12, but it is well worth reminding yourself about the physics and the equations that describe the phenomenon.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/diffraction.svg') }}" alt="single slit diffraction" class="size800">
+		<figcaption><b>Figure 16:</b>&nbsp;Diffraction through a single slit.</figcaption>
+	</figure>
+	<p>The equation that describes the position of the first bright fringe, <span>$\theta$</span> is:</p>
+	<div class="formula">$$d \sin \theta=n\lambda$$</div>
+	<p>Where</p>
+	<ul class="page_list">
+		<li><span>$d$</span> width of the slit or aperture.</li>
+		<li><span>$\theta$</span> is the angle made by the central maximum.</li>
+		<li><span>$n$</span> is the order of the maximum.</li>
+		<li><span>$\lambda$</span> is the wavelength of the light.</li>
+	</ul>
+	<p>When the aperture or slit is circular, a very similar effect occurs, but in this case the fringes become a circular pattern. About <span>$98\%$</span> of the light from the source is contained within the bright central maximum, so the subsequent fringes are much dimmer. The central disc is called an <em>airy disc</em> and the overall circular pattern is called <em>Fraunhofer diffraction</em> pattern. Obviously telescopes of all sizes present a circular aperture to a wide range of wavelengths, and although the wavelength of visible light is much smaller than the diameter of a telescope, a small amount of diffraction still occurs. If the light comes from a point source, such as a star, this creates a series of bright circular fringes around the image. This effect doesn&rsquo;t just affect the images of stars, but also sets a level for the minimum amount of detail that can be obtained when viewing distant objects, even within the solar system.</p>
+	<p>The angle <span>$\theta$</span> made by the central maximum in this case is very significant as it set the <em>minimum angular resolution</em> of the telescope and the image. It is described by a very similar equation, of which there is a proper form, and a more simplified form which you are able to use. Due to the circular nature of the diffraction pattern, instead of the integer, <span>$n$</span> being used to determine the order of the maximum, integer multiples of 1.22 are used instead. And as the angle <span>$\theta$</span> in <span>$\units{radians}$</span> is very small, the small angle approximation where <span>$\sin \theta\approx \theta$</span> holds. Therefore the angle made by the central maximum is:</p>
+	<div class="formula">$$\theta=1.22\frac{\lambda}{D}$$</div>
+	<p>In the AQA specification the 1.22 is dropped to give:</p>
+	<div class="formula">$$\theta\approx\frac{\lambda}{D}$$</div>
+	<p>However, you can use either equation, and would not be penalized.</p>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>$D$ is the full <b>diameter</b> of the telescope's objective lens or primary mirror, not its radius. And remember: a <b>smaller</b> value of $\theta$ means <b>better</b> resolution (more detail visible), not worse &mdash; it's easy to intuitively expect a bigger number to mean "more resolving power", but here it's the opposite.</p>
+	</div>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/resolving_power.svg') }}" alt="diffraction through a circular aperture" class="size500">
+		<figcaption><b>Figure 17:</b>&nbsp;Diffraction through a circular aperture, showing the central bright maximum and the Airy disk.</figcaption>
+	</figure>
+	<p>If two objects appear to be too close, their diffraction patterns overlap too much, and it may become impossible to resolve them as separate objects. This is defined by the <em>arbitrary</em> condition called <em>Rayleigh&rsquo;s criterion</em>, which states that:</p>
+	<p class="important"><b>Two sources will be (just) resolved if the central maximum of the diffraction pattern of one coincides with the first minimum of the other.</b></p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/2_images_just_resolved.svg') }}" alt="Rayleigh's criterion, resolving power of telescopes" class="size700">
+		<figcaption><b>Figure 18:</b>&nbsp;Rayleigh's criterion showing how images can become un-resolvable if the angular separation is too small.</figcaption>
+	</figure>
+	<p>So if the two objects are separated by an angle of <span>$&lt;\theta$</span> their airy discs overlap and they cannot be resolved as separate images. The factors the affect this minimum angular separation are the diameter of the telescope and the wavelength of the light being observed. This gives another advantage to reflecting telescopes as they can be built much larger, so <span>$D$</span> is bigger and there is less diffraction. In fact the effective diameter of a reflecting telescope is reduced by the <em>spider</em> which holds the secondary mirror, but in exam questions we will neglect this and always perform calculations on the overall diameter of the telescope. However telescopes that observe longer wavelengths of light, such as radio telescopes will suffer from this problems significantly more than optical telescopes.</p>
+	<p>This problem doesn&rsquo;t just affect the ability to see stars separately, but also limits the amount of detail that can be seen in closer objects, for example, if a feature on a planet, or moon, or even across a whole galaxy has an angular size of $&lt;\theta$ it will not be resolved against nearby objects. A good example of how much detail can be resolved by a telescope is shown in the two photos below. Both have been taken by the same telescope and camera, but at different distances from the object, and you can clearly see how much more detail can be seen in the photo taken from the shorter distance.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/resolving_vesta.svg') }}" alt="two images of the asteroid 4 Vesta showing the detail resolvable at different distances" class="size600">
+		<figcaption><b>Figure 19:</b>&nbsp;An example of the effect of minimum angular resolution.</figcaption>
+	</figure>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="9">
+	<h3>Worked example</h3>
+	<p>The table summarises some of the properties of Vesta, one of the largest objects in the asteroid belt between Mars and Jupiter.</p>
+	<div>
+		<table class="center">
+			<tr>
+				<th rowspan="2">Diameter / <span>$\units{m}$</span></th>
+				<th colspan="2">Distance from the Sun / <span>$\units{AU}$</span></th>
+			</tr>
+			<tr>
+				<td>smallest</td>
+				<td>largest</td>
+			</tr>
+			<tr>
+				<td><span>$5.4\times 10^{5}$</span></td>
+				<td><span>$2.15$</span></td>
+				<td><span>$2.57$</span></td>
+			</tr>
+		</table>
+	</div>
+	<ol class="page_list" type="A">
+		<li>Calculate the largest possible distance, in $\units{m}$, between the Earth and Vesta.</li>
+		<p class="workex">Although the unit, <span>$\units{AU}$</span> hasn&rsquo;t been covered yet it is worth thinking about the problem in the context of this question. One astronomical unit, <span>$\units{AU}$</span>, is the mean distance between the Earth and the Sun, and is equal to <span>$\quantity{1.50\times 10^{11}}{m}$</span>. It would be easy to rush into this question and convert the largest distance from the Sun into metres, but looking at the diagram below you can see that the greatest distance between the Earth and Vesta is when they are are on opposite sides of the Sun.</p>
+		<figure>
+			<img src="{{ url_for('static', filename='images/astrophysics/vesta_worked_example_1.svg') }}" alt="maximum distance from Vesta" class="size700">
+			<figcaption><b>Figure 20:</b>Worked example - the maximum distance from Earth to Vesta.</figcaption>
+		</figure>
+		<p class="workex">So the maximum distance between the two is <span>$\quantity{1}{AU}+\quantity{2.57}{AU}=\quantity{3.57}{AU}$</span> which in metres is:</p>
+		<div class="formula">$$\quantity{3.57}{AU}\times\quantity{1.50\times 10^{11}}{m}=\quantity{5.36\times 10^{11}}{m}$$</div>
+		<br><br>
+		<li>Show that when Vesta is at a distance of <span>$\quantity{1.73 \times 10^{11}}{m}$</span> from Earth, the angle subtended by Vesta to an observer on Earth is about <span>$\quantity{3\times 10^{-6}}{radian}$</span>.</li>
+		<p class="workex">In this question we are given all the data that we need and we have to correctly substitute it into the equation for angle in radians:</p>
+		<div class="formula">$$\theta=\frac{s}{r}$$</div>
+		<p class="workex">The examiner will expect to see evidence that you have carried out the calculation, not just written it out with the provided data. The best way to demonstrate this is to give the answer of the calculation to more significant figures than provided, e.g.:</p>
+		<div class="formula">$$\theta=\frac{\quantity{5.4\times 10^{5}}{m}}{\quantity{1.73 \times 10^{11}}{m}}=\quantity{3.1\times 10^{-6}}{rad}$$</div>
+		<br><br>
+		<li>Observations of Vesta have been made by the Infrared Telescope Facility (IRTF) in Hawaii. The IRTF includes a camera capable of detecting infrared radiation with wavelengths in the range <span>$\quantity{1.0}{\mu m}$</span> to <span>$\quantity{5.0}{\mu m}$</span>.<br>
+		The smallest angle the telescope can resolve is <span>$\quantity{3.3\times 10^{-7}}{radian}$</span>.<br>
+		Calculate the diameter of the objective of the telescope.<br>
+		<b>Give your answer to a suitable number of significant figures.</b></li>
+		<p class="workex">As we have been told that the minimum angular resolution of the telescope is <span>$\quantity{3.3\times 10^{-7}}{radian}$</span>, we can use the equation, <span>$\theta\approx\frac{\lambda}{D}$</span>. In this case the factor of 1.22 can be dropped for simplicity. The key to correctly answering this question is to pick the wavelength that would produce the smallest angle that can be resolved.</p>
+		<div class="callout callout-mistake">
+			<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+			<p>When a range of wavelengths is given, use the <b>shortest</b> wavelength to find the minimum objective diameter needed &mdash; since $\theta\approx\frac{\lambda}{D}$, a shorter $\lambda$ gives a smaller (better) resolvable angle for the same $D$. Using the wrong end of the range here, as demonstrated below, produces a telescope size that doesn't actually satisfy the stated resolution at the other wavelength.</p>
+		</div>
+		<p class="workex">The longer the wavelength, the greater the amount of refraction and the larger the smallest resolvable angle. When the limit of resolution is small, more detail can be seen in the image. In this case we take the smallest wavelength of light observable, and divide it by the angle.</p>
+		<div class="formula">$$D=\frac{\quantity{1.0\times 10^{-6}}{m}}{\quantity{3.3\times 10^{-7}}{radian}}=\quantity{3.0}{m}$$</div>
+		<p class="workex">If we performed the same calculation with the other wavelength of light we would get a telescope size of:</p>
+		<div class="formula">$$D=\frac{\quantity{5.0\times 10^{-6}}{m}}{\quantity{3.3\times 10^{-7}}{radian}}=\quantity{15.2}{m}$$</div>
+		<p class="workex">Although this value is a reasonable diameter for a telescope, if we use this diameter to find the smallest resolvable angle for the <span>$\quantity{1.0}{\mu m}$</span> wavelength we get:</p>
+		<div class="formula">$$\theta=\frac{\quantity{1.0\times 10^{-6}}{m}}{\quantity{15.2}{m}}=\quantity{6.6\times 10^{-8}}{rad}$$</div>
+		<p class="workex">As <span>$\quantity{6.6\times 10^{-8}}{rad}<\quantity{3.3\times 10^{-7}}{rad}$</span> this cannot be the size of the telescope.</p>
+		<p class="workex">Also note that the answer has been given to two significant figures, as has the data in the question.</p>
+		<br><br>
+		<li>Discuss the level of detail the IRTF would be able to detect on the surface of Vesta, when Vesta is <span>$\quantity{1.73\times 10^{11}}{m}$</span> from Earth.</li>
+		<p class="workex">In this question we are being asked to compare the minimum angular resolution of the IRTF to the size of the asteroid Vesta. We have been told that the telescope can resolve angles as small as <span>$\quantity{3.3\times 10^{-7}}{rad}$</span>. In this example Vesta is <span>$\quantity{1.73\times 10^{11}}{m}$</span> from Earth, and at this distance the IRTF would be able to resolve objects as small as:</p>
+		<div class="formula">$$\quantity{3.3\times 10^{-7}}{rad}\times\quantity{1.73\times 10^{11}}{m}=\quantity{5.71\times 10^{4}}{m}$$</div>
+		<p class="workex">This means that details which are around <span>$\quantity{50-60}{km}$</span> can be resolved on the surface of the asteroid.</p>
+		<p class="workex">You could also compare the minimum resolvable angle of the telescope with the angular size of the asteroid at this distance:</p>
+		<div class="formula">$$\theta=\frac{\quantity{5.4\times 10^{5}}{m}}{\quantity{1.73\times 10^{11}}{m}}=\quantity{3.12\times 10^{-6}}{rad}$$</div>
+		<p class="workex">This is about &times;10 larger than the smallest resolvable angle of the telescope, so features around a 10th of the size of Vesta could be resolved.</p>
+		<p class="workex">To gain full credit for this question you would have to state that the the smallest angular resolution is smaller than the angular size of the asteroid AND support it with a quantitative statement about how much detail can be seen.</p>
+	</ol>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="10">
+	<h3>Test yourself</h3>
+	<p>Try the questions below to check your understanding of this topic. Numerical questions use different numbers each time, so you can attempt them more than once.</p>
+	<div id="quiz-root"></div>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+
+{% endblock %}
+
+{% block resources %}
+	<li><a href="{{ url_for('static', filename='summaries/astrophysics/telescopes_summary.html') }}" target="_blank"><i class="fas fa-file-alt"></i> Printable revision sheet</a></li>
+{% endblock %}
+
+{% block prev_link %}
+	<a href="{{ url_for('lenses') }}"><i class="fas fa-chevron-circle-left"></i><span class="nav_link">Previous topic</span></a>
+{% endblock %}
+
+{% block next_link %}
+	<a href="/astrophysics/non-optical-telescopes"><span class="nav_link">Next topic</span><i class="fas fa-chevron-circle-right"></i></a>
+{% endblock %}
+
+{% block extra_scripts %}
+	<script src="{{ url_for('static', filename='js/quiz.js') }}"></script>
+	<script src="{{ url_for('static', filename='quizzes/telescopes_questions.js') }}"></script>
+	<script>
+		new PhysicsQuiz(document.getElementById('quiz-root'), telescopesQuestions, {
+			storageKey: 'telescopes'
+		});
+	</script>
+{% endblock %}

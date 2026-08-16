@@ -1,0 +1,375 @@
+{% extends "base.html" %}
+
+{% block title %}Classification of stars by temperature{% endblock %}
+{% block page_h1 %}Black-body radiation{% endblock %}
+
+{% block meta_description %}A Level Physics notes and worked examples to help students with their exams and learning. After learning about the magnitude scale, we learn here that the temperature of the star determines its colour and what we can learn from the observation of the colour.{% endblock %}
+{% block meta_keywords %}black-body, radiation, hydrogen, spectrum, hydrogen alpha, spectral classes, worked examples, exam questions, A level, physics{% endblock %}
+
+{% block extra_head %}
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/quiz.css') }}">
+{% endblock %}
+
+{% block page_boxes %}
+	<a href="#1"><button class="button">Blackbody radiation</button></a>
+	<a href="#2"><button class="button">Temperature and luminosity</button></a>
+	<a href="#3"><button class="button">Worked example</button></a>
+	<a href="#4"><button class="button">Emission and absorption spectra</button></a>
+	<a href="#5"><button class="button">Stellar spectral classes</button></a>
+	<a href="#6"><button class="button">Test yourself</button></a>
+{% endblock %}
+
+{% block spec %}
+<div id="spec">
+	<p class="spec_ref"><b>3.9.2.3 Classification by temperature, black-body radiation</b></p>
+	<p class="spec_box">Stefan&rsquo;s law and Wien&rsquo;s displacement law.</p>
+	<p class="spec_box">General shape of black-body curves, use of Wien&rsquo;s displacement law to estimate black-body temperature of sources.</p>
+	<p class="spec_box">Experimental verification is not required.</p>
+	<div class="formula">$$\lambda_{max}T = \mathrm{constant}=\quantity{2.9\times 10^{-3}}{m\,K}$$</div>
+	<p class="spec_box">Assumption that a star is a black body.</p>
+	<p class="spec_box">Inverse square law, assumptions in its application.</p>
+	<p class="spec_box">Use of Stefan&rsquo;s law to compare the power output, temperature and size of stars $P=\sigma AT^{4}$</p>
+	<p class="spec_box"><b>3.9.2.4 Principles of the use of stellar spectral classes</b></p>
+	<p class="spec_box">Description of the main classes (see main table)</p>
+	<p class="spec_box">Temperature related to absorption spectra limited to Hydrogen Balmer absorption lines: requirement for atoms in an $n = 2$ state.</p>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<section class="top_section" id="1">
+	<h3>Blackbody radiation</h3>
+	<p>A blackbody is an idealised emitter and absorber of radiation. It is an object that absorbs all radiation (or light) that is incident on it, i.e. it would appear black when any wavelength of light is shone on it. Black bodies also emit radiation and like any hot object it emits radiation over a continuous range of wavelengths with one one particular peak wavelength which is emitted with a higher maximum intensity. In fact black bodies radiate energy in a very characteristic fashion, where the <b>peak wavelength</b> is determined only by the temperature of the object.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/black_body_radiation.svg') }}" alt="black body curves" class="size600">
+		<figcaption><b>Figure 1:</b>&nbsp;Blackbody curves for objects at three different temperatures.</figcaption>
+	</figure>
+	<p>In the graph above you can see the the blackbody curves for three object at different temperatures. The hotter the object the shorter the peak wavelength emitted. These lines are called <b>blackbody</b> or <b>Planck curves</b>, and show that the blackbody emits radiation at all wavelengths. The area under the line is the total energy radiated per unit of time per unit of surface area by the object at that temperature. So, as can be seen above, the hotter the object the more energy, or power is radiated by the blackbody. The pattern of this radiation does not depend on the material or chemical composition of the object, only on its temperature.</p>
+	<p>This is a graph that you may be expected to draw in an exam, so it is important to remember the following points:</p>
+	<ul class="page_list">
+		<li>The left hand side must be drawn steeper than the right hand side</li>
+		<li>The intensity must decrease towards (but not reach) zero as the wavelength increases.</li>
+		<li>The line must not cross the intensity axis (y-axis)</li>
+	</ul>
+	<p>No object is a perfect blackbody, but stars are very good approximations. This is very odd to think about, as stars are clearly anything but black, however as the surface of a star like the sun is around <span>$\quantity{6000}{K}$</span> the peak wavelength is in the visible part of the electromagnetic spectrum. Also, stars also absorb any incident light, if we imagine being able to shine a torch onto the surface of the Sun, none of the light would be reflected. The diagram below shows the radiation spectrum from the Sun overlaid on a blackbody curve. As can be seen the Sun&rsquo;s spectrum closely matches the blackbody spectrum. There are some noticeable regions where molecules, such as water or oxygen in the Earth&rsquo;s atmosphere absorb the Sun&rsquo;s radiation.</p>
+	<figure>
+		<a href="https://commons.wikimedia.org/wiki/File%3ASolar_spectrum_en.svg" target="_blank"><img src="{{ url_for('static', filename='images/astrophysics/solar_spectrum_en.svg') }}" alt="Solar spectrum en" class="size600"></a>
+		<figcaption><b>Figure 2:</b>&nbsp;The blackbody spectrum of the Sun showing absorption bands for different molecules found in the Earth's atmosphere.</figcaption>
+	</figure>
+	<p>The hotter the star, the shorter its peak wavelength. Therefore cooler stars, will have a longer peak wavelength, possibly in the infrared part of the spectrum so will appear red, and the hottest stars may have a peak wavelength in the ultraviolet part of the spectrum and will appear blue. The most explosive energetic events will be so hot that their peak wavelength is in the X-ray part of the electromagnetic spectrum. So we can observe the colour, or the peak wavelength of a star, and from its blackbody curve predict its temperature. The relationship between wavelength and temperature is known as <i>Wien's displacement law</i>:</p>
+	<div class="formula">$$\lambda_{max}T=\quantity{2.9\times 10^{-3}}{m\cdot K}$$</div>
+	<p>Where:</p>
+	<ul class="page_list">
+		<li><span>$\lambda_{max}$</span> is the peak wavelength of the star in <span>$\units{m}$</span></li>
+		<li><span>$T$</span> is the temperature of the star in <span>$\units{K}$</span></li>
+		<li>The constant of <span>$\quantity{2.9\times 10^{-3}}{m\cdot K}$</span> is known as <b>Wien&rsquo;s constant</b>.</li>
+	</ul>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>$\lambda_{max}$ is the <b>peak</b> wavelength &mdash; the wavelength emitted with the greatest intensity &mdash; not the "maximum wavelength". Longer wavelengths are still emitted, just with lower intensity. Calling it the "maximum wavelength" in an exam answer is a common way to lose marks even when the calculation itself is correct.</p>
+	</div>
+	<p>This equation can be used to find the temperature of the outer photosphere of a star, which is sometimes referred to as the surface temperature of the star. A hotter star will have a shorter peak wavelength and will emit more radiation near this peak wavelength. But stars all emit similar amounts of radiation at much longer wavelengths.</p>
+	<p>For example, the star Bellatrix has an effective temperature (or surface temperature) of <span>$\quantity{22\,000}{K}$</span> so will have a peak wavelength of:</p>
+	<div class="formula">$$\lambda_{max}=\frac{\quantity{2.9\times 10^{-3}}{m\cdot K}}{\quantity{22\,000}{K}}=\quantity{1.32\times 10^{-7}}{m}$$</div>
+	<p>This wavelength is in the far ultraviolet part on the electromagnetic spectrum, so the star itself appears pale blue in colour.</p>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="2">
+	<h3>Temperature and luminosity</h3>
+	<p>The temperature of a blackbody and the amount of energy it radiates is described by the <i>Stefan-Boltzmann law</i>. This was first discovered by Josef Stefan experimentally and then later derived by Ludwig Boltzmann from the laws of thermodynamics and Maxwell&rsquo;s electromagnetic equations. It relates the total power output of a blackbody (a star in this case) to the surface area of the objects and the fourth power of its temperature. It is, therefore, sometimes known as Stefan's fourth power law.</p>
+	<div class="formula">$$P=\sigma AT^{4}$$</div>
+	<p>Where:</p>
+	<ul class="page_list">
+		<li><span>$P$</span> is the power or luminosity of the the star in <span>$\units{watts}$</span>. This may sometimes be given the letter <i>L</i>.</li>
+		<li><span>$\sigma$</span> is the Stefan constant which is <span>$\quantity{5.67\times 10^{-8}}{W\,m^{-2}\,K^{-4}}$</span></li>
+		<li><span>$A$</span> is the surface area of the star (<span>$4\pi r^{2}$</span>) in <span>$\units{m^{2}}$</span></li>
+		<li><span>$T$</span> is the effective thermodynamic temperature of the star in <span>$\units{K}$</span></li>
+	</ul>
+	<p>Combining this equation with the inverse square law we can show that the energy leaving the star, per unit surface area is <span>$P=\sigma T^{4}$</span>, which is sometimes called the energy flux or surface flux of the star.</p>
+	<p>As the power output of the star is also its luminosity, it is directly analogous to its absolute magnitude. The Stefan-Boltzmann law therefore allows us to compare stars that have either the same power output or the same effective temperature. Stefan's law also tells us that if two stars have the same blackbody temperature, the star with the greater absolute magnitude must have the larger diameter.</p>
+	<p>For example, Antares and Proxima Centauri have both got an effective surface temperature of around <span>$\quantity{3500}{K}$</span>, but Antares is one of the brightest stars with an absolute magnitude of -5.3 and Proxima Centauri is one of the dimmest with and absolute magnitude of 15. So, when viewed from the same distance Antares is much brighter, it has a greater luminosity. So to produce more power from at the same temperature, Antares must be a larger star, and in fact its diameter is around 5500 times larger than Proxima Centauri's!</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/stefans_law.svg') }}" alt="Stefan's law" class="size800">
+		<figcaption><b>Figure 3:</b>&nbsp;A small hot star can appear have the same absolute magnitude as a large cool star.</figcaption>
+	</figure>
+	<p>Imagine two stars X and Y with same absolute magnitude, and therefore the same power output.</p>
+	<ul class="page_list">
+		<li><span>$P_{X}=\sigma A_{X}{T_{X}}^{4}$</span></li>
+		<li><span>$P_{Y}=\sigma A_{Y}{T_{Y}}^{4}$</span></li>
+	</ul>
+	<p>They both have the same power output so:</p>
+	<div class="formula">
+		$$\sigma A_{X}{T_{X}}^{4}=\sigma A_{Y}{T_{Y}}^{4}$$
+		$$\frac{A_{X}}{A_{Y}}=\frac{T_{Y}^{4}}{T_{X}^{4}}$$
+	</div>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>For two stars with the <b>same luminosity</b>, the <b>hotter</b> one has the <b>smaller</b> surface area (and therefore the smaller diameter) &mdash; it's easy to intuitively expect "hotter" to mean "bigger", but with luminosity fixed, temperature and size trade off against each other. A hot, small star can output exactly as much power as a cool, enormous one.</p>
+	</div>
+	<p>Therefore the hotter star will have a smaller area.</p>
+	<p>We can also use this law to compare the ratio of two stars&rsquo; diameters to be compared if we know their absolute magnitude (power) and their temperature:</p>
+	<div class="formula">
+		$$\frac{P_{\alpha}}{D_{\alpha}^{2}T_{\alpha}^{4}}=\frac{P_{\beta}}{D_{\beta}^{2}T_{\beta}^{4}}$$
+		$$\frac{D_{\alpha}}{D_{\beta}}=\sqrt{\frac{P_{\alpha}}{P_{\beta}}}\times\frac{T_{\beta}^{2}}{T_{\alpha}^{2}}$$
+	</div>
+	<p>This can also be used to consider how the size of an individual star changes throughout its life as both its temperature and magnitude change.</p>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="3">
+	<h3>Worked example</h3>
+	<ol class="page_list" type="A">
+		<li>
+			<ol class="page_list" type="i">
+				<li>Wien&rsquo;s displacement law may be written as <span>$\lambda_{max}T=\rm{constant}$</span>. State what <span>$\lambda_{max}$</span> represents</li>
+				<p class="workex">In this equation <span>$\lambda_{max}$</span> is the peak wavelength. It is a common mistake to call it the maximum wavelength, but this is incorrect and you won&rsquo;t get the marks if you say this. Wavelengths greater than this are emitted, but this is the wavelength that is emitted with the highest intensity, hence the name peak wavelength.</p>
+				<li>Calculate <span>$\lambda_{max}$</span> for a temperature of <span>$\quantity{1600}{K}$</span></li>
+				<p class="workex">This is a simple case of using the equation correctly:</p>
+				<div class="formula">$$\frac{\quantity{2.9\times 10^{-3}}{m\cdot K}}{\quantity{1600}{K}}=1.8125\times 10^{-6}=\quantity{1800}{nm}$$</div>
+				<p class="workex">As we are stating the wavelength of light, it is usual, but not essential, to state the answer in nanometres.</p>
+				<li>Assuming that <span>$\lambda_{max}$</span> for the Sun lies within the range of the visible spectrum, use Wien&rsquo;s law to estimate the temperature of the Sun.</li>
+				<p class="workex">To answer this question we need to be able to estimate the wavelength of visible light. This is the kind of general knowledge that it is important to have in your skillset. I tend to remember that green light (which is in the middle of the visible spectrum) has a wavelength of around <span>$\quantity{520}{nm}$</span>, so in this case I can estimate the temperature of the Sun as:</p>
+				<div class="formula">$$\frac{\quantity{2.9\times 10^{-3}}{m\cdot K}}{\quantity{520}{nm}}=\quantity{5\,600}{K}$$</div>
+			</ol>
+		</li>
+		<li>Stefan&rsquo;s law for a black body may be written as <span>$E=\sigma T^{4}$</span> where <i>E</i>, the energy radiated per second per square metre of the surface area, has units <span>$\units{W\,m^{-2}}$</span>.<br>
+		Hence state how a value of <i>E</i> may be obtained from one of the curves drawn in part (A) for a given temperature.</li>
+		<p class="workex">The energy radiated per second per square metre of the surface area is found from the area under the line on the graph.</p>
+		<p class="workex">You would not be expected to find this, but you are expected to know its significance.</p>
+		<li>
+			<ol class="page_list" type="i">
+				<li>The diagram represents the Earth in orbit around the Sun. Given that the Earth receives <span>$\quantity{1400}{W\,m^{-2}}$</span> of energy from the Sun and that the Sun emits energy equally in all directions, estimate the total output power, in <span>$\units{W}$</span>, of the Sun.<br>
+				mean radius, <i>R</i>, of the Earth&rsquo;s orbit around the Sun = <span>$\quantity{1.5\times 10^{11}}{m}$</span></li>
+				<br>
+				<figure>
+					<img src="{{ url_for('static', filename='images/astrophysics/stefans_law_worked_example.svg') }}" alt="Earth orbiting the Sun" class="size400">
+					<figcaption><b>Figure 4:</b>&nbsp;The Earth in orbit around the Sun.</figcaption>
+				</figure>
+				<p class="workex">If we know the intensity, <i>I</i> of the Sun&rsquo;s radiation on Earth, and the distance between the Earth and the Sun, we can use the inverse square law to find the total power output or luminosity, <i>L</i> of the Sun.</p>
+				<div class="formula">$$I=\frac{L}{4\pi R^{2}}$$</div>
+				<p class="workex">So,</p>
+				<div class="formula">
+					\begin{align}
+					L&=I\times4\pi R^{2}\\
+					L&=\quantity{1400}{W\,m^{-2}}\times4\times\pi\times\left({\quantity{1.5\times 10^{11}}{m}}\right)^{2}\\
+					L&=3.9584\times 10^{26}\\
+					\\
+					L&=\quantity{4.0\times 10^{26}}{W}
+					\end{align}
+				</div>
+				<li>Hence, use Stefan&rsquo;s law to deduce the temperature of the Sun.<br>
+				radius of the Sun = <span>$\quantity{7.0\times 10^{8}}{m}$</span></li>
+				<p class="workex">We now know the power output of the Sun, so we can use:</p>
+				<div class="formula">$$P=\sigma AT^{4}$$</div>
+				<p class="workex">Where $A=4\pi r^{2}$, therefore:</p>
+				<div class="formula">
+					\begin{align}
+					T^{4}&=\frac{P}{\sigma 4\pi r^{2}}\\
+					T^{4}&=\frac{3.9584\times 10^{26}}{5.67\times 10^{-8}\times 4\times\pi\times \left(7.0\times 10^{8}\right)^{2}}\\
+					T^{4}&=\quantity{1.12278492\times 10^{15}}{K^{4}}\\
+					\\
+					T&=\quantity{5\,800}{K}
+					\end{align}
+				</div>
+				<p class="workex">I have used the unrounded value for power, but you would not be penalised if you had used your answer of <span>$\quantity{4.0\times 10^{26}}{W}$</span> instead.</p>
+			</ol>
+		</li>
+	</ol>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="4">
+	<h3>Emission and absorption spectra</h3>
+	<p>You will have studied the creation of line spectra in Year 12, but it is important to remember how they are created in order to understand the classification system in stars.</p>
+	<p>When a photon passes through a cloud of cool gas it might be absorbed by an orbital electron. When this happens the electron becomes <i>excited</i> to a higher energy level. The greater the energy of the photon, from <span>$E=hf$</span>, the greater the <i>quantum jump</i>. The electron will soon <i>de-excite</i> and fall back down to the lowest energy level or <i>ground state</i>. When the electron de-excites it will give up all the energy it absorbed by emitting a photon in a random direction. This de-excitation does not necessarily occur in one jump.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/line_spectra.svg') }}" alt="line spectra" class="size400">
+		<figcaption><b>Figure 5:</b>&nbsp;When electrons gain energy they become excited and jump up to higher energy levels, they then emit photons as they de-excite back down the the n=1 energy level.</figcaption>
+	</figure>
+	<p>When photons are absorbed by electrons in a cool gas, a dark line is created in an otherwise continuous spectrum. This is known as an absorption spectrum. When a gas is excited, for example by being placed in an electric field, it will emit light in narrow bands at exactly the same wavelengths. This is called an emission spectrum.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/kirchhoff_spectra_laws.svg') }}" alt="kirchhoff's laws of spectral emission and absorption" class="size700">
+		<figcaption><b>Figure 6:</b>&nbsp;As light passes through a gas an absorption spectrum is created, and a cool gas will itself create an emission spectrum.</figcaption>
+	</figure>
+	<p>Different elements, and molecules show characteristic spectra, so they can identified by looking for these absorption or emission spectra. In fact this is how astronomers identify the composition of many things including, stellar atmospheres, comets&rsquo; comas and nebulae.</p>
+	<p>The absorption and emission spectra of hydrogen are of particular importance to astronomers due to its abundance in the universe, and of the different series of spectra, the most important is one known as the <i>Balmer series</i>.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/hydrogen_energy_levels.svg') }}" alt="Energy levels in the Hydrogen atom" class="size600">
+		<figcaption><b>Figure 7:</b>&nbsp;The different series of the hydrogen spectrum.</figcaption>
+	</figure>
+	<p>The Balmer series involves electron transitions either to or from the second energy level, or the <span>$n=2$</span> energy level. The Balmer series is of so important because the wavelengths of photon created are in the visible spectrum.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/stellar_spectra.svg') }}" alt="the production of Balmer lines in the atmosphere of a star" class="size700">
+		<figcaption><b>Figure 8:</b>&nbsp;The production of hydrogen alpha lines in the atmosphere of a star.</figcaption>
+	</figure>
+	<p>The picture below shows an emission nebula glowing with a characteristic red glow associated with the <span>$\rm{H}$-$\alpha$</span> transition from the <span>$n=3$</span> to the <span>$n=2$</span> energy levels. This transition would create photon with an wavelength of:</p>
+	<div class="formula">
+		$$\quantity{-1.51}{eV}-\,\quantity{-3.40}{eV}=\quantity{1.89}{eV}$$
+		$$\quantity{1.89}{eV}\times\quantity{1.60\times 10^{-19}}{C}=\quantity{3.03\times 10^{-19}}{J}$$
+		$$E=\frac{hc}{\lambda}$$
+	</div>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>Energy level differences are usually quoted in <b>electron volts (eV)</b>, but $E=hf$ and $E=\frac{hc}{\lambda}$ need energy in <b>joules</b>. Convert using $\quantity{1}{eV}=\quantity{1.60\times 10^{-19}}{J}$ before substituting &mdash; forgetting this conversion is a very easy way to be wrong by a factor of about $10^{19}$.</p>
+	</div>
+	<p>Rearranging to make <span>$\lambda$</span> the subject:</p>
+	<div class="formula">
+		\begin{align}
+		\lambda&=\frac{\quantity{6.63\times 10^{-34}}{J\cdot s}\times\quantity{3.00\times 10^{8}}{m\,s^{-1}}}{\quantity{3.03\times 10^{-19}}{J}}\\
+		\lambda&=\quantity{6.56\times 10^{-7}}{m}\\
+		\\
+		\lambda&=\quantity{656}{nm}
+		\end{align}
+	</div>
+	<figure>
+		<a href="http://www.sky-image.com/home2.html" target="_blank"><img src="{{ url_for('static', filename='images/astrophysics/h_alpha_nebula.svg') }}" alt="heart nebula" class="size500"></a>
+		<figcaption><b>Figure 9:</b>&nbsp;A nebula showing the characteristic color of the hydrogen alpha line.</figcaption>
+	</figure>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="5">
+	<h3>Stellar spectral classes</h3>
+	<p>When the spectrum from the Sun is observed through a spectroscope thousands of dark absorption lines can be seen crossing the otherwise continuous spectrum.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/solar_spectrum.svg') }}" alt="The Sun's spectrum" class="size700">
+		<figcaption><b>Figure 10:</b>The absorption spectrum of the Sun showing hundreds of dark absorption lines.</figcaption>
+	</figure>
+	<p>The first attempts to classify stars was made using the strength of these dark absorption lines, especially the Balmer lines. Stars were classified alphabetically according the strength of these lines. However it was soon discovered that the strength of the lines depended on the temperature of the star and that some stars were so hot (over <span>$\quantity{10\,000}{K}$</span>) that they ionise the hydrogen, and some were too cool to excite the hydrogen in the first place. The order was re-arranged by Annie Jump-Cannon into temperature order into seven spectral types, now known as the Harvard system of <b>O</b>, <b>B</b>, <b>A</b>, <b>F</b>, <b>G</b>, <b>K</b>, <b>M</b>.</p>
+	<p>There are several ways to remember this order but the two that I like are:</p>
+	<ul class="page_list">
+		<li>Oh Be A Fine Girl/Guy Kiss Me</li>
+		<li>Only Boring Astronomers Find Gratification Knowing Mnemonics</li>
+	</ul>
+	<div>
+	<table class="spectralclass">
+		<tr>
+			<th class="spectralheading">Spectral class</th>
+			<th>Intrinsic colour</th>
+			<th>Temperature /<span>$\units{K}$</span></th>
+			<th>Prominent Absorption Lines</th>
+			<th>Main sequence lifetime</th>
+		</tr>
+		<tr class="Oclass">
+			<td>O</td>
+			<td>Blue</td>
+			<td>25 000 - 50 000</td>
+			<td>He&plus;, He, H</td>
+			<td>1-10 Myr</td>
+		</tr>
+		<tr class="Bclass">
+			<td>B</td>
+			<td>Blue</td>
+			<td>11 000 - 25 000</td>
+			<td>He, H</td>
+			<td>11-400 Myr</td>
+		</tr>
+		<tr class="Aclass">
+			<td>A</td>
+			<td>Blue-white</td>
+			<td>7 500 - 11 000</td>
+			<td>H (strongest) ionised metals</td>
+			<td>440 Myr - 3 Gyr</td>
+		</tr>
+		<tr class="Fclass">
+			<td>F</td>
+			<td>White</td>
+			<td>6 000 - 7 500</td>
+			<td>ionised metals</td>
+			<td>3-7 Gyr</td>
+		</tr>
+		<tr class="Gclass">
+			<td>G</td>
+			<td>Yellow-white</td>
+			<td>5 000 - 6 000</td>
+			<td>ionised &amp; neutral metals</td>
+			<td>8-15 Gyr</td>
+		</tr>
+		<tr class="Kclass">
+			<td>K</td>
+			<td>Orange</td>
+			<td>3 500 - 5 000</td>
+			<td>neutral metals</td>
+			<td>17 Gyr</td>
+		</tr>
+		<tr class="Mclass">
+			<td>M</td>
+			<td>Red</td>
+			<td>&lt;3 500</td>
+			<td>neutral atoms, TiO</td>
+			<td>56 Gyr</td>
+		</tr>
+	</table>
+	</div>
+	<p>Each class is further divided into 10 subdivisions, so for example, the Sun is a G2 star, or a fairly hot G class star. There is a lot of information in that table, but what you really need to remember is:</p>
+	<ul class="page_list">
+		<li>The temperature ranges for each class.</li>
+		<li>The strongest absorption lines for each class.</li>
+	</ul>
+	<p>Questions are regularly asked such as the following:</p>
+	<p><b>A star has a peak wavelength of <span>$\quantity{350}{nm}$</span>, calculate its surface temperature and suggest what spectral class the star belongs to.</b></p>
+	<p class="workex">To find this you would first use Wien&rsquo;s law to find the temperature:</p>
+	<div class="formula">$$T=\frac{\quantity{2.9\times 10^{-3}}{m\cdot K}}{\quantity{350}{nm}}=\quantity{8\,286}{K}$$</div>
+	<p class="workex">So this star would be an A class star.</p>
+	<p>The different spectral lines occur because atomic states of ionisation and excitation depend on temperature. Only the hottest stars (O class) can ionise Helium atoms in significant numbers, so these are the only stars which show the absorption lines associated with <span>$\rm{He}+$</span> ions. However O class stars are the hottest stars, and are in fact extremely rare. Absorption lines which correspond to excited helium can be found in cooler stars (B class).</p>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>It's tempting to assume the hottest stars have the strongest hydrogen (Balmer) lines, but it's actually the mid-range <b>A and B class</b> stars that show the strongest Balmer lines. The hottest <b>O class</b> stars have <i>weak</i> hydrogen lines because most of the hydrogen is ionised (no electron left to absorb a photon). The coolest <b>K and M class</b> stars also have weak Balmer lines, because their electrons stay in the ground state ($n=1$) rather than the required $n=2$ state. Strong Balmer lines need a specific temperature range, not just "hot".</p>
+	</div>
+	<p>If a star is to produce strong absorption lines in the visible part of the spectrum (Balmer lines) then it needs to have a lot of hydrogen in the <span>$n=2$</span> state. So only B and A stars show strong Balmer lines. Cooler stars are too cool and hydrogen is in its ground state <span>$n=1$</span> and therefore most of the absorption lines are in the UV part of the spectrum. The hottest O stars have weak Hydrogen absorption lines as most of the hydrogen is ionised (no electrons therefore no absorption!). It is only when these hydrogen lines become weaker that there is enough energy left over to start to excite Helium atoms.</p>
+	<p>Many metals (<span>$\rm{Ca}$</span> and <span>$\rm{Fe}$</span>) are more easily ionised than H and He so we see absorption lines from these metals in cooler stars. In the coolest stars we see absorption lines of neutral metals. In the hottest stars metals tend to be triply or doubly ionised and the absorption lines are in the UV part of the spectrum. In the coolest K and M stars molecular absorption bands are seen as these stars are so cool that molecules can still form. Hotter stars rip the molecules up into their constituent atoms.</p>
+	<p>The diagram below shows the relative strength of the absorption lines in the different classes. You do not have to remember the diagram, but it useful to help you understand how the different classes exhibit the different spectral lines.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/principal_spectral_lines.svg') }}" alt="The relative intensity of spectral lines form stars" class="size700">
+		<figcaption><b>Figure 11:</b>&nbsp;The class, and therefore the temperature, of stars determines the relative intensity of spectral lines from different elements.</figcaption>
+	</figure>
+	<p>The following plots are the spectra from real stars, one A class and one G class. You can clearly see the distinctive black body curve, peaking at a longer wavelength for the cooler G class star.</p>
+	<figure>
+		<a href="http://skyserver.sdss.org/dr14/en/home.aspx" target="_blank"><img src="{{ url_for('static', filename='images/astrophysics/spectrum_a_class_star.svg') }}" alt="spectrum from A class star Sloane Digital Sky Survey" class="graph"></a>
+		<figcaption><b>Figure 12:</b>&nbsp;A real life spectrum from an A class star.</figcaption>
+	</figure>
+	<figure>
+		<a href="http://skyserver.sdss.org/dr14/en/home.aspx" target="_blank"><img src="{{ url_for('static', filename='images/astrophysics/spectrum_g_class_star.svg') }}" alt="spectrum from G class star Sloane Digital Sky Survey" class="graph"></a>
+		<figcaption><b>Figure 13:</b>&nbsp;A real life spectrum from a G class star.</figcaption>
+	</figure>
+	<p>Comparing the two, you can see that in the G class spectrum there are lines appearing for calcium <span>$\rm{Ca}$</span>, sodium <span>$\rm{Na}$</span> and magnesium <span>$\rm{Mg}$</span>, which, although identified on the A class spectrum, are not really present.</p>
+	<p>The <span>$\rm{H}$-$\alpha$</span> line is present in both, the A class star shows strong lines for the all of the hydrogen wavelengths, whereas the G class star as generally weaker hydrogen lines.</p>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="6">
+	<h3>Test yourself</h3>
+	<p>Try the questions below to check your understanding of this topic. Numerical questions use different numbers each time, so you can attempt them more than once.</p>
+	<div id="quiz-root"></div>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+
+{% endblock %}
+
+{% block resources %}
+	<li><a href="{{ url_for('static', filename='summaries/astrophysics/black_body_rad_summary.html') }}" target="_blank"><i class="fas fa-file-alt"></i> Printable revision sheet</a></li>
+{% endblock %}
+
+{% block prev_link %}
+	<a href="{{ url_for('classification') }}"><i class="fas fa-chevron-circle-left"></i><span class="nav_link">Previous topic</span></a>
+{% endblock %}
+
+{% block next_link %}
+	<a href="/astrophysics/hr-diagram"><span class="nav_link">Next topic</span><i class="fas fa-chevron-circle-right"></i></a>
+{% endblock %}
+
+{% block extra_scripts %}
+	<script src="{{ url_for('static', filename='js/quiz.js') }}"></script>
+	<script src="{{ url_for('static', filename='quizzes/black_body_rad_questions.js') }}"></script>
+	<script>
+		new PhysicsQuiz(document.getElementById('quiz-root'), blackBodyRadQuestions, {
+			storageKey: 'black_body_rad'
+		});
+	</script>
+{% endblock %}

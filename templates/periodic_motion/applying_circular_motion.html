@@ -1,0 +1,146 @@
+{% extends "base.html" %}
+
+{% block title %}Applying circular motion concepts{% endblock %}
+{% block page_h1 %}Applying circular motion concepts{% endblock %}
+
+{% block meta_description %}A Level Physics notes and worked examples to help students with their exams and learning. This page uses the ideas of circular motion and applies them to some real world examples.{% endblock %}
+{% block meta_keywords %}circular motion, centripetal force, centripetal acceleration, cornering, going over hills, worked examples, exam questions, A level, physics{% endblock %}
+
+{% block extra_head %}
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/quiz.css') }}">
+{% endblock %}
+
+{% block page_boxes %}
+	<a href="#1"><button class="button">Intro</button></a>
+	<a href="#2"><button class="button">The bucket trick</button></a>
+	<a href="#3"><button class="button">Cars Going Over Hills</button></a>
+	<a href="#4"><button class="button">Going Round Bends</button></a>
+	<a href="#5"><button class="button">Test yourself</button></a>
+{% endblock %}
+
+{% block spec %}
+<div id="spec">
+	<p class="spec_ref"><b>3.6.1.1 Circular motion</b></p>
+	<p class="spec_box">Motion in a circular path at constant speed implies there is an acceleration and requires a centripetal force.</p>
+	<p class="spec_box">Magnitude of angular speed,</p>
+	<div class="formula">
+		$$\omega=\frac{v}{r}=2\pi f$$
+	</div>
+	<p class="spec_box">Radian measure of angle.</p>
+	<p class="spec_box">Direction of angular velocity will not be considered.</p>
+	<p class="spec_box">Centripetal acceleration,</p>
+	<div class="formula">
+		$$a=\frac{v^{2}}{r}=\omega^{2}r$$
+	</div>
+	<p class="spec_box">The derivation of the centripetal acceleration formula will not be examined.</p>
+	<p class="spec_box">Centripetal force,</p>
+	<div class="formula">
+		$$F=\frac{mv^{2}}{r}=m\omega^{2}r$$
+	</div>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<section class="top_section" id="1">
+	<p>Once the basics of circular motion have been grasped, it is important to be able to apply them to a range of situations. One of the best ways to do this is to look at some different examples and see what is providing the centripetal forces and how they change around the circular path.</p>
+</section>
+<br><br><hr>
+
+<section id="2">
+	<h3>The Bucket Trick</h3>
+	<p>Water can be made to stay in an inverted bucket if it is spun faster than a certain minimum speed. This is because below this speed the water will fall because its weight will accelerate it at 9.81ms<sup>-2</sup>. If it is rotated at an angular speed great so that the centripetal acceleration is equal to or greater than its free-fall acceleration, then at the top of the path the water will accelerate downwards at at least the same rate as the bucket.</p>
+	<div class="formula">
+		$$\large a=r\omega^{2}\geq g=9.81\mathrm{ms}^{-2}$$
+	</div>
+	<p>When the bucket revolves faster than this rate the floor of the bucket pushes down on the water and provides it with enough centripetal acceleration to move in the same circular path as the bucket.</p>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>This inequality only works because, at the critical (minimum) speed, the bucket's push on the water drops to exactly <b>zero</b> &mdash; gravity alone is providing all of the centripetal force at that boundary case. At any speed above this, the bucket floor also contributes a push, and you can't simply set $a=g$ any more. Don't apply $r\omega^2=g$ to a general "spinning water" problem &mdash; it's only valid right at the critical minimum speed.</p>
+	</div>
+	<p>This is the same principle that is used to create artificial gravity in fairground rides and in (potential) space stations. For a space station to create artificial gravity it would need to rotate with a centripetal acceleration of 9.81ms<sup>-2</sup>, so:</p>
+	<div class="formula">$$\large a=r\omega^{2}=9.81\mathrm{ms}^{-2}$$</div>
+	<div class="formula">
+		$$\large \omega=\sqrt{\frac{9.81\mathrm{ms}^{-2}}{r}}$$
+	</div>
+	<p>So for a space station with a radius of 100m would give an angular velocity of 0.31rad s<sup>-1</sup> and a period of revolution of 20s. The larger the space station, the slower it would have to rotate. There are, obviously lot of other practical considerations about building a space station like this, such as the huge mass.</p>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="3">
+	<h3>Cars Going Over Hills</h3>
+	<p>When a car is travelling on a flat road, the support force from the road is in the opposite direction to and equal in magnitude to the weight of the car. When the car goes over a hill the centripetal force which causes the car to travel in a circular path is the difference between the weight and the support force.</p>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>Centripetal force always points <b>towards the centre</b> of the circular path &mdash; here, that's downwards, into the hill. Since weight (down) must be larger than the support force (up) to give a net downward resultant, the equation is $mg-S=\frac{mv^2}{r}$, not $S-mg=\frac{mv^2}{r}$. Getting this sign the wrong way round is a very common error and leads to the wrong final formula for the maximum speed.</p>
+	</div>
+	<div class="formula">$$\large mg-S=\frac{mv^{2}}{r}$$</div>
+	<p>The faster the car goes, the greater required centripetal force. As the car&rsquo;s weight is providing the centripetal force, then as the car gets faster then <i>S</i> must get smaller and smaller until it reaches <i>0</i>. When <i>S</i> reaches <i>0</i> the car will lose contact with the road when the speed of the car reaches <i>v<sub>0</sub></i>.</p>
+	<div class="formula">$$\large mg=\frac{mv{_{0}}^{2}}{r}$$</div>
+	<figure>
+		<img src="{{ url_for('static', filename='images/periodic_motion/car_on_bridge.svg') }}" alt="car going over a bridge" class="size650">
+		<figcaption><b>Figure 1:</b>&nbsp;The forces on a car going over a hill.</figcaption>
+	</figure>
+	<p>So for a bridge, with a radius of <i>r</i> the maximum speed the car would be able to go before it became airborne would be:</p>
+	<div class="formula">$$\large v_{0}=\left ( gr \right )^{\frac{1}{2}}$$</div>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="4">
+	<h3>Going Round Bends</h3>
+	<p>Cycle tracks have banked corners to allow the bikes to remain at high speeds as they go around the bends. Of a flat surface the centripetal force is provided by the frictional forces between the tyres and the road. When the track is banked, the support force from the surface provides some of the centripetal force, so less has to be provided by the friction.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/periodic_motion/cyclist_on_banked_track.svg') }}" alt="Cyclist on a banked track" class="size450">
+		<figcaption><b>Figure 2:</b>&nbsp;Cyclists using a banked track use the push from the track to provide some of the centripetal force.</figcaption>
+	</figure>
+	<p>Resolving horizontally $N \sin \theta+F\cos\theta=\frac{mv^{2}}{r}$ is the centripetal force acting on the car.</p>
+	<p>Resolving vertically $N \cos \theta=mg$ as it is opposite the weight.</p>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>It's easy to swap $\sin\theta$ and $\cos\theta$ when resolving $N$. Here $\theta$ is measured from the vertical (the normal to the banked surface), so the component of $N$ balancing weight &mdash; which acts straight down &mdash; uses $\cos\theta$, and the horizontal component providing centripetal force uses $\sin\theta$. Always sketch the angle onto your diagram and check which component points which way, rather than guessing which trig ratio to use.</p>
+	</div>
+	<p>At a certain speed the bike could travel around the track with no friction, in this case:</p>
+	<div class="formula">$$\large \tan\theta=\frac{N\sin\theta}{N\cos\theta}=\frac{mv^{2}}{mgr}\rightarrow \tan\theta=\frac{v^{2}}{gr}$$</div>
+	<p>So the speed the bike would need to be travelling at for there to be no sideways friction is $v^{2}=gr\tan\theta$</p>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>$\tan\theta=\frac{v^2}{gr}$ only holds at the <b>one specific speed</b> where friction isn't needed at all. At any other speed on the same banked track, friction also contributes to (or opposes) the centripetal force, and this simplified equation no longer applies &mdash; you'd need to go back to the full horizontal and vertical resolving equations with an $F$ term included.</p>
+	</div>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="5">
+	<h3>Test yourself</h3>
+	<p>Try the questions below to check your understanding of this topic. Numerical questions use different numbers each time, so you can attempt them more than once.</p>
+	<div id="quiz-root"></div>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+
+{% endblock %}
+
+{% block prev_link %}
+	<a href="{{ url_for('circular_motion') }}"><i class="fas fa-chevron-circle-left"></i><span class="nav_link">Previous topic</span></a>
+{% endblock %}
+
+{% block resources_heading %}One page summary{% endblock %}
+
+{% block resources %}
+	<li><a href="{{ url_for('static', filename='summaries/periodic_motion/applying_circular_motion_summary.html') }}" target="_blank"><i class="fas fa-file-alt"></i> Printable revision sheet</a></li>
+{% endblock %}
+
+{% block next_link %}
+	<a href="/periodic-motion/shm"><span class="nav_link">Next topic</span><i class="fas fa-chevron-circle-right"></i></a>
+{% endblock %}
+
+{% block extra_scripts %}
+	<script src="{{ url_for('static', filename='js/quiz.js') }}"></script>
+	<script src="{{ url_for('static', filename='quizzes/applying_circular_motion_questions.js') }}"></script>
+	<script>
+		new PhysicsQuiz(document.getElementById('quiz-root'), applyingCircularMotionQuestions, {
+			storageKey: 'applying_circular_motion'
+		});
+	</script>
+{% endblock %}

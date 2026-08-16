@@ -1,0 +1,328 @@
+{% extends "base.html" %}
+
+{% block title %}Projectile motion{% endblock %}
+{% block page_h1 %}Projectile motion{% endblock %}
+
+{% block meta_description %}A Level Physics notes and worked examples to help students with their exams and learning. In this topic we extend the concepts of motion into two dimensions, where an object is acted on only by gravity.{% endblock %}
+{% block meta_keywords %}projectiles, gravity, acceleration, parabola, terminal velocity, air resistance, worked examples, exam questions, A level, physics{% endblock %}
+
+{% block extra_head %}
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/quiz.css') }}">
+{% endblock %}
+
+{% block page_boxes %}
+		<a href="#1"><button class="button">Projectiles</button></a>
+		<a href="#2"><button class="button">Solving projectile problems</button></a>
+		<a href="#3"><button class="button">Launched horizontally</button></a>
+		<a href="#4"><button class="button">Launched at an angle</button></a>
+		<a href="#5"><button class="button">The monkey and the hunter</button></a>
+		<a href="#6"><button class="button">Air resistance and projectiles</button></a>
+		<a href="#7"><button class="button">Worked example</button></a>
+		<a href="#8"><button class="button">Test yourself</button></a>
+{% endblock %}
+
+{% block spec %}
+	<div id="spec">
+		<p class="spec_ref"><b>3.4.1.4 Projectile motion</b></p>
+
+		<p class="spec_box">Independent effect of motion in horizontal and vertical directions of a uniform gravitational field. Problems will be solvable using the equations of uniform acceleration.</p>
+		<p class="spec_box">Qualitative treatment of friction.</p>
+		<p class="spec_box">Distinctions between static and dynamic friction will not be tested.</p>
+		<p class="spec_box">Qualitative treatment of lift and drag forces.</p>
+		<p class="spec_box">Terminal speed.</p>
+		<p class="spec_box">Knowledge that air resistance increases with speed.</p>
+		<p class="spec_box">Qualitative understanding of the effect of air resistance on the trajectory of a projectile and on the factors that affect the maximum speed of a vehicle.</p>
+	</div>
+{% endblock %}
+
+{% block content %}
+
+		<section class="top_section" id="1">
+			<h3>Projectiles</h3>
+			<p>So far, motion has only been considered in a single direction at a time, either horizontal or vertical. But what happens when an object has <b>both</b> horizontal and vertical components to its motion at once, such as a lemming taking a running leap off the edge of a cliff?</p>
+
+			<figure>
+				<img src="{{ url_for('static', filename='images/mechanics/lemmings.gif') }}" alt="lemmings jumping off a cliff" class="size400">
+				<figcaption><b>Figure 1:</b>&nbsp;Lemmings jumping off a cliff are an example of projectile motion.</figcaption>
+			</figure>
+
+			<p>A <b>projectile</b> is any object moving freely through the air under the influence of gravity alone, with no continuous thrust of its own. As soon as the lemming leaves the edge of the cliff, it's a projectile: there's no longer any horizontal force acting on it (a force can only act while its paws are in contact with the ground), so its horizontal velocity stays constant. Its weight, however, is a non-contact force, so it continues to accelerate downwards for the whole of its flight.</p>
+			<p>This gives projectile motion its key feature: the horizontal and vertical components of the motion are completely <b>independent</b> of one another. The vertical motion behaves exactly as it would for an object simply dropped or thrown straight up, accelerating under gravity throughout; the horizontal motion behaves exactly as it would for an object moving at constant velocity with no forces acting on it at all. Neither component affects the other.</p>
+
+			<div class="callout callout-definition">
+				<p class="callout-label"><i class="fas fa-lightbulb"></i> Worth remembering</p>
+				<p>Every technique on this page comes back to one idea: <b>horizontal and vertical motion are completely independent</b>. Treat them as two separate suvat problems, connected only by the time, $t$, which is the same for both. Never let a horizontal quantity sneak into a vertical calculation, or vice versa &mdash; they don't interact at all, in the absence of air resistance.</p>
+			</div>
+			<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+		</section>
+	<br>
+	<br>
+	<hr>
+		<section id="2">
+			<h3>Solving projectile problems</h3>
+			<p>Because the horizontal and vertical motions are independent, every projectile problem can be split into two separate suvat problems: one horizontal, one vertical, connected only by the time, $t$, which is the same for both.</p>
+
+			<div>
+			<table class="center" style="width: 85%">
+				<tr>
+					<th></th>
+					<th><b>Vertical</b></th>
+					<th><b>Horizontal</b></th>
+				</tr>
+				<tr>
+					<td>Displacement</td>
+					<td>$s_{V}$</td>
+					<td>$s_{H}$</td>
+				</tr>
+				<tr>
+					<td>Initial velocity</td>
+					<td>$u_{V}$</td>
+					<td>$u_{H}$</td>
+				</tr>
+				<tr>
+					<td>Final velocity</td>
+					<td>$v_{V}$</td>
+					<td>$v_{H}$</td>
+				</tr>
+				<tr>
+					<td>Acceleration</td>
+					<td>$a_{V}=-g$</td>
+					<td>$a_{H}=0$</td>
+				</tr>
+				<tr>
+					<td>Time</td>
+					<td colspan="2" style="text-align:center">$t$ (the same for both)</td>
+				</tr>
+			</table>
+			</div>
+
+			<p>The behaviour of the two components is summarised below, taking upwards as positive:</p>
+
+			<ul class="page_list">
+			<li>The <b>horizontal</b> component of velocity doesn't change with time, since the horizontal acceleration is zero (in the absence of air resistance). It determines the <b>range</b> of the projectile, via $s_{H}=u_{H}t$.</li>
+			<li>The <b>vertical</b> component of velocity is acted on by a constant acceleration, $-g$, throughout the flight. Along with the initial height, it determines the <b>time of flight</b>, via $s_{V}=u_{V}t+\frac{1}{2}at^{2}$ or $v_{V}^{2}=u_{V}^{2}+2as_{V}$.</li>
+			</ul>
+
+			<p>If the object is launched at an angle $\theta$ above the horizontal, rather than purely horizontally or vertically, the initial velocity $u$ must first be resolved into its two components before either suvat problem can be tackled:</p>
+
+			<div class="formula">
+				$$u_{H}=u\cos\theta \qquad u_{V}=u\sin\theta$$
+			</div>
+
+			<p>A reliable method for approaching any projectile problem is:</p>
+			<ol class="page_list">
+			<li>If the initial velocity is at an angle, resolve it into horizontal and vertical components first.</li>
+			<li>List the knowns separately for the horizontal and vertical motion, as in the table above.</li>
+			<li>Solve the <b>vertical</b> motion first. This is usually where enough information exists to find the time of flight, $t$, since it depends on the height and the vertical velocity.</li>
+			<li>Use that value of $t$ in the <b>horizontal</b> equation, $s_{H}=u_{H}t$, to find the range, or any other horizontal quantity asked for.</li>
+			</ol>
+			<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+		</section>
+	<br>
+	<br>
+	<hr>
+		<section id="3">
+			<h3>Launched horizontally</h3>
+			<p>Going back to the lemming: at the instant it leaves the cliff, its vertical velocity is zero, but it will begin to increase immediately, while its horizontal velocity remains whatever it was at the moment it left the ground.</p>
+
+			<figure>
+				<img src="{{ url_for('static', filename='images/mechanics/lemming_projectile.svg') }}" alt="lemming jumping off a cliff, vector diagram" class="size650">
+				<figcaption><b>Figure 2:</b>&nbsp;As the lemming falls, the vertical component of its velocity increases, but the horizontal component remains constant.</figcaption>
+			</figure>
+
+			<p>Because $u_{V}=0$ in this case, the time of flight can be found directly from the height of the cliff, $s$:</p>
+
+			<div class="formula">
+				$$\large s=\frac{1}{2}gt^{2} \quad \Longrightarrow \quad t=\sqrt{\frac{2s}{g}}$$
+			</div>
+
+			<p>This shows that the time a projectile spends in the air is determined <i>only</i> by the height it falls, and is completely independent of how fast it's moving horizontally. Two lemmings jumping off the same cliff at different running speeds will hit the ground at exactly the same time, even though they'll land different distances away.</p>
+
+			<div class="callout callout-mistake">
+				<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+				<p>For an object launched horizontally, the time of flight depends <b>only</b> on the height it falls, never on its horizontal speed. It's tempting to think a faster-moving object would somehow spend less time in the air, but the horizontal and vertical motions don't interact: two objects released from the same height, however different their horizontal speeds, always land at exactly the same moment.</p>
+			</div>
+			<p>The range is then simply the horizontal velocity multiplied by this time of flight:</p>
+
+			<div class="formula">
+				$$\large s_{H}=u_{H}t$$
+			</div>
+
+			<p>The velocity of the lemming at any point during its flight can also be found. The horizontal component stays constant throughout, while the vertical component grows according to $v_{V}=-gt$ (negative, since it's directed downwards). These two components can then be combined with Pythagoras' theorem to find the resultant speed, and with trigonometry to find the angle of impact:</p>
+
+			<div class="formula">
+				$$\large\tan \theta =\frac{v_{V}}{v_{H}}$$
+			</div>
+
+			<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+		</section>
+	<br>
+	<br>
+	<hr>
+		<section id="4">
+			<h3>Launched at an angle</h3>
+			<p>Not everything is as simple as a horizontally launched lemming. Imagine a flare fired at 26 m s<sup>−1</sup> from ground level, at an angle of 30° to the horizontal. Like all projectiles in the absence of air resistance, the flare traces out a parabolic path. This time, the initial velocity has both a vertical <b>and</b> a horizontal component, so it needs to be resolved before anything else can be calculated.</p>
+
+			<figure>
+				<img src="{{ url_for('static', filename='images/mechanics/flare_gun.svg') }}" alt="path of a flare fired at an angle" class="size1000">
+				<figcaption><b>Figure 3:</b>&nbsp;A flare fired at an angle to the horizontal takes a parabolic path.</figcaption>
+			</figure>
+
+			<p>Once the velocity has been resolved, the same method as before applies: the vertical component determines the time of flight and any vertical distances, while the horizontal component determines the range.</p>
+			<p>The flare reaches its maximum height when the vertical component of its velocity is momentarily zero. Using $v=u+at$, the time this takes is:</p>
+
+			<div class="formula">
+				$$\large t=\frac{0-u\sin \theta}{-g}=\frac{u\sin\theta}{g}$$
+			</div>
+
+			<p>Note that this is <i>not</i> the total time of flight, just the time taken to reach the highest point. If the flare lands back at the same height it was launched from, the path is symmetrical, so the total time of flight is exactly double this value.</p>
+
+			<div class="callout callout-mistake">
+				<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+				<p>$t=\frac{u\sin\theta}{g}$ gives the time to reach maximum height, <b>not</b> the total time of flight. Doubling it to get the full flight time only works when the projectile lands at the <b>same height</b> it was launched from &mdash; if it lands higher or lower (such as a ball hit off the edge of a cliff), the ascent and descent take different amounts of time, and this simple doubling trick doesn't apply.</p>
+			</div>
+			<p>The flare gun is also a good example of a projectile that wouldn't actually follow a full, clean parabola in real life: it would explode at the top of its flight, and the resulting fragments would fall with significant air resistance, rather than continuing along the idealised path.</p>
+			<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+		</section>
+	<br>
+	<br>
+	<hr>
+		<section id="5">
+			<h3>The monkey and the hunter</h3>
+			<p>A classic thought experiment shows just how completely independent the horizontal and vertical motions of a projectile really are.</p>
+			<p>A hunter spots a monkey hanging from a branch, aims their gun directly at it, and fires. At the exact instant the gun fires, the monkey, startled by the sound, lets go of the branch and begins to fall. Does the bullet still hit the monkey?</p>
+
+			<figure>
+				<img src="{{ url_for('static', filename='images/mechanics/monkey_and_hunter.svg') }}" alt="the monkey and hunter thought experiment, showing the bullet's curved path and the monkey's vertical fall meeting at the same point" class="size800">
+				<figcaption><b>Figure 4:</b>&nbsp;Because gravity affects the bullet and the monkey equally, the bullet always hits.</figcaption>
+			</figure>
+
+			<p>Perhaps surprisingly, the answer is yes, the bullet always hits the monkey (ignoring air resistance). If the gun hadn't been affected by gravity at all, the bullet would have travelled in a straight line to the monkey's <i>original</i> position. But gravity accelerates the bullet downwards throughout its flight, by exactly the same amount, in exactly the same time, as it accelerates the falling monkey. Since both the bullet and the monkey fall by the same vertical distance in the same time, the bullet always ends up exactly where the monkey has fallen to, regardless of the bullet's speed or the angle it was fired at.</p>
+			<p>This works precisely because horizontal and vertical motion are independent: the bullet's horizontal velocity carries it towards the monkey's tree without being affected by gravity at all, while gravity acts on the vertical motion of both the bullet and the monkey in exactly the same way, whether they're moving horizontally or not.</p>
+			<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+		</section>
+	<br>
+	<br>
+	<hr>
+		<section id="6">
+			<h3>Air resistance and projectiles</h3>
+			<p>Every projectile discussed so far has assumed there's no air resistance acting on it, which keeps the horizontal velocity constant and produces a perfectly symmetrical parabola. In reality, air resistance affects almost every real projectile to some extent.</p>
+			<p>Air resistance is a form of <b>drag</b>: a resistive force that acts in the opposite direction to an object's motion through a fluid (including air), and which <b>increases as speed increases</b>. Because it opposes motion in whichever direction the object happens to be moving, it acts on both the horizontal and vertical components of a projectile's velocity, and both components are reduced as a result.</p>
+
+			<div class="callout callout-mistake">
+				<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+				<p>Air resistance doesn't just slow the vertical fall &mdash; it acts directly opposite to the object's actual direction of travel, so it reduces <b>both</b> the horizontal and vertical components of velocity simultaneously. This is why range is reduced as well as maximum height; a common mistake is to only consider air resistance's effect on the vertical motion, and forget it reduces the horizontal component too.</p>
+			</div>
+
+			<figure>
+				<img src="{{ url_for('static', filename='images/mechanics/projectile_air_resistance.svg') }}" alt="comparison of a projectile's path with and without air resistance, showing the path with air resistance falling short and steeper" class="size800">
+				<figcaption><b>Figure 5:</b>&nbsp;Air resistance reduces the range and maximum height of a projectile, and steepens its final descent.</figcaption>
+			</figure>
+
+			<p>Compared to the idealised parabola, a projectile affected by air resistance will:</p>
+			<ul class="page_list">
+			<li>reach a <b>lower maximum height</b>, and reach it <b>sooner</b>, since the vertical component of its velocity is reduced throughout the ascent;</li>
+			<li>travel a <b>shorter range</b>, since the horizontal component of its velocity is continuously reduced, rather than staying constant;</li>
+			<li>fall more <b>steeply</b> on the way down than it rose on the way up, since drag continues to reduce the horizontal velocity throughout the flight, while the vertical velocity approaches its terminal value.</li>
+			</ul>
+			<p>The result is a path that's no longer symmetrical: it becomes noticeably steeper on the way down, rather than mirroring the shape of the ascent.</p>
+			<p>If an object falls for long enough, the drag force acting on it will increase until it exactly balances its weight. At this point there's no longer any resultant force, so no further acceleration occurs, and the object falls at a constant <b>terminal velocity</b>. The same idea explains what limits the maximum speed of a powered vehicle, such as a car or a plane: as its speed increases, so does the drag acting against it, until the drag force exactly balances the driving force (or thrust), at which point the resultant force is zero and the vehicle can no longer accelerate any further.</p>
+			<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+		</section>
+	<br>
+	<br>
+	<hr>
+		<section id="7">
+			<h3>Worked example</h3>
+
+			<figure>
+				<img src="{{ url_for('static', filename='images/mechanics/golfer_cliff.svg') }}" alt="a golfer hitting a ball from the top of a cliff at 40 metres per second and 30 degrees above the horizontal" class="size650">
+				<figcaption><b>Figure 6:</b>&nbsp;A golfer hits a ball from the top of a cliff, at 40 m s<sup>−1</sup> and 30° above the horizontal.</figcaption>
+			</figure>
+
+			<p>A golfer hits a ball from the top of a cliff with an initial velocity of 40 m s<sup>−1</sup>, at an angle of 30° above the horizontal, as shown in Figure 6. Assume there's no air resistance.</p>
+
+			<div>
+				<ol class="page_list" type="A">
+					<li>Calculate the initial vertical component of velocity of the ball.</li>
+					<p class="workex">The first step in any problem like this is to resolve the initial velocity into its two components. Only the vertical one is needed here:</p>
+					<div class="formula">
+						$$u_{V}=u\sin\theta=40\sin30°=\quantity{20}{ms^{-1}}$$
+					</div>
+
+					<li>At point $Y$, the ball is level with its initial position. Show that the time taken to reach $Y$ is about 4 s.</li>
+					<p class="workex">Because $Y$ is at the same height as the launch point, the vertical displacement between the two points is zero, so this can be treated as its own mini suvat problem, using only the vertical component of the motion:</p>
+					<div class="formula">
+						$$u_{V}=\quantity{20}{ms^{-1}} \qquad a=\quantity{-9.81}{ms^{-2}} \qquad s_{V}=\quantity{0}{m} \qquad t=\text{?}$$
+					</div>
+					<p class="workex">Rather than solving $s_{V}=u_{V}t+\frac{1}{2}at^{2}$ directly (which would need factorising), it's quicker to use the symmetry of the path: the ball takes just as long to rise to its maximum height as it does to fall back down to launch height, so we can find the time to the top, then double it. At the top, the vertical velocity is momentarily zero, so using $v=u+at$:</p>
+					<div class="formula">
+						$$0=20-9.81t \quad \Longrightarrow \quad t=\quantity{2.04}{s}$$
+					</div>
+					<p class="workex">Doubling this, by symmetry, gives the time to reach $Y$:</p>
+					<div class="formula">
+						$$t_{Y}=2\times2.04=\quantity{4.08}{s}\approx\quantity{4}{s} \quad \checkmark$$
+					</div>
+
+					<div class="callout callout-definition">
+						<p class="callout-label"><i class="fas fa-lightbulb"></i> Worth remembering</p>
+						<p>The doubling trick used here only works because $Y$ is at the <b>same height</b> as the launch point &mdash; that's exactly why part D of this worked example can't just double the time again to find when the ball reaches the ground, and instead has to treat the final drop from $Y$ to the base of the cliff as a separate suvat problem. Symmetry only applies between two points of equal height, not across a flight where the landing point is higher or lower than the start.</p>
+					</div>
+
+					<li>The total time of flight of the ball is 6.0 s. Describe how the vertical component of velocity changes throughout this time.</li>
+					<p class="workex">The vertical velocity starts at $+\quantity{20}{ms^{-1}}$ (upwards), and decreases at a constant rate of $\quantity{9.81}{ms^{-2}}$ for the entire flight, since gravity acts continuously, whether the ball is rising or falling. This means a graph of $v$ against $t$ is a single straight line of constant negative gradient, starting at $(0,\,20)$, crossing the time axis at $t\approx\quantity{2.04}{s}$ (the moment found in part B, where the ball is at its highest point), and continuing down to $v=20-(9.81\times6)\approx\quantity{-38.9}{ms^{-1}}$ at $t=\quantity{6.0}{s}$, the moment the ball lands.</p>
+					<p class="workex">It's worth noticing that this graph doesn't stop being valid once the ball passes $Y$; the acceleration is constant for the <i>entire</i> flight, from the moment it leaves the club to the moment it lands, so a single straight line describes the whole 6.0 s.</p>
+
+					<li>Calculate the height, $h$, of the cliff.</li>
+					<p class="workex">By the symmetry used in part B, the vertical velocity at $Y$ has the same magnitude as the initial vertical velocity, but acts downwards: $v_{V}=\quantity{-20}{ms^{-1}}$. The remaining time from $Y$ to the ground is the total flight time minus the time already used to reach $Y$:</p>
+					<div class="formula">
+						$$t_{remaining}=6.0-4.0=\quantity{2.0}{s}$$
+					</div>
+					<p class="workex">This last stretch, from $Y$ down to the base of the cliff, can now be treated as its own suvat problem. Taking downwards as positive for convenience, with $u=\quantity{20}{ms^{-1}}$ and $t=\quantity{2.0}{s}$:</p>
+					<div class="formula">
+						$$h=ut+\frac{1}{2}at^{2}=(20\times2.0)+\left(\frac{1}{2}\times9.81\times2.0^{2}\right)\approx\quantity{60}{m}$$
+					</div>
+					<p class="workex">This is a good example of the "split the motion into stages" approach: rather than trying to handle the whole 6.0 s flight in one calculation, it's broken into a symmetrical rise-and-fall down to launch height, followed by a separate, simpler fall from $Y$ to the ground.</p>
+
+					<li>In practice, air resistance would affect the path of the ball. Describe how this would change the path shown in Figure 6.</li>
+					<p class="workex">With air resistance included, the ball would reach a lower maximum height than $X$, and reach it earlier than in the ideal case, since drag continuously reduces its vertical velocity as it rises. Its range would also be reduced, so it would land closer to the base of the cliff than the path shown, and its final descent would be steeper than its ascent, rather than mirroring it.</p>
+				</ol>
+			</div>
+
+			<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+		</section>
+	<br>
+	<br>
+	<hr>
+		<section id="8">
+			<h3>Test yourself</h3>
+			<p>Try the questions below to check your understanding of this topic. Numerical questions use different numbers each time, so you can attempt them more than once.</p>
+			<div id="quiz-root"></div>
+			<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+		</section>
+
+	{% endblock %}
+
+	{% block resources_heading %}One page summary{% endblock %}
+
+{% block resources %}
+	<li><a href="{{ url_for('static', filename='summaries/mechanics/projectiles_summary.html') }}" target="_blank"><i class="fas fa-file-alt"></i> Printable revision sheet</a></li>
+{% endblock %}
+
+{% block prev_link %}
+	<a href="{{ url_for('motion') }}"><i class="fas fa-chevron-circle-left"></i><span class="nav_link">Previous topic</span></a>
+{% endblock %}
+
+{% block next_link %}
+	<a href="{{ url_for('newtonlaws') }}"><span class="nav_link">Next topic</span><i class="fas fa-chevron-circle-right"></i></a>
+{% endblock %}
+
+{% block extra_scripts %}
+	<script src="{{ url_for('static', filename='js/quiz.js') }}"></script>
+	<script src="{{ url_for('static', filename='quizzes/projectiles_questions.js') }}"></script>
+	<script>
+		new PhysicsQuiz(document.getElementById('quiz-root'), projectilesQuestions, {
+			storageKey: 'projectiles'
+		});
+	</script>
+{% endblock %}

@@ -1,0 +1,275 @@
+{% extends "base.html" %}
+
+{% block title %}Vectors{% endblock %}
+{% block page_h1 %}Vectors{% endblock %}
+
+{% block meta_description %}A Level Physics notes and worked examples to help students with their exams and learning. This page introduces scalars and vectors, and how to resolve and combine vectors using trigonometry and scale diagrams.{% endblock %}
+{% block meta_keywords %}vectors, scalars, equilibrium, rotation, perpendicular, worked examples, exam questions, A level, physics{% endblock %}
+
+{% block extra_head %}
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/quiz.css') }}">
+{% endblock %}
+
+{% block page_boxes %}
+		<a href="#1"><button class="button">Vectors and scalars</button></a>
+		<a href="#2"><button class="button">Using trigonometry to resolve vectors</button></a>
+		<a href="#3"><button class="button">Using a scale diagram to solve vectors</button></a>
+		<a href="#4"><button class="button">Test yourself</button></a>
+{% endblock %}
+
+{% block spec %}
+<div id="spec">
+<p class="spec_ref">3.4.1.1 Scalars and vectors</p>
+<p class="spec_box">Nature of scalars and vectors.</p>
+<p class="spec_box">Examples should include:<br>
+velocity/speed, mass, force/weight, acceleration, displacement/distance.</p>
+<p class="spec_box">Addition of vectors by calculation or scale drawing.</p>
+<p class="spec_box">Calculations will be limited to two vectors at right angles.</p>
+<p class="spec_box">Scale drawings may involve vectors at angles other than 90°.</p>
+<p class="spec_box">Resolution of vectors into two components at right angles to each other.</p>
+<p class="spec_box">Examples should include components of forces along and perpendicular to an inclined plane.</p>
+<p class="spec_box">Problems may be solved either by the use of resolved forces or the use of a closed triangle.</p>
+<p class="spec_box">Conditions for equilibrium for two or three coplanar forces acting at a point. Appreciation of the meaning of equilibrium in the context of an object at rest or moving with constant velocity.</p>
+</div>
+{% endblock %}
+
+{% block content %}
+
+		<!-- body text goes here -->
+		<section class="top_section" id="1">
+			<h3>Vectors and scalars</h3>
+			<p>Imagine a friend calls you for directions and you tell them "walk 500 metres". That's not much use on its own; 500 metres in which direction? Some quantities in physics are like this, knowing their size alone isn't enough to fully describe them, we also need to know which way they're pointing. This distinction, between quantities that need only a size and those that need a direction too, is one of the most fundamental ideas in physics, and it's the one we'll build the whole of mechanics on, so it's the natural place to start.</p>
+			<p>Almost every physical quantity you'll meet in this course falls into one of two categories: scalars and vectors. Scalars are quantities that have size, or magnitude, only, with no direction attached. For example, the mass of an object can be fully described as 45 kg, and no further information is needed. Vectors, on the other hand, have both <i>magnitude</i> <b>and</b> <i>direction</i>.</p>
+			<p>The direction of a vector is usually given as either + (positive) and - (negative), or as an angle measured from some horizontal or vertical reference line. Other conventions are sometimes used too, such as points on a compass, or simply up, down, backwards and forwards.</p>
+
+			<p>When describing a vector, both its magnitude and direction must be stated, and vectors can be drawn as arrows, with the length of the arrow representing the magnitude and the direction of the arrow representing, unsurprisingly, the direction.</p>
+
+			<p>Below is a list of some of the common scalar and vector quantities you'll come across throughout your A-level studies.</p>
+
+
+			<!--Table of vectors and scalars-->
+			<div>
+			<table class="center" style="width: 50%">
+				<tr>
+					<th><b>Scalar</b></th>
+					<th><b>Vector</b></th>
+				</tr>
+				<tr>
+					<td>speed</td>
+					<td>velocity</td>
+				</tr>
+				<tr>
+					<td>mass</td>
+					<td>force</td>
+				</tr>
+				<tr>
+					<td>energy</td>
+					<td>momentum</td>
+				</tr>
+				<tr>
+					<td>distance</td>
+					<td>displacement</td>
+				</tr>
+				<tr>
+					<td>pressure</td>
+					<td>moment</td>
+				</tr>
+				<tr>
+					<td>frequency</td>
+					<td>field strength</td>
+				</tr>
+				<tr>
+					<td>time</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>volume</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>charge</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>current</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>temperature</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>power</td>
+					<td></td>
+				</tr>
+			</table>
+			</div>
+
+			<p>As you can see, many scalar quantities have vector equivalents, such as speed and velocity. One of the simplest examples of the difference between scalars and vectors is the case of distance and displacement, an idea you may already have met at GCSE. The distance covered by an object when travelling is the length of the path taken, whereas the displacement is the length of the shortest path from the start of the journey to the end. In a full circular path of motion, for example, the distance travelled would be π times the diameter of the circle, but the displacement would be zero, since the object starts and ends at the same point in space.</p>
+
+			<div class="callout callout-definition">
+				<p class="callout-label"><i class="fas fa-lightbulb"></i> Worth remembering</p>
+				<p><b>Distance</b> is a scalar &mdash; the total length of the path travelled, always positive, never "cancels out". <b>Displacement</b> is a vector &mdash; the straight-line distance from start to end point, in a given direction. An object can travel a large distance while having zero displacement (a full lap of a track), or a small distance with a displacement close to it (a straight walk). Don't use the two words interchangeably in an answer.</p>
+			</div>
+
+			<figure>
+				<img src="{{ url_for('static', filename='images/mechanics/Displacement.svg') }}" alt="the difference between distance and displacement" class="size300">
+				<figcaption><b>Figure 1:</b>&nbsp;The difference between distance and displacement</figcaption>
+			</figure>
+
+			<p>When two or more vectors act on an object the overall effect they have on the object is called the <i>resultant</i> and can itself be described as a vector.</p>
+
+			<p>Using vectors leads to some different arithmetic; we can no longer always just add vector quantities together as we are used to. We must take into account their direction.</p>
+
+			<p>When the vectors are acting in one dimension (along the same plane) we can use + and - as the directions and then addition of vectors is not too difficult.</p>
+
+			<figure>
+				<img src="{{ url_for('static', filename='images/mechanics/two_vectors_on_a_plane.svg') }}" alt="adding two parallel vectors" class="size800">
+				<figcaption><b>Figure 2:</b>&nbsp;Adding two parallel vectors.</figcaption>
+			</figure>
+			<p>In the top diagram both of the force vectors are acting in the same direction, so we can simply add them together. In the bottom diagram the two force vectors are acting in opposite directions, so we must consider their relative directions. (It doesn't matter which direction we choose to call positive and which negative, the result will still be the same.) In this example, the force acting to the right (7 N) is taken as positive and the force acting to the left (5 N) as negative. Once the signs have been assigned we can simply add the vectors together. It's important that the directional signs are assigned consistently throughout your working, since the sign of the answer tells you the direction of the resultant vector. Here, the resultant is +2 N, telling us that the overall force is acting to the right.</p>
+
+			<div class="callout callout-mistake">
+				<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+				<p>It doesn't matter <i>which</i> direction you choose as positive, but you must stick with that choice for the whole calculation. Switching convention part-way through &mdash; even accidentally &mdash; will flip the sign of some forces and give a resultant with the wrong magnitude, direction, or both. It's worth stating your chosen positive direction explicitly before you start adding.</p>
+			</div>
+
+			<p>When vectors are not acting along a plane we have one of two options:</p>
+			<ul class="page_list">
+			<li>Use trigonometry </li>
+			<li>Draw a scale diagram</li>
+			</ul>
+			<p>There are different situations where each approach is more appropriate, and we will look at each in turn.</p>
+			<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+		</section>
+	<br>
+	<br>
+	<hr>
+		<section id="2">
+			<h3>Using trigonometry to resolve vectors</h3>
+
+			<p>When two vectors are acting at right angles to each other we can use Pythagoras' theorem to find the resultant, rather than having to measure it from a scale drawing. If you were to draw the two vectors nose-to-tail, as in a scale diagram, the resultant would be the line joining the start of the first vector to the end of the second. Because the two original vectors are at right angles to one another, this resultant forms the hypotenuse of a right-angled triangle, with the two vectors themselves as the other two sides. Pythagoras' theorem, $a^2+b^2=c^2$, then lets us calculate the length of that hypotenuse directly, without needing a ruler and protractor.</p>
+
+			<div class="callout callout-mistake">
+				<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+				<p>Pythagoras' theorem only works directly when the two vectors are at exactly 90° to each other. If the angle between them is anything else, $a^2+b^2=c^2$ does not apply, and you'll need either the sine/cosine rule or a carefully drawn scale diagram instead (see the next section). Always check the angle between the vectors before reaching for Pythagoras.</p>
+			</div>
+
+			<figure>
+				<img src="{{ url_for('static', filename='images/mechanics/two_right_angled_vectors.svg') }}" alt="adding two vectors at right angles" class="size850">
+				<figcaption><b>Figure 3:</b>&nbsp;Calculating the resultant of two vectors at right angles to each other.</figcaption>
+			</figure>
+
+			<p>If two vectors acting at right angles to each other can be combined into a single resultant vector, it should be clear that the reverse is also true. Any individual vector can be <i>resolved</i> into two <i>components</i> at right angles to each other.</p>
+
+			<p>To do this we need to know the angle at which the vector is acting relative to some reference direction. Once we know the angle we can use trigonometry to resolve the vector into its components.</p>
+
+			<figure>
+				<img src="{{ url_for('static', filename='images/mechanics/resolving_vectors.svg') }}" alt="resolving a vector into right angled components" class="size850">
+				<figcaption><b>Figure 4:</b>&nbsp;Any vector quantity can be broken into two components which are at right angles to each other.</figcaption>
+			</figure>
+
+			<p>In this example a ball has been launched with a velocity (<i>s</i>)of 40 ms<sup>-1</sup> at an angle of 30 degrees to the horizontal. This velocity vector can be resolved into vertical and horizontal components.</p>
+
+			<p>The horizontal component (H) can be represented as the adjacent side of a right angled triangle and the vertical component (V) is the opposite side of the triangle.</p>
+			<p>The horizontal component is therefore:</p>
+
+			<div class="formula">
+				$$\large\textrm{H}=40 \cos (30)=34.6\textrm{ms}^{-1}$$
+			</div>
+
+			<p>And the vertical component is:</p>
+			<div class="formula">
+				$$\large\textrm{V}=40 \sin (30)=20.0 \textrm{ms}^{-1}$$
+			</div>
+
+			<p>This is very useful when the two components of a vector need to be considered separately, as is often the case with forces and projectile motion.</p>
+
+			<div>
+				<ol class="page_list" type="A">
+					<li>A boat's engine provides a driving force of <span>$\quantity{6.0\times10^{3}}{N}$</span> due East, while the current pushes on the hull with a force of <span>$\quantity{8.0\times10^{3}}{N}$</span> due North. Calculate the magnitude of the resultant force on the boat.</li>
+					<p class="workex">The two forces act at right angles to each other, so the resultant is the hypotenuse of a right-angled triangle with the two forces as the other sides. Using Pythagoras' theorem:</p>
+					<div class="formula">
+						$$F_{R}=\sqrt{F_{1}^{2}+F_{2}^{2}}=\sqrt{\left(\quantity{6.0\times10^{3}}{N}\right)^{2}+\left(\quantity{8.0\times10^{3}}{N}\right)^{2}}=\quantity{1.0\times10^{4}}{N}$$
+					</div>
+					<li>Calculate the angle, <span>$\theta$</span>, that the resultant force makes with due East.</li>
+					<p class="workex">Since we know all three sides of the triangle (or the two original forces), we can find the angle using the inverse tangent of the opposite over the adjacent side:</p>
+					<div class="formula">
+						$$\theta=\tan^{-1}\left(\frac{F_{North}}{F_{East}}\right)=\tan^{-1}\left(\frac{8.0\times10^{3}}{6.0\times10^{3}}\right)=53.1°$$
+					</div>
+					<p class="workex">So the resultant force is <span>$\quantity{1.0\times10^{4}}{N}$</span> at an angle of 53.1° from due East.</p>
+				</ol>
+			</div>
+
+			<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>	
+		</section>
+	<br>
+	<br>
+	<hr>
+		<section id="3">
+			<h3>Using a scale diagram to solve vectors</h3>
+
+			<p>In situations where two vectors are not acting at right angles, it may be necessary to draw a scale diagram to find the resultant instead. Scale diagrams must be drawn carefully, using a sharp pencil, a ruler and a protractor.</p>
+
+			<p>In this example, two forces are acting at a point: one 16 N force and one 12 N force.<br>
+			A suitable scale of 1 cm to 2 N is chosen.<br>
+			As the two forces are both acting at the same point, the resultant force can be found by drawing a <em>parallelogram</em> of forces.</p>
+
+			<figure>
+				<img src="{{ url_for('static', filename='images/mechanics/how_to_draw_scale_diagrams_1.svg') }}" alt="drawing a scale diagram part 1" class="size450">
+				<figcaption><b>Figure 5:</b>&nbsp;Drawing a scale diagram, step 1. Carefully draw the vectors.</figcaption>
+			</figure>
+
+			<p>The angle between the two forces is carefully measured and the two other sides of the parallelogram can be drawn</p>
+
+			<figure>
+				<img src="{{ url_for('static', filename='images/mechanics/how_to_draw_scale_diagrams_2.svg') }}" alt="drawing a scale diagram part 2" class="size450">
+				<figcaption><b>Figure 6:</b>&nbsp;Drawing a scale diagram, step 2. Complete the parallelogram</figcaption>
+			</figure>
+
+			<p>Once the parallelogram has been drawn, the resultant force can be drawn as the diagonal starting from the origin of the two forces.<br>
+			Its magnitude can be measured directly using a ruler and converted using the scale, and its direction found using a protractor.</p>
+
+			<figure>
+				<img src="{{ url_for('static', filename='images/mechanics/how_to_draw_scale_diagrams_3.svg') }}" alt="drawing a scale diagram part 3" class="size450">
+				<figcaption><b>Figure 7:</b>&nbsp;Drawing a scale diagram, step 3. Draw and measure the diagonal.</figcaption>
+			</figure>
+
+			<p>Scale diagrams need to be drawn carefully, choosing as large a scale as possible to reduce any error.</p>
+
+			<div class="callout callout-mistake">
+				<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+				<p>When a question calls for a scale diagram, you need to actually <b>draw</b> it &mdash; sharp pencil, ruler, protractor, and a sensible scale stated clearly &mdash; even if you could get a numerical answer some other way, such as the sine rule. Skipping the diagram and just writing down an answer, however correct, will not get full marks. Choose as large a scale as the space allows, since a small scale magnifies any drawing or measuring error.</p>
+			</div>
+			<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+		</section>
+	<br>
+	<br>
+	<hr>
+		<section id="4">
+			<h3>Test yourself</h3>
+			<p>Try the questions below to check your understanding of this topic. Numerical questions use different numbers each time, so you can attempt them more than once.</p>
+			<div id="quiz-root"></div>
+			<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+		</section>
+
+		{% endblock %}
+	{% block resources_heading %}One page summary{% endblock %}
+
+{% block resources %}
+	<li><a href="{{ url_for('static', filename='summaries/mechanics/vectors_summary.html') }}" target="_blank"><i class="fas fa-file-alt"></i> Printable revision sheet</a></li>
+{% endblock %}
+
+{% block next_link %}
+	<a href="{{ url_for('statics') }}"><span class="nav_link">Next topic</span><i class="fas fa-chevron-circle-right"></i></a>
+{% endblock %}
+
+{% block extra_scripts %}
+	<script src="{{ url_for('static', filename='js/quiz.js') }}"></script>
+	<script src="{{ url_for('static', filename='quizzes/vectors_questions.js') }}"></script>
+	<script>
+		new PhysicsQuiz(document.getElementById('quiz-root'), vectorsQuestions, {
+			storageKey: 'vectors'
+		});
+	</script>
+{% endblock %}

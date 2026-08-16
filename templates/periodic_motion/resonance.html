@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+
+{% block title %}Resonance{% endblock %}
+{% block page_h1 %}Resonance{% endblock %}
+
+{% block meta_description %}A Level Physics notes and worked examples to help students with their exams and learning. In the last section of this module we learn about driven oscillations and resonance.{% endblock %}
+{% block meta_keywords %}periodic motion, oscillations, resonance, forced vibrations, vibrations, worked examples, exam questions, A level, physics{% endblock %}
+
+{% block extra_head %}
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/quiz.css') }}">
+{% endblock %}
+
+{% block page_boxes %}
+	<a href="#1"><button class="button">Resonance</button></a>
+	<a href="#2"><button class="button">Test yourself</button></a>
+{% endblock %}
+
+{% block spec %}
+<div id="spec">
+	<p class="spec_ref"><b>3.6.1.4 Forced vibrations and resonance</b></p>
+	<p class="spec_box">Qualitative treatment of free and forced vibrations.</p>
+	<p class="spec_box">Resonance and the effects of damping on the sharpness of resonance.</p>
+	<p class="spec_box">Examples of these effects in mechanical systems and situations involving stationary waves.</p>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<section class="top_section" id="1">
+	<h3>Resonance</h3>
+	<p>So far only <i>free oscillations</i> have been considered. If an external agent drives the oscillation it becomes a <i>forced oscillation</i>.</p>
+	<p>How the object responds to being driven depends on how it is being driven. If the object driving the oscillator forces the oscillations at the same frequency as the oscillator&rsquo;s own <i>natural frequency</i> then <i>resonance occurs</i>.</p>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>After any initial transient dies away, a forced oscillator settles into oscillating at the <b>driving frequency</b>, not its own natural frequency &mdash; this is true whether or not you're at resonance. Resonance is simply the special case where the driving frequency happens to <i>equal</i> the natural frequency, which is when the amplitude becomes largest. Away from resonance, the oscillator still moves at the driver's frequency, just with much smaller amplitude.</p>
+	</div>
+	<p>This can easily be shown by attempting to force a pendulum, first quickly enough so that the change in direction of the displacement stops the oscillator from responding and the pendulum no longer moves, and then slowly so that it barely effects the oscillation. It is easy enough to find the <i>resonant frequency</i> of the pendulum.</p>
+	<p>It should be noticed that the amplitude of the oscillation increases dramatically. The system is said to be <i>resonating</i>.</p>
+	<p>At resonance the <i>driver</i> is continuously supplying energy to the system, and without <i>damping</i> the amplitude would increase until the system destroyed itself. This is what happens when an opera singer manages to shatter a glass.</p>
+	<div class="callout callout-definition">
+		<p class="callout-label"><i class="fas fa-lightbulb"></i> Worth remembering</p>
+		<p>Every real system has <i>some</i> damping, so in practice the amplitude at resonance grows large but settles at a finite value, rather than truly increasing forever &mdash; energy lost to damping each cycle eventually balances the energy the driver supplies. The "amplitude increases without limit" description only applies to the idealised, completely undamped case.</p>
+	</div>
+	<figure>
+		<img src="{{ url_for('static', filename='images/periodic_motion/resonance.svg') }}" alt="resonant frequency of an oscillator" class="size600">
+		<figcaption><b>Figure 1:</b>&nbsp;When the driver frequency matches the oscillator's frequency there will be a large increase in amplitude.</figcaption>
+	</figure>
+	<p>A system is in resonance when the applied frequency is equal to the natural frequency.</p>
+	<p>The phase difference between the displacement and the periodic force is $\frac{\pi}{2}$. The force is exactly in phase with the velocity of the system.</p>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>Two different phase relationships are mentioned here, and it's easy to mix them up: at resonance, the driving force is $\frac{\pi}{2}$ <b>out of phase with displacement</b>, but exactly <b>in phase with velocity</b>. If asked which quantity the driving force is "in phase with" at resonance, the answer is velocity, not displacement.</p>
+	</div>
+	<p>If the applied frequency increases, and becomes higher than the natural frequency of the system then the amplitude decreases more and more and the phase difference increases from $\frac{\pi}{2}$ to $\pi$ so that the applied force is out of phase with the displacement.</p>
+	<p>This can be demonstrated very well by Barton&rsquo;s pendulums.</p>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="2">
+	<h3>Test yourself</h3>
+	<p>Try the questions below to check your understanding of this topic. Numerical questions use different numbers each time, so you can attempt them more than once.</p>
+	<div id="quiz-root"></div>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+
+{% endblock %}
+
+{% block resources_heading %}One page summary{% endblock %}
+
+{% block resources %}
+	<li><a href="{{ url_for('static', filename='summaries/periodic_motion/resonance_summary.html') }}" target="_blank"><i class="fas fa-file-alt"></i> Printable revision sheet</a></li>
+{% endblock %}
+
+{% block prev_link %}
+	<a href="{{ url_for('damping') }}"><i class="fas fa-chevron-circle-left"></i><span class="nav_link">Previous topic</span></a>
+{% endblock %}
+
+{% block extra_scripts %}
+	<script src="{{ url_for('static', filename='js/quiz.js') }}"></script>
+	<script src="{{ url_for('static', filename='quizzes/resonance_questions.js') }}"></script>
+	<script>
+		new PhysicsQuiz(document.getElementById('quiz-root'), resonanceQuestions, {
+			storageKey: 'resonance'
+		});
+	</script>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "extensions/_extension_base.html" %}
+
+{% block title %}Is the Sun hot enough for fusion?{% endblock %}
+
+{% block content %}
+<h3>Is the Sun hot enough for fusion?</h3>
+<p>The core of the Sun is around <span>$\quantity{15}{million\,K}$</span>, this is of course very hot, but is it hot enough to start the fusion process? As explained earlier, the fusion process begins with two protons coming together and one up-quark turning into a down-quark to create a neutron. For this to happen, the two protons need to be close enough together to interact via the strong force.</p>
+<p>The strong force has a range of <span>$\quantity{4\times 10^{-15}}{m}$</span>, so protons need to have enough kinetic energy to overcome the electric repulsion between them. This repulsion is called the coulomb barrier, so when protons are further apart than the strong force range they repel, but if they get over the barrier, they will attract each other.</p>
+<figure>
+	<img src="{{ url_for('static', filename='images/astrophysics/coulomb_barrier.svg') }}" alt="The coulomb barrier" class="size600">
+</figure>
+<p>The force between two point charges is:</p>
+<div class="formula">$$F=\frac{1}{4\pi\epsilon_{0}}\frac{Q_{1}Q_{2}}{r^{2}}$$</div>
+<p>The energy required by the protons is equal to the work done to move the proton from <span>$\infty$</span> to <span>$r$</span>, where <span>$r$</span> is <span>$\quantity{4\times 10^{-15}}{m}$</span>. This is given by:</p>
+<div class="formula">$$\int_{r}^{\infty} \frac{1}{4\pi\epsilon_{0}}\frac{Q_{1}Q_{2}}{r^{2}} \,dr=\frac{1}{4\pi\epsilon_{0}}\frac{Q^{2}}{r}$$</div>
+<p>The Boltzmann equation gives the average energy per particle as:</p>
+<div class="formula">$$E=\frac{3}{2}kT$$</div>
+<p>So we can estimate the temperature required to bring two protons close enough to go through nuclear fusion from:</p>
+<div class="formula">
+	$$\frac{3}{2}kT=\frac{Q^{2}}{4\pi\epsilon_{0}r}$$
+	$$T=\frac{Q^{2}}{6\pi\epsilon_{0}k r}\approx\quantity{3\times 10^{9}}{K}$$
+</div>
+<p>This is around 200 times hotter than the core of the Sun, so not hot enough for fusion!</p>
+<p>So what&rsquo;s going on?</p>
+<p>Firstly, the Boltzmann equation only gives the average energy per particle. There will be particles with much higher energies, and it these that will undergo the fusion process, but this does not account for all the fusion in the Sun.</p>
+<p>Due to <i>quantum</i> effects and <i>uncertainty</i>, it is wrong to think of a proton as a point particle being in a single position. Rather there is an uncertainty in its location, so as the protons approach the coulomb barrier, they are most probably going to be repelled, but there is a small, but non-zero, chance that this uncertainty means that they would be found on the other side of the barrier, as if it had tunnelled through it. So would therefore go through fusion. This is known as <i>quantum tunneling</i>.</p>
+<figure>
+	<img src="{{ url_for('static', filename='images/astrophysics/coulomb_barrier_quantum.svg') }}" alt="quantum tunnelling" class="size600">
+</figure>
+<p>Although, the chance of any proton tunnelling through the coulomb barrier, the number of protons in the Sun is so vast, a low probability event happens very often. When the calculations on this are performed it perfectly matches the amount of fusion going on the Sun!</p>
+{% endblock %}

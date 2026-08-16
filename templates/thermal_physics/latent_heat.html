@@ -1,0 +1,163 @@
+{% extends "base.html" %}
+
+{% block title %}Latent heat{% endblock %}
+{% block page_h1 %}Latent heat{% endblock %}
+
+{% block meta_description %}A Level Physics notes and worked examples to help students with their exams and learning. This page looks at changing the state of materials and latent heat.{% endblock %}
+{% block meta_keywords %}latent heat, energy, heat, worked examples, exam questions, A level, physics{% endblock %}
+
+{% block extra_head %}
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/quiz.css') }}">
+{% endblock %}
+
+{% block page_boxes %}
+	<a href="#1"><button class="button">Latent heat</button></a>
+	<a href="#2"><button class="button">Finding the specific latent heat of materials experimentally</button></a>
+	<a href="#3"><button class="button">Worked example</button></a>
+	<a href="#4"><button class="button">Test yourself</button></a>
+{% endblock %}
+
+{% block spec %}
+<div id="spec">
+	<p class="spec_ref"><b>3.6.2.1 Thermal energy transfer</b></p>
+	<p class="spec_box">Appreciation that during a change of state the potential energies of the particle ensemble are changing but not the kinetic energies. Calculations involving transfer of energy.</p>
+	<p class="spec_box">For a change of state $Q = ml$ where <i>l</i> is the specific latent heat.</p>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<section class="top_section" id="1">
+	<p>When a material is heated the particles within it are given more energy, which takes the form of both kinetic energy and potential energy. The particles begin to move faster and faster until the material reaches the temperature at which it changes state. At this point the particles cannot move any faster without breaking their bonds and changing state. In order for the material to change state, from a solid to a liquid, or from a liquid to a gas, enough heat needs to be supplied in order to break all the bonds in the material. This heat is supplied to the material without causing any change in temperature, and is called <i>latent heat</i>.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/thermal_physics/latent_heat.svg') }}" alt="latent heat" class="size600">
+		<figcaption><b>Figure 1:</b>&nbsp;Changes of state as a solid is heated until it becomes a gas</figcaption>
+	</figure>
+	<p>As can be seen from the graph the temperature rises steadily until it reaches the melting point, then although more heat is supplied there is no increase in temperature. This heat increases the internal energy in the form of the potential energy between the particles. The energy required to break the bonds, therefore to melt one kilogram of a material to a liquid is called the <i>specific latent heat of fusion</i> and the heat required to boil one kilogram of a liquid into a gas is called the <i>specific latent heat of vapourisation</i>. Latent heat is defined as the heat required to change the state of $\quantity{1}{kg}$ of material without any change in temperature.</p>
+	<p>The latent heat for either phase change is calculated by the equation:</p>
+	<div class="formula">$$\large Q=ml$$</div>
+	<p>Where:</p>
+	<ul class="page_list">
+		<li><b><i>Q</i></b> is the heat supplied in joules</li>
+		<li><b><i>m</i></b> is the mass in kilograms</li>
+		<li><b><i>l</i></b> is the latent heat in J kg<sup>-1</sup></li>
+	</ul>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>Fusion (solid&harr;liquid) and vaporisation (liquid&harr;gas) each have their own value of $l$, and they are <b>not interchangeable</b> &mdash; using the wrong one for the phase change actually happening in the question is a common error. Vaporisation almost always needs far more energy than fusion for the same mass (around 7&times; more for water), since boiling breaks essentially all the bonds between particles, while melting only loosens them.</p>
+	</div>
+	<p>The latent heat of vapourisation of water is approximately seven times the latent heat of fusion. This is because although melting a solid breaks some of the bonds, a liquid still has relatively strong bonds between the particles. When a material is in its gaseous state there are no bonds between any of the particles, therefore much more energy is required to break all the bonds.</p>
+	<p>The latent heat of ice can be usefully applied when cooling drinks cans. If the cans were placed in liquid water at $\quantity{0}{^\circ C}$ there will be a heat transfer from the drinks cans to the water which will increase the temperature of the water until they reach thermal equilibrium. However if the drinks are placed in a bucket of ice and water also at $\quantity{0}{^\circ C}$ there will still be a heat transfer from the drinks cans, however this heat will be used to melt the ice rather than change the temperature of the water, so there will be a greater transfer of heat before the two reach thermal equilibrium.</p>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>Ice and water at the same temperature do <b>not</b> have the same cooling effect. It's tempting to think "same temperature, same result" &mdash; but melting ice keeps absorbing energy as latent heat while staying at $\quantity{0}{^\circ C}$, whereas water at $\quantity{0}{^\circ C}$ can only absorb energy by actually warming up. The ice's extra absorption capacity is exactly the latent heat of fusion, and it's why ice cools things more effectively (and for longer) than water at the same starting temperature.</p>
+	</div>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="2">
+	<h3>Finding the specific latent heat of materials experimentally.</h3>
+	<p>The latent heat of vapourisation of a liquid like ethanol can be found by heating it with an electric heater until it boils. The vapour is then condensed and collected and the mass of liquid collected over a period of time is recorded. As in the continuous flow method for finding the SHC of water, heat loses to the environment are reduced by carrying out the experiment with the heater at two different powers.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/thermal_physics/latent_heat_prac.svg') }}" alt="finding the latent heat experimentally" class="size450">
+		<figcaption><b>Figure 2:</b>&nbsp;Finding the specific latent heat of ethanol</figcaption>
+	</figure>
+	<p class="equation">electrical energy supplied in time t = energy transferred to fluid + energy lost to surroundings</p>
+	<p>Therefore:</p>
+	<div class="formula">$$IVt=ml+E$$</div>
+	<p>Where:</p>
+	<ul class="page_list">
+		<li><b><i>I</i></b> is the current through the heater in A</li>
+		<li><b><i>V</i></b> is the p.d. across the heater in V</li>
+		<li><b><i>t</i></b> is the time in s for the mass of fluid <b><i>m</i></b> to to collected.</li>
+	</ul>
+	<p>Now <i>I</i> and <i>V</i> are adjusted to give a different rate of vapourisation <i>m<sub>2</sub></i> in <i>t<sub>2</sub></i>. Now:</p>
+	<div class="formula">$$I_{2}V_{2}t_{2}=m_{2}l+E$$</div>
+	<p>As is each case the liquid is at its boiling point, which is the same in both cases, the energy lost to the environment is also the same. So as before subtracting the two equations from each other eliminates that heat loss:</p>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>This method works for exactly the same reason as the continuous flow method on the previous page: $E$ only cancels because the liquid is boiling at the <b>same temperature</b> in both trials, so the rate of heat loss to the surroundings is identical each time. If the two trials happened at different temperatures, $E$ would differ between them and the subtraction wouldn't eliminate it.</p>
+	</div>
+	<div class="formula">$$IVt-I_{2}V_{2}t_{2}=ml-m_{2}l$$</div>
+	<p>The latent heat can now be calculated by factorising the right-hand side and rearranging:</p>
+	<div class="formula">
+		$$IVt-I_{2}V_{2}t_{2}=l\left(m-m_{2}\right)$$
+		$$l=\frac{IVt-I_{2}V_{2}t_{2}}{m-m_{2}}$$
+	</div>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="3">
+	<h3>Worked example</h3>
+	<ol type="A" class="page_list">
+		<li>Calculate the energy released when <span>$\quantity{1.5}{kg}$</span> of water at <span>$\quantity{18}{^\circ C}$</span> cools to <span>$\quantity{0}{^\circ C}$</span> and then freezes to form ice, also at <span>$\quantity{0}{^\circ C}$</span>.</li>
+		<ul class="page_list">
+			<li>specific heat capacity of water = <span>$\quantity{4200}{J\,kg^{-1}\,K^{-1}}$</span></li>
+			<li>specific latent heat of fusion of ice = <span>$\quantity{3.4\times 10^{5}}{J\,kg^{-1}}$</span></li>
+		</ul>
+		<div class="callout callout-mistake">
+			<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+			<p>$Q=mc\Delta\theta$ and $Q=ml$ apply to <b>different stages</b> of this process and can't be combined into one calculation. Use $Q=mc\Delta\theta$ while the temperature is actually changing, and $Q=ml$ separately for the phase change itself (where temperature stays constant) &mdash; then add the two energies together. Trying to do this in a single step is a common way to lose marks.</p>
+		</div>
+		<p class="workex">The water loses heat in two stages in this example. As it cools down from <span>$\quantity{18}{^\circ C}$</span> to its freezing point. And it then loses heat at <span>$\quantity{0}{^\circ C}$</span> whilst it changes state. To find the total energy released we need to calculate each heat loss separately.</p>
+		<p class="workex">Whilst it is cooling we use <span>$Q=mc\Delta\theta$</span>, where <span>$\Delta\theta=\quantity{18}{^\circ C}$</span></p>
+		<div class="formula">
+			\begin{align}
+			Q&=mc\Delta\theta\\
+			Q&=\quantity{1.5}{kg}\times\quantity{4200}{J\,kg^{-1}\,K^{-1}}\times\quantity{18}{^\circ C}\\
+			Q&=\quantity{113400}{J}=\quantity{1.134\times 10^{5}}{J}
+			\end{align}
+		</div>
+		<p class="workex">The heat lost whilst the water is changing state is:</p>
+		<div class="formula">
+			\begin{align}
+			Q&=ml\\
+			Q&=\quantity{1.5}{kg}\times\quantity{3.4\times 10^{5}}{J\,kg^{-1}}\\
+			Q&=\quantity{510000}{J}=\quantity{5.1\times 10^{5}}{J}
+			\end{align}
+		</div>
+		<p class="workex">We now add these two values together to find the total heat lost by the water:</p>
+		<div class="formula">$$\quantity{1.134\times 10^{5}}{J}+\quantity{5.1\times 10^{5}}{J}=\quantity{6.2\times 10^{5}}{J}$$</div>
+		<p class="workex">Notice that we did not round the result to the first calculation, as this could result in significant rounding errors later on. Remember do not round on intermediate stages, only on the final calculation.</p>
+		<li>Explain why it is more effective to cool cans of drinks by placing them in a bucket full of melting ice rather than in a bucket of water at an initial temperature of <span>$\quantity{0}{^\circ C}$</span>.</li>
+		<p class="workex">The ice cools the drinks by <b>absorbing</b> energy from them, so the drink cans transfer energy to the solid ice. However, as the ice is solid at <span>$\quantity{0}{^\circ C}$</span> it will absorb more energy than water at <span>$\quantity{0}{^\circ C}$</span> before it begins to change temperature. This extra energy it absorbs is the latent heat, or the energy required to melt the ice.</p>
+		<p class="workex">This means that more energy will be absorbed from the drinks cans before they reach thermal equilibrium and they will stay cooler for longer.</p>
+	</ol>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="4">
+	<h3>Test yourself</h3>
+	<p>Try the questions below to check your understanding of this topic. Numerical questions use different numbers each time, so you can attempt them more than once.</p>
+	<div id="quiz-root"></div>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+
+{% endblock %}
+
+{% block resources_heading %}One page summary{% endblock %}
+
+{% block resources %}
+	<li><a href="{{ url_for('static', filename='summaries/thermal_physics/latent_heat_summary.html') }}" target="_blank"><i class="fas fa-file-alt"></i> Printable revision sheet</a></li>
+{% endblock %}
+
+{% block prev_link %}
+	<a href="{{ url_for('specific_heat') }}"><i class="fas fa-chevron-circle-left"></i><span class="nav_link">Previous topic</span></a>
+{% endblock %}
+
+{% block next_link %}
+	<a href="/thermal-physics/gas-laws"><span class="nav_link">Next topic</span><i class="fas fa-chevron-circle-right"></i></a>
+{% endblock %}
+
+{% block extra_scripts %}
+	<script src="{{ url_for('static', filename='js/quiz.js') }}"></script>
+	<script src="{{ url_for('static', filename='quizzes/latent_heat_questions.js') }}"></script>
+	<script>
+		new PhysicsQuiz(document.getElementById('quiz-root'), latentHeatQuestions, {
+			storageKey: 'latent_heat'
+		});
+	</script>
+{% endblock %}

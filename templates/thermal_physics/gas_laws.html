@@ -1,0 +1,275 @@
+{% extends "base.html" %}
+
+{% block title %}The Experimental gas laws{% endblock %}
+{% block page_h1 %}The Experimental gas laws{% endblock %}
+
+{% block meta_description %}A Level Physics notes and worked examples to help students with their exams and learning. This page focuses on the experimental gas laws such as Boyle's law and Charles' law.{% endblock %}
+{% block meta_keywords %}gas laws, Boyle's law, Charles' law, pressure law, work done by a gas, energy, expansion, compression, heat, worked examples, exam questions, A level, physics{% endblock %}
+
+{% block extra_head %}
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/quiz.css') }}">
+{% endblock %}
+
+{% block page_boxes %}
+	<a href="#1"><button class="button">Intro</button></a>
+	<a href="#2"><button class="button">Boyle's law</button></a>
+	<a href="#3"><button class="button">Charles' law</button></a>
+	<a href="#4"><button class="button">The Pressure law</button></a>
+	<a href="#5"><button class="button">Equation of state</button></a>
+	<a href="#6"><button class="button">Worked example</button></a>
+	<a href="#7"><button class="button">Conditions for an ideal gas</button></a>
+	<a href="#8"><button class="button">Work done by an expanding gas</button></a>
+	<a href="#9"><button class="button">Test yourself</button></a>
+{% endblock %}
+
+{% block spec %}
+<div id="spec">
+	<p class="spec_ref"><b>3.6.2.2 Ideal gases</b></p>
+	<p class="spec_box">Gas laws as experimental relationships between <i>p, V, T</i> and the mass of the gas.</p>
+	<p class="spec_box">Concept of absolute zero of temperature.</p>
+	<p class="spec_box">Ideal gas equation: $pV = nRT$ for <i>n</i> moles and $pV = NkT$ for <i>N</i> molecules.</p>
+	<p class="spec_box">$Work\; done = p\Delta V$</p>
+	<p class="spec_box">Avogadro constant <i>N<sub>A</sub></i>, molar gas constant <i>R</i>, Boltzmann constant <i>k</i></p>
+	<p class="spec_box">Molar mass and molecular mass.</p>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<section class="top_section" id="1">
+	<p>In the late 17th and 18th centuries, a number of scientists were performing experiments on gases. This was a golden age of discovery in science, with the birth of modern chemistry and physics with scientists such as Lavoisier and Newton pushing forwards our understanding of the world. It was during this time of experimentation and discovery that the three <i>experimental gas laws</i> were established. Robert Boyle working in England during the 1670&rsquo;s, and Jacques Charles working in France in the 1780&rsquo;s carried out a number of experiments to establish the laws now named after them. Critical to the development of laws describing the behaviour of gases was the development of the science of thermometry and the establishment of standardised temperature scales. As the gas laws relate the temperature of a gas to its other measurable properties, these two fields progressed hand in hand. The three gas laws are known as the experimental gas laws because they were observed as a result of experimentation, rather than being derived mathematically. They were explained at the time by a basic atomic theory, although evidence for atoms didn't emerge until the end of the 19th century and it wasn't until 1905 until their existence was proved.</p>
+</section>
+<br><br><hr>
+
+<section id="2">
+	<h3>Boyle&rsquo;s law</h3>
+	<p>This laws links the pressure exerted by a gas and its volume. If a mass of gas is squeezed into a smaller and smaller volume is pressure increases. As the volume decreases, the pressure increases, but the product of the two remains constant. This inverse relationship only holds true if the temperature of the gas remains constant.</p>
+	<div class="formula">$$p\propto \frac {1}{V}$$</div>
+	<figure>
+		<img class="size450" src="{{ url_for('static', filename='images/thermal_physics/pvt_relationship_1.svg') }}" alt="pressure and volume of a gas">
+		<figcaption><b>Figure 1:</b>&nbsp;For an ideal gas the product of its pressure and its volume is constant</figcaption>
+	</figure>
+	<p>We can explain Boyle&rsquo;s law in terms of the particles within the gas. When a fixed mass of gas is trapped in a container, it exerts a pressure on it due to the collisions between the particles and the walls of the container. The more collisions per second the greater the total force and therefore the greater the total pressure. If the volume of the container is reduced, but the number of particles remains unchanged, then the particles will collide more frequently, therefore increasing the total force along with the pressure.</p>
+	<figure>
+		<img class="size450" src="{{ url_for('static', filename='images/thermal_physics/boyles_law.svg') }}" alt="Boyle's law graph">
+		<figcaption><b>Figure 2:</b>&nbsp;The relationship between pressure and volume at different temperatures</figcaption>
+	</figure>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>The particles themselves don't speed up or gain kinetic energy when a gas is compressed at constant temperature &mdash; collisions with the container walls are perfectly elastic, so no kinetic energy is lost or gained in them either. The pressure increases purely because collisions happen <b>more frequently</b> (particles have less distance to travel between collisions), not because each individual collision hits harder.</p>
+	</div>
+	<p>If the gas starts out at a higher temperature, it will have a higher initial pressure (see the pressure law) and the product of the pressure and the temperature will be greater.</p>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="3">
+	<h3>Charles&rsquo; law</h3>
+	<p>Along with relating two more of the measurable properties of gases, Charles&rsquo; law also helped define the concept of absolute zero. When a fixed mass of gases is heated, but held under a constant pressure its volume increases. The quotient of the volume and the temperature is a constant.</p>
+	<figure>
+		<img class="size450" src="{{ url_for('static', filename='images/thermal_physics/pvt_relationship_2.svg') }}" alt="pressure volume and temperature">
+		<figcaption><b>Figure 3:</b>&nbsp;For an ideal gas the volume divided by the temperature equals a constant</figcaption>
+	</figure>
+	<p>When the gas is heated the particles move faster and further apart from each other. The volume of the gas increases, if the container also expands to equalise the pressure. It was noted that when the temperature changes by a single &deg;C the volume of the gas changes by $\frac{1}{273}$ of its volume at $\quantity{0}{^\circ C}$. This implied that at approximately $\quantity{-273}{^\circ C}$ the volume of a gas would be 0. This lead Lord Kelvin to suggest the use of an absolute temperature scale using the &ldquo;zero volume point&rdquo; of $\quantity{-273.15}{^\circ C}$ as absolute zero. When using the absolute temperature scale the volume of the gas is directly proportional to its absolute temperature.</p>
+	<figure>
+		<img class="size750" src="{{ url_for('static', filename='images/thermal_physics/volume_and_temp_graph.svg') }}" alt="volume vs temperature">
+		<figcaption><b>Figure 4:</b>&nbsp;Using Charles' law, the relationship between volume and temperature, to predict the value of absolute zero</figcaption>
+	</figure>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="4">
+	<h3>The pressure law</h3>
+	<p>The pressure law was formulated soon after the work of Charles and states that the pressure of a gas is directly proportional to its absolute temperature, when the volume remains constant.</p>
+	<figure>
+		<img class="size450" src="{{ url_for('static', filename='images/thermal_physics/pvt_relationship_3.svg') }}" alt="pressure and temperature">
+		<figcaption><b>Figure 5:</b>&nbsp;For an ideal gas the pressure divided by the temperature equals a constant</figcaption>
+	</figure>
+	<p>We can again explain this in terms of the particles within the gas by assuming that as they gain thermal energy they move at a faster speed and therefore gain greater momentum. When they collide with the walls, the change in momentum, and therefore the force and the pressure is greater. It was also noted that, similarly to Charles&rsquo; Law, that a single degree change in temperature caused a $\frac{1}{273.15}$ change in the pressure at $\quantity{0}{^\circ C}$. This further backed up the concept of absolute zero, as the pressure would become zero as the particles are no longer moving at all.</p>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="5">
+	<h3>Equation of state</h3>
+	<p>By looking at each of these laws and combing their relationships it is possible to write down an equation for the ideal gas, so called because it only applies under certain (reasonable) assumptions, which are discussed below. For each law (where k is a constant):</p>
+	<ul class="page_list">
+		<li>Boyle&rsquo;s Law: $p=\frac{k}{V}$ (When temperature is constant)</li>
+		<li>Charles&rsquo; Law: $\frac{V}{T}=k$ (When pressure is constant)</li>
+		<li>The Pressure Law: $\frac{p}{T}=k$ (When volume is constant)</li>
+	</ul>
+	<p>These three laws can be eqauted to form the ideal gas equation:</p>
+	<div class="formula">$$\large pV=nRT$$</div>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>Every "$T$" in the gas laws must be an <b>absolute temperature in kelvin</b>, never &deg;C. This applies to $pV=nRT$ and all three individual laws above. If a question gives you a temperature in &deg;C, convert it first ($T(\mathrm{K})=T(^\circ C)+273.15$) &mdash; forgetting this conversion is probably the single most common mistake across the whole gas laws topic.</p>
+	</div>
+	<p>Where:</p>
+	<ul class="page_list">
+		<li><i><b>p</b></i> is the pressure in $\units{Pa}$ ($\units{N\,m^{-2}}$)</li>
+		<li><i><b>V</b></i> is the volume in $\units{m^{3}}$</li>
+		<li><i><b>n</b></i> is the number of moles of gas</li>
+		<li><i><b>R</b></i> is the molar gas constant, which has a value of $\quantity{8.31}{J\,K^{-1}\,mol^{-1}}$</li>
+		<li><i><b>T</b></i> is the absolute temperature in $\units{K}$</li>
+	</ul>
+	<p>This can also be stated in terms of the number of <i>molecules</i> within the gas itself, rather than the number of <i>moles</i> of the gas. This would use the Boltzmann constant, k, which is the molar gas constant per particle and has a value of $\quantity{1.38\times 10^{-23}}{J\,K^{-1}}$, and is equal to $\frac {R}{N_{A}}$;</p>
+	<div class="formula">$$\large pV=NkT$$</div>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>Match the right constant to the right variable: $R$ (the molar gas constant) pairs with $n$ (number of <b>moles</b>) in $pV=nRT$; $k$ (the Boltzmann constant) pairs with $N$ (number of <b>molecules</b>) in $pV=NkT$. Mixing these up &mdash; e.g. using $R$ with a number of molecules &mdash; gives an answer wrong by a factor of the Avogadro constant.</p>
+	</div>
+	<p>Although the equations above are useful for calculating the pressure, temperature and volume of a gas, they are of most use when looking at how a gas changes between two states, an initial condition and a final one, where one or two of the pressure, volume or temperature have changed.</p>
+	<figure>
+		<img class="size450" src="{{ url_for('static', filename='images/thermal_physics/equation_of_state.svg') }}" alt="using the equation of state">
+		<figcaption><b>Figure 6:</b>&nbsp;Using the equation of state to compare the properties of a gas in its initial condition (State 1) to a second condition (State 2)</figcaption>
+	</figure>
+	<p>When calculating with two states, we can bring the constant terms to one side of the equation and equate the expressions:</p>
+	<div class="formula">$$\frac{p_{1}V_{1}}{T_{1}}=\frac{p_{2}V_{2}}{T_{2}}$$</div>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>Keep each state's variables together with the correct subscript &mdash; all of state 1's values ($p_1$, $V_1$, $T_1$) on one side, all of state 2's ($p_2$, $V_2$, $T_2$) on the other. Mixing a state-1 pressure with a state-2 volume (or similar) is an easy slip to make when rearranging quickly under exam pressure.</p>
+	</div>
+	<p>Which we can then solve for the unknown in question.</p>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="6">
+	<h3><b>Worked example</b></h3>
+	<p>A volume of $\quantity{0.0016}{m^{3}}$ of air at a pressure of $\quantity{1.0\times 10^{5}}{Pa}$ and a temperature of $\quantity{290}{K}$ is trapped in a cylinder. Under these conditions the volume of air occupied by $\quantity{1.0}{mol}$ is $\quantity{0.024}{m^{3}}$. The air in the cylinder is heated and at the same time compressed slowly by a piston. The initial condition and final condition of the trapped air are shown in the diagram.</p>
+	<figure>
+		<img class="size550" src="{{ url_for('static', filename='images/thermal_physics/worked_example_gas_laws.svg') }}" alt="two states of a gas">
+		<figcaption><b>Figure 7:</b>&nbsp;Worked example</figcaption>
+	</figure>
+	<p>In this question we are also asked to treat air as an ideal gas having a molar mass of <span>$\quantity{0.029}{kg\,mol^{-1}}$</span>.</p>
+	<p>We need to calculate:</p>
+	<ol class="page_list" type="a">
+		<li>Calculate the final volume of the air trapped in the cylinder.</li>
+		<li>Calculate the number of moles of air in the cylinder.</li>
+		<li>Calculate the initial density of air trapped in the cylinder.</li>
+	</ol>
+	<ol class="page_list" type="a">
+		<li class="workex">To calculate the final volume of the gas we need to equate the initial and final states of the gas. This is a slightly unusual situation, as we would normally expect a gas to expand when it is heated. However, in this example the gas is also being compressed, which is why we can see such a large increase in its pressure too.</li>
+		<p class="workex">The mass of gas in the cylinder is fixed, so we can bring the number of moles and the molar gas constant over to one side of the ideal gas equation:</p>
+		<div class="formula">
+			\begin{align}
+			pV&=nRT\\
+			\frac{pV}{T}&=nR
+			\end{align}
+		</div>
+		<p class="workex">We can now look at the values for pressure, temperature and volume for the initial and final conditions:</p>
+		<p class="workex"><b>Initial condition:</b></p>
+		<ul class="page_list">
+			<li>$p_{1}=\quantity{1.0\times 10^{5}}{Pa}$</li>
+			<li>$T_{1}=\quantity{290}{K}$</li>
+			<li>$V_{1}=\quantity{0.0016}{m^{3}}$</li>
+		</ul>
+		<p class="workex"><b>Final condition:</b></p>
+		<ul class="page_list">
+			<li>$p_{2}=\quantity{4.4\times 10^{5}}{Pa}$</li>
+			<li>$T_{2}=\quantity{350}{K}$</li>
+			<li>$V_{2}=\mathrm{unknown}$</li>
+		</ul>
+		<p class="workex">The two states can be equated as below:</p>
+		<div class="formula">$$\frac{p_{1}V_{1}}{T_{1}}=\frac{p_{2}V_{2}}{T_{2}}$$</div>
+		<p class="workex">Which can be rearranged to equal the unknown <i>V<sub>2</sub></i>,</p>
+		<div class="formula">$$\frac{p_{1}V_{1}T_{2}}{T_{1}p_{2}}=V_{2}$$</div>
+		<p class="workex">And the data can be substituted in:</p>
+		<div class="formula">$$\frac{\quantity{1.0\times 10^{5}}{Pa}\times\quantity{0.0016}{m^{3}}\times\quantity{350}{K}}{\quantity{290}{K}\times\quantity{4.4\times 10^{5}}{Pa}}=\quantity{0.00044}{m^{3}}$$</div>
+		<p class="workex">The answer can of course be given in standard form, but I have given it here in the same format as the question so you can compare easily the change in volume.</p>
+		<li class="workex">For the second part of the question, there are two ways to calculate the number of moles in the cylinder. We could use the ideal gas equation again and re-arrange it to equal n, but we have been given the volume of one mole of gas under the initial conditions, so it is easier to calculate it from the ratio of the volume of gas in the cylinder to the volume of one mole:</li>
+		<div class="formula">$$n=\frac{\quantity{0.0016}{m^{3}}}{\quantity{0.024}{m^{3}\,mol^{-1}}}=\quantity{0.067}{mol}$$</div>
+		<li class="workex">Now we know the amount of substance in the cylinder, and as we are given the molar mass of the gas, we are able to calculate the mass of the gas in the cylinder:</li>
+		<p class="equation">mass = number of moles &times; molar mass</p>
+		<div class="formula">$$\quantity{0.067}{mol}\times\quantity{0.029}{kg\,mol^{-1}}=\quantity{0.00193}{kg}$$</div>
+		<p class="workex">We can now use this mass, along with the initial volume to find the density of the gas.</p>
+		<div class="formula">$$\rho=\frac{m}{V}=\frac{\quantity{0.00193}{kg}}{\quantity{0.0016}{m^{3}}}=\quantity{1.2}{kg\,m^{-3}}$$</div>
+	</ol>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="7">
+	<h3>Conditions for an ideal gas</h3>
+	<p>The above considerations do not apply to all gases in everyday situations, for example, water steam might easily change back into its liquid state if the pressure suddenly decreases and the temperature drops, so the ideal gas equation would no longer apply. The gas might be a mixture of various different gases, with different masses, and therefore applying a different force on the container. Also we have treated everything using Newtonian mechanics, but a more realistic picture of particle interactions would have to take into account quantum mechanics. We therefore stipulate a number of assumptions when dealing with ideal gases, which for the most part are realistic. You will need to remember at least some of these, and I suggest remembering the ones in bold.</p>
+	<ol class="page_list">
+		<li><b>There are no long range attractive forces acting between particles and the container.</b></li>
+		<li>The gas cannot be liquified by pressure alone.</li>
+		<li><b>There are enough particles present to be able to treat them statistically.</b></li>
+		<li><b>All collisions are completely elastic. This is a reasonable assumption to make as it agrees with observation. Imagine if a bicycle tyre went flat because the gas inside it has used all of its energy.</b></li>
+		<li>The average distance between particles is much greater than the size of the particles themselves.</li>
+		<li><b>The volume of the particles is negligible compared to the size of the container.</b></li>
+		<li><b>The particles are in constant random motion i.e. they have random velocities, and they obey Newton's laws of motion.</b></li>
+		<li>The average kinetic energy of the particles are directly proportional to the absolute temperature.</li>
+		<li>All the particles have the same mass.</li>
+		<li>We also make the assumption that the gas molecules are point particles and are spherical.</li>
+	</ol>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="8">
+	<h3>Work done by an expanding gas</h3>
+	<p>When a gas expands due to being heated, as for Charles&rsquo; Law, it exerts an outwards force on its container. This can be harnessed to perform useful work, for example in a cylinder or piston inside a car&rsquo;s engine. When fuel vapour is ignited, it expands rapidly and pushes the piston head outwards to equalise the pressure. This does useful work which, when combined with the other cylinders in the engine is converted to mechanical energy to drive the car forward.</p>
+	<figure>
+		<img class="size300" src="{{ url_for('static', filename='images/thermal_physics/work_done_by_a_gas_1.svg') }}" alt="work done by a gas expanding 1">
+		<figcaption><b>Figure 8:</b>&nbsp;Heated gas in a piston does work as it expands outwards</figcaption>
+	</figure>
+	<p>In this situation, the pressure remains constant as the volume expands. The work done in joules can be found by finding the area under the line on a <b>pressure vs volume</b> graph.</p>
+	<figure>
+		<img class="size600" src="{{ url_for('static', filename='images/thermal_physics/work_done_by_a_gas_2.svg') }}" alt="work done by a gas expanding, area under the graph">
+		<figcaption><b>Figure 9:</b>&nbsp;The area under the line represents the work done by the gas</figcaption>
+	</figure>
+	<p>When the pressure remains constant, the work done by the expanding gas is:</p>
+	<div class="formula">$$\large W=p\Delta V$$</div>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>$W=p\Delta V$ only applies when pressure is <b>constant</b> throughout the change. For an isothermal change (constant temperature, varying pressure) this formula doesn't apply at all &mdash; you'd need the logarithmic result derived on the <a href="{{ url_for('isothermal_changes') }}" target="_blank">isothermal changes</a> page instead. Always check whether pressure is actually staying constant before reaching for $W=p\Delta V$.</p>
+	</div>
+	<p>By considering the SI units in the equation above we can show that this equation is <i>dimensionally</i> consistent. Remember that $\quantity{1}{J} = \quantity{1}{N\,m}$</p>
+	<div class="formula">
+		\begin{align}
+		W&=pV\\
+		\left[\mathrm{J}\right]&=\left[\mathrm{N}\right]\left[\mathrm{m^{-2}}\right]\left[\mathrm{m^{3}}\right]\\
+		\left[\mathrm{J}\right]&=\left[\mathrm{N}\right]\left[\mathrm{m}\right]\\
+		\left[\mathrm{J}\right]&=\left[\mathrm{J}\right]
+		\end{align}
+	</div>
+	<p>When both the pressure and the volume change, as is the case in an <i>isothermal</i> change, when there is no change in temperature of the gas, the equation becomes a little more complicated. Isothermal and, the similar adiabatic changes are covered in the Engineering Physics topic, but you can read a brief description of the maths behind an isothermal change <a href="{{ url_for('isothermal_changes') }}" target="_blank">here</a></p>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="9">
+	<h3>Test yourself</h3>
+	<p>Try the questions below to check your understanding of this topic. Numerical questions use different numbers each time, so you can attempt them more than once.</p>
+	<div id="quiz-root"></div>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+
+{% endblock %}
+
+{% block resources_heading %}One page summary{% endblock %}
+
+{% block resources %}
+	<li><a href="{{ url_for('static', filename='summaries/thermal_physics/gas_laws_summary.html') }}" target="_blank"><i class="fas fa-file-alt"></i> Printable revision sheet</a></li>
+{% endblock %}
+
+{% block prev_link %}
+	<a href="{{ url_for('latent_heat') }}"><i class="fas fa-chevron-circle-left"></i><span class="nav_link">Previous topic</span></a>
+{% endblock %}
+
+{% block next_link %}
+	<a href="/thermal-physics/kinetic-theory"><span class="nav_link">Next topic</span><i class="fas fa-chevron-circle-right"></i></a>
+{% endblock %}
+
+{% block extra_scripts %}
+	<script src="{{ url_for('static', filename='js/quiz.js') }}"></script>
+	<script src="{{ url_for('static', filename='quizzes/gas_laws_questions.js') }}"></script>
+	<script>
+		new PhysicsQuiz(document.getElementById('quiz-root'), gasLawsQuestions, {
+			storageKey: 'gas_laws'
+		});
+	</script>
+{% endblock %}

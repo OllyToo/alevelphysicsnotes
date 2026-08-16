@@ -1,0 +1,95 @@
+/* ==========================================================================
+   Mr Toogood Physics — Maths Skills quick-reference pages
+   These pages open in a new tab from content pages, so they get a light
+   version of the site's branding rather than the full header/nav/footer —
+   enough to feel connected to the site without the weight of a full page.
+   ========================================================================== */
+
+body#mathsbox {
+	background-color: #eef2f3;
+	margin: 0;
+	min-height: 100vh;
+}
+
+.skills-header {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+	padding: 14px 24px;
+	background: #009ec3;
+	background: linear-gradient(to bottom, #009ec3 0%, #00b7ea 100%);
+	box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.4);
+}
+
+.skills-header img {
+	height: 42px;
+	width: 42px;
+}
+
+.skills-header-text {
+	color: #ffffff;
+	font-family: 'Titillium Web', sans-serif;
+	text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.4);
+}
+
+.skills-header-text .site-name {
+	display: block;
+	font-size: 105%;
+	font-weight: 600;
+}
+
+.skills-header-text .section-label {
+	display: block;
+	font-size: 80%;
+	opacity: 0.9;
+	font-style: italic;
+}
+
+.skills-body {
+	max-width: 700px;
+	margin: 30px auto 50px;
+	padding: 0 20px;
+}
+
+.skills-card {
+	background: #ffffff;
+	box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.4);
+	border-radius: 4px;
+	padding: 25px 35px 35px;
+}
+
+.skills-card h3 {
+	margin-top: 0;
+	padding-top: 0;
+}
+
+.skills-footer {
+	max-width: 700px;
+	margin: 0 auto 40px;
+	padding: 0 20px;
+	text-align: center;
+}
+
+.skills-footer a {
+	font-family: 'Do Hyeon', sans-serif;
+	color: #356aa0;
+	text-decoration: none;
+	font-size: 95%;
+}
+
+.skills-footer a:hover {
+	text-decoration: underline;
+}
+
+@media (max-width: 500px) {
+	.skills-header {
+		padding: 10px 15px;
+	}
+	.skills-header img {
+		height: 32px;
+		width: 32px;
+	}
+	.skills-card {
+		padding: 18px 20px 25px;
+	}
+}

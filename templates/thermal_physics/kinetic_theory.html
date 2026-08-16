@@ -1,0 +1,197 @@
+{% extends "base.html" %}
+
+{% block title %}Kinetic theory{% endblock %}
+{% block page_h1 %}Kinetic theory{% endblock %}
+
+{% block meta_description %}A Level Physics notes and worked examples to help students with their exams and learning. On this page we look at how to apply the laws of motion to individual particles and build up the kinetic theory, including deriving the equation that describes the energy of a particle.{% endblock %}
+{% block meta_keywords %}kinetic theory, heat, boltzmann, root mean square, rms, pressure, worked examples, exam questions, A level, physics{% endblock %}
+
+{% block extra_head %}
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/quiz.css') }}">
+{% endblock %}
+
+{% block page_boxes %}
+	<a href="#1"><button class="button">Intro</button></a>
+	<a href="#2"><button class="button">Laws and theories</button></a>
+	<a href="#3"><button class="button">The kinetic theory of gases</button></a>
+	<a href="#4"><button class="button">Root mean square speed</button></a>
+	<a href="#5"><button class="button">The Boltzmann equation</button></a>
+	<a href="#6"><button class="button">Test yourself</button></a>
+{% endblock %}
+
+{% block content %}
+
+<section class="top_section" id="1">
+	<p>It is sometimes easy to forget that until relatively recently the fact that all matter is made up from atoms was still quite controversial. It was at the beginning of the 20<sup>th</sup> century when a young Albert Einstein published his study on the <i>Brownian motion</i> of soot particles in 1905, reasoning that the motion, as shown below in the animation, can only be fully explained by assuming that the matter surrounding the particles was itself made of even tinier particles, which were constantly moving and jostling the soot.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/thermal_physics/brownian_motion.gif') }}" alt="Brownian motion animation" class="size300">
+		<figcaption><b>Figure 1:</b>&nbsp;An animation showing brownian motion</figcaption>
+	</figure>
+	<p>This paper gave a real physical basis to the kinetic theory of matter that had been in place for some time. However before Einstein this <i>atomic</i> theory was thought to be a purely mathematical construct with no real solid basis in reality. In fact a kinetic theory, of sorts, had first been postulated around the time of Boyle and Charles, and working with are series of assumptions has provided an unbeatable explanation for the three gas laws. Alongside Brownian motion, the assumptions that underpin the equations which are derived on this page were, until the conception of quantum theory and the modern technology that allows us to see individual atoms, strongest evidence for atoms that existed.</p>
+	<p>The kinetic theory of matter explains the macroscopic properties of solids, liquids and gases in terms of the movement of the particles within it. It is a classical theory, so is derived purely using Newtonian mechanics. In very simple terms the three gas laws studied can be explained in terms of kinetic theory:</p>
+	<p>
+		<b>Boyle's law</b> - If the volume of the gas container is reduced then the particles have less distance to travel before they collide with the walls. Therefore there are more collisions and more force applied to the the walls so more pressure.
+		<br><b>The pressure law</b> - As you heat a gas the particles have more energy and therefore move around faster. Therefore they collide more frequently with the wall and with more force so the pressure increases.
+		<br><b>Charles' law</b> - as above with increasing temperature but to maintain the same pressure, i.e. maintain the same number of collisions per second the particles need to travel further and so the container needs to be larger.
+	</p>
+</section>
+<br><br><hr>
+
+<section id="2">
+	<h3>Laws and theories</h3>
+	<p>These two words are used a lot in science, and especially physics without giving much thought as to what they mean. Laws and theories are quite distinct from each other, scientific laws are descriptions of a consistent set of observations, that are always observed to be true, for example Newton&rsquo;s 2<sup>nd</sup> law of motion. The descriptions can be written as words, but more usually they are mathematical. As the phenomena are always observed to be such the mathematical description has a lot of predictive power, which is why Newton&rsquo;s law of gravitation can be used to predict eclipses and comets hundreds of years in advance. Laws, however, offer no explanatory power, they do not say <em>why</em> things happen, that is the job of theories. Theories explain laws, and say how laws happen. The best example of this is how kinetic theory explains the three gas laws in terms of particles. Theories can also produce equations and so can also be predictive. Both laws and theories are only as good as the observations, and when new observations are made that contradict old theories then new ones need to be discovered, as when the wave theory of light could not explain the photoelectric effect which heralded the birth of quantum theory.</p>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="3">
+	<h3>The kinetic theory of gases</h3>
+	<p>Using the basic assumption that we made for an ideal gas, we can start to build up a set of equations that describe the measurable properties of gases such as:</p>
+	<ol class="page_list">
+		<li><b>Pressure</b></li>
+		<li><b>Density</b></li>
+		<li><b>Temperature</b></li>
+		<li><b>Energy</b></li>
+	</ol>
+	<p>in terms of the particles within the gas. The following derivation is one that you do need to know, although you would only be expected to do parts of it, and are very unlikely to be asked to do the whole thing in one go!</p>
+	<p>We start with one particle in a sealed box moving backwards and forwards between the shaded wall and the other side of the box. For the moment, let&rsquo;s constrain the particle to move in one dimension only (along the x-axis).</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/thermal_physics/kinetic_theory_1.svg') }}" alt="particle moving in a box" class="size550">
+		<figcaption><b>Figure 2:</b>&nbsp;Taking it back to basics, looking at just one particle</figcaption>
+	</figure>
+	<p>The particle has a mass <i>m</i> and a velocity <i>v</i>. When it collides with the shaded wall the particle will, according to Newton&rsquo;s 3<sup>rd</sup> law, exert a force on it, and the wall with exert an equal force on the particle; and according to Newton&rsquo;s 2<sup>nd</sup> law this force is equal to the <i>rate of change of momentum</i> of the particle.</p>
+	<p>The particle has a momentum of $p=mv$</p>
+	<p>At the moment, in our example, the particle is just knocking backwards and forwards between two walls, so the distance that the particle will travel between two successive collisions is $2l$ and the time between collisions with that wall is $t=\frac{2l}{v}$.</p>
+	<p>Newton&rsquo;s 2nd law can be stated as $F=\frac{\Delta mv}{t}$</p>
+	<p>The change in momentum of the particle is $-mv-mu=-2mv$. As the collision is completely elastic <i>u</i> and <i>v</i> have the same magnitude. The negative sign tells us that the particle is now travelling in the opposite direction.</p>
+	<p>We can now combine these three statements:</p>
+	<ol class="page_list">
+		<li>$t=\frac{2l}{v}$</li>
+		<li>$F=\frac{\Delta mv}{t}$</li>
+		<li>$-mv-mu=-2mv$</li>
+	</ol>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>Be careful whose force you're describing at each step. Newton's 3rd law means the particle and the wall exert <b>equal and opposite</b> forces on each other &mdash; the derivation initially finds the force <i>on the wall</i>, then switches to considering the force <i>on the particle</i> by dropping the sign. Losing track of which object a force or momentum change applies to is an easy way to introduce a sign error partway through a derivation like this.</p>
+	</div>
+	<div class="formula">
+		$$F=\frac{-2mv}{\frac{2l}{v}}\;\rightarrow\;\frac{2mv^{2}}{2l}$$
+		$$\rightarrow\;\frac{-mv^{2}}{l}$$
+	</div>
+	<p>This is the force of the wall on the particle, but as we are interested in the particle we can drop the minus sign (Newton&rsquo;s 3<sup>rd</sup> law). The first property for which we need to derive an expression is pressure. Pressure is the force per unit area, $F\div A$, so as we have just derived a term for the force being exerted on the wall, which has an area of $l^{2}$ we can state the pressure as:</p>
+	<div class="formula">$$p=\frac{mv^{2}}{l}\div l^{2}\;\;\mathrm{or}\;\;p=\frac{mv^{2}}{l^{3}}$$</div>
+	<p>As $l^{3}$ is also the volume of the box the equation above becomes $p=\frac{mv^{2}}{V}$. Of course as we are still dealing with just one particle, the pressure being exerted will be vanishingly small, in the region of $\quantity{10^{-21}}{Pa}$. However in a real gas there will of course be vast numbers of particles colliding with the walls of the container creating measurable pressures. Each particle contributes to the total pressure:</p>
+	<div class="formula">$$p=p_{1}+p_{2}+p_{3}+p_{4}+\cdots$$</div>
+	<p>Or, using the equation above:</p>
+	<div class="formula">$$p=\frac{m{v_{1}}^{2}}{V}+\frac{m{v_{2}}^{2}}{V}+\frac{m{v_{3}}^{2}}{V}+\frac{m{v_{4}}^{2}}{V}+\cdots$$</div>
+	<p>Which can be simplified, as the volume V is the common denominator and the mass of each particle is the same:</p>
+	<div class="formula">$$p=\frac{m\left({v_{1}}^{2}+{v_{2}}^{2}+{v_{3}}^{2}+{v_{4}}^{2}+\cdots\right)}{V}$$</div>
+	<p>The sum of the squared velocities in the bracket is equal to the <i>mean square speed</i> $\left(\overline{c^{2}}\right)$ multiplied by the number of particles in the gas. This is only true for a large number of particles, where some will be moving faster than the mean and some will be moving slower than the mean; however as one of the key assumptions we made for an ideal gas (such as this one) was that there are a large number of particles this is justified and in fact in $\quantity{1}{m^{3}}$ of a gas at sea level there are approximately $10^{25}$ particles.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/thermal_physics/kinetic_theory_2.svg') }}" alt="many particles moving in three dimensions" class="size550">
+		<figcaption><b>Figure 3:</b>&nbsp;But things get more complicated when we have to deal with more particles</figcaption>
+	</figure>
+	<p>One of our other assumptions was that the particle was moving in one dimension only, which of course is unrealistic. The particles will be moving in random directions and the speed of any one particle will be the sum of its velocity vectors in each spatial direction.</p>
+	<div class="formula">$$c^{2}={v_{x}}^{2}+{v_{y}}^{2}+{v_{z}}^{2}$$</div>
+	<p>As the motion is random and there are a vast number of particles, the average speed in any of the spatial directions is likely to be equal, therefore the mean value of ${v_{x}}^{2}+{v_{y}}^{2}+{v_{z}}^{2}=3{v_{x}}^{2}$ so we can say that the mean square speed $\overline{c^{2}}=3{v_{x}}^{2}$.</p>
+	<p>Bringing it all together with the equation for pressure derived earlier gives us the following two equations:</p>
+	<div class="formula">$$\large p=\frac{Nm\overline{c^{2}}}{3V}\;\;\mathrm{or}\;\;pV=\frac{1}{3}Nm\overline{c^{2}}$$</div>
+	<p>Finally, it should be noted that $\frac{Nm}{V}$ is density, so the above equation can also be written as:</p>
+	<div class="formula">$$\large p=\frac{1}{3}\rho\overline{c^{2}}$$</div>
+	<p>So we have managed to construct, from simple assumptions, and by applying material studied throughout the course such as Newtonian mechanics, a set of equations that link speed of particles to pressure, volume, and density.</p>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="4">
+	<h3>Root mean square speed</h3>
+	<p>Root mean square speed, or <i>rms speed</i>, is commonly used during discussions of gases and kinetic theory. The rms speed is the <em>square root of the arithmetic mean of the squares of the values</em>!</p>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>Mean square speed (average the squares, $\overline{c^2}$) and the square of the mean speed ($\bar{c}^2$) are <b>not the same value</b> &mdash; squaring first and then averaging generally gives a different (larger) result than averaging first and then squaring. Always follow the order in the name: <i>root</i> of the <i>mean</i> of the <i>squares</i>, done in that sequence.</p>
+	</div>
+	<p>For example, if five particles have speeds of:</p>
+	<div class="formula">$$\quantity{504}{ms^{-1}},\;\;\quantity{658}{ms^{-1}},\;\;\quantity{407}{ms^{-1}},\;\;\quantity{496}{ms^{-1}},\;\;\quantity{571}{ms^{-1}}$$</div>
+	<p>Then the rms speed would be calculated like this:</p>
+	<div class="formula">$$c_{\mathrm{rms}}=\sqrt{\frac{504^{2}+658^{2}+407^{2}+496^{2}+571^{2}}{5}}=\quantity{534}{ms^{-1}}$$</div>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>We use <b>speed</b> (always positive) rather than <b>velocity</b> (a vector) for exactly this reason: gas particles move in random directions, so the mean of their <i>velocities</i> would average out to zero and tell us nothing useful. Squaring before averaging (as in rms speed) makes every contribution positive, so the random directions no longer cancel out.</p>
+	</div>
+	<p>We discuss mean square speed and not mean square velocity, because as velocity is a vector quantity, and has a directional component, the mean of the velocities of a large number of gas particles will be zero, however the average speed will always be greater than zero, as it is always positive.</p>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="5">
+	<h3>The Boltzmann equation</h3>
+	<p>Ludwig Boltzmann was one of the first scientists to really develop the idea of atoms as real objects, rather than a mathematically useful tool to explain gases and thermodynamics. He studied thermodynamics and devised several important ideas associated with the distribution of the energy of particles within a gas and the growth of <i>entropy</i> within a system.</p>
+	<p>Boltzmann&rsquo;s studies arrived at the conclusion that within a gas the particles are moving at a range of speeds, and so have a range of energies, and therefore speeds, above and below a mean value. The mean energy is proportional to the gas&rsquo; thermodynamic temperature and the range of energies increases with temperature.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/thermal_physics/average_speed_graph.svg') }}" alt="Boltzmann distribution" class="size500">
+		<figcaption><b>Figure 4:</b>&nbsp;The distribution of particles at different temperatures</figcaption>
+	</figure>
+	<p>We can use the equations we have met already and Boltzmann&rsquo;s ideas to derive a final set of equations to relate the <i>average energy</i> of a molecule in a gas with its thermodynamic temperature.</p>
+	<p>Starting with the equation of state and the one of the equations derived above:</p>
+	<div class="formula">
+		$$pV=nRT$$
+		$$\mathrm{and}$$
+		$$p=\frac{1}{3}\frac{Nm\overline{c^{2}}}{V}$$
+	</div>
+	<p>If the average kinetic energy of a particle, $\overline{E_{k}}$, is equal to $\frac{1}{2}m\overline{c^{2}}$ then as we already have $m$ and $\overline{c^{2}}$ in the equations above, so we can introduce a term for energy:</p>
+	<div class="formula">$$p=\frac{1}{3}\frac{Nm\overline{c^{2}}}{V}\Rightarrow\frac{3pV}{N}=m\overline{c^{2}}$$</div>
+	<p>If we divide both sides of the equation by two we can see that we now have our energy term as described above:</p>
+	<div class="formula">
+		\begin{align}
+		\frac{3pV}{2N} &=\frac{1}{2}m\overline{c^{2}}=E\\
+		\\
+		\therefore\;\; pV &=\frac{2}{3}NE
+		\end{align}
+	</div>
+	<p>As $pV=nRT$ we can now say that:</p>
+	<div class="formula">$$nRT=\frac{2}{3}NE$$</div>
+	<p>This can easily be rearranged to make E the subject:</p>
+	<div class="formula">$$E=\frac 3 2 \cdot\frac{nRT}{N}$$</div>
+	<p>If we remember the definition of a mole as:</p>
+	<p class="equation">Number of particles = number of moles x Avogadro&rsquo;s constant</p>
+	<div class="formula">$$N=n\times N_{A} \qquad \Rightarrow \qquad \frac n N = \frac 1 {N_{A}}$$</div>
+	<p>Which, when substituted into the equation above gives us an expression for the average kinetic energy per particle in a gas:</p>
+	<div class="formula">$$\large E=\frac{3RT}{2N_{A}}$$</div>
+	<p>Where <i>R</i> is the molar gas constant. Boltzmann introduced a new constant <i>k</i>, which is the molar gas constant per particle and is equal to $\frac {R}{N_{A}}$, which gives us the final equation:</p>
+	<div class="formula">$$\large E=\frac{3}{2}kT$$</div>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>$E=\frac{3}{2}kT$ gives the average kinetic energy of a <b>single particle</b>, not the total internal energy of the whole gas. To find the total kinetic energy of $N$ particles, multiply by $N$: $E_{total}=\frac{3}{2}NkT$. Forgetting this multiplication &mdash; treating the per-particle value as if it were the total &mdash; is a very common way to lose marks when a question asks for the internal energy of a sample of gas rather than a single molecule.</p>
+	</div>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="6">
+	<h3>Test yourself</h3>
+	<p>Try the questions below to check your understanding of this topic. Numerical questions use different numbers each time, so you can attempt them more than once.</p>
+	<div id="quiz-root"></div>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+
+{% endblock %}
+
+{% block resources_heading %}One page summary{% endblock %}
+
+{% block resources %}
+	<li><a href="{{ url_for('static', filename='summaries/thermal_physics/kinetic_theory_summary.html') }}" target="_blank"><i class="fas fa-file-alt"></i> Printable revision sheet</a></li>
+{% endblock %}
+
+{% block prev_link %}
+	<a href="{{ url_for('gas_laws') }}"><i class="fas fa-chevron-circle-left"></i><span class="nav_link">Previous topic</span></a>
+{% endblock %}
+
+{% block extra_scripts %}
+	<script src="{{ url_for('static', filename='js/quiz.js') }}"></script>
+	<script src="{{ url_for('static', filename='quizzes/kinetic_theory_questions.js') }}"></script>
+	<script>
+		new PhysicsQuiz(document.getElementById('quiz-root'), kineticTheoryQuestions, {
+			storageKey: 'kinetic_theory'
+		});
+	</script>
+{% endblock %}

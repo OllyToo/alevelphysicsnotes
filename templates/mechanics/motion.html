@@ -1,0 +1,350 @@
+{% extends "base.html" %}
+
+{% block title %}Motion in one dimension{% endblock %}
+{% block page_h1 %}Motion in one dimension{% endblock %}
+
+{% block meta_description %}A Level Physics notes and worked examples to help students with their exams and learning. In this topic we learn about describing motion using the suvat equations and graphs.{% endblock %}
+{% block meta_keywords %}suvat, equations of motion, distance-time, velocity-time, distance, velocity, sign convention, graphs, gradient, worked examples, exam questions, A level, physics{% endblock %}
+
+{% block extra_head %}
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/quiz.css') }}">
+{% endblock %}
+
+{% block page_boxes %}
+		<a href="#1"><button class="button">The SUVAT equations</button></a>
+		<a href="#2"><button class="button">Choosing the right equation</button></a>
+		<a href="#3"><button class="button">Sign convention</button></a>
+		<a href="#4"><button class="button">When can we use SUVAT?</button></a>
+		<a href="#5"><button class="button">Graphing motion</button></a>
+		<a href="#6"><button class="button">Worked example</button></a>
+		<a href="#7"><button class="button">Test yourself</button></a>
+{% endblock %}
+
+{% block spec %}
+	<div id="spec">
+		<p class="spec_ref"><b>3.4.1.3 Motion along a straight line</b></p>
+
+		<p class="spec_box">Displacement, speed, velocity, acceleration.</p>
+		<div class="formula">
+			$$v=\frac{\Delta s}{\Delta t}$$
+			$$a=\frac{\Delta v}{\Delta t}$$
+		</div>
+		<p class="spec_box">Calculations may include average and instantaneous speeds and velocities.</p>
+		<p class="spec_box">Representation by graphical methods of uniform and nonuniform acceleration.</p>
+		<p class="spec_box">Significance of areas of velocity–time and acceleration–time graphs and gradients of displacement–time and velocity–time graphs for uniform and non-uniform acceleration eg graphs for motion of bouncing ball.</p>
+		<p class="spec_box">Equations for uniform acceleration:</p>
+		<div class="formula">
+			$$v=u+at$$
+			$$s=\frac{u+v}{2}t$$
+			$$s=ut+\frac{1}{2}at^{2}$$
+			$$v^{2}=u^{2}+2as$$	
+		</div>
+		<p class="spec_box">Acceleration due to gravity, g.</p>
+	</div>
+{% endblock %}
+
+{% block content %}
+
+		<section class="top_section" id="1">
+			<h3>The SUVAT equations</h3>
+			<p>It's important, right at the start, to be clear about the difference between the scalar and vector quantities used to describe motion.</p>
+			<p>Speed is the <i>rate of change of distance</i>, whereas velocity is the <i>rate of change of displacement</i>:</p>
+
+			<div class="formula">
+				$$\large v=\frac{\Delta s}{\Delta t}$$
+			</div>
+
+			<p>Because distance is a scalar quantity, speed itself is a scalar. Displacement is a vector, so velocity is a vector too. This means that, unlike speed, velocity can be broken into components, and must always be stated with a direction.</p>
+			<p>Acceleration is the rate of change of <i>velocity</i>:</p>
+
+			<div class="formula">
+				$$\large a=\frac{\Delta v}{\Delta t}$$
+			</div>
+
+			<p>In practice, $\Delta v$, the change in velocity, is calculated by:</p>
+
+			<div class="formula">
+				$$\large	\Delta v=\left ( v-u \right )$$
+			</div>
+
+			<p>where $v$ is the final velocity and $u$ is the initial velocity. Between them, these five quantities are all we need to fully describe the motion of an object moving with constant acceleration:</p>
+
+			<div>
+			<table class="center" style="width: 60%">
+				<tr>
+					<th><b>Quantity</b></th>
+					<th><b>Symbol</b></th>
+					<th><b>Units</b></th>
+				</tr>
+				<tr>
+					<td>Displacement</td>
+					<td>$s$</td>
+					<td>m</td>
+				</tr>
+				<tr>
+					<td>Initial velocity</td>
+					<td>$u$</td>
+					<td>m s<sup>−1</sup></td>
+				</tr>
+				<tr>
+					<td>Final velocity</td>
+					<td>$v$</td>
+					<td>m s<sup>−1</sup></td>
+				</tr>
+				<tr>
+					<td>Acceleration</td>
+					<td>$a$</td>
+					<td>m s<sup>−2</sup></td>
+				</tr>
+				<tr>
+					<td>Time</td>
+					<td>$t$</td>
+					<td>s</td>
+				</tr>
+			</table>
+			</div>
+
+			<p>This gives the equations their name: the <i>suvat</i> equations. From the basic definitions above, it's possible to derive four equations that describe the motion of an object under constant acceleration:</p>
+
+			<p>(eq. 1) </p>
+			<div class="formula">
+				$$\large v=u+at$$
+			</div>
+			 
+			<p>(eq. 2)</p>
+			<div class="formula">
+				$$\large s=\frac{\left ( u+v \right )}{2}t$$
+			</div>
+			 
+			<p>(eq. 3) </p>
+			<div class="formula">
+				$$\large s=ut+\frac{1}{2}at^{2}$$
+			</div>
+
+			<p>(eq. 4) </p>
+			<div class="formula">
+				$$\large v^{2}=u^{2}+2as$$	
+			</div>
+
+			<p>You don't need to know how to derive these equations, but if you're interested, you can find out where they come from here:</p>
+			<p><a href="{{ url_for('deriving_equations_of_motion') }}" target="_blank">How to derive the four equations of motion</a></p>
+			<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+		</section>
+	<br>
+	<br>
+	<hr>
+		<section id="2">
+			<h3>Choosing the right equation</h3>
+			<p>Each of the four suvat equations is missing one of the five quantities, which is exactly what makes them useful for picking the right tool for a given problem:</p>
+
+			<div>
+			<table class="center" style="width: 70%">
+				<tr>
+					<th><b>Equation</b></th>
+					<th><b>Missing quantity</b></th>
+				</tr>
+				<tr>
+					<td>$v=u+at$</td>
+					<td>$s$</td>
+				</tr>
+				<tr>
+					<td>$s=\dfrac{(u+v)}{2}t$</td>
+					<td>$a$</td>
+				</tr>
+				<tr>
+					<td>$s=ut+\frac{1}{2}at^{2}$</td>
+					<td>$v$</td>
+				</tr>
+				<tr>
+					<td>$v^{2}=u^{2}+2as$</td>
+					<td>$t$</td>
+				</tr>
+			</table>
+			</div>
+
+			<p>Because of this, choosing the right equation for a problem is really just a case of working out which quantity you don't have, and don't need. It's worth approaching every suvat question with the same method:</p>
+			<ol class="page_list">
+			<li>Write down every quantity given in the question, using the letters $s$, $u$, $v$, $a$ and $t$.</li>
+			<li>Identify which quantity the question is actually asking you to find.</li>
+			<li>Cross out the one remaining quantity that you haven't been given, and don't need to find.</li>
+			<li>Choose the equation that doesn't contain that missing quantity.</li>
+			</ol>
+
+			<p>It's worth doing this before attempting any calculation. For example, a sprinter reaches a velocity of 8.2 m s<sup>−1</sup>, then accelerates at a constant 0.6 m s<sup>−2</sup> for 3.5 s. To find the distance she covers in this time:</p>
+
+			<div class="formula">
+				$$u=\quantity{8.2}{ms^{-1}} \qquad a=\quantity{0.6}{ms^{-2}} \qquad t=\quantity{3.5}{s} \qquad s=\text{?} \qquad (v \text{ not needed})$$
+			</div>
+
+			<p>$v$ is neither given nor needed, so the equation to use is the one missing $v$: equation 3.</p>
+
+			<div class="formula">
+				$$s=ut+\frac{1}{2}at^{2}=(8.2\times3.5)+\left(\frac{1}{2}\times0.6\times3.5^{2}\right)=\quantity{32.4}{m}$$
+			</div>
+
+			<p>Skipping straight to a calculation without first identifying the missing quantity is one of the most common ways marks are lost in these questions, since it's easy to reach for an equation that looks right but is actually missing a value you were never given.</p>
+
+			<div class="callout callout-mistake">
+				<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+				<p>Always identify the missing quantity <b>before</b> picking an equation, not after. Writing out $s$, $u$, $v$, $a$, $t$ and filling in what you know (and crossing out the one you neither have nor need) takes seconds, and stops you reaching for an equation that happens to "look right" but secretly needs a value you were never given.</p>
+			</div>
+			<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+		</section>
+	<br>
+	<br>
+	<hr>
+		<section id="3">
+			<h3>Sign convention</h3>
+			<p>Because $s$, $u$, $v$ and $a$ are all vector quantities, each one needs a direction as well as a magnitude. Rather than writing "12 m s<sup>−1</sup> upwards" every time, it's far more convenient to choose one direction as <b>positive</b> at the start of a problem, and treat anything in the opposite direction as <b>negative</b>.</p>
+			<p>It doesn't matter which direction you choose as positive, as long as you're consistent for every quantity in that problem.</p>
+
+			<p>A classic example is a ball thrown straight upwards. Taking upwards as positive:</p>
+			<ul class="page_list">
+			<li>The initial velocity, $u$, is positive, since the ball starts by moving upwards.</li>
+			<li>The acceleration, $a$, is negative throughout the entire motion, since gravity always acts downwards. This is true even while the ball is still travelling upwards, and is a common point of confusion: the acceleration doesn't change sign at the top of the flight, only the velocity does.</li>
+			<li>The final velocity, $v$, will come out negative if the ball is travelling downwards at the point you're calculating it for.</li>
+			</ul>
+
+			<div class="callout callout-mistake">
+				<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+				<p>It's tempting to think acceleration must be zero, or change sign, at the very top of a ball's flight, since the ball is momentarily stationary there. In fact $g$ stays constant and negative (with upwards positive) throughout the <b>entire</b> flight, up and down alike; it's only the <b>velocity</b> that passes through zero and changes sign at the top, not the acceleration.</p>
+			</div>
+
+			<p>Getting the sign convention right at the start of a question, and sticking to it, is essential; a single sign error carried through a calculation will usually give an answer with the right magnitude but the wrong direction, or an answer that simply doesn't make physical sense.</p>
+			<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+		</section>
+	<br>
+	<br>
+	<hr>
+		<section id="4">
+			<h3>When can we use SUVAT?</h3>
+			<p>The suvat equations are only valid while the acceleration is <b>constant</b>. If the acceleration is changing, whether it's increasing, decreasing, or changing direction, none of the four equations can be applied across that period of motion.</p>
+			<p>This condition catches a lot of students out, because it's easy to assume any motion problem can be solved with suvat. A car accelerating away from traffic lights, for example, doesn't have constant acceleration: the driving force stays roughly constant, but air resistance grows as the car speeds up, so the resultant force, and therefore the acceleration, decreases the faster the car goes.</p>
+
+			<div class="callout callout-mistake">
+				<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+				<p>Before reaching for a suvat equation, check the acceleration is actually <b>constant</b> throughout the motion in question. "Accelerating" alone isn't enough &mdash; if the resultant force on an object changes as it moves (as with a car facing increasing air resistance, or an object approaching terminal velocity), the acceleration changes too, and suvat cannot be applied across that period, even though the object is clearly still speeding up or slowing down.</p>
+			</div>
+			<p>When the acceleration changes partway through a motion, but is constant within each separate stage, the motion can still be analysed with suvat, so long as it's split into separate stages, each treated as its own suvat problem. The final velocity of one stage becomes the initial velocity of the next.</p>
+
+			<p>Before reading on, decide whether each of the following could be analysed with a single application of suvat, multiple stages, or not at all:</p>
+			<ul class="page_list">
+			<li>A marble rolling down a straight, uniform ramp.</li>
+			<li>A raindrop falling from a high cloud all the way to the ground.</li>
+			<li>A lift travelling from the ground floor to the top of a tall building.</li>
+			</ul>
+			<p>The marble experiences a constant resultant force along the ramp, so a single application of suvat is enough. The raindrop accelerates under gravity at first, but as its speed increases, so does air resistance, until it reaches a constant <i>terminal velocity</i>; because the acceleration isn't constant throughout the fall, suvat can't be applied across the whole journey. The lift is a good example of a multi-stage motion: it accelerates away from the ground floor, travels at a constant velocity for most of the journey, then decelerates as it approaches its destination. Each of these three stages has its own constant acceleration, so each can be treated separately with suvat, even though the journey as a whole can't.</p>
+			<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+		</section>
+	<br>
+	<br>
+	<hr>
+		<section id="5">
+			<h3>Graphing motion</h3>
+			<p>It's often useful to represent the motion of an object on a graph. The two most common are displacement-time and velocity-time graphs, although acceleration-time graphs are sometimes used too. It's worth thinking about how any particular journey would look on all three.</p>
+			<p>The simplest of the three is the displacement-time graph. Using the same principles discussed above, an s-t graph can be used to find both the displacement and the velocity of an object. The displacement is read directly from the y-axis, and because the gradient is $\frac{\Delta s}{\Delta t}$, it equals the velocity of the object. If the line slopes upward, the velocity is positive; if it slopes downwards, the velocity is negative. The steeper the line, the greater the magnitude of the velocity. When an object accelerates, its velocity is constantly changing, so the line will be curved; to find the velocity at any point on a curved section, a tangent to the line must be drawn. This is a skill you'll be expected to perform.</p>
+			<p>Displacement-time graphs can either be drawn like the one shown below, or, as is often the case for oscillating objects, with a positive and a negative quadrant.</p>
+
+			<figure>
+				<img src="{{ url_for('static', filename='images/mechanics/displacement_time_graph.svg') }}" alt="displacement time graph" class="size600">
+				<figcaption><b>Figure 1:</b>&nbsp;A displacement-time graph.</figcaption>
+			</figure>
+			<p>It's worth spending some time studying this graph, and describing the motion taking place at each stage of it, before moving on.</p>
+			<p>Velocity-time graphs are even more useful, but often require careful thought when drawing them. On a v-t graph, the gradient is $\frac{\Delta v}{\Delta t}$, which is equal to the acceleration. The area underneath any section of the line is equal to the displacement of the object over that time.</p>
+
+			<figure>
+				<img src="{{ url_for('static', filename='images/mechanics/velocity_time_graph.svg') }}" alt="velocity time graph" class="size600">
+				<figcaption><b>Figure 2:</b>&nbsp;A velocity-time graph.</figcaption>
+			</figure>
+			<p>There are some important points to note:</p>
+			<ul class="page_list">
+			<li>Whenever an object stops moving, even instantaneously, the line will cross the x-axis.</li>
+			<li>A constant velocity produces a horizontal line.</li>
+			<li>Any object experiencing constant acceleration, such as an object in free-fall, will produce a straight line.</li>
+			<li>When finding the area under a line, it's usually easiest to split the area into several regular shapes and add their individual areas together, rather than counting squares. It's also possible, if you know the equation of the line, to integrate, but this is well beyond what's expected at A-level.</li>
+			</ul>
+
+			<div class="callout callout-definition">
+				<p class="callout-label"><i class="fas fa-lightbulb"></i> Worth remembering</p>
+				<p>It's easy to muddle up gradient and area between the two graph types. On a <b>displacement-time</b> graph, the <i>gradient</i> gives velocity (there's no meaningful area to find). On a <b>velocity-time</b> graph, the <i>gradient</i> gives acceleration, but the <i>area</i> under the line gives displacement. Always check which graph you're looking at before deciding whether to read a gradient or an area.</p>
+			</div>
+
+			<p>It's worth spending some time studying the graph above, working out what the acceleration is doing at each stage, and sketching how that would look if plotted against time.</p>
+			<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>	
+		</section>
+	<br>
+	<br>
+	<hr>
+		<section id="6">
+			<h3>Worked example</h3>
+
+			<p>A supersonic car is attempting to break the land speed record on a horizontal track. While travelling at 320 m s<sup>−1</sup>, a small part $P$, 1.5 m above the ground, becomes detached from the car. The initial vertical velocity of $P$ is 2.5 m s<sup>−1</sup>, in the upwards direction. Air resistance can be assumed to have a negligible effect on the vertical motion.</p>
+
+			<div>
+				<ol class="page_list" type="A">
+					<li>Calculate the time taken for the small part $P$ to reach the ground.</li>
+					<p class="workex">Only the vertical motion matters here, and the horizontal velocity of the car (320 m s<sup>−1</sup>) is irrelevant to it. Taking upwards as positive, and $g=\quantity{9.8}{ms^{-2}}$:</p>
+					<div class="formula">
+						$$u=\quantity{2.5}{ms^{-1}} \qquad a=\quantity{-9.8}{ms^{-2}} \qquad s=\quantity{-1.5}{m} \qquad t=\text{?} \qquad (v \text{ not needed})$$
+					</div>
+					<p class="workex">The displacement is negative because $P$ ends up 1.5 m below its starting point. With $v$ missing, the equation to use is equation 3:</p>
+					<div class="formula">
+						$$s=ut+\frac{1}{2}at^{2}$$
+					</div>
+					<div class="formula">
+						$$-1.5=2.5t-4.9t^{2}$$
+					</div>
+					<p class="workex">Rearranging into the standard form of a quadratic gives:</p>
+					<div class="formula">
+						$$4.9t^{2}-2.5t-1.5=0$$
+					</div>
+					<p class="workex">Solving with the quadratic formula gives two solutions, $t=0.86$ s or $t=-0.35$ s. A negative time isn't physically meaningful here, so:</p>
+					<div class="formula">
+						$$t\approx\quantity{0.86}{s}$$
+					</div>
+
+					<div class="callout callout-mistake">
+						<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+						<p>When $s=ut+\frac{1}{2}at^{2}$ is rearranged into a quadratic, solving it will generally give <b>two</b> mathematical solutions, but not both will necessarily make physical sense. A negative time before the motion even started is almost always the one to discard &mdash; but always check which root is meaningful for the specific situation, rather than just assuming the positive one is automatically correct.</p>
+					</div>
+					<p class="workex">An equally valid alternative is to split the motion into two stages, using the "when can we use suvat" method above: first find the time to reach maximum height, where $v=0$, then treat the fall back down to the ground as a second, separate suvat problem. Both approaches give the same answer, and it's worth knowing both, since some questions are more naturally suited to one method than the other.</p>
+				</ol>
+			</div>
+
+			<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+		</section>
+	<br>
+	<br>
+	<hr>
+		<section id="7">
+			<h3>Test yourself</h3>
+			<p>Try the questions below to check your understanding of this topic. Numerical questions use different numbers each time, so you can attempt them more than once.</p>
+			<div id="quiz-root"></div>
+			<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+		</section>
+
+	{% endblock %}
+
+	{% block resources_heading %}One page summary{% endblock %}
+
+{% block resources %}
+	<li><a href="{{ url_for('static', filename='summaries/mechanics/motion_summary.html') }}" target="_blank"><i class="fas fa-file-alt"></i> Printable revision sheet</a></li>
+{% endblock %}
+
+{% block prev_link %}
+	<a href="{{ url_for('moments') }}"><i class="fas fa-chevron-circle-left"></i><span class="nav_link">Previous topic</span></a>
+{% endblock %}
+
+{% block next_link %}
+	<a href="{{ url_for('projectiles') }}"><span class="nav_link">Next topic</span><i class="fas fa-chevron-circle-right"></i></a>
+{% endblock %}
+
+{% block extra_scripts %}
+	<script src="{{ url_for('static', filename='js/quiz.js') }}"></script>
+	<script src="{{ url_for('static', filename='quizzes/motion_questions.js') }}"></script>
+	<script>
+		new PhysicsQuiz(document.getElementById('quiz-root'), motionQuestions, {
+			storageKey: 'motion'
+		});
+	</script>
+{% endblock %}

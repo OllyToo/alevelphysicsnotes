@@ -1,0 +1,209 @@
+{% extends "base.html" %}
+
+{% block title %}Statics and forces in equilibrium{% endblock %}
+{% block page_h1 %}Statics and forces in equilibrium{% endblock %}
+
+{% block meta_description %}A Level Physics notes and worked examples to help students with their exams and learning. This page looks at free-body diagrams and how to determine whether forces acting on an object are in equilibrium.{% endblock %}
+{% block meta_keywords %}equilibrium, statics, scale diagrams, resolving forces, rotation, perpendicular, worked examples, exam questions, A level, physics{% endblock %}
+
+{% block extra_head %}
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/quiz.css') }}">
+{% endblock %}
+
+{% block page_boxes %}
+		<a href="#1"><button class="button">Free-body Diagrams</button></a>
+		<a href="#2"><button class="button">Forces in equilibrium</button></a>
+		<a href="#3"><button class="button">Worked example</button></a>
+		<a href="#4"><button class="button">Test yourself</button></a>
+{% endblock %}
+
+{% block spec %}
+	<div id="spec">
+		<p class="spec_ref"><b>3.4.1.1 Scalars and vectors</b></p>
+
+		<p class="spec_box">Nature of scalars and vectors.</p>
+		<p class="spec_box">Examples should include:<br>
+		velocity/speed, mass, force/weight, acceleration, displacement/distance.</p>
+		<p class="spec_box">Addition of vectors by calculation or scale drawing.</p>
+		<p class="spec_box">Calculations will be limited to two vectors at right angles.</p>
+		<p class="spec_box">Scale drawings may involve vectors at angles other than 90°.</p>
+		<p class="spec_box">Resolution of vectors into two components at right angles to each other.</p>
+		<p class="spec_box">Examples should include components of forces along and perpendicular to an inclined plane.</p>
+		<p class="spec_box">Problems may be solved either by the use of resolved forces or the use of a closed triangle.</p>
+		<p class="spec_box">Conditions for equilibrium for two or three coplanar forces acting at a point. Appreciation of the meaning of equilibrium in the context of an object at rest or moving with constant velocity.</p>
+	</div>	
+{% endblock %}
+
+{% block content %}
+
+		<section class="top_section" id="1">
+			<h3>Free-body Diagrams</h3>
+			<p>When considering the forces acting on an object it is often very useful to draw what is called a <b>free-body diagram</b>. Free-body diagrams show two things:</p>
+
+			<p>&bull; The size or magnitude of the force vector</br>
+			&bull; The direction of the force vector</p>
+
+			<p>Free-body diagrams are <i>schematic</i>, this means that they are not lifelike drawings, but they merely represent a physical situation. The object is drawn as a box or a dot, and the force arrows are drawn from the edge of the object (though it can sometimes be clearer to draw them from the actual point where the force acts). The force arrows must be drawn to scale and be pointing in the correct direction, and it's useful to label each one with what's producing the force.</p>
+			<p>If the free-body diagram has been drawn accurately it can be used to solve a number of problems, such as resolving forces into components, seeing whether a system is in equilibrium, finding the value of unknown forces and even identifying missing forces.</p>
+
+			<figure>
+				<img src="{{ url_for('static', filename='images/mechanics/free-body_diagram.svg') }}" alt="free-body diagram of an airplane" class="size800">
+				<figcaption><b>Figure 1:</b>&nbsp;Free-body diagram of the forces acting on an airplane.</figcaption>
+			</figure>
+			<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>	
+
+		</section>
+	<br>
+	<br>
+	<hr>
+		<section id="2">
+			<h3>Forces in equilibrium</h3>
+
+			<p>When two or more forces act on an object and the object remains stationary, or moves at a constant velocity, the forces are said to be in <b>equilibrium</b>. When forces are in equilibrium, their <b>vector sum</b> is <b>zero</b>:</p>
+			<div class="formula">
+				$$\Sigma \mathrm{F}=0$$
+			</div>
+
+			<p>This should be read as, "The sum of all the forces acting on the object equals zero." If the forces don't cancel out, there will be a resultant force acting on the body, and it will accelerate.</p>
+
+			<div class="callout callout-definition">
+				<p class="callout-label"><i class="fas fa-lightbulb"></i> Worth remembering</p>
+				<p>"Equilibrium" does not mean "stationary" &mdash; it means <b>zero resultant force</b>, which includes an object moving in a straight line at constant velocity, just as much as an object at rest. A car cruising at a steady speed on a flat road is in equilibrium, even though it's clearly moving; its driving force exactly balances the resistive forces acting against it.</p>
+			</div>
+
+			<div>
+			<figure>
+				<img src="{{ url_for('static', filename='images/mechanics/box.png') }}" alt="forces on a box in equilibrium" class="size350">
+				<figcaption><b>Figure 2:</b>&nbsp;Two forces acting on a box in equilibrium.</figcaption>
+			</figure>
+			<p>The example on the left is a simple situation.</p>
+			<p>The block is not moving so it must be in equilibrium. The downward force, that of its weight is cancelled out by the support force provided by the floor.</p>
+			<div style="text-align:center">
+			<div class="formula">
+				$$\Sigma \mathrm{S\,W}=0$$
+			</div>
+			</div>
+
+			<div class="callout callout-mistake">
+				<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+				<p>Just two forces can only be in equilibrium if they are equal in magnitude and act in exactly opposite directions, along the same line &mdash; like the weight and support force here. Any other arrangement of just two forces (not equal, or not exactly opposite) will leave a resultant force, and the object cannot be in equilibrium.</p>
+			</div>
+
+			<p>When there are only two forces acting on a body they can only be in equilibrium if they are acting parallel to each other as they are in the example of above of the box on the floor. With situations when an object is moving and the forces are in equilibrium, such as a car travelling at a constant speed, the car’s engine will produce a driving force to overcome <i>resistive forces</i> such as air resistance, rolling resistance etc.</p>
+			<p>When there are three forces acting on an object the resultant can take any value from 0 (if the object is in equilibrium) to the absolute sum of the three forces if they are all acting in the same direction. If three forces act on an object they are in equilibrium only if the resultant of any two of the forces is equal and opposite to the third.</p>
+
+			<figure>
+				<img src="{{ url_for('static', filename='images/mechanics/three_forces_acting_on_an_object.svg') }}" alt="three forces acting on an object" class="size800">
+				<figcaption><b>Figure 3:</b>&nbsp;Three forces acting on an object can be arranged in many different ways.</figcaption>
+			</figure>
+
+			<p>There are two ways to check whether the forces acting on an object are in equilibrium, and like we have previously seen when using vectors there is a graphical method and a mathematical method.</p>
+			<p>To determine graphically whether the object is in equilibrium we need to be able to draw a <i>closed equilibrium triangle</i>. This involves arranging the three forces <b>without rotating them</b> into a closed triangle. It is important that each of the vectors join from head to tail. If two arrowheads join then it is not an equilibrium situation. If it is not possible to draw the triangle then the forces are not in equilibrium.</p>
+
+			<div class="callout callout-mistake">
+				<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+				<p>When testing for equilibrium graphically, the vectors must join <b>head to tail</b> all the way round the triangle, without being rotated from their original directions. If you find two arrowheads meeting at the same corner (as in example <i>ii</i> below), the forces are <b>not</b> in equilibrium, even though a closed triangle can still be drawn &mdash; the shape closing isn't enough on its own, the direction of travel around it matters too.</p>
+			</div>
+
+			<p>In example <i>iii</i> above the three forces are parallel to each other so they clearly cannot be arranged into a triangle. Looking at the other two examples, as you can see below only example <i>i</i> can be arranged into an equilibrium triangle. Although example <i>ii</i> can be arranged into a closed triangle, there are two arrow heads meeting at the same corner so it cannot be in equilibrium.</p>
+
+			<figure>
+				<img src="{{ url_for('static', filename='images/mechanics/triangles_of_equilibrium.svg') }}" alt="arranging three forces to create a triangle of equilibrium" class="size800">
+				<figcaption><b>Figure 4:</b>&nbsp;You can determine whether forces are in equilibrium by arranging them in a triangle.</figcaption>
+			</figure>
+
+			<p>The mathematical method involves resolving the forces into horizontal and vertical components. If the sum of the components of the forces equals 0 then the object is in equilibrium. This method has two steps:</p>
+			<ul class="page_list">
+			<li>Resolve the forces along the same parallel and perpendicular axis.</li>
+			<li>Balance the components along these lines.</li>
+			</ul>
+			<p>In this example there are no angles given, but resolving vectors into components was explained in vectors section of this site.</p>
+
+			<figure>
+				<img src="{{ url_for('static', filename='images/mechanics/resolving_forces_in_equilibrium.svg') }}" alt="resolving three forces into parallel and perpendicular components" class="size850">
+				<figcaption><b>Figure 5:</b>&nbsp;If an object is equilibrium then the sum of the components of the forces horizontal and vertical directions will be 0.</figcaption>
+			</figure>
+
+			<p>A good example of three forces acting in equilibrium is an object resting on an inclined slope, as shown in the diagram below. Before reading on, see if you can answer the following questions yourself:</p>
+			<ul class="page_list">
+			<li>What do the three forces arrows represent?</li>
+			<li>How can we tell the object is in equilibrium?</li>
+			<li>Can you draw a free-body diagram for the object?</li>
+			<li>If we knew the value of one of the forces, how could we calculate the size of the other two?</li>
+			</ul>
+
+			<figure>
+				<img src="{{ url_for('static', filename='images/mechanics/object_on_a_slope.svg') }}" alt="forces acting on an object at rest on a slope" class="size650">
+				<figcaption><b>Figure 6:</b>&nbsp;The forces acting on an object on an inclined plane.</figcaption>
+			</figure>
+			<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>	
+		</section>
+	<br>
+	<br>
+	<hr>
+		<section id="3">
+			<h3>Worked example</h3>
+
+			<figure>
+				<img src="{{ url_for('static', filename='images/mechanics/vectors_worked_example.svg') }}" alt="camera suspended by two cables A and B over pulleys" class="size700">
+				<figcaption><b>Figure 7:</b>&nbsp;A camera filming a sports event from above is suspended by two steel cables.</figcaption>
+			</figure>
+
+			<p>The diagram shows a camera filming a sports event from above. The position of the camera is controlled by two steel cables, <b>A</b> and <b>B</b>, that pass over fixed, smooth pulleys. With the camera stationary, the tension in <b>A</b> is 430 N and <b>A</b> makes an angle of 35° to the horizontal, while <b>B</b> makes an angle of 12° to the horizontal.</p>
+
+			<div>
+				<ol class="page_list" type="A">
+					<li>Calculate the tension in <b>B</b>.</li>
+					<p class="workex">The camera is stationary, so it's in equilibrium. Resolving horizontally, the horizontal components of the two tensions must be equal and opposite:</p>
+					<div class="formula">
+						$$T_A \cos35°=T_B \cos12°$$
+					</div>
+					<div class="formula">
+						$$T_B=\frac{T_A \cos35°}{\cos12°}=\frac{430\cos35°}{\cos12°}=\quantity{360}{N}$$
+					</div>
+					
+					<li>The camera is moved horizontally to a new stationary position, further from the pulley for <b>A</b>. Deduce whether the tension in <b>A</b> has increased or decreased.</li>
+					<p class="workex">As the camera moves further from <b>A</b>'s pulley, the angle <b>A</b> makes with the horizontal decreases, while the angle <b>B</b> makes with the horizontal increases. The camera's weight hasn't changed, so the vertical components of the two tensions must still add up to support it. Because <b>A</b> is now shallower, each newton of tension in it contributes less vertical support than before, so <b>B</b> must take up more of the weight, and the tension in <b>A</b> decreases.</p>
+					<div class="callout callout-mistake">
+						<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+						<p>Questions like this reward reasoning through the physics step by step (weight is fixed &rarr; vertical components must still sum to the weight &rarr; a shallower angle contributes less vertical support per newton of tension), not just stating a conclusion. A one-line answer like "the tension decreases" with no explanation of why won't get full marks, even if it's the correct answer.</p>
+					</div>
+				</ol>
+			</div>
+
+			<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>	
+		</section>
+	<br>
+	<br>
+	<hr>
+		<section id="4">
+			<h3>Test yourself</h3>
+			<p>Try the questions below to check your understanding of this topic. Numerical questions use different numbers each time, so you can attempt them more than once.</p>
+			<div id="quiz-root"></div>
+			<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+		</section>
+
+	{% endblock %}
+	
+	{% block resources_heading %}One page summary{% endblock %}
+
+{% block resources %}
+	<li><a href="{{ url_for('static', filename='summaries/mechanics/statics_summary.html') }}" target="_blank"><i class="fas fa-file-alt"></i> Printable revision sheet</a></li>
+{% endblock %}
+
+{% block prev_link %}
+	<a href="{{ url_for('vectors') }}"><i class="fas fa-chevron-circle-left"></i><span class="nav_link">Previous topic</span></a>
+{% endblock %}
+
+{% block next_link %}
+	<a href="{{ url_for('moments') }}"><span class="nav_link">Next topic</span><i class="fas fa-chevron-circle-right"></i></a>
+{% endblock %}
+{% block extra_scripts %}
+	<script src="{{ url_for('static', filename='js/quiz.js') }}"></script>
+	<script src="{{ url_for('static', filename='quizzes/statics_questions.js') }}"></script>
+	<script>
+		new PhysicsQuiz(document.getElementById('quiz-root'), staticsQuestions, {
+			storageKey: 'statics'
+		});
+	</script>
+{% endblock %}

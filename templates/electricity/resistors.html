@@ -1,0 +1,366 @@
+{% extends "base.html" %}
+
+{% block title %}Resistors and resistance{% endblock %}
+{% block page_h1 %}Resistors and resistance{% endblock %}
+
+{% block meta_description %}A Level Physics notes and worked examples to help students with their exams and learning. Here we learn how resistance affects the flow of charge around a circuit and how to combine resistances in series and parallel{% endblock %}
+{% block meta_keywords %}resistors, resistance, series, parallel, circuits, temperature, worked examples, exam questions, A level, physics{% endblock %}
+
+{% block extra_head %}
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/quiz.css') }}">
+{% endblock %}
+
+{% block page_boxes %}
+	<a href="#1"><button class="button">Resistance</button></a>
+	<a href="#2"><button class="button">Resistance and temperature</button></a>
+	<a href="#3"><button class="button">Resistors around a circuit</button></a>
+	<a href="#4"><button class="button">Resistors in parallel</button></a>
+	<a href="#5"><button class="button">Worked example</button></a>
+	<a href="#6"><button class="button">Test yourself</button></a>
+{% endblock %}
+
+{% block spec %}
+<div id="spec">
+	<p class="spec_ref"><b>3.5.1.2 Current&ndash;voltage characteristics</b></p>
+	<p class="spec_box">Resistance defined as <span>$R=\frac{V}{I}$</span></p>
+	<p class="spec_box">For an ohmic conductor, semiconductor diode, and filament lamp.</p>
+	<p class="spec_box">Ohm&rsquo;s law as a special case where <span>$I \propto V$</span> under constant physical conditions.</p>
+	<p class="spec_box">Unless specifically stated in questions, ammeters and voltmeters should be treated as ideal (having zero and infinite resistance respectively).</p>
+	<p class="spec_box">Questions can be set where either I or V is on the horizontal axis of the characteristic graph.</p>
+	<br>
+	<p class="spec_ref">3.5.1.4 Circuits</p>
+	<p class="spec_box">Resistors:<br>
+	in series, <span>$R_{T}=R_{1}+R_{2}+R_{3}+\cdots$</span><br>
+	in parallel, <span>$\frac{1}{R_{T}}=\frac{1}{R_{1}}+\frac{1}{R_{2}}+\frac{1}{R_{3}}+\cdots$</span></p>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<section class="top_section" id="1">
+	<h3>Resistance</h3>
+	<p>In most circuits, current flows due to the movement of free electrons through a conductor. Some conductors have more free electrons than others, and, are, therefore better conductors than those with fewer free electrons. Materials with no free electrons are called insulators and allow no current to pass through them. There are also materials that lie somewhere in between, and will only liberate electrons, or allow a current to flow in response to an external stimulus such as, light, heat, or an electric field. These materials are called semiconductors, and are the building blocks of modern digital technology.</p>
+	<p>In any metal, the atoms shed electrons as they form a crystal lattice, and these free electrons move randomly between the ionic cores of the metal atoms. Usually, as the motion of the electrons is random, their net velocity is zero. However, when an emf is placed across a conductor the electrons will move away from the negative terminal and towards the positive terminal.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/electricity/wire_resistance.svg') }}" alt="resistance and length of conductor" class="size600">
+		<figcaption><b>Figure 1:</b>&nbsp;If we could see inside a wire...</figcaption>
+	</figure>
+	<p>As the electrons begin to move their random motion is broken, but as there are vast numbers of ionic cores obstructing the path between the terminals there are lots of collisions between them and the electrons. This causes the path of the electrons to be anything but straight, and the overall velocity to still be quite low, however, there is now a net drift velocity from negative to positive. This series of collisions reduces the amount of energy that the electrons have, there is a transfer of electrical potential energy to thermal energy. In poorer conductors, there are more collisions, and a greater amount of electrical potential is transferred. This is known as resistance. The more collisions the greater the amount of energy transferred to heat, the greater the potential difference and the greater the resistance of the component.</p>
+	<p>Resistors are components that have a fixed value of resistance over a range of potential differences. The current through them is directly proportional to the potential difference across them. They are said to follow Ohm&rsquo;s law which is described by:</p>
+	<div class="formula">
+		$$R=\frac{V}{I}$$
+	</div>
+	<p>Ohm&rsquo;s law states that the current through a conductor is directly proportional the potential difference across it, for a conductor at a constant temperature. Conductors, such as resistors behave ohmically at fixed temperatures, and a plot of current against potential difference would produce a straight line through the origin. The resistance of the component is the inverse of the gradient. A resistor with a high value of resistance would have a relatively shallow line, whereas a component with a low resistance would have a steep line. Looking at the graphs below we can see that for an equal increase in p.d. the blue line has a smaller increase in the current flowing through it than the red line. Other components have distinctive shapes for their <em>IV graphs</em>, which you need to know.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/electricity/IV_graphs.svg') }}" alt="resistance and area of conductor" class="size1000">
+		<figcaption><b>Figure 2:</b>&nbsp;The I.V. characteristics of different components.</figcaption>
+	</figure>
+	<p>A filament bulb, or an old fashioned light bulb works by passing a large current through a thin piece of wire, which gets very hot and begins to glow red hot. This excites the inert argon inside the bulb to produce light. At low values of p.d. the wire bulb behaves ohmically and the line is straight, but when the p.d. increases the resistance of the bulb increases and the line flattens off.</p>
+	<p>The diode is a semiconductor and only allows a current to flow in certain conditions. In the case of diodes, which are polarised, current can only flow in one direction, so if the potential difference is reversed no current can flow, which explains the horizontal line on the negative quadrant of the graph. When they are placed in the forward direction they allow current to flow easily, but only after a threshold voltage has been reached, after that, their resistance drops to nearly zero, and the line shoots up nearly vertically.</p>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>For a <b>curved</b> (non-linear) I&ndash;V graph like the filament bulb or diode above, resistance is <b>not</b> the gradient of the curve. $R=\frac{V}{I}$ always means the ratio of the coordinates at a single point on the graph &mdash; you must read off a specific $V$ and $I$ value and divide them, not draw a tangent and take $1/\text{gradient}$. The gradient method only works for a straight line through the origin, i.e. an ohmic conductor.</p>
+	</div>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="2">
+	<h3>Resistance and temperature</h3>
+	<p>When a conductor is heated, energy is passed to the particles within the conductor and they begin to move faster. In a solid, as the particles are in a fixed position, this means that they begin to vibrate faster. This causes the number of collisions between the particles in the solid conductor and the electrons to increase. In effect the <em>mean free path</em> of the electrons is reduced, and the amount of charge flowing per second also decreases, which results in an increased resistance.</p>
+	<p>Heating can cause an increase in the number of collisions between electrons and the particles, and the reverse is also true. Increasing the current through a conductor will increase the number of collisions between the particles and electrons. This causes an energy transfer from the electrons to the particles within the conductor, and generates heat. This in turn increases the resistance of the conductor. This effect can be clearly seen when a filament bulb is switched on and the current flowing through it is analysed over the first few seconds. The graph below was obtained using a classroom data logger.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/electricity/switching_on_a_bulb.svg') }}" alt="current through a bulb being switched on" class="size400">
+		<figcaption><b>Figure 3:</b>&nbsp;How the current varies through a filament bulb in the first 3 seconds after it has been switched on.</figcaption>
+	</figure>
+	<p>As the bulb is switched on there is a sudden increase in the current flowing through the bulb. As the bulb is cool before it is switched on, the particles in the filament are not vibrating very quickly, and the bulb has a low resistance. This means that a large current can flow through it. As the current flows, the electrons collide with the ions in the filament wire and cause it to heat up, increasing the resistance of the bulb. This higher resistance means that less current can flow and we see the current trailing off to a lower, constant value, is known as the operating current. This is a good example of <em>negative feedback</em>, where the output of a system at time <i>a</i> causes the output at time <i>b</i> to be lower. This explains the shape of the IV graph for the filament bulb, and why the resistance increases with higher values of current.</p>
+	<p>As the current through the filament bulb increases, so does the temperature of the filament, and therefore the resistance increases. This produces the distinctive S-shaped curve.</p>
+	<p>The relationship between resistance and temperature can be utilised to build accurate thermometers that can be used over a wide range of temperatures. You will carry out an experiment in class to build a rudimentary thermometer with a resistance wire.</p>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="3">
+	<h3>Resistors around a circuit</h3>
+	<p>When there are multiple resistors in a circuit, it may be necessary to combine their values in order to calculate the total resistance, or the current flowing in the circuit. When the resistors are all in series, this is quite simple, as the values of the resistors can just be added together. In the example below there are three resistors, each with different values of resistance.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/electricity/series_resistors_1.svg') }}" alt="adding resistors in series" class="size600">
+		<figcaption><b>Figure 4:</b>&nbsp;Adding resistors around a series circuit.</figcaption>
+	</figure>
+	<p>The total resistance for this circuit is:</p>
+	<div class="formula">
+		$$\large R_{Total}=R_{1}+R_{2}+R_{3}+\cdots$$
+		$$\quantity{10}{\Omega} + \quantity{5}{\Omega} + \quantity{12}{\Omega} = \quantity{27}{\Omega}$$
+	</div>
+	<p>Although a simple relationship, an expression for the total resistance in a series circuit can be derived by remembering that the sum of the potential differences across each resistor is equal to the emf supplied to the circuit (Kirchhoff&rsquo;s 2nd law).</p>
+	<div class="formula">
+		\begin{align}
+		\varepsilon&=V_{1}+V_{2}+V_{3}+\cdots\\
+		\\
+		IR_{T}&=IR_{1}+IR_{2}+IR_{3}+\cdots\\
+		\\
+		IR_{T}&=I\left(R_{1}+R_{2}+R_{3}+\cdots\right)\\
+		\\
+		R_{T}&=R_{1}+R_{2}+R_{3}+\cdots
+		\end{align}
+	</div>
+	<div class="callout callout-definition">
+		<p class="callout-label"><i class="fas fa-lightbulb"></i> Worth remembering</p>
+		<p>Series and parallel circuits split the opposite quantity. In <b>series</b>, current is the same everywhere and p.d. splits between components. In <b>parallel</b>, p.d. is the same across every branch and current splits between branches. Mixing these two up is a very easy way to set up a calculation incorrectly.</p>
+	</div>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="4">
+	<h3>Resistors in parallel</h3>
+	<p>The situation is a bit more complicated for resistors in parallel, and it is worth thinking about it from simple terms. The difference between series and parallel circuits is that the current will split at junctions in a parallel circuit. Each unit of charge gains a certain amount of energy from the cell. It will only use that energy as it passes through a resistance. In the diagram below each orange dot represents $\quantity{1}{C}$ of charge, carrying $\quantity{1}{J}$ of electric potential. At the junction, the charges either take the right branch or continue straight. As the resistance of each branch is the same the same amount of current flows through each. Each charge does $\quantity{1}{J}$ of work as it passes through the resistance, meaning that the potential difference across each branch is $\quantity{1}{V}$.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/electricity/current_splitting.svg') }}" alt="current at a junction" class="size300">
+		<figcaption><b>Figure 5:</b>&nbsp;Current splitting at a junction.</figcaption>
+	</figure>
+	<p>We can also see that the current on each branch is less than the current before the junction, but the amount of energy that each coulomb of charge has is the same before and after the junction. We can also apply Kirchhoff&rsquo;s two laws to this arrangement:</p>
+	<ul class="page_list">
+		<li>The current on each branch is less than the current before the junction, but the sum of the two is equal to the current before the junction. This satisfies the 1st law.</li>
+		<li>Taking each branch to be a different loop, we can see that the potential difference on each branch is the same as the energy held by each coulomb of charge (the emf) before the junction, which is what the second law states should be the case.</li>
+	</ul>
+	<p>We can apply Kirchhoff&rsquo;s 1st law to derive an equation for the total resistance in a parallel circuit. The sum of the currents on each branch will equal the total current leaving the cell:</p>
+	<div class="formula">
+		\begin{align}
+		I_{T}&=I_{1}+I_{2}+I_{3}+\cdots\\
+		\\
+		\frac{V}{R_{T}}&=\frac{V}{R_{1}}+\frac{V}{R_{2}}+\frac{V}{R_{3}}+\cdots\\
+		\\
+		\frac{1}{R_{T}}&=\frac{1}{R_{1}}+\frac{1}{R_{2}}+\frac{1}{R_{3}}+\cdots
+		\end{align}
+	</div>
+	<p>This equation deserves some discussion as it leads to the slightly counter-intuitive conclusion, that if we add more parallel resistors, the total resistance of the circuit actually <em>decreases</em>.</p>
+	<p>If we look at the circuit below we can see, that with a single $\quantity{2}{\Omega}$ resistor the potential difference will be $\quantity{6}{V}$ and the current will be $\quantity{3}{A}$.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/electricity/parallel_resistors_1.svg') }}" alt="adding parallel resistors 1" class="size400">
+		<figcaption><b>Figure 6:</b>&nbsp;The current drawn by a single resistor</figcaption>
+	</figure>
+	<p>If a second resistor, of a higher value is added in parallel to the first, another route, or path, for the current to flow through is opened. Even through the resistance on this route is higher, so less current flows through it, more current in total is now flowing through the circuit. We can calculate the current in each branch using Ohm&rsquo;s law, remembering that each branch will have the same potential difference.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/electricity/parallel_resistors_2.svg') }}" alt="adding parallel resistors 2" class="size400">
+		<figcaption><b>Figure 7:</b>&nbsp;The current drawn by two resistors in parallel.</figcaption>
+	</figure>
+	<p>For resistor R<sub>1</sub>:</p>
+	<div class="formula">
+		\begin{align}
+		I&=\frac{V}{R}\\
+		\\
+		I&=\frac{\quantity{6.0}{V}}{\quantity{2.0}{\Omega}}\\
+		\\
+		I&=\quantity{3.0}{A}
+		\end{align}
+	</div>
+	<p>For resistor R<sub>2</sub>:</p>
+	<div class="formula">
+		\begin{align}
+		I&=\frac{V}{R}\\
+		\\
+		I&=\frac{\quantity{6.0}{V}}{\quantity{20}{\Omega}}\\
+		\\
+		I&=\quantity{0.30}{A}
+		\end{align}
+	</div>
+	<p>The total current is the sum of the currents on the branches:</p>
+	<div class="formula">
+		$$I_{Total}=\quantity{3.0}{A}+\quantity{0.30}{A}=\quantity{3.3}{A}$$
+	</div>
+	<p>When a third resistor is added, with an even higher value than either of the first two, yet another route opens up for current to flow and the current leaving the cell increases again.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/electricity/parallel_resistors_3.svg') }}" alt="adding parallel resistors 3" class="size400">
+		<figcaption><b>Figure 8:</b>&nbsp;The current drawn by three resistors in parallel.</figcaption>
+	</figure>
+	<p>As more current leaves the cell each time, and the cell is of a fixed emf the conclusion must be, that as $R=\frac{V}{I}$, as I increases each time a resistor is added, then the total resistance of the circuit must decrease.</p>
+	<p>We can calculate the resistance of the final circuit using the equation we derived above:</p>
+	<div class="formula">
+		\begin{align}
+		\frac{1}{R_{T}}&=\frac{1}{R_{1}}+\frac{1}{R_{2}}+\frac{1}{R_{3}}\\
+		\\
+		\frac{1}{R_{T}}&=\frac{1}{\quantity{2.0}{\Omega}}+\frac{1}{\quantity{20}{\Omega}}+\frac{1}{\quantity{200}{\Omega}}\\
+		\\
+		\frac{1}{R_{T}}&=0.555
+		\end{align}
+	</div>
+	<p>We must be very careful, as this value we have just calculated is $\frac{1}{R}$ and not $R$, so we must find the reciprocal of this value to find the resistance.</p>
+	<div class="formula">
+		$$R=\frac{1}{0.555}=\quantity{1.8}{\Omega}$$
+	</div>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>The parallel resistance formula gives you $\frac{1}{R_{T}}$, <b>not</b> $R_{T}$ directly &mdash; forgetting the final reciprocal step is one of the most common ways marks are lost on this topic. Also watch the order on a calculator: work out each $\frac{1}{R_{n}}$ term separately (or use the calculator's fraction/memory function) rather than trying to do it all in one line, where a misplaced bracket can silently give the wrong answer.</p>
+	</div>
+	<p>Notice that the total resistance of the circuit is in fact lower than the smallest resistor in the circuit. You can use this as a good way to check your calculations, as the resistance of a parallel network will always be lower than any of the resistors in that network.</p>
+	<div class="callout callout-tip">
+		<p class="callout-label"><i class="fas fa-check-circle"></i> Exam tip</p>
+		<p>Use this as a quick sanity check after any parallel resistance calculation: your answer for $R_{T}$ should always be <b>smaller</b> than the smallest individual resistor in the network. If it isn't, you've made an arithmetic slip &mdash; most likely the reciprocal mistake above.</p>
+	</div>
+	<br><br><hr>
+	<h3>Combining series and parallel resistors</h3>
+	<p>When we are confronted with more complicated circuits, which have combinations of series <em>and</em> parallel resistors, we must follow the following rules in order to find the total resistance of the circuit, and thus to make further calculations:</p>
+	<ol class="page_list">
+		<li>Work from the branch furthest from the cell, and calculate towards the cell.</li>
+		<li>Add any series resistors that are on parallel branches.</li>
+		<li>Calculate the resistance of the parallel networks.</li>
+		<li>Add this resistance to any other series resistors.</li>
+	</ol>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>Doing these steps out of order is a common source of errors &mdash; for example, adding the outer series resistors to a branch's resistance <i>before</i> combining that branch's own parallel network, rather than after. Always resolve the network furthest from the cell first, then work outward one step at a time.</p>
+	</div>
+	<p>In the example below the branch containing R<sub>4</sub> and R<sub>5</sub>, should be dealt with first as it is furthest from the cell.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/electricity/combining_series_and_parallel.svg') }}" alt="combining series and parallel resistors" class="size600">
+		<figcaption><b>Figure 9:</b>Combining resistors in series and parallel.</figcaption>
+	</figure>
+	<div class="formula">
+		$$R_{4}+R_{5}=\quantity{8.0}{\Omega}+\quantity{6.0}{\Omega}=\quantity{14}{\Omega}$$
+	</div>
+	<p>So that branch has a resistance of $\quantity{14}{\Omega}$ which can be combined with R<sub>3</sub> with a value of $\quantity{12}{\Omega}$ to find the total resistance of the parallel network. We know that the total resistance of this part of the circuit will be less than $\quantity{12}{\Omega}$, so this will allow us to check our answer for mistakes.</p>
+	<div class="formula">
+		\begin{align}
+		\frac{1}{R_{T}}&=\frac{1}{R_{3}}+\frac{1}{R_{4+5}}\\
+		\\
+		\frac{1}{R_{T}}&=\frac{1}{\quantity{12}{\Omega}}+\frac{1}{\quantity{14}{\Omega}}\\
+		\\
+		\frac{1}{R_{T}}&=0.1547619\\
+		\\
+		R_{T}&=\quantity{6.5}{\Omega}
+		\end{align}
+	</div>
+	<p>Finally we can now add this resistance to the two series resistors, R<sub>1</sub> and R<sub>2</sub> to find the total resistance of the circuit,</p>
+	<div class="formula">
+		$$\quantity{5.0}{\Omega}+\quantity{2.0}{\Omega}+\quantity{6.5}{\Omega}=\quantity{13.5}{\Omega}$$
+	</div>
+	<p>Now we know the total resistance of the circuit, given that emf of the battery is $\quantity{3}{V}$ we can calculate the current to be $\quantity{0.22}{A}$</p>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="5">
+	<h3>Worked example</h3>
+	<p>In this example, the question starts with some resistance calculations, before asking you to compare the potentials between the labeled points.</p>
+	<p>The circuit diagram below shows a $\quantity{12}{V}$ battery of negligible internal resistance connected to a combination of three resistors and a <a href="/electricity/resistivity">thermistor</a>.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/electricity/resistance_worked_example_1.svg') }}" alt="worked example diagram" class="size400">
+		<figcaption><b>Figure 10:</b>&nbsp;Worked example 1.</figcaption>
+	</figure>
+	<ol type="a" class="page_list">
+		<li>When the resistance of the thermistor is $\quantity{5.0}{k\Omega}$</li>
+		<br>
+		<ol class="page_list" type="i">
+			<li>calculate the total resistance of the circuit,</li>
+			<p class="workex">As both of the branches have two resistors on them, we need to add them together to find the total resistance on each branch before we find the resistance of the parallel network.</p>
+			<p class="workex">Resistance between A-E</p>
+			<div class="formula">
+				$$\quantity{20}{k\Omega}+\quantity{20}{k\Omega}=\quantity{40}{k\Omega}$$
+			</div>
+			<p class="workex">Resistance between B-F</p>
+			<div class="formula">
+				$$\quantity{10}{k\Omega}+\quantity{5.0}{k\Omega}=\quantity{15}{k\Omega}$$
+			</div>
+			<p class="workex">Now we know the total resistance of each branch we can use the equation for parallel resistors to find the total resistance of the circuit.</p>
+			<div class="formula">
+				\begin{align}
+				\frac{1}{R_{T}}&=\frac{1}{\quantity{40}{k\Omega}}+\frac{1}{\quantity{15}{k\Omega}}\\
+				\frac{1}{R_{T}}&=0.1916666\\
+				\\
+				R_{T}&= \quantity{10.9}{k\Omega}=\quantity{11}{k\Omega}
+				\end{align}
+			</div>
+			<p class="workex">When performing a calculation like this, with an intermediate calculation, in this case for $\frac{1}{R_{T}}$, you should either write down the full answer as displayed on your calculator, or use the calculator&rsquo;s memory settings to save it for the final step. For the final answer I have rounded the result to the same number of significant figures as the data in the question.</p>
+			<br>
+			<li>calculate the current in the battery (in $\units{mA}$).</li>
+			<p class="workex">With the resistance of the circuit calculated in part i. and the emf of the cell stated in the question, we can use Ohm&rsquo;s law to find the total current flowing in the circuit:</p>
+			<div class="formula">
+				\begin{align}
+				I&=\frac{V}{R}\\
+				\\
+				I&=\frac{\quantity{12}{V}}{\quantity{10.9}{k\Omega}}\\
+				\\
+				I&=\quantity{1.10}{mA}
+				\end{align}
+			</div>
+			<p class="workex">As the resistances are all in $\units{k\Omega}$ and the question asks for the current in $\units{mA}$ there is no need to convert the resistances to $\units{\Omega}$.</p>
+		</ol>
+		<br>
+		<li>A high-resistance voltmeter is used to measure the potential difference (pd) between points A-C, D-F and C-D in turn.<br>
+		Complete the following table indicating the reading of the voltmeter at each of the three positions.</li>
+		<br>
+		<table class="center">
+			<tr>
+				<th class="column30">voltmeter position</th>
+				<th class="column30">p.d. /V</th>
+			</tr>
+			<tr>
+				<td>A-C</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>D-F</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>C-D</td>
+				<td></td>
+			</tr>
+		</table>
+		<br>
+		<p class="workex">The potential differences across A-C and D-F are easy to work out without any further calculation. We know that the p.d. across each branch is $\quantity{12}{V}$ and on the first branch the two resistors have the same value so the p.d. across each of the them is equal, $\quantity{6}{V}$ in this case.</p>
+		<p class="workex">The resistor between on the branch is twice the value of the thermistor between D-F, so the p.d. across the resistor is will be twice the p.d. across the thermistor, so the p.d. across the thermistor is $\quantity{4}{V}$.</p>
+		<p class="workex">Finally a voltmeter is connected between the two branches as in the diagram below:</p>
+		<figure>
+			<img src="{{ url_for('static', filename='images/electricity/resistance_worked_example_1_1.svg') }}" alt="worked example diagram" class="size400">
+			<figcaption><b>Figure 11:</b>&nbsp;Worked example 2.</figcaption>
+		</figure>
+		<p class="workex">This initially seems like a very tricky problem to solve, but by applying Kirchhoff&rsquo;s 2nd law to each branch and comparing the amount of electric potential held by the current after passing through the first resistor, we can compare the difference in the potential in the two branches.</p>
+		<p class="workex">In the top branch the current holds $\quantity{12}{V}-\quantity{6}{V}=\quantity{6}{V}$, and in the bottom branch we have already deduced that the current holds $\quantity{4}{V}$. The difference in the two potentials will be the reading on the voltmeter and is $\quantity{6}{V}-\quantity{4}{V}=\quantity{2}{V}$</p>
+		<br>
+		<li>The thermistor is heated so that its resistance decreases. State and explain the effect this has on the voltmeter reading in the following positions.</li>
+		<br>
+		<ol class="page_list" type="i">
+			<li>A-C</li>
+			<p class="workex">In this question we must give an explanation of the observed change on the voltmeter. In this case the reading on the voltmeter is unchanged. The reason being, that the resistance of the branch of the circuit is unchanged so the p.d. across that branch is still the same.</p>
+			<li>D-F</li>
+			<p class="workex">For the final part of the question we note that the resistance of the thermistor decreases so the reading on the voltmeter also decreases. This is because the p.d. is directly proportional to the resistance, and so a greater proportion of the p.d. across that branch will be over the $\quantity{10}{k\Omega}$ resistor.</p>
+		</ol>
+	</ol>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="6">
+	<h3>Test yourself</h3>
+	<p>Try the questions below to check your understanding of this topic. Numerical questions use different numbers each time, so you can attempt them more than once.</p>
+	<div id="quiz-root"></div>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+
+{% endblock %}
+
+{% block resources_heading %}One page summary{% endblock %}
+
+{% block resources %}
+	<li><a href="{{ url_for('static', filename='summaries/electricity/resistors_summary.html') }}" target="_blank"><i class="fas fa-file-alt"></i> Printable revision sheet</a></li>
+{% endblock %}
+
+{% block prev_link %}
+	<a href="{{ url_for('charge_and_current') }}"><i class="fas fa-chevron-circle-left"></i><span class="nav_link">Previous topic</span></a>
+{% endblock %}
+
+{% block next_link %}
+	<a href="/electricity/resistivity"><span class="nav_link">Next topic</span><i class="fas fa-chevron-circle-right"></i></a>
+{% endblock %}
+
+{% block extra_scripts %}
+	<script src="{{ url_for('static', filename='js/quiz.js') }}"></script>
+	<script src="{{ url_for('static', filename='quizzes/resistors_questions.js') }}"></script>
+	<script>
+		new PhysicsQuiz(document.getElementById('quiz-root'), resistorsQuestions, {
+			storageKey: 'resistors'
+		});
+	</script>
+{% endblock %}

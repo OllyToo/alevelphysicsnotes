@@ -1,0 +1,345 @@
+{% extends "base.html" %}
+
+{% block title %}Lenses{% endblock %}
+{% block page_h1 %}Lenses{% endblock %}
+
+{% block meta_description %}A Level Physics notes and worked examples to help students with their exams and learning. The Astrophysics module begins with a look at lenses and how they are used in the construction of telescopes.{% endblock %}
+{% block meta_keywords %}lens, convex, concave, image, object, ray diagram, virtual image, real image, worked examples, exam questions, A level, physics{% endblock %}
+
+{% block extra_head %}
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/quiz.css') }}">
+{% endblock %}
+
+{% block page_boxes %}
+	<a href="#1"><button class="button">Introduction</button></a>
+	<a href="#2"><button class="button">Refraction</button></a>
+	<a href="#3"><button class="button">Ray diagrams</button></a>
+	<a href="#4"><button class="button">Magnification and the lens equation</button></a>
+	<a href="#5"><button class="button">Worked example 1</button></a>
+	<a href="#6"><button class="button">Worked example 2</button></a>
+	<a href="#7"><button class="button">Test yourself</button></a>
+{% endblock %}
+
+{% block spec %}
+<div id="spec">
+	<p class="spec_box"><b>3.9.1.1 Astronomical telescope consisting of two converging lenses</b></p>
+	<p class="spec_box">Ray diagram to show the image formation in normal adjustment.</p>
+	<p class="spec_box">Angular magnification in normal adjustment.</p>
+	<div class="formula">
+		$$\scriptsize M=\frac{angle\,subtended\,by\,image\,at\,eye}{angle\,subtended\,by\,object\,at\,unaided\,eye}$$
+	</div>
+	<p class="spec_box">Focal lengths of the lenses.</p>
+	<div class="formula">
+		$$M=\frac{f_{o}}{f_{e}}$$
+	</div>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<section class="top_section" id="1">
+	<h3>Introduction</h3>
+	<p>Until recently, everything that we knew about the solar system and beyond came from the careful study of light, either via lenses or mirrors. Therefore understanding how we can capture light and how lenses work is of fundamental importance to this area of science.</p>
+	<p>In more recent times, extra planetary probes landing on <a href="https://www.nasa.gov/mission_pages/msl/index.html" target="_blank">Mars</a> or even <a href="https://www.nasa.gov/rosetta" target="_blank">comets</a> have allowed analysis using mass spectrometry, but still our understanding of the further universe comes solely from the study of light. Hundreds of years of development has enabled the construction of telescopes and lenses so advanced that we are able to use them to see almost back to the origins of the universe.</p>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="2">
+	<h3>Refraction</h3>
+	<p>All lenses employ refraction to bring light rays to a focus at a single point. When light enters a lens it is refracted. Refraction, at its most simple, is the change in direction that light experiences as it passes from one medium into another. When light travels into a medium with a higher <em>refractive index</em> than the one it is currently in, such as from air into glass, its direction changes, and it turns towards the normal line.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/simple_refraction.svg') }}" class="size400" alt="refraction through a rectangular block">
+		<figcaption><b>Figure 1:</b>&nbsp;Refraction through a rectangular block, a very simple example to start off with!</figcaption>
+	</figure>
+	<p>As the light leaves the glass into air, which has a lower refractive index, it bends away from the normal line. When we look refraction in a rectangular block, such as the one above, we can see that the <em>emergent</em> ray is parallel to the <em>incident</em> ray. If we had several rays, all parallel, incident on the block, the would all emerge parallel, so clearly, a simple rectangular block cannot be used to focus light rays.</p>
+	<p>Lenses are curved so that rays are refracted by different amounts depending in their distance from an axis through the centre of the lens. A ray travelling along this line would not be refracted at all, and the further the ray from this axis, the greater the angle through which it is refracted. Whereas with the parallel sided block, parallel incident rays emerge parallel, with a lens, parallel incident rays are brought to a focus at a single point.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/lens_refraction.svg') }}" alt="refraction through a convex lens" class="size400">
+		<figcaption><b>Figure 2</b>&nbsp;When parallel rays approach a convex lens, each is refracted by a different amount.</figcaption>
+	</figure>
+	<p>As can be seen from the diagram above light is refracted as it passes into the lens, and again when it emerges from the lens. If the lens is fat the image it creates could be laterally translated, which causes distortions in the image. To prevent this lenses are manufactured to be as thin as possible. Light will still be refracted twice, but the effect is greatly reduced. To simplify diagrams and calculations we assume that the light is refracted once, at the centre of the lens.</p>
+	<p>The image made through a simple arrangement of lenses can be projected onto a screen, and is called a <em>real image</em> and will be <em>inverted</em> (upside down). Whether the image is <em>magnified</em> (larger) or <em>diminished</em> (smaller) will depend on how far the object is from the lens.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/image_through_a_lens.svg') }}" alt="an image through a lens" class="size700">
+		<figcaption><b>Figure 3:</b>&nbsp;An image of a toy formed through a convex lens.</figcaption>
+	</figure>
+	<p>As you can see from the image above, the rays scattering from the toy Utahraptor (the object) spread out and do not reach the lens parallel to each other. This means that they will not be focused at the principal focus.</p>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="3">
+	<h3>Ray diagrams</h3>
+	<p>The way that light behaves through lenses can be well understood by constructing ray diagrams, so it is important to learn and to be able to use these key terms associated with lenses and the diagrams that help describe how they work.</p>
+	<ul class="page_list">
+		<li><b>Principal axis</b> - This is the axis passing through the centre of the lens, and perpendicular to the lens axis.</li>
+		<li><b>Principal focus</b> - Otherwise called the focal point, this is the single point where parallel incident rays converge and are brought to a focus. When the incident rays are parallel to the principal axis, the focal point will also lie on the principle axis.</li>
+		<li><b>Focal length</b> - This is the distance from the lens axis of the focal point. Distances around the lens are often measured in integer multiples of the focal length, e.g. 1F, 2F.</li>
+		<li><b>Focal plane</b> - The focal plane is a plane perpendicular to the principal axis. If the incident rays are parallel but non-axial (not parallel to the principal axis) then the principal focus will not lie on the principle axis, but it will lie somewhere on the focal plane.</li>
+	</ul>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/lenses_definitions.svg') }}" alt="key terms for lens diagrams" class="size600">
+		<figcaption><b>Figure 4:</b>&nbsp;The key terms you need to know for understanding lenses.</figcaption>
+	</figure>
+	<p>The lens also has two sides, the image side, from which incident rays approach the lens, and the objective side on which emergent rays form an image.</p>
+	<p>It is not always necessary to draw a realistic lens, the symbols below can be used. And in fact on a ray diagram, the lens can be drawn any size, the rays would still refract at the lens axis.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/lens_symbols.svg') }}" alt="symbols for lenses" class="size300">
+		<figcaption><b>Figure 5:</b>&nbsp;The symbols for convex and concave lenses.</figcaption>
+	</figure>
+	<p>When constructing a ray diagram it is useful to remember three standard rays,</p>
+	<ol class="page_list">
+		<li>Rays passing through the centre of a lens remain undeviated and can be drawn as one continuous line.</li>
+		<figure>
+			<img src="{{ url_for('static', filename='images/astrophysics/standard_rays_1.svg') }}" alt="standard rays" class="size300">
+			<figcaption><b>Figure 6:</b>&nbsp;Drawing rays diagrams and standard rays 1.</figcaption>
+		</figure>
+		<br>
+		<li>An incident ray parallel to the principal axis will be refracted and pass through the focal point.</li>
+		<figure>
+			<img src="{{ url_for('static', filename='images/astrophysics/standard_rays_2.svg') }}" alt="standard rays" class="size300">
+			<figcaption><b>Figure 7:</b>&nbsp;Drawing rays diagrams and standard rays 2.</figcaption>
+		</figure>
+		<br>
+		<li>An incident ray passing through the focal point on the objective side of the lens will emerge parallel to the principal axis.</li>
+		<figure>
+			<img src="{{ url_for('static', filename='images/astrophysics/standard_rays_3.svg') }}" alt="standard rays" class="size300">
+			<figcaption><b>Figure 8:</b>&nbsp;Drawing rays diagrams and standard rays 3.</figcaption>
+		</figure>
+		<br>
+	</ol>
+	<p>You need to know how to draw ray diagrams for objects at different distances from a lens. When doing this, draw two of the standard rays above, emanating from one point on the object. Where they cross on the image side of the lens is where the image would appear.</p>
+	<div class="callout callout-definition">
+		<p class="callout-label"><i class="fas fa-lightbulb"></i> Worth remembering</p>
+		<p>In each table below, <b>&ldquo;Position&rdquo; describes where the image forms</b>, not where the object is placed &mdash; the object's position is already given in the heading above each table. It's an easy mix-up to make when scanning the table quickly.</p>
+	</div>
+	<ul class="page_list">
+		<li>An object placed at a distance greater than 2F</li>
+		<figure>
+			<img src="{{ url_for('static', filename='images/astrophysics/ray_diagram_gt_2f.svg') }}" alt="An object at a distance greater than 2 focal lengths" class="size600">
+			<figcaption><b>Figure 9:</b>&nbsp;The ray diagram for and object placed at a distance greater than two focal lengths.</figcaption>
+		</figure>
+		<br>
+		<table class="center">
+			<tr><td><b>Position</b></td><td class="lens">Between 1F and 2F</td></tr>
+			<tr><td><b>Nature</b></td><td>Real</td></tr>
+			<tr><td><b>Orientation</b></td><td>Inverted</td></tr>
+			<tr><td><b>Magnification</b></td><td>Diminished</td></tr>
+			<tr><td><b>Use</b></td><td>Camera lens</td></tr>
+		</table>
+		<br>
+		<li>An object placed at a distance equal to 2F</li>
+		<figure>
+			<img src="{{ url_for('static', filename='images/astrophysics/ray_diagram_2f.svg') }}" alt="An object at a distance equal to 2 focal lengths" class="size600">
+			<figcaption><b>Figure 10:</b>&nbsp;The ray diagram for and object placed at two focal lengths.</figcaption>
+		</figure>
+		<br>
+		<table class="center">
+			<tr><td><b>Position</b></td><td class="lens">At 2F</td></tr>
+			<tr><td><b>Nature</b></td><td>Real</td></tr>
+			<tr><td><b>Orientation</b></td><td>Inverted</td></tr>
+			<tr><td><b>Magnification</b></td><td>Same size</td></tr>
+			<tr><td><b>Use</b></td><td></td></tr>
+		</table>
+		<br>
+		<li>An object placed at a distance greater than 1F and less that 2F</li>
+		<figure>
+			<img src="{{ url_for('static', filename='images/astrophysics/ray_diagram_between_1_and_2f.svg') }}" alt="An object at a distance greater than 1 focal lengths and less than 2 focal lengths" class="size600">
+			<figcaption><b>Figure 11:</b>&nbsp;The ray diagram for an object at a distance greater than one focal length and less than two focal lengths</figcaption>
+		</figure>
+		<br>
+		<table class="center">
+			<tr><td><b>Position</b></td><td class="lens">Greater than 2F</td></tr>
+			<tr><td><b>Nature</b></td><td>Real</td></tr>
+			<tr><td><b>Orientation</b></td><td>Inverted</td></tr>
+			<tr><td><b>Magnification</b></td><td>Magnified</td></tr>
+			<tr><td><b>Use</b></td><td>Projector</td></tr>
+		</table>
+		<br>
+		<li>An object placed at a distance equal to 1F</li>
+		<figure>
+			<img src="{{ url_for('static', filename='images/astrophysics/ray_diagram_1f.svg') }}" alt="An object at a distance equal to 1 focal length" class="size600">
+			<figcaption><b>Figure 12:</b>&nbsp;The ray diagram for an object at a distance of one focal length.</figcaption>
+		</figure>
+		<br>
+		<table class="center">
+			<tr><td><b>Position</b></td><td class="lens">At infinity</td></tr>
+			<tr><td><b>Nature</b></td><td>Real (at infinity)</td></tr>
+			<tr><td><b>Orientation</b></td><td>Inverted</td></tr>
+			<tr><td><b>Magnification</b></td><td>N/A</td></tr>
+			<tr><td><b>Use</b></td><td>Searchlight</td></tr>
+		</table>
+		<br>
+		<li>An object placed at a distance less than 1F</li>
+		<figure>
+			<img src="{{ url_for('static', filename='images/astrophysics/ray_diagram_lt_1f.svg') }}" alt="An object at a distance less than 1 focal length" class="size600">
+			<figcaption><b>Figure 13:</b>&nbsp;The ray diagram for an object at a distance of less than one focal length.</figcaption>
+		</figure>
+		<br>
+		<table class="center">
+			<tr><td><b>Position</b></td><td class="lens">On the objective side</td></tr>
+			<tr><td><b>Nature</b></td><td>Virtual</td></tr>
+			<tr><td><b>Orientation</b></td><td>Upright</td></tr>
+			<tr><td><b>Magnification</b></td><td>Magnified</td></tr>
+			<tr><td><b>Use</b></td><td>Magnifying glass.</td></tr>
+		</table>
+		<br>
+	</ul>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="4">
+	<h3>Magnification and the lens equation</h3>
+	<p>In the examples above the distances are measured in terms of the focal length of the lens, but they can also be measured in metres, in which case the distance of the object from the lens is given the letter <span>$u$</span> and the distance of the image from the lens is <span>$v$</span>.</p>
+	<p>The magnification of the image is a ratio of the size of the object to the size of the image.</p>
+	<div class="formula">
+		$$magnification=\frac{height\,of\,image}{height\,of\,object}$$
+		$$M=\frac{h_{i}}{h_{o}}$$
+	</div>
+	<p>As it is a ratio, magnification has no units. Looking at the diagram below we can see that the ray diagram can be understood as two similar triangles, and so, if the above magnification describes the ratio of the two opposite sides of the triangles it must also be true that the same ratio applies to the two adjacent sides of the triangles, which represent <span>$u$</span> and <span>$v$</span>.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/lens_equation_2.svg') }}" alt="measuring magnification using a ray diagram" class="size600">
+		<figcaption><b>Figure 14:</b>&nbsp;A ray diagram can be used to find the magnification of a lens.</figcaption>
+	</figure>
+	<p>Therefore we can also describe the magnification as:</p>
+	<div class="formula">$$M=\frac{v}{u}$$</div>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>$M=\frac{h_i}{h_o}$ and $M=\frac{v}{u}$ are equivalent (by similar triangles), so use whichever matches the data you've actually been given &mdash; there's no need to convert between heights and distances if a question gives you one pair directly.</p>
+	</div>
+	<p>Looking at the ray diagrams geometrically allows us to derive an equation that links the object and image distances to the focal length of the lens.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/lens_equation_1.svg') }}" alt="deriving the lens equation" class="size600">
+		<figcaption><b>Figure 15:</b>&nbsp;Ray diagram can also be used to derive the lens equation.</figcaption>
+	</figure>
+	<br>
+	Looking at the green triangles below we can describe the angle <span>$\alpha$</span> by:
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/lens_equation_3.svg') }}" alt="deriving the lens equation image side triangles" class="size350">
+		<figcaption><b>Figure 16:</b>&nbsp;Taking a closer look at the triangles on the image side of the lens.</figcaption>
+	</figure>
+	<div class="formula">$$\tan \alpha =\frac{h_{o}}{f}=\frac{h_{i}}{v-f}$$</div>
+	<p>And the angle &theta; (from the blue triangle) is:</p>
+	<div class="formula">$$\tan \theta=\frac{h_{o}}{u}=\frac{h_{i}}{v}$$</div>
+	<p>We can now rearrange the term for <span>$\alpha$</span> to make <span>$h_{i}$</span> the subject,</p>
+	<div class="formula">$$h_{i}=\frac{h_{o}\left(v-f\right)}{f}$$</div>
+	<p>And substitute it into the equation for <span>$\theta$</span>:</p>
+	<div class="formula">$$\frac{h_{o}}{u}=\frac{h_{o}\left(v-f\right)}{vf}$$</div>
+	<p>We can divide both sides by <span>$h_{o}$</span> and then multiply out the brackets to give:</p>
+	<div class="formula">
+		$$\frac{1}{u}=\frac{v}{vf}-\frac{f}{vf}$$
+		$$\frac{1}{u}=\frac{1}{f}-\frac{1}{v}$$
+	</div>
+	<p>Which when given in terms of <span>$\frac{1}{f}$</span> is called the lens equation:</p>
+	<div class="formula">$$\frac{1}{f}=\frac{1}{u}+\frac{1}{v}$$</div>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>After solving the lens equation, check the <b>sign</b> of your answer for $v$: positive means a <b>real</b> image, negative means a <b>virtual</b> image. It's easy to solve the equation correctly and then ignore what the sign is actually telling you. And separately &mdash; the equation never tells you whether an image is upright or inverted; you need to know that a real image from a convex lens is always inverted, and a virtual image (only possible when the object is inside the focal length) is always upright.</p>
+	</div>
+	<p>Using this equation all positive values are real, and all negative values are virtual, so a negative value for <span>$\frac{1}{v}$</span> would indicate that a virtual image had been created. The term <span>$\frac{1}{f}$</span> is also known as the power of the lens, and has units of <span>$\units{m^{-1}}$</span> or dioptres, symbol <span>$\units{d}$</span>.</p>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="5">
+	<h3>Worked example 1</h3>
+	<p>Find the position, nature and magnification of the image when an object is placed <span>$\quantity{20}{cm}$</span> from a convex lens with a focal length of <span>$\quantity{15}{cm}$</span></p>
+	<p class="workex">The value of <span>$f$</span> is <span>$\quantity{15}{cm}$</span> and the value of <span>$u$</span> is <span>$\quantity{20}{cm}$</span>, so using the lens equation we can find the position and nature of the image:</p>
+	<div class="formula">
+		\begin{align}
+		\frac{1}{f}&=\frac{1}{u}+\frac{1}{v}\\
+		\frac{1}{\quantity{15}{cm}}&=\frac{1}{\quantity{20}{cm}}+\frac{1}{v}
+		\end{align}
+	</div>
+	<p class="workex">So,</p>
+	<div class="formula">
+		\begin{align}
+		\frac{1}{v}&=\frac{1}{\quantity{15}{cm}}-\frac{1}{\quantity{20}{cm}}\\
+		\frac{1}{v}&=0.0166666667\\
+		\\
+		\therefore\;\; v&=\quantity{60}{cm}
+		\end{align}
+	</div>
+	<p class="workex">As this value is positive it also tells us that the image is real. We should also know that as it is a convex lens making a real image it will be inverted. We cannot read this from the equation, we just have to know it!</p>
+	<p class="workex">The magnification is the ratio of the object position, <span>$u$</span>, and the image position, <span>$v$</span>:</p>
+	<div class="formula">$$M=\frac{v}{u}=\frac{\quantity{60}{cm}}{\quantity{20}{cm}}=3$$</div>
+	<p class="workex">So the image is magnified by a factor of three.</p>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="6">
+	<h3>Worked example 2</h3>
+	<p>A converging lens forms a real image of a real object. If the image is twice the size of the object and <span>$\quantity{90}{cm}$</span> from it, calculate the the focal length of the lens?</p>
+	<p class="workex">We can solve this either graphically, by drawing a ray diagram, or by using the lens equation. From the question we know the following:</p>
+	<ul class="page_list">
+		<li><span>$M=2$</span></li>
+		<li><span>$u+v=\quantity{90}{cm}$</span></li>
+		<li><span>$f$</span> is unknown</li>
+	</ul>
+	<p>The ray diagram of this situation is shown below, and as long as it is drawn to scale.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/worked_example_ray_diagram_1.svg') }}" alt="worked example ray diagram" class="size500">
+		<figcaption><b>Figure 17:</b>&nbsp;Worked example - step 1.</figcaption>
+	</figure>
+	<p class="workex">Firstly, the object and the image are drawn on the principle axis using an appropriate scale, such as <span>$\quantity{1}{cm}=\quantity{10}{cm}$</span>. As we don&rsquo;t know where the focal point is, we also do not know where the lens is either. We can, however, draw one standard ray from the top of the object to the top of the image. We can now draw the lens where the ray crosses the principle axis.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/worked_example_ray_diagram_2.svg') }}" alt="worked example ray diagram" class="size500">
+		<figcaption><b>Figure 18:</b>&nbsp;Worked example - step 2.</figcaption>
+	</figure>
+	<p class="workex">We can now fill in the rest of the ray diagram, including the lens, and another standard ray, which allows us to identify the position of the focal point. We can now measure this with a ruler and convert using our scale.</p>
+	<p class="workex">We can also use the lens equation to solve this problem. We know that the magnification is 2, which also means that <span>$\frac{v}{u}=2$</span>, and we know that <span>$u+v=\quantity{90}{cm}$</span>, therefore:</p>
+	<p class="equation"><span>$v=2u$</span> and <span>$v=90-u$</span></p>
+	<p class="workex">So</p>
+	<div class="formula">
+		\begin{align}
+		2u&=\quantity{90}{cm}-u\\
+		3u&=\quantity{90}{cm}\\
+		\\
+		u&=\quantity{30}{cm}
+		\end{align}
+	</div>
+	<p class="workex">Therefore</p>
+	<div class="formula">$$v=\quantity{90}{cm}-\quantity{30}{cm}=\quantity{60}{cm}$$</div>
+	<p class="workex">We can now use the lens equation to find <span>$f$</span></p>
+	<div class="formula">
+		\begin{align}
+		\frac{1}{f}&=\frac{1}{u}+\frac{1}{v}\\
+		\frac{1}{f}&=\frac{1}{\quantity{30}{cm}}+\frac{1}{\quantity{60}{cm}}\\
+		\frac{1}{f}&=0.05\\
+		\\
+		\therefore\;\; f&=\quantity{20}{cm}
+		\end{align}
+	</div>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="7">
+	<h3>Test yourself</h3>
+	<p>Try the questions below to check your understanding of this topic. Numerical questions use different numbers each time, so you can attempt them more than once.</p>
+	<div id="quiz-root"></div>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+
+{% endblock %}
+
+{% block resources %}
+	<li><a href="{{ url_for('static', filename='summaries/astrophysics/lenses_summary.html') }}" target="_blank"><i class="fas fa-file-alt"></i> Printable revision sheet</a></li>
+{% endblock %}
+
+{% block next_link %}
+	<a href="/astrophysics/telescopes"><span class="nav_link">Next topic</span><i class="fas fa-chevron-circle-right"></i></a>
+{% endblock %}
+
+{% block extra_scripts %}
+	<script src="{{ url_for('static', filename='js/quiz.js') }}"></script>
+	<script src="{{ url_for('static', filename='quizzes/lenses_questions.js') }}"></script>
+	<script>
+		new PhysicsQuiz(document.getElementById('quiz-root'), lensesQuestions, {
+			storageKey: 'lenses'
+		});
+	</script>
+{% endblock %}

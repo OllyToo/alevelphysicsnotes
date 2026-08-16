@@ -1,0 +1,330 @@
+{% extends "base.html" %}
+
+{% block title %}Electricity basics{% endblock %}
+{% block page_h1 %}Electricity basics{% endblock %}
+
+{% block meta_description %}A Level Physics notes and worked examples to help students with their exams and learning. In the first part of this module we learn about the flow of charge and Kirchhoff's laws{% endblock %}
+{% block meta_keywords %}current, charge, flow, potential difference, kirchhoff, conventional current, voltage, worked examples, exam questions, A level, physics{% endblock %}
+
+{% block extra_head %}
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/quiz.css') }}">
+{% endblock %}
+
+{% block page_boxes %}
+	<a href="#1"><button class="button">Intro</button></a>
+	<a href="#2"><button class="button">Circuit symbols</button></a>
+	<a href="#3"><button class="button">Current and charge</button></a>
+	<a href="#4"><button class="button">Conventional current</button></a>
+	<a href="#5"><button class="button">Current in circuits</button></a>
+	<a href="#6"><button class="button">Potential difference</button></a>
+	<a href="#7"><button class="button">Worked example</button></a>
+	<a href="#8"><button class="button">Test yourself</button></a>
+{% endblock %}
+
+{% block spec %}
+<div id="spec">
+	<p class="spec_ref"><b>3.5.1.1 Basics of electricity</b></p>
+	<p class="spec_box">Electric current as the rate of flow of charge; potential difference as work done per unit charge.<p>
+	<p class="spec_box">$I=\frac{\Delta Q}{\Delta t}$, $V=\frac{W}{Q}$</p>
+	<p class="spec_box">Resistance defined as $R=\frac{V}{I}$</p>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<section class="top_section" id="1">
+	<h3>Intro</h3>
+	<p>In the modern world, electrical circuits are ubiquitous. Almost every aspect of our lives involve electronic circuitry with varying degrees of complexity. It can, however, be hard to understand what is going on within some of the components and how the current behaves. This module looks at understanding the behaviour of simple resistive circuits, and the electrical properties of conductors.</p>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="2">
+	<h3>Circuit symbols</h3>
+	<p>The majority of the components that you will use in this module of A level are the same as the ones that you have used before, but it is worth reminding ourselves of their symbols and their functions.</p>
+	<div style="overflow-x:auto;">
+	<table class="center">
+		<tr>
+			<th>Component</th>
+			<th>Symbol</th>
+			<th>Function</th>
+		</tr>
+		<tr>
+			<td>Cell</td>
+			<td><img src="{{ url_for('static', filename='images/electricity/cell.svg') }}" alt="circuit symbol of a cell" class="displayed" style="max-width: 100px"></td>
+			<td>A cell provides the energy for a circuit, or the emf. </td>
+		</tr>
+		<tr>
+			<td>Battery</td>
+			<td><img src="{{ url_for('static', filename='images/electricity/battery.svg') }}" alt="circuit symbol of a battery" class="displayed" style="min-width: 100px"></td>
+			<td>A battery is several cells joined together, although, generally, the two terms are interchangeable, and many shop bought batteries, are just that.</td>
+		</tr>
+		<tr>
+			<td>Resistor</td>
+			<td><img src="{{ url_for('static', filename='images/electricity/resistor.svg') }}" alt="circuit symbol of a resistor" class="displayed" style="min-width: 150px"></td>
+			<td>These components reduce the current. They can be used to control the flow of charge and are the basic building block for many circuits.</td>
+		</tr>
+		<tr>
+			<td>Variable resistor</td>
+			<td><img src="{{ url_for('static', filename='images/electricity/variable_resistor.svg') }}" alt="circuit symbol of a variable resistor" class="displayed" style="min-width: 150px"></td>
+			<td>A resistor, whose value can bu manually altered.</td>
+		</tr>
+		<tr>
+			<td>Thermistor</td>
+			<td><img src="{{ url_for('static', filename='images/electricity/thermistor.svg') }}" alt="circuit symbol of a thermistor" class="displayed" style="min-width: 150px"></td>
+			<td>A resistor, whose value can be altered due to the external temperature. These components are intrinsic semiconductors.</td>
+		</tr>
+		<tr>
+			<td>Filament bulb</td>
+			<td><img src="{{ url_for('static', filename='images/electricity/filament_bulb.svg') }}" alt="circuit symbol of a filament bulb" class="displayed" style="min-width: 100px"></td>
+			<td>Also known as an incandescent bulb. The convert electrical energy into light and (mostly) heat.</td>
+		</tr>
+		<tr>
+			<td>Light emitting diode (LED)</td>
+			<td><img src="{{ url_for('static', filename='images/electricity/LED.svg') }}" alt="circuit symbol of an LED" class="displayed" style="max-width: 100px"></td>
+			<td>A much more efficient light source. These are also semiconductors, and waste very little energy in the production of light.</td>
+		</tr>
+		<tr>
+			<td>Ammeter</td>
+			<td><img src="{{ url_for('static', filename='images/electricity/ammeter.svg') }}" alt="circuit symbol of an ammeter" class="displayed" style="min-width: 100px"></td>
+			<td>This measures the electrical current. They are always set-up in series within a circuit</td>
+		</tr>
+		<tr>
+			<td>Voltmeter</td>
+			<td><img src="{{ url_for('static', filename='images/electricity/voltmeter.svg') }}" alt="circuit symbol of a voltmeter" class="displayed" style="min-width: 100px"></td>
+			<td>This measures the potential difference or voltage across a component. They are always set-up in parallel.</td>
+		</tr>
+	</table>
+	</div>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="3">
+	<h3>Current and charge</h3>
+	<p>At the most fundamental level, all matter is electrical. Everything is made from small charged particles, charge is a property of matter, and it is the movement of charge that gives rise to electricity. In any electrical circuit charge is moved; in most cases the moving charges are free electrons in the metal conductors, but they could also be free ions in a liquid or a gas. The flow of charge is an electric current. If more charge flows then the current increases. </p>
+	<p>Charge is measured in coulombs (C), and the basic charge carrying unit, the electron, has a charge of $\quantity{1.60\times 10^{-19}}{C}$. We would therefore require $\frac{1}{\quantity{1.60\times 10^{19}}{C}}=6.24\times 10^{18}$ electrons to make up a single coulomb of charge.</p>
+	<p>Current is defined as the <em>rate of flow of charge</em>, and can be thought of as the amount of charge that passes a point in a circuit per unit of time, It is defined by the equation:</p>
+	<div class="formula">
+		$$\large I=\frac{\Delta Q}{\Delta t}$$
+	</div>
+	<p>Where:</p>
+	<ul class="page_list">
+		<li><i>I</i> is the current in amps</li>
+		<li><i>&Delta;Q</i> is the charge in coulombs</li>
+		<li><i>&Delta;t</i> is the time in seconds</li>
+	</ul>
+	<p>It is important to note that it is the change in charge, $\Delta Q$ in time $\Delta t$, not the total charge. This is because the current is the charge that has moved past a point (an ammeter) for example, in time <i>t</i>. This would be the equivalent of finding the current by finding the gradient of charge-time graph.</p>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>Use $\Delta Q$, not the total charge $Q$, in $I=\dfrac{\Delta Q}{\Delta t}$. Students often plug in a cumulative charge value instead of the change over the time interval in question — this is a frequent reason for losing marks on gradient/rate questions.</p>
+	</div>
+	<figure>
+		<img src="{{ url_for('static', filename='images/electricity/charge_time_graph.svg') }}" alt="Charge vs time graph" class="size600">
+	</figure>
+	<div class="formula">
+		\begin{align}
+		Q&=\Delta I \Delta t\\
+		Q&=\quantity{10.0\times 10^{-3}}{A}\times\quantity{60}{s}\\
+		\\
+		Q&=\quantity{0.60}{C}
+		\end{align}
+	</div>
+	<p>Looking at the calculation above it can be seen that electrical charge is the product of current and time. Many modern batteries that store a lot of charge and the coulomb is not always the most appropriate unit. Many mobile phones advertise their batteries using the non-SI unit called the milliamp-hour ($\quantity{}{mAh}$). A top of the range phone may have a battery which can store a charge of $\quantity{3000}{mAh}$ which means it can deliver a continuous current of $\quantity{3000}{mA}$ or $\quantity{3}{A}$ for 1 hour or $\quantity{3}{mA}$ for 1000 hours. This charge is equivalent to:</p>
+	<div class="formula">
+		$$\quantity{3}{A} \times \quantity{60}{s} \times \quantity{60}{minutes}=  \quantity{10800}{C}$$
+	</div>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>mAh is a unit of <i>charge</i>, not current or energy. Don't try to use it directly in equations — convert to coulombs first using $Q=I\Delta t$, remembering to convert hours to seconds.</p>
+	</div>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="4">
+	<h3>Conventional current</h3>
+	<p>As current is the flow of charge, and in most electrical circuits the charge carriers are electrons which have a negative charge the charge in fact moves from the negative terminal to the positive terminal of the cell or power supply. However, <em>conventional current</em> flows from positive to negative. This is as a result of the historical convention of defining the electron as having a negative charge. Whenever the word current is used, it will be in terms of conventional current, but whenever the word charge is used it will be in terms of the charge of the actual particles in question.</p>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>When asked for the direction of current on a circuit diagram, give the direction of <i>conventional</i> current (+ to &ndash;), not the direction electrons are actually moving (&ndash; to +). These are opposite, and exam questions often specifically test whether you know the difference.</p>
+	</div>
+	<figure>
+		<img src="{{ url_for('static', filename='images/electricity/conventional_current.svg') }}" alt="conventional current and electron flow" class="size400">
+		<figcaption><b>Figure 2:</b>Conventional current flows in the opposite direction to the movement of electrons.</figcaption>
+	</figure>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="5">
+	<h3>Current in circuits</h3>
+	<p>The amount of current that flows in a circuit depends on the resistance of that circuit and the emf (or voltage) of the the power supply. The greater the resistance, the lower the current that can flow through the circuit, the greater the voltage of the power supply, the greater the current for a fixed value of resistance. Current is measured with an ammeter which is set up series within a circuit. An ammeter must have a very low resistance, approximately zero, otherwise it would affect the amount of current flowing within the circuit.</p>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>An <i>ideal</i> ammeter has (approximately) zero resistance. Don't confuse this with a voltmeter — mixing up which meter has which idealised resistance is a very common error when asked to explain why a meter doesn't affect the circuit it's placed in.</p>
+	</div>
+	<p>A very important, but easily forgotten, rule is that the current around a circuit is constant. This is easy to spot in a simple series circuit as below where each ammeter has the same reading, demonstrating the constant current. It is also important to note that the current displayed on the ammeters is the same as the current flowing through the cell itself.</p>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>Current does <i>not</i> drop across resistors in a series loop, even though the p.d. does. Current is the same at every point around a single series loop — it's potential difference that's shared out between components, not current.</p>
+	</div>
+	<figure>
+		<img src="{{ url_for('static', filename='images/electricity/current_around_a_series_circuit.svg') }}" alt="current around a series circuit" class="size600">
+		<figcaption><b>Figure 3:</b>In a simple series circuit the current is the same at all points.</figcaption>
+	</figure>
+	<p>It is a little harder to see that this still holds true for parallel circuits, so it may be easier to remember that the <em>current leaving the cell is the same as the current returning to the cell</em>. In a parallel circuit, the current splits at the junctions with the current in each branch depending on the resistance of that branch, but all the current will return to the cell. This is known as Kirchhoff's 1st law, which states that, the current entering a junction is equal to the current leaving the junction.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/electricity/kirchhoffs_1st_law.svg') }}" alt="Kirchhoffs 1st law" class="size600">
+		<figcaption><b>Figure 4:</b>Kirchhoff's 1st law, the current entering a junction is equal to the current leaving the junction.</figcaption>
+	</figure>
+	<p>In practice this means that in a parallel circuit, branches with higher resistance will have a lower current flowing through them, but the sum of all the currents flowing in all of the branches will equal the current flowing through the whole circuit. If we know the total current and the current in one branch we can calculate the current in the other branch.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/electricity/current_around_a_parallel_circuit.svg') }}" alt="Current around a parallel circuit" class="size600">
+		<figcaption><b>Figure 5:</b>The current in the branches of a parallel circuit is equal to the current leaving the cell.</figcaption>
+	</figure>
+	<p>In exam questions, you may not be given quite as much information and you will have to calculate the currents from other given values. We will explain how to do this in another section.</p>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="6">
+	<h3>Potential difference</h3>
+	<p>As it moves around the circuit, the charge carries potential energy which it can convert to useful work. Although charges are always moving around a circuit when current is flowing, they are not always using up their potential energy. This <i>electrical potential</i> is only used when the charge passes through a resistance. When a current flows through a resistance the electrical potential is converted to heat, or light, or kinetic energy. Electric current effectively moves energy from store (a cell for example) to another (heat in a room)</p>
+	<p>The amount of work done by a unit of charge as it passes through a resistance is called the potential difference. This is what is often referred to as the voltage across a component. Potential difference is defined as:</p>
+	<div class="formula">
+		$$\large V=\frac{W}{Q}$$
+	</div>
+	<p>Where:</p>
+	<ul class="page_list">
+		<li><i>V</i> is the potential difference in volts</li>
+		<li><i>W</i> is the work done in joules</li>
+		<li><i>Q</i> is the charge in coulombs</li>
+	</ul>
+	<p>Potential difference is measured using a voltmeter which is placed in parallel across a component. It must have a very high resistance, nearly infinite, to prevent any current flowing through it.</p>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>An <i>ideal</i> voltmeter has (approximately) infinite resistance — the opposite of an ideal ammeter. If you're asked why a voltmeter doesn't affect the circuit, the answer is that its very high resistance means almost no current is diverted through it.</p>
+	</div>
+	<p>The battery, or power supply, provides all of the energy to the charge, which is then used up around the circuit, so that the charges returning to the battery, or power supply will have an electrical potential of $\quantity{0}{V}$. This does not mean that the charges have no energy at all, but their potential is zero compared to the gain in potential that the charges recieve inside the cell or power supply. The charges will only lose electrical potential when they pass through a component, the greater the resistance of the component, the greater the loss of potential, and the greater the potential difference across that component. This is analogous to gaining gravitational potential energy by cycling up a hill. That gravitational potential energy can be converted back into useful work as you descend the hill to kinetic energy. You only lose gravitational potential energy when you are descending, so if the bike coasts along a flat section of the hill you will continue to move forward, but your gravitational potential energy will not change. When you get to the bottom of the hill the total change in gravitational potential energy is equal to the gravitational potential energy gained by the initial climb. This can be represented by the hill diagram below.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/electricity/hill_diagram.svg') }}" alt="Hill diagram" class="size600">
+		<figcaption><b>Figure 6:</b>A hill diagram can be used to help understand potential difference.</figcaption>
+	</figure>
+	<p>As the charges pass through the cell they gain energy, so unlike potential difference where the charges do work as they pass through a resistance, in the cell work is done on the charges which gives them more potential. This is equivalent to going to the top of the hill to gain gravitational potential energy in our analogy. The energy gained per unit of charge is called the <i>emf</i> (short for electromotive force, but as it is not a force we will always use the abbreviation). The units for emf are volts as it is defined as:</p>
+	<div class="formula">
+		$$\large \varepsilon=\frac{E}{Q}$$
+	</div>
+	<p>Where:</p>
+	<ul class="page_list">
+		<li><i>&epsilon;</i> is the emf in volts</li>
+		<li><i>E</i> is the energy supplied in joules</li>
+		<li><i>Q</i> is the charge in coulombs</li>
+	</ul>
+	<p>This definition is very similar to that for potential difference, and the only difference that you need to remember is that the emf gives charges energy, but the when there is a potential difference the charges lose energy.</p>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>P.d. and emf are easy to mix up because the equations look almost identical. Remember: <b>emf</b> is energy <i>given to</i> charge by the source; <b>p.d.</b> is energy <i>taken from</i> charge by a component. Getting the direction of energy transfer backwards is a common way to lose marks in explain-style questions.</p>
+	</div>
+	<p>The emf of the cell is used up around the circuit as the current passes through the resistances. So the sum of the potential differences across all of the components in the circuit is equal to the emf supplied to the circuit. This is known as Kirchhoff's 2nd law and can be applied to series circuits and parallel circuits.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/electricity/pd_around_a_circuit.svg') }}" alt="potential difference around a series circuit" class="size600">
+		<figcaption><b>Figure 7:</b>The emf of the cell is equal to the potential difference across the components in the circuit.</figcaption>
+	</figure>
+	<p>In the circuit above the values of the resistors is marked as R. It does not matter what their actual values are, as they all have the same resistance, so will have the same p.d. across them. If the emf supplied to the circuit was higher, each resistor would have to dissipate more energy and the p.d. across each would be greater.</p>
+	<p>In parallel circuits, to understand that the same law applies we need to think about the loops the current makes around the circuit. The total potential difference around each loop will equal the emf of that loop.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/electricity/pd_around_a_parallel_circuit_1.svg') }}" alt="p.d. around a parallel circuit 1" class="size400">
+		<img src="{{ url_for('static', filename='images/electricity/pd_around_a_parallel_circuit_2.svg') }}" alt="p.d. around a parallel circuit 2" class="size400">
+		<figcaption><b>Figure 8:</b>The p.d. around each loop is equal to the emf of the cell.</figcaption>
+	</figure>
+	<p>Even though each loop has a different resistance the total potential difference around each is the same, and importantly, the p.d. across the two branches is also the same.</p>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="7">
+	<h3>Worked example</h3>
+	<p>This question was in the specimen paper for the new A level specification, but it neatly demonstrates some of the ideas we have looked at on this page.</p>
+	<p>The cells in the circuit shown in the figure below have zero internal resistance. Currents are in the directions shown by the arrows.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/electricity/worked_example_1.svg') }}" alt="resistor with two cells in parallel worked example 1" class="size600">
+		<figcaption><b>Figure 9:</b>Worked example 1</figcaption>
+	</figure>
+	<p>$R_{1}$ is a variable resistor with a resistance that varies between $\quantity{0}{\Omega}$ and $\quantity{10}{\Omega}$.</p>
+	<ol type="a" class="page_list">
+		<li>Write down the relationship between currents $I_{1}$,$I_{2}$ and $I_{3}$</li>
+		<p class="workex">This question is asking about the three current around the junction, so it is an application of Kirchhoff's 1st law. The current leaving the junction, $I_{3}$, is equal to the sum of the currents entering the junction, $I_{1}+I_{2}$. So the answer can be stated as:</p>
+		<div class="formula">
+			$$I_{3}=I_{1}+I_{2}$$
+		</div>
+		<br>
+		<li>$R_{1}$ is adjusted until it has a value of $\quantity{0}{\Omega}$<br>
+			State the potential difference across $R_{3}$.</li>
+		<p class="workex">This question looks trickier than it is because we have two power supplies and a shared resistor in the centre, so will the p.d. across the resistor be a combination of both of these cells?</p>
+		<p class="workex">Well if we apply the ideas of loops from Kirchhoff's 2nd law we can solve this easily. The variable resistor is now set to a value of $\quantity{0}{\Omega}$ so we can redraw the circuit as below and imagine the two loops around it.</p>
+		<figure>
+			<img src="{{ url_for('static', filename='images/electricity/worked_example_1_1.svg') }}" alt="resistor with two cells in parallel worked example 2" class="size600">
+			<figcaption><b>Figure 9:</b>Worked example 2</figcaption>
+		</figure>
+		<p class="workex">We can see that the red loop has an emf of $\quantity{10}{V}$ so the total p.d. around that loop must also be $\quantity{10}{V}$, as there is only one component in the red loop, it must have a potential difference of $\quantity{10}{V}$ across it.</p>
+		<p class="workex">If we tried to solve this using the blue loop, then the p.d. across $R_{3}$ will be lower than $\quantity{10}{V}$ which means that Kirchhoff's law is not satisfied for the red loop as well.</p>
+		<div class="callout callout-mistake">
+			<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+			<p>With two cells sharing a resistor, it's tempting to add or average both emfs to find the p.d. across $R_{3}$. Instead, pick <i>one</i> complete loop containing $R_{3}$ and apply Kirchhoff's 2nd law to that loop only — here, the red loop (cell 1 and $R_3$) gives the answer directly, without needing to involve the second cell at all.</p>
+		</div>
+		<br>
+		<li>Determine the current $I_{2}$.</li>
+		<p class="workex">As this is a complicated circuit, to answer this question, we have to think carefully about what we already know. We know that the p.d. across $R_{3}$ is $\quantity{10}{V}$, so we can deduce the p.d. across R<sub>2</sub> as $\quantity{12}{V}-\quantity{10}{V}=\quantity{2}{V}$. From this we just need to use $R=\frac{V}{I}$ to calculate the current:</p>
+		<div class="formula">
+			\begin{align}
+			I&=\frac{V}{R}\\
+			\\
+			I&=\frac{\quantity{2}{V}}{\quantity{10}{\Omega}}\\
+			\\
+			I&=\quantity{0.2}{A}
+			\end{align}
+		</div>
+		<br>
+		<li>State and explain what happens to the potential difference across $R_{2}$ as the resistance of $R_{1}$ is gradually increased from zero.</li>
+		<p class="workex">In this part of the question we are being asked to not only describe the effect of the changing resistance of one component on the whole circuit but explain why it is happening. Again, by thinking carefully about the ideas we have already looked at we can break this question down into three stages.</p>
+		<p class="workex">Firstly, as the resistance $R_{1}$ increases then the p.d. across the component must also increase, because potential difference is proportional to resistance. </p>
+		<p class="workex">Secondly, the total p.d. around that loop must equal $\quantity{10}{V}$ therefore the p.d. across $R_{3}$ must begin to decrease. </p>
+		<p class="workex">Finally, we can relate the change in the potential difference across $R_{3}$ to the change in potential difference across $R_{2}$. We know that the sum of the potential differences across the two components must equal the emf of that loop, or:</p>
+		<div class="formula">
+			$$\mathrm{p.d. across}\,{R_{2}}=\quantity{12}{V}-\mathrm{p.d. across}\,{R_{3}}$$
+		</div>
+		<p class="workex">so as the p.d. across $R_{3}$ decreases, the p.d. across $R_{2}$ must begin to increase. </p>
+	</ol>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="8">
+	<h3>Test yourself</h3>
+	<p>Try the questions below to check your understanding of this topic. Numerical questions use different numbers each time, so you can attempt them more than once.</p>
+	<div id="quiz-root"></div>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+
+{% endblock %}
+
+{% block resources_heading %}One page summary{% endblock %}
+
+{% block resources %}
+	<li><a href="{{ url_for('static', filename='summaries/electricity/charge_and_current_summary.html') }}" target="_blank"><i class="fas fa-file-alt"></i> Printable revision sheet</a></li>
+{% endblock %}
+
+{% block next_link %}
+	<a href="/electricity/resistors"><span class="nav_link">Next topic</span><i class="fas fa-chevron-circle-right"></i></a>
+{% endblock %}
+
+{% block extra_scripts %}
+	<script src="{{ url_for('static', filename='js/quiz.js') }}"></script>
+	<script src="{{ url_for('static', filename='quizzes/charge_and_current_questions.js') }}"></script>
+	<script>
+		new PhysicsQuiz(document.getElementById('quiz-root'), chargeAndCurrentQuestions, {
+			storageKey: 'charge_and_current'
+		});
+	</script>
+{% endblock %}

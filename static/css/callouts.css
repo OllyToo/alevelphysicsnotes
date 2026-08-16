@@ -1,0 +1,48 @@
+/* ==========================================================================
+   Mr Toogood Physics — Callout boxes
+   Used for "common exam mistake" and similar inline highlight boxes within
+   the main notes content. Kept as its own file so it doesn't require
+   touching the existing style.css.
+   ========================================================================== */
+
+.callout {
+  border-left: 5px solid var(--callout-accent, #c0392b);
+  background: var(--callout-bg, #fbeceb);
+  border-radius: 6px;
+  padding: 14px 18px;
+  margin: 18px 0;
+}
+
+.callout-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  margin: 0 0 6px 0;
+  color: var(--callout-accent, #c0392b);
+  text-transform: uppercase;
+  font-size: 0.85em;
+  letter-spacing: 0.03em;
+}
+
+.callout p:last-child {
+  margin-bottom: 0;
+}
+
+/* Exam mistake — red/warning */
+.callout-mistake {
+  --callout-accent: #c0392b;
+  --callout-bg: #fbeceb;
+}
+
+/* Exam tip — green, for positive technique tips if you want them later */
+.callout-tip {
+  --callout-accent: #2e8b57;
+  --callout-bg: #eaf6ef;
+}
+
+/* Key definition — blue, for definitions worth flagging */
+.callout-definition {
+  --callout-accent: #2c6e91;
+  --callout-bg: #eaf3f7;
+}

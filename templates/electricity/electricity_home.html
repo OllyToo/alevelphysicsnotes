@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+
+{% block title %}Electricity basics{% endblock %}
+{% block page_h1 %}Electricity basics{% endblock %}
+
+{% block meta_description %}A Level Physics notes and worked examples to help students with their exams and learning. In the first part of this module we learn about the flow of charge and Kirchhoff's laws{% endblock %}
+{% block meta_keywords %}current, charge, flow, potential difference, kirchhoff, conventional current, voltage, worked examples, exam questions, A level, physics{% endblock %}
+
+{% block extra_head %}
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/quiz.css') }}">
+{% endblock %}
+
+{% block spec %}
+<div class="clearfix1">
+	<img src="..\images/electricity.svg" class="topicHomeimg" alt="electricity - NO IMAGE">
+	<div class="Topictext">
+		<div class="hide-text">
+			<p class="mainTxt">The electricity module studies direct current circuits and resistive components only. Alternating current and capacitors will be studied in a later module. Many of the basics of this module will have already been covered during your GCSEs, so it will pay to revise that work. You will study power, potential difference, current and resistance, and describe them mathematically. This is a very applied module and you will be able to solve many of the problems by using logic as well as mathematics. Many students find this module very difficult to understand, but the mathematics is not complicated, and if you understand the simple fundamental ideas, the rest will follow.</p>
+			<p class="mainTxt">This is a very practical module, and you will use a range of both digital and analogue measuring devices to make accurate measurements. Some of the practicals that we will do in class take the ideas beyond what is needed in the spec, but they illustrate the ideas clearly. The module contains two CAPs, <i>Resistivity</i> and <i>EMF and internal resistance</i>. You will be expected to plan your own method for the <i>EMF and internal resistance</i> CAP.</p>
+		</div>
+
+		<h3>Pick one of the topics below:</h3>
+		<ul class="navlistTopic">
+			<li><a href="charge_and_current.php">Electricity basics</a></li>
+			<li><a href="resistors.php">Resistors and resistance</a></li>
+			<li><a href="resistivity.php">Resistivity</a></li>
+			<li><a href="power_and_resistance.php">Power in resistive circuits</a></li>
+			<li><a href="emf_and_internal_resisitance.php">EMF and Internal resistance</a></li>
+			<li><a href="potential_dividers.php">Potential Dividers</a></li>
+		</ul>
+	</div>
+</div>
+<hr>
+
+<div class="topicBlurb">
+	<h3>What you need to know</h3>
+	<p class="mainTxt">Below you can read exactly what AQA want you to know for this module. You can also find the relevant section from the specification on each page of this site. You should be aware of both what you need to know, and (just as importantly) what you DO NOT need to know. It is also important to remember that you need to be able to apply these statements to a wide range of different contexts, so you must practise this by attempting lots of different questions and reading around the subject.</p>
+</div>
+
+<div id="specTopic">
+<div class="msg_list">
+<div class="head_1"><p class="spec_head">3.5.1.1 Basics of electricity<span class="downArrow"><i class="fas fa-angle-down"></i></span></p></div>
+<div class="spec_body">
+	<div class="body_1">
+		<p class="spec_box">Electric current as the rate of flow of charge; potential difference as work done per unit charge.<p>
+		<p class="spec_box">$I=\frac{&Delta;Q}{&Delta;t}$, $V=\frac{W}{Q}$</p>
+		<p class="spec_box">Resistance defined as $R=\frac{V}{I}$</p>
+</div>
+</div>
+
+<div class="head_2"><p class="spec_head">3.5.1.2 Current–voltage characteristics<span class="downArrow"><i class="fas fa-angle-down"></i></span></p></div>
+<div class="spec_body">
+	<div class="body_2">
+		<p class="spec_box">Resistance defined as <span>$R=\frac{V}{I}$</span></p>
+		<p class="spec_box">For an ohmic conductor, semiconductor diode, and filament lamp.</p>
+		<p class="spec_box">Ohm’s law as a special case where <span>$I &prop; V$</span> under constant physical conditions.</p>
+		<p class="spec_box">Unless specifically stated in questions, ammeters and voltmeters should be treated as ideal (having zero and infinite resistance respectively).</p>
+		<p class="spec_box">Questions can be set where either I or V is on the horizontal axis of the characteristic graph.</p>
+	</div>
+</div>
+
+<div class="head_3"><p class="spec_head">3.5.1.3 Resistivity<span class="downArrow"><i class="fas fa-angle-down"></i></span></p></div>
+<div class="spec_body">
+	<div class="body_3">
+		<p class="spec_box">Resistivity,</p>
+		<div class="formula">$$&rho;=\frac{RA}{l}$$</div>
+		<p class="spec_box">Description of the qualitative effect of temperature on the resistance of metal conductors and thermistors.</p>
+		<p class="spec_box">Only negative temperature coefficient (ntc) thermistors will be considered.</p>
+		<p class="spec_box">Applications of thermistors to include temperature sensors and resistance–temperature graphs.</p>
+		<p class="spec_box">Superconductivity as a property of certain materials which have zero resistivity at and below a critical temperature which depends on the material.</p>
+		<p class="spec_box">Applications of superconductors to include the production of strong magnetic fields and the reduction of energy loss in transmission of electric power.</p>
+		<p class="spec_box">Critical field will not be assessed.</p>
+	</div>
+</div>
+
+<div class="head_4"><p class="spec_head">3.5.1.4 Circuits<span class="downArrow"><i class="fas fa-angle-down"></i></span></p></div>
+<div class="spec_body">
+	<div class="body_4">
+		<p class="spec_box">Energy and power equations: </p>
+		<div class="formula">$$E=IVt$$</div>
+		</br>
+		<div class="formula">$$P = IV = I^{2}R = \frac{V^{2}}{R}$$</div>
+		<p class="spec_box">The relationships between currents, voltages and resistances in series and parallel circuits, including cells in series and identical cells in parallel.</p>
+		<p class="spec_box">Conservation of charge and conservation of energy in dc circuits.</p>
+	</div>
+</div>
+
+<div class="head_5"><p class="spec_ref">3.5.1.5 Potential divider<span class="downArrow"><i class="fas fa-angle-down"></i></span></p></div>
+<div class="spec_body">
+	<div class="body_5">
+		<p class="spec_box">The potential divider used to supply constant or variable potential difference from a power supply.</p>
+		<p class="spec_box">The use of the potentiometer as a measuring instrument is not required.</p>
+		<p class="spec_box">Examples should include the use of variable resistors,thermistors, and light dependent resistors (LDR) in the potential divider.</p>
+	</div>
+</div>
+
+<div class="head_6"><p class="spec_head">3.5.1.6 Electromotive force and internal resistance<span class="downArrow"><i class="fas fa-angle-down"></i></span></p></div>
+<div class="spec_body">
+	<div class="body_6">
+		<div class="formula">$$&epsilon;=\frac{E}{Q}$$</div>
+		<div class="formula">$$&epsilon;=I\left (R + r \right )$$</div>
+		<p class="spec_box">Terminal pd; emf</p>
+		<p class="spec_box">Students will be expected to understand and perform calculations for circuits in which the internal resistance of the supply is not negligible.</p>
+	</div>
+</div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,155 @@
+{% extends "base.html" %}
+
+{% block title %}The Hertzsprung-Russell diagram{% endblock %}
+{% block page_h1 %}The Hertzsprung-Russell diagram{% endblock %}
+
+{% block meta_description %}A Level Physics notes and worked examples to help students with their exams and learning. Using the ideas already learnt about the magnitude and temperature of stars we look here at the Hertzsprung-Russell diagram and use it to help describe the life cycle of stars.{% endblock %}
+{% block meta_keywords %}Hertzsprung-Russell, Hertzsprung, Russell, stars, lifecycle, magnitude, temperature, worked examples, exam questions, A level, physics{% endblock %}
+
+{% block extra_head %}
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/quiz.css') }}">
+{% endblock %}
+
+{% block page_boxes %}
+	<a href="#1"><button class="button">Life cycle of stars - What you need to know</button></a>
+	<a href="#2"><button class="button">The Hertzsprung-Russell diagram</button></a>
+	<a href="#3"><button class="button">Worked example</button></a>
+	<a href="#4"><button class="button">Test yourself</button></a>
+{% endblock %}
+
+{% block spec %}
+<div id="spec">
+	<p class="spec_ref"><b>3.9.2.5 The Hertzsprung-Russell (HR) diagram</b></p>
+	<p class="spec_box">General shape: main sequence, dwarfs and giants.</p>
+	<p class="spec_box">Axis scales range from &ndash;10 to +15 (absolute magnitude) and $\quantity{50\,000}{K}$ to $\quantity{2\,500}{K}$ (temperature) or OBAFGKM (spectral class).</p>
+	<p class="spec_box">Students should be familiar with the position of the Sun on the HR diagram.</p>
+	<p class="spec_box">Stellar evolution: path of a star similar to our Sun on the HR diagram from formation to white dwarf.</p>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<section class="top_section" id="1">
+	<h3>Life cycle of stars - What you need to know</h3>
+	<p>The life cycle of stars is quite complicated, and involves a lot of different branches of physics, from the gas laws to nuclear physics. A lot of the details are beyond the scope of an A level course, but I will include them later on this page as they are, nonetheless, very interesting.</p>
+	<p>What is important for you to know are the following:</p>
+	<ul class="page_list" type="none">
+		<li>&bullet;&nbsp;How to use the Hertzsprung-Russell diagram.</li>
+		<li>&bullet;&nbsp;The path the a star like the sun will take through it.</li>
+		<li>&bullet;&nbsp;How the mass of a star will determine how it will end its life.</li>
+	</ul>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="2">
+	<h3>The Hertzsprung-Russell diagram</h3>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/hr_diagram_scale.svg') }}" alt="Hertzsprung-Russell diagram for 100 000 closest stars" class="size600">
+		<figcaption><b>Figure 1:</b>&nbsp;A Hertzsprung-Russell diagram for the 100 000 closest stars, made with data which is in the public domain.</figcaption>
+	</figure>
+	<p>The HR diagram is a very useful tool for helping understand the differences between the different types of stars and how a star changes throughout its life. It plots spectral class, or temperature on the x-axis and absolute magnitude or luminosity on the y-axis. It is not a graph, in the true sense on the word, and neither axis starts at zero.</p>
+	<p>Stars tend to fall into one of four distinct areas on the diagram depending on their size and the stage of their lives.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/hr_diagram_1.svg') }}" alt="HR diagram" class="size600">
+		<figcaption><b>Figure 2:</b>&nbsp;A basic HR diagram. These simple shapes and axes are what you need to be able to remember.</figcaption>
+	</figure>
+	<p>The main stripe down the middle of the diagram is called the main sequence, and this is where stars will stay throughout the majority of their lives. The hottest stars are on the left of the diagram, and will, typically be much brighter. The cooler stars are usually dimmer and appear on the right of the main sequence.</p>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>Both axes on the HR diagram run in the direction you might not expect. The <b>y-axis</b> (absolute magnitude) runs from 15 at the bottom to &ndash;10 at the top &mdash; remember magnitude is a "smaller is brighter" scale, so brighter stars are higher up. The <b>x-axis</b> (temperature) runs from $\quantity{50\,000}{K}$ on the left to $\quantity{2\,500}{K}$ on the right &mdash; hottest stars on the left, coolest on the right. Both axes are effectively reversed from the way you'd naively plot increasing numbers.</p>
+	</div>
+	<p>There are two &lsquo;clouds&rsquo; in the top right hand corner of the diagram of giant stars and supergiant stars. These are large stars which are approaching the end of their lives. Most typical stars (such as the Sun) will expand towards the end of their lives and move into the giant cloud. These stars and much brighter, so appear higher up on the y-axis, but are also much cooler, class class K or M, due to their surface area increasing, and following from from Stefan&rsquo;s law. When such a star finishes fusing all of its fuel it will slowly cool to form a stellar remnant called a white dwarf. These are very small dim objects, but are also very hot, class B. The sun was formed from a cloud of dust and gas called a nebula. This was quite cool and very dim, so would not appear on the diagram. So when the Sun was formed it just appears on the HR diagram in its current position. The Sun will follow a path during its life similar to the one on the diagram below, and you are required to know this path.</p>
+	<div class="callout callout-definition">
+		<p class="callout-label"><i class="fas fa-lightbulb"></i> Worth remembering</p>
+		<p>Position on the HR diagram encodes size <i>indirectly</i>, through the combination of temperature and brightness. <b>Giants</b> are cool but very bright &mdash; the only way to be bright while cool is to have an enormous surface area, so they must be huge. <b>White dwarfs</b> are hot but very dim &mdash; the only way to be dim while hot is to have a tiny surface area, so they must be tiny. Reading size off the diagram is really just applying Stefan's law, $P=\sigma AT^{4}$, in your head.</p>
+	</div>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/hr_diagram_2.svg') }}" alt="HR diagram with the path of the Sun's life" class="size600">
+		<figcaption><b>Figure 3:</b>&nbsp;The HR diagram can be used to track the path of a star's life. In this case the Sun's life has been traced.</figcaption>
+	</figure>
+	<p>You may be expected to draw an HR diagram in your exam, and you may be asked to label the x-axis with either spectral class <i>or</i> temperature, so it worth practising it. Some key points to remember when drawing the diagram are:</p>
+	<ul class="page_list">
+		<li>The absolute magnitude on the y-axis should start at 15 at the bottom and go to -10. Make sure that you get these numbers the correct way around, from largest to smallest, not the other way.</li>
+		<li>If plotting temperature, the x-axis should go from <span>$\quantity{50\,000}{K}$</span> on the left to <span>$\quantity{2500}{K}$</span> on the right.</li>
+		<li>The main sequence should be drawn as a band, not a line and must have some curvature.</li>
+		<li>Neither the giant cloud nor the white dwarf cloud can touch the main sequence.</li>
+		<li>The giants should have an absolute magnitude less than 0.</li>
+		<li>The dwarfs should have an absolute magnitude greater than 10.</li>
+		<li>You do not need to draw the supergiants.</li>
+	</ul>
+	<div class="video-tray">
+		<div class="video-container">
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/VfjPzwHob8s?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen class="displayed"></iframe>
+		</div>
+	</div>
+	<p>The Hertzsprung-Russell diagram is also useful for comparing two different stars in terms of their size or temperature. For example if two G class stars are observed to have different absolute magnitudes they can be plotted on the HR as below.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/hr_diagram_3.svg') }}" alt="HR diagram with two stars of the same class but different magnitudes" class="size600">
+		<figcaption><b>Figure 4:</b>&nbsp;The HR diagram can be used to compare two stars which have the same temperature, but different magnitudes.</figcaption>
+	</figure>
+	<p>If they are both the same spectral class, they must have the same temperature, but Star A has a brighter absolute magnitude, so has a higher power output. We can no compare these two stars using Stefan&rsquo;s law, <span>$P=\sigma AT^{4}$</span>:</p>
+	<div class="formula">$$\frac{P_{A}}{P_{B}}=\frac{A_{A}}{A_{B}}$$</div>
+	<p>So star A must have a greater surface area, and therefore a greater diameter.</p>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="3">
+	<h3>Worked example</h3>
+	<p>A red giant and a main sequence star have the same absolute magnitude, 0, and surface temperatures of $\quantity{3000}{K}$ and $\quantity{15\,000}{K}$ respectively.</p>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>This technique only works because the two stars have the same <b>absolute</b> magnitude, which means the same luminosity directly, regardless of distance. If the question instead gave <i>apparent</i> magnitudes, you couldn't assume equal power output without also knowing (or being able to cancel out) each star's distance from Earth.</p>
+	</div>
+	<ol class="page_list" type="a">
+		<li>What spectral classes are the two stars?</li>
+		<p class="workex">You are expected to remember the associated temperatures for the different spectral classes, especially at either end of the scale. An HR diagram can help with this. If a star has a surface temperature of <span>$\quantity{3000}{K}$</span> it is one of the coolest stars, class M. The main sequence star is much hotter, and its temperature of <span>$\quantity{15\,000}{K}$</span> puts its in class B.</p>
+		<figure>
+			<img src="{{ url_for('static', filename='images/astrophysics/hr_diagram_4.svg') }}" alt="HR diagram with two stars with the same magnitude but different spectral classes" class="size600">
+			<figcaption><b>Figure 5:</b>&nbsp;Using the HR diagram to compare two stars with the same magnitude.</figcaption>
+		</figure>
+		<li>Show that the radius of the red giant is 25 times that of the main sequence star.</li>
+		<p class="workex">As both of the stars have the same absolute magnitude, they must both have the same power output.</p>
+		<ul class="page_list workex">
+			<li>The red giant - <span>$P_{RG}=\sigma A_{RG}T_{RG}^{4}$</span></li>
+			<li>The main sequence star - <span>$P_{MS}=\sigma A_{MS}T_{MS}^{4}$</span></li>
+		</ul>
+		<p class="workex">Rearranging and cancelling gives:</p>
+		<div class="formula">$$\frac{A_{RG}}{A_{MS}}=\left(\frac{T_{MS}}{T_{RG}}\right)^{4}=\left(\frac{\quantity{15\,000}{K}}{\quantity{3000}{K}}\right)^{4}=5^{4}=625$$</div>
+	</ol>
+	<p class="workex">So the red giant has a surface area, 625 times that of the main sequence star. Since <span>$A=4\pi r^{2}$</span>, the red giant is <span>$625^{\frac{1}{2}}=25$</span> times larger.</p>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="4">
+	<h3>Test yourself</h3>
+	<p>Try the questions below to check your understanding of this topic. Numerical questions use different numbers each time, so you can attempt them more than once.</p>
+	<div id="quiz-root"></div>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+
+{% endblock %}
+
+{% block resources %}
+	<li><a href="{{ url_for('static', filename='summaries/astrophysics/hr_diagrams_summary.html') }}" target="_blank"><i class="fas fa-file-alt"></i> Printable revision sheet</a></li>
+{% endblock %}
+
+{% block prev_link %}
+	<a href="{{ url_for('classification_by_temperature') }}"><i class="fas fa-chevron-circle-left"></i><span class="nav_link">Previous topic</span></a>
+{% endblock %}
+
+{% block next_link %}
+	<a href="/astrophysics/life-and-death-of-stars"><span class="nav_link">Next topic</span><i class="fas fa-chevron-circle-right"></i></a>
+{% endblock %}
+
+{% block extra_scripts %}
+	<script src="{{ url_for('static', filename='js/quiz.js') }}"></script>
+	<script src="{{ url_for('static', filename='quizzes/hr_diagrams_questions.js') }}"></script>
+	<script>
+		new PhysicsQuiz(document.getElementById('quiz-root'), hrDiagramsQuestions, {
+			storageKey: 'hr_diagrams'
+		});
+	</script>
+{% endblock %}

@@ -1,0 +1,91 @@
+{% extends "extensions/_extension_base.html" %}
+
+{% block title %}Fusion in the Sun{% endblock %}
+
+{% block content %}
+<h3>The proton-proton chain</h3>
+<p>The main fusion process in a star such as the Sun is called the proton-proton chain. This is a three stage process, with each stage releasing more energy than the previous one. By examining the reactions at each stage in the diagram below, we can calculate the amount of energy produced this fusion chain, and also the number of fusion reactions per second taking place in the Sun&rsquo;s core.</p>
+<figure>
+	<img src="{{ url_for('static', filename='images/astrophysics/star_fusion.svg') }}" alt="proton-proton chain fusion in the Sun" class="size700">
+</figure>
+<p>In the first stage, two protons are brought together to form the hydrogen isotope deuterium. A neutrino and a positron are also created in this process as one of the quarks in the proton changes flavour to create a neutron:</p>
+<figure>
+	<img src="{{ url_for('static', filename='images/astrophysics/sun_feynman_diagram.svg') }}" alt="Feynman diagram of the fusion process" class="size400">
+</figure>
+<div class="formula">{% raw %}$$\mathrm{{^{1}H}+{^{1}H}\rightarrow {^{2}D}+\nu+{e^{+}}}$$</div>{% endraw %}
+<p>By comparing the masses of the protons on the left of the above equation with the deuterium nucleus and electron on the right, we can calculate the energy released in this reaction.</p>
+<p>The protons each have a mass (<span>$m_{p}$</span>) of:</p>
+<ul>
+	<li><span>$\quantity{1.6726219\times 10^{-27}}{kg}$</span></li>
+</ul>
+<p>The deuterium nucleus has a mass (<span>$m_{D}$</span>) of:</p>
+<ul>
+	<li><span>$\quantity{3.3435837\times 10^{-27}}{kg}$</span></li>
+</ul>
+<p>And electrons have a mass (<span>$m_{e}$</span>) of:</p>
+<ul>
+	<li><span>$\quantity{9.10938356\times 10^{-31}}{kg}$</span></li>
+</ul>
+<p>The two protons have a combined mass of $\quantity{3.3452438\times 10^{-27}}{kg}$, which is higher than the mass of the deuterium and the electron combined:</p>
+<div class="formula">$$2\times m_{p}-m_{D}-m_{e}=\quantity{7.4916691\times 10^{-31}}{kg}$$</div>
+<p>This mass is converted into energy following Einstein&rsquo;s mass-energy relation $E=mc^{2}$:</p>
+<div class="formula">
+	\begin{align}
+	E&=mc^{2}\\
+	E&=\quantity{7.4916691\times 10^{-31}}{kg}\times \left(\quantity{3.00\times 10^{8}}{m\,s^{-1}}\right)^{2}\\
+	\\
+	E&=\quantity{6.7425\times 10^{-14}}{J}
+	\end{align}
+</div>
+<p>So each proton fusion releases <span>$\quantity{6.7425\times 10^{-14}}{J}$</span> or <span>$\quantity{0.42}{MeV}$</span>. As this first stage involves a total of two fusion events, the total energy released is:</p>
+<div class="formula">$$\quantity{0.84}{MeV}$$</div>
+<p>This energy will be in the form of kinetic energy of the particles, and emitted photons. The positron that is created in this process quickly annihilates with an electron and forms two high energy gamma photons which will slowly over time make their way through the Sun eventually reaching Earth at a lower frequency.</p>
+<p>The second stage involves a third proton fusing with the deuterium to form a helium-3 nucleus:</p>
+<div class="formula">{% raw %}$$\mathrm{{^{2}D}+{^{1}H}\rightarrow{^{3}He}}$$</div>{% endraw %}
+<p>The helium-3 nucleus has a mass <span>$m_{He-3}$</span> of:</p>
+<ul>
+	<li><span>$\quantity{5.0064125\times 10^{-27}}{kg}$</span></li>
+</ul>
+<p>This stage has a mass deficit of:</p>
+<div class="formula">$$m_{p}+m_{D}-m_{He-3}=\quantity{9.7930730\times 10^{-30}}{kg}$$</div>
+<p>This is over ten times as much mass lost, therefore energy created per fusion event.</p>
+<div class="formula">
+	\begin{align}
+	E&=mc^{2}\\
+	E&=\quantity{9.7930730\times 10^{-30}}{kg}\times \left(\quantity{3.00\times 10^{8}}{m\,s^{-1}}\right)^{2}\\
+	\\
+	E&=\quantity{8.81377\times 10^{-13}}{J}
+	\end{align}
+</div>
+<p>Which converts to <span>$\quantity{5.51}{MeV}$</span>. Again, there are two of these events in the chain so the total energy is <span>$\quantity{11.02}{MeV}$</span></p>
+<p>The final stage involves two helium-3 nuclei which fuse to produce a helium 4 nucleus and two protons. The helium-4 has a mass <span>$m_{He-4}$</span> of:</p>
+<ul>
+	<li><span>$\quantity{6.6464769\times 10^{-27}}{kg}$</span></li>
+</ul>
+<div class="formula">{% raw %}$$\mathrm{{^{3}He}+{^{3}He}\rightarrow{^{4}He}+2{^{1}H}}$$</div>{% endraw %}
+<p>This stage has a mass deficit of:</p>
+<div class="formula">$$2\times m_{He-3}-m_{He-4}-2\times m_{p}=\quantity{2.1104361\times 10^{-29}}{kg}$$</div>
+<p>Again this is even more energy per event:</p>
+<div class="formula">
+	\begin{align}
+	E&=mc^{2}\\
+	E&=\quantity{2.1104361\times 10^{-29}}{kg}\times \left(\quantity{3.00\times 10^{8}}{m\,s^{-1}}\right)^{2}\\
+	\\
+	E&=\quantity{1.89939\times 10^{-12}}{J}
+	\end{align}
+</div>
+<p>Or $\quantity{11.87}{MeV}$.</p>
+<p>So the total energy released from this chain is:</p>
+<div class="formula">
+	\begin{align}
+	&\quantity{0.84}{MeV}\\
+	&\quantity{11.02}{MeV}\\
+	\underline{+\quad}&\underline{\quantity{11.87}{MeV}}\\
+	&\quantity{23.73}{MeV}
+	\end{align}
+</div>
+<p>These two protons are then available to take part in other fusion reactions, and begin another chain.</p>
+<p>The Sun produces <span>$\quantity{3.846\times 10^{26}}{W}$</span> of power. If each proton-proton chain produces <span>$\quantity{23.73}{MeV}$</span> or <span>$\quantity{3.80\times 10^{-12}}{J}$</span>, then the number of fusion chains per second will be approximately:</p>
+<div class="formula">$$\frac{\quantity{3.846\times 10^{26}}{W}}{\quantity{3.80\times 10^{-12}}{J}}=\quantity{1.01\times 10^{38}}{s^{-1}}$$</div>
+<p>This amount of power is also equivalent to 4 million tonnes of mass being converted into pure energy every second.</p>
+{% endblock %}

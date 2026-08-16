@@ -1,0 +1,209 @@
+{% extends "base.html" %}
+
+{% block title %}Simple harmonic motion{% endblock %}
+{% block page_h1 %}Simple harmonic motion{% endblock %}
+
+{% block meta_description %}A Level Physics notes and worked examples to help students with their exams and learning. Here we start to look at simple harmonic motion, that is motion of an oscillating body.{% endblock %}
+{% block meta_keywords %}simple harmonic motion, oscillations, pendulum, spring, restoring force, worked examples, exam questions, A level, physics{% endblock %}
+
+{% block extra_head %}
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/quiz.css') }}">
+{% endblock %}
+
+{% block page_boxes %}
+	<a href="#1"><button class="button">Intro</button></a>
+	<a href="#2"><button class="button">Simple Harmonic Motion</button></a>
+	<a href="#3"><button class="button">Properties of simple harmonic oscillators</button></a>
+	<a href="#4"><button class="button">Test yourself</button></a>
+{% endblock %}
+
+{% block spec %}
+<div id="spec">
+	<p class="spec_ref"><b>3.6.1.2 Simple harmonic motion</b></p>
+	<p class="spec_box">Analysis of characteristics of simple harmonic motion (SHM).</p>
+	<p class="spec_box">Condition for SHM: $a\propto -x$</p>
+	<p class="spec_box">Defining equation: $a=-\omega^{2}x$</p>
+	<p>$x=A\cos\omega t$ and $v=\pm \omega \sqrt{\left (A ^{2}-x^{2} \right )}$</p>
+	<p class="spec_box">Graphical representations linking the variations of <i>x</i>, <i>v</i> and <i>a</i> with time.</p>
+	<p class="spec_box">Appreciation that the v - t graph is derived from the gradient of the x - t graph and that the a - t graph is derived from the gradient of the v - t graph.</p>
+	<p class="spec_box">Maximum speed $=\omega A$</p>
+	<p class="spec_box">Maximum acceleration $=\omega^{2}A$</p>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<section class="top_section" id="1">
+	<p>This part of the module builds on what has already been learnt in <a href="{{ url_for('circular_motion') }}">circular motion</a>, specifically how the terms used in circular motion can be applied to SHM.</p>
+	<p>Oscillations are common in many aspects of everyday life, the suspension in a car as it rides over a bump, the processors in computers oscillate at very high frequencies 2 GHz, musical instruments oscillate, stars and planet orbits are all examples of oscillation.</p>
+	<p>When an object which could oscillate is stationary it is said to be in <i>equilibrium</i>, when it begins to oscillate its displacement from equilibrium changes constantly.</p>
+	<p>The displacement increases as it moves away from the equilibrium position till it reaches a maximum. It then decreases as it moves back towards the equilibrium position.</p>
+	<p>Once the equilibrium position is reached it reverses and begins to increase again until another -equal but opposite- maximum is reached.</p>
+	<p>Finally it decreases until the equilibrium position is reached again.</p>
+	<p><b>Definitions of key terms for Oscillations</b></p>
+	<ul class="page_list">
+		<li><b>Amplitude (<i>A</i>)</b> &ndash; The maximum displacement from the equilibrium (<span>$\units{m}$</span>)</li>
+		<li><b>Period (<i>T</i>)</b> &ndash; The time for one complete cycle of oscillation (<span>$\units{s}$</span>)</li>
+		<li><b>Frequency (<i>f</i>)</b> &ndash; The number of complete oscillations per second (<span>$\units{Hz}$</span>)</li>
+	</ul>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>Amplitude is measured from the <b>equilibrium position to the maximum displacement</b> &mdash; not the full distance from one extreme to the other. Reading the peak-to-peak distance straight off a displacement&ndash;time graph and calling that "the amplitude" is a very common error; that distance is actually $2A$.</p>
+	</div>
+	<p><b>Phase</b> - phase is the measure of the position of an oscillator within its cycle. One whole cycle is <i>2&pi; radians</i>, so if one wave peak meets the trough of another they are <i>&pi; radians</i> out of phase. If one peak meets the peak of the next wave they are <i>2&pi; radians</i> out of phase, but this is the same as being in phase, so the oscillation of a wave repeats when the phase changes by any multiple of <i>2&pi;</i>.</p>
+	<p>The phase difference between two objects oscillating at the same frequency is given by,</p>
+	<div class="formula">
+		$$\large phase\:difference=\frac{2\pi\Delta t}{T}=\omega\Delta t$$
+	</div>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>Phase difference calculated this way comes out in <b>radians</b>, matching $\omega$'s units. If a question asks for the answer in degrees, you'll need to convert at the end &mdash; don't mix degrees into the calculation itself, and don't forget the conversion if degrees are specifically requested.</p>
+	</div>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="2">
+	<h3>Simple Harmonic Motion</h3>
+	<p>Lots of things oscillate&hellip;<br>
+	...But not all of them are simple harmonic motion.</p>
+	<p><b>Free Oscillations are when the amplitude of the oscillation remains constant and there are no frictional forces.</b></p>
+	<p>All harmonic oscillators have the following properties,</p>
+	<ul class="page_list">
+		<li>The period of oscillation in independent of amplitude. Which means that each oscillation takes the same time.</li>
+		<li>A force is acting on the oscillating object to return it to its equilibrium position.</li>
+		<li>Inertia makes the system overshoot the equilibrium position when it is in motion.</li>
+	</ul>
+	<p>In class you will carry out a series of practicals in which you will explore the relationship between, mass, amplitude, and length of a pendulum with time period. You will be expected to to draw graphs using logarithms. To find out about logs and how they are a powerful tool in investigations click <a href="/maths-skills/logarithms" target="_blank">here</a></p>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="3">
+	<h3>Properties of simple harmonic oscillators</h3>
+	<p>Simple Harmonic Oscillators all have the following features:</p>
+	<ul class="page_list">
+		<li>The acceleration is directed towards a fixed point in its path (the equilibrium position)</li>
+		<li>The acceleration is in the opposite direction to the displacement</li>
+		<li>and is directly proportional to its distance from that fixed point</li>
+	</ul>
+	<p>If these three conditions are met the the body is moving with simple harmonic motion. In practice, this looks like:</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/periodic_motion/shm_a_x_graph.svg') }}" alt="amplitude and displacement for a simple harmonic oscillator" class="size300">
+		<figcaption><b>Figure 1:</b>&nbsp;The acceleration of an object in SHM is directly proportional to the negative of the displacement.</figcaption>
+	</figure>
+	<p>You can see that whenever the displacement is positive, the acceleration is negative. The relationship is still directly proportional.</p>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>Don't drop the minus sign in $a=-\omega^{2}x$. It's not just decoration &mdash; it's what makes the acceleration a <i>restoring</i> force, always pointing back towards equilibrium and opposite to the displacement. Leaving it out (or losing it partway through a calculation) gives an acceleration that points the wrong way.</p>
+	</div>
+	<p>If we compared how the displacement, velocity and acceleration of a simple harmonic oscillator varies with time. When the displacement is at its maximum, the velocity is zero, and the acceleration is at its maximum value, in the other direction.</p>
+	<p>When the displacement is zero (when the oscillator passes through the equilibrium position) the velocity is at its maximum and the acceleration is zero.</p>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>This is the single most commonly mixed-up fact in SHM: velocity is <b>maximum at the equilibrium position</b> (zero displacement) and <b>zero at maximum displacement</b> &mdash; the opposite way round to what feels intuitive. Acceleration works the other way: <b>zero</b> at equilibrium, <b>maximum</b> at the extremes. Double check which quantity a question is asking about before answering.</p>
+	</div>
+	<figure>
+		<img src="{{ url_for('static', filename='images/periodic_motion/shm_graphs.svg') }}" alt="relationship between displacement, velocity and acceleration for a simple harmonic oscillator" class="size450">
+		<figcaption><b>Figure 2:</b>&nbsp;Three graphs showing how displacement, velocity and acceleration vary for an object in SHM.</figcaption>
+	</figure>
+	<p>We can use these basic principles to derive the equations for SHM.</p>
+	<p>There are several links between SHM and circular motion. Clearly they are both periodic in nature, but there are other clear similarities as summarised below:</p>
+	<div>
+	<table class="center" style="width: 50%;">
+		<tr>
+			<th>Circular motion</th>
+			<th>Simple Harmonic Motion</th>
+		</tr>
+		<tr>
+			<td>Radius (<i>r</i>)</td>
+			<td>Amplitude (<i>A</i>)</td>
+		</tr>
+		<tr>
+			<td>Angular displacement (<i>&theta;</i>)</td>
+			<td>Phase (<i>&omega;t</i>)</td>
+		</tr>
+		<tr>
+			<td>Angular velocity (<i>&omega;</i>)</td>
+			<td>Angular frequency (<i>&omega;</i>)</td>
+		</tr>
+	</table>
+	</div>
+	<p>The diagram below shows a particle spinning in a circle and another moving with SHM. When the angle <span>$\theta=0$</span> the displacement <span>$x$</span> will be equal to the radius <span>$r$</span>. At this point the displacement will also equal the amplitude of the oscillator.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/periodic_motion/shm_and_circular_motion_1.svg') }}" alt="the relationship between SHM and circular motion" class="size550">
+		<figcaption><b>Figure 3:</b>&nbsp;Relating circular motion and SHM.</figcaption>
+	</figure>
+	<p>As the amplitude equals the radius, <span>$A=r$</span>. and so the displacement at any angle &theta; can be described as:</p>
+	<div class="formula">
+		$$\large x=A\cos\theta$$
+	</div>
+	<p>The angular displacement <span>$\theta$</span> at time <span>$t$</span> is <span>$\omega t$</span> or <span>$2\pi ft$</span> which allows us to describe the displacement of the oscillator at any time:</p>
+	<div class="formula">
+		$$\large x=A\cos\omega t=A\cos 2\pi ft$$
+	</div>
+	<p>The full set of equations that you need to know are:</p>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>Don't drop the $\pm$ in $v=\pm\omega\sqrt{A^{2}-x^{2}}$. At any given displacement (other than the extremes), the oscillator could be moving in either direction &mdash; the $\pm$ reflects that. If a question asks for a direction or expects two possible answers, giving only the positive root misses half the answer.</p>
+	</div>
+	<div>
+	<table class="center" style="width: 50%;">
+		<tr>
+			<td><i>acceleration</i></td>
+			<td><span>$$a=-\omega^{2}x$$</span></td>
+		</tr>
+		<tr>
+			<td><i>displacement</i></td>
+			<td><span>$$x=A\cos\left ( \omega t \right )$$</span></td>
+		</tr>
+		<tr>
+			<td><i>speed</i></td>
+			<td><span>$$v=\pm\omega\sqrt{\left ( A^{2}-x^{2} \right )}$$</span></td>
+		</tr>
+		<tr>
+			<td><i>maximum speed</i></td>
+			<td><span>$$v_{max}=\omega A$$</span></td>
+		</tr>
+		<tr>
+			<td><i>maximum acceleration</i></td>
+			<td><span>$$a_{max}=\omega^{2} A$$</span></td>
+		</tr>
+	</table>
+	</div>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="4">
+	<h3>Test yourself</h3>
+	<p>Try the questions below to check your understanding of this topic. Numerical questions use different numbers each time, so you can attempt them more than once.</p>
+	<div id="quiz-root"></div>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+
+{% endblock %}
+
+{% block prev_link %}
+	<a href="{{ url_for('applying_circular_motion') }}"><i class="fas fa-chevron-circle-left"></i><span class="nav_link">Previous topic</span></a>
+{% endblock %}
+
+{% block resources_heading %}One page summary{% endblock %}
+
+{% block resources %}
+	<li><a href="{{ url_for('static', filename='summaries/periodic_motion/shm_summary.html') }}" target="_blank"><i class="fas fa-file-alt"></i> Printable revision sheet</a></li>
+{% endblock %}
+
+{% block next_link %}
+	<a href="/periodic-motion/harmonic-systems"><span class="nav_link">Next topic</span><i class="fas fa-chevron-circle-right"></i></a>
+{% endblock %}
+
+{% block extra_scripts %}
+	<script src="{{ url_for('static', filename='js/quiz.js') }}"></script>
+	<script src="{{ url_for('static', filename='quizzes/shm_questions.js') }}"></script>
+	<script>
+		new PhysicsQuiz(document.getElementById('quiz-root'), shmQuestions, {
+			storageKey: 'shm'
+		});
+	</script>
+{% endblock %}

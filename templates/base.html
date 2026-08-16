@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en-UK">
+<head>
+	<title>Mr Toogood Physics - {% block title %}{% endblock %}</title>
+
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/reset.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/mobile.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/callouts.css') }}">
+	{% block extra_head %}{% endblock %}
+
+	<link href="https://fonts.googleapis.com/css?family=Noto+Sans|Noto+Serif|Roboto|Roboto+Slab|Roboto+Mono|Titillium+Web|Do+Hyeon|Enriqueta" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+	<meta charset="UTF-8">
+	<meta name="author" content="Oliver Toogood">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="{% block meta_description %}A Level Physics notes and worked examples to help students with their exams and learning.{% endblock %}">
+	<meta name="keywords" content="{% block meta_keywords %}worked examples, exam questions, A level, physics{% endblock %}">
+
+	<link rel="icon" type="image/png" href="{{ url_for('static', filename='images/icons/favicon-32x32.png') }}" sizes="32x32" />
+	<link rel="icon" type="image/png" href="{{ url_for('static', filename='images/icons/favicon-16x16.png') }}" sizes="16x16" />
+
+	<!--MathJax v3 (CDN) — config must be set before the library script loads-->
+	<script>
+	  window.MathJax = {
+	    tex: {
+	      inlineMath: [['$', '$'], ['\\(', '\\)']],
+	      macros: {
+	        {% raw %}
+	        quantity: ["{#1}\\;\\mathrm{#2}", 2],
+	        units: ["\\mathrm{#1}", 1],
+			degree: ["^{\\circ}", 0]
+	        {% endraw %}
+	      }
+	    }
+	  };
+	</script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+	<!--Google Analytics script-->
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	  ga('create', 'UA-105574226-1', 'auto');
+	  ga('send', 'pageview');
+	</script>
+</head>
+
+<body id="top">
+
+<div id="header">
+	<div class="search">
+		<form name="jksearch" action="http://www.google.com/search" method="get" onSubmit="jksitesearch(this)" target="_blank">
+			<input id="hiddenquery" type="hidden" name="q" />
+			<input class="search_box" name="qfront" type="text" value="" />
+			<button class="myButton" type="submit"><i class="fas fa-search"></i></button><br />
+			<script type="text/javascript">
+			var domainroot="www.alevelphysicsnotes.com"
+			var searchaction=["http://www.google.com/search"]
+			var queryfieldname=["q","p","q"]
+			function switchaction(cur, index){
+				cur.form.action=searchaction[index]
+				document.getElementById("hiddenquery").name=queryfieldname[index]
+			}
+			function jksitesearch(curobj){
+				for (i=0; i< document.jksearch.se.length; i++){
+					if (document.jksearch.se[i].checked==true) switchaction(document.jksearch.se[i], i)
+				}
+				document.getElementById("hiddenquery").value="site:"+domainroot+" "+curobj.qfront.value
+			}
+			</script>
+		</form>
+	</div>
+
+	<a href="{{ url_for('home') }}"><img src="{{ url_for('static', filename='images/icons/logo_circle.svg') }}" class="logo"></a>
+	<h1>{% block page_h1 %}{% endblock %}</h1>
+	<p class="sub_heading">Mr Toogood's Physics</p>
+</div>
+
+<div class="menu-wrap">
+	<nav class="menu">
+		<ul class="clearfix">
+			<li><a href="{{ url_for('home') }}">Home</a></li>
+			<li class="current-item"><a href="#">Topics<span class="arrow">&#9660;</span></a>
+			<div class="sub-menu mega">
+				<div class="mega-group">
+					<h6>AS Topics</h6>
+					<div class="mega-columns">
+						<div class="mega-col">
+							<h5 class="mega-topic"><a href="/mechanics">Mechanics</a></h5>
+							<ul>
+								<li><a href="{{ url_for('vectors') }}">Vectors</a></li>
+								<li><a href="{{ url_for('statics')}}">Statics and forces in equilibrium</a></li>
+								<li><a href="{{ url_for('moments') }}">Moments</a></li>
+								<li><a href="{{ url_for('motion') }}">Motion in a straight line</a></li>
+								<li><a href="{{ url_for('projectiles') }}">Projectile motion</a></li>
+								<li><a href="{{ url_for('newtonlaws') }}">Newton's laws of motion</a></li>
+								<li><a href="{{ url_for('energy') }}">Energy</a></li>
+								<li><a href="{{ url_for('momentum') }}">Momentum</a></li>
+							</ul>
+						</div>
+						<div class="mega-col">
+							<h5 class="mega-topic soon">Particles</h5>
+							<p class="soon-label">Coming soon</p>
+						</div>
+						<div class="mega-col">
+							<h5 class="mega-topic"><a href="/electricity">Electricity</a></h5>
+							<ul>
+								<li><a href="{{ url_for('charge_and_current') }}">Electricity basics</a></li>
+								<li><a href="{{ url_for('resistors') }}">Resistors and resistance</a></li>
+								<li><a href="{{ url_for('resistivity') }}">Resistivity</a></li>
+								<li><a href="{{ url_for('power_and_resistance') }}">Power in resistive circuits</a></li>
+								<li><a href="{{ url_for('emf_and_internal_resistance') }}">EMF and internal resistance</a></li>
+								<li><a href="{{ url_for('potential_dividers') }}">Potential dividers</a></li>
+							</ul>
+						</div>
+						<div class="mega-col">
+							<h5 class="mega-topic soon">Waves</h5>
+							<p class="soon-label">Coming soon</p>
+						</div>
+						<div class="mega-col">
+							<h5 class="mega-topic soon">Materials</h5>
+							<p class="soon-label">Coming soon</p>
+						</div>
+					</div>
+				</div>
+				<div class="mega-group">
+					<h6>A Level Topics</h6>
+					<div class="mega-columns">
+						<div class="mega-col">
+							<h5 class="mega-topic"><a href="/periodic-motion">Periodic motion</a></h5>
+							<ul>
+								<li><a href="{{ url_for('circular_motion') }}">Circular motion</a></li>
+								<li><a href="{{ url_for('applying_circular_motion') }}">Applying circular motion concepts</a></li>
+								<li><a href="{{ url_for('shm') }}">Simple harmonic motion</a></li>
+								<li><a href="{{ url_for('harmonic_systems') }}">Simple harmonic systems</a></li>
+								<li><a href="{{ url_for('damping') }}">Damping</a></li>
+								<li><a href="{{ url_for('resonance') }}">Resonance</a></li>
+							</ul>
+						</div>
+						<div class="mega-col">
+							<h5 class="mega-topic soon">Fields</h5>
+							<p class="soon-label">Coming soon</p>
+						</div>
+						<div class="mega-col">
+							<h5 class="mega-topic"><a href="/thermal">Thermal physics</a></h5>
+							<ul>
+								<li><a href="{{ url_for('specific_heat') }}">Specific heat capacity</a></li>
+								<li><a href="{{ url_for('latent_heat') }}">Specific latent heat</a></li>
+								<li><a href="{{ url_for('gas_laws') }}">The experimental gas laws</a></li>
+								<li><a href="{{ url_for('kinetic_theory') }}">Kinetic theory</a></li>
+							</ul>
+						</div>
+						<div class="mega-col">
+							<h5 class="mega-topic soon">Nuclear physics</h5>
+							<p class="soon-label">Coming soon</p>
+						</div>
+						<div class="mega-col">
+							<h5 class="mega-topic"><a href="/astrophysics">Astrophysics</a></h5>
+							<ul>
+								<li><a href="{{ url_for ('telescopes') }}">Telescopes and their limitations</a></li>
+								<li><a href="{{ url_for ('lenses') }}">Lenses</a></li>
+								<li><a href="{{ url_for ('non_optical_telescopes') }}">Non-optical telescopes</a></li>
+								<li><a href="{{ url_for ('classification') }}">Classification of stars by luminosity</a></li>
+								<li><a href="{{ url_for ('classification_by_temperature') }}">Classification of stars by temperature</a></li>
+								<li><a href="{{ url_for ('hr_diagram') }}">The Hertzsprung-Russell diagram</a></li>
+								<li><a href="{{ url_for ('deadstars') }}">The life and death of stars</a></li>
+								<li><a href="{{ url_for ('doppler_effect') }}">The Doppler effect, binary stars and exoplanets</a></li>
+								<li><a href="{{ url_for ('big_bang') }}">The big bang, quasars and cosmology</a></li>
+							</ul>
+						</div>
+						<div class="mega-col">
+							<h5 class="mega-topic"><a href="/experimental">Experimental physics</a></h5>
+							<ul>
+								<li><a href="/measurements/units.php">SI and derived units</a></li>
+								<li><a href="/measurements/measurements.php">Measurements and their uncertainties</a></li>
+								<li><a href="/measurements/graphs.php">Using data and graphs</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			</li>
+			<li><a href="#">Resources<span class="arrow">&#9660;</span></a>
+			<ul class="sub-menu">
+				<li><a href="/downloads">Downloads</a></li>
+				<li><a href="https://goo.gl/qx2cDw" target="_blank">Year 12 (Google Drive)</a></li>
+				<li><a href="https://goo.gl/M8Y8ts" target="_blank">Year 13 (Google Drive)</a></li>
+			</ul>
+			</li>
+			<li><a href="mailto:o.toogood@littleover.derby.sch.uk">Contact</a></li>
+		</ul>
+	</nav>
+</div>
+
+{% block page_body %}
+<article>
+
+	<div id="page-contents">
+		<h4>On this page:</h4>
+		<div class="boxes">
+			{% block page_boxes %}{% endblock %}
+		</div>
+	</div>
+
+	{% block spec %}{% endblock %}
+
+	<div id="main">
+		{% block content %}{% endblock %}
+	</div>
+
+	<br><br><hr>
+
+	{% set resources_content %}{% block resources %}{% endblock %}{% endset %}
+	{% if resources_content.strip() %}
+	<div>
+		<h3>{% block resources_heading %}Resources{% endblock %}</h3>
+		<ul class="page_resources">
+			{{ resources_content }}
+		</ul>
+	</div>
+	{% endif %}
+
+	<hr>
+	<div class="page_navigation">
+		<div class="back">{% block prev_link %}{% endblock %}</div>
+		<div class="forward">{% block next_link %}{% endblock %}</div>
+	</div>
+</article>
+{% endblock %}
+
+<footer class="footer-distributed">
+	<div class="footer-left">
+		<h5>Mr Toogood's Physics</h5>
+		<p class="footer-links">
+			<a href="{{ url_for('home') }}">Home</a>
+			·
+			<a href="https://goo.gl/qx2cDw" target="_blank">Year 12 folder</a>
+			·
+			<a href="https://goo.gl/M8Y8ts" target="_blank">Year 13 folder</a>
+			·
+			<a href="https://filestore.aqa.org.uk/resources/physics/specifications/AQA-7407-7408-SP-2015.PDF" target="_blank">Specification</a>
+			·
+			<a href="#" target="_blank">Privacy</a>
+		</p>
+	</div>
+
+	<div class="footer-center">
+		<div>
+			<i class="fa fa-envelope"></i>
+			<p><a href="mailto:o.toogood@littleover.derby.sch.uk">o.toogood@littleover.derby.sch.uk</a></p>
+		</div>
+		<div>
+			<i class="fa fa-envelope"></i>
+			<p><a href="mailto:admin@alevelphysicsnotes.com">admin@alevelphysicsnotes.com</a></p>
+		</div>
+		<div>
+			<i class="fas fa-link"></i>
+			<p><a href="http://www.littleover.derby.sch.uk/" target="_blank">Littleover Community School</a></p>
+		</div>
+	</div>
+
+	<div class="footer-right">
+		<p class="footer-company-about">
+			<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />
+			<span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Mr Toogood's Physics</span> by
+			<a xmlns:cc="http://creativecommons.org/ns#" href="http://www.alevelphysicsnotes.com" property="cc:attributionName" rel="cc:attributionURL">Oliver Toogood</a>
+			is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+		</p>
+	</div>
+</footer>
+
+{% block extra_scripts %}{% endblock %}
+
+</body>
+</html>

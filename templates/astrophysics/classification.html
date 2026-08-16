@@ -1,0 +1,348 @@
+{% extends "base.html" %}
+
+{% block title %}Classification of stars by luminosity{% endblock %}
+{% block page_h1 %}Classification of stars by luminosity{% endblock %}
+
+{% block meta_description %}A Level Physics notes and worked examples to help students with their exams and learning. We are now moving on to look at how stars are measured, both their distance and their brightness.{% endblock %}
+{% block meta_keywords %}absolute, apparent, magnitude, hipparcos, brightness, light year, lightyear, light-year, parsec, parallax, worked examples, exam questions, A level, physics{% endblock %}
+
+{% block extra_head %}
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/quiz.css') }}">
+{% endblock %}
+
+{% block page_boxes %}
+	<a href="#1"><button class="button">Measuring the distance to stars</button></a>
+	<a href="#2"><button class="button">The light year</button></a>
+	<a href="#3"><button class="button">Parallax</button></a>
+	<a href="#4"><button class="button">The magnitude scale</button></a>
+	<a href="#5"><button class="button">Worked example</button></a>
+	<a href="#6"><button class="button">Standard candles</button></a>
+	<a href="#7"><button class="button">Test yourself</button></a>
+{% endblock %}
+
+{% block spec %}
+<div id="spec">
+	<p class="spec_ref"><b>3.9.2.1 Classification by luminosity</b></p>
+	<p class="spec_box">Apparent magnitude, <i>m</i>.</p>
+	<p class="spec_box">The Hipparcos scale.</p>
+	<p class="spec_box">Dimmest visible stars have a magnitude of 6.</p>
+	<p class="spec_box">Relation between brightness and apparent magnitude. Difference of 1 on magnitude scale is equal to an intensity ratio of 2.51.</p>
+	<p class="spec_box">Brightness is a subjective scale of measurement.</p>
+	<p class="spec_box"><b>3.9.2.2 Absolute magnitude, <i>M</i></b></p>
+	<p class="spec_box">Parsec and light year.</p>
+	<p class="spec_box">Definition of <i>M</i>, relation to <i>m</i>:<br>
+	<span>$$m-M=5 \log\frac{d}{10}$$</span></p>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<section class="top_section" id="1">
+	<h3>Measuring the distance to stars</h3>
+	<p>One of the biggest problems faced by astronomers is whether the stars that they observe are close or far away, intrinsically bright, or dim! Looking at the photo below we can see that the stars are all a range of different brightnesses, and colours. Without being able to measure the distance to the stars it is impossible to know whether a star appears bright because it is close to us or whether it appears bright because it is intrinsically bright.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/large_magellanic_cloud.svg') }}" alt="large magellanic cloud" class="size600">
+		<figcaption><b>Figure 1:</b>&nbsp;There are lots of stars out there, but are they bright because they are close to us, or because they are intrinsically luminous?</figcaption>
+	</figure>
+	<p>In fact, most of the stars in this picture are a similar distance from Earth, as they are in a small satellite galaxy of the Milky Way called the Large Magellanic Cloud, but we only know that because astronomers have developed a range of techniques to measure distances across space. Of course they can&rsquo;t use conventional measuring devices. There is a &ldquo;ladder&rdquo; of different measurement techniques that can be utilised to measure these distances.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/measurement_ladder_low_res.svg') }}" alt="measurement ladder for astronomical distances" class="size800">
+		<figcaption><b>Figure 2:</b>&nbsp;Astronomers use different measurement techniques to measure different distances. This allows them to build up a ladder of distances.</figcaption>
+	</figure>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="2">
+	<h3>The light year</h3>
+	<p>Distances within our solar system can be measured by reflecting radar pulses and time how long the reflections take to return. The distance to the moon is measured regularly by reflecting a laser pulse off a mirror that was placed there during an Apollo mission. It takes around <span>$\quantity{2.5}{s}$</span> for a beam of light to travel from Earth to the Moon and back. The moon could be described as being <span>$\quantity{1.25}{light seconds}$</span> from Earth.</p>
+	<p>The light from the Sun takes <span>$\quantity{8}{minutes}$</span> to travel to the Earth so the Sun could be described as being 8 light minutes from the Earth. This is the basis behind the most familiar unit for measuring astronomical distances, the light year. This defined as being the distance that light travels in one year. Light is, of course, very fast, and its speed is defined as being <span>$\quantity{299\,792\,458}{ms^{-1}}$</span> so one light year is:</p>
+	<div class="formula">$$\quantity{299\,792\,458}{ms^{-1}}\times\quantity{60}{s}\times\quantity{60}{minutes}\times\quantity{24}{hours}\times\quantity{365.25}{days}=\quantity{9.46\times 10^{15}}{m}$$</div>
+	<p>So one light year (<span>$\units{ly}$</span>) is <span>$\quantity{9.46\times 10^{15}}{m}$</span>, which is an incredibly large distance, but as scales in the universe are so huge, it is appropriate to use a unit that reflects this. Some examples of distances in the universe measured in light years are:</p>
+	<ul class="page_list">
+		<li>Distance to the closest star, Proxima Centauri - <span>$\quantity{4.2}{ly}$</span></li>
+		<li>Diameter of the Milky Way galaxy - <span>$\quantity{100\,000}{ly}$</span></li>
+		<li>Distance to the Andromeda galaxy - <span>$\quantity{2.5\times 10^{6}}{ly}$</span></li>
+		<li>Diameter of the observable universe - <span>$\quantity{9.3\times 10^{10}}{ly}$</span></li>
+	</ul>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="3">
+	<h3>Parallax</h3>
+	<p>It is all very well defining the light year as a suitable unit of measurement, but we cannot wait the decades it would take to reflect light pulses of the stars in order to time their return. Astronomers have used another method to measure the distances to relatively close stars for 200 years.</p>
+	<p>Parallax is the apparent shift in the relative position of two objects due to the changing position of the observer. To understand what this means imagine looking out of a car window on a drive along a motorway. The trees, and signs by the side of the motorway appear to dash past you very quickly, whilst the distant hills appear to not move at all. Of course both the near objects and the distant ones are moving, but the <i>angular position</i> of the objects close to you changes by a greater amount.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/car_parallax.svg') }}" alt="parallax angles from a moving car" class="size600">
+		<figcaption><b>Figure 3:</b>&nbsp;The effect of parallax can be seen from a car window. More distant objects, such as hills seem to move by much more slowly than the objects closer to the car.</figcaption>
+	</figure>
+	<p>In the diagram above, you can see that as the car moves from position 1 to position 2 the sign by the side of the road appears to move through an angle &beta;, which is much larger than the angle moved through by the distant hill, &alpha;. These angles are called <i>parallax angles</i>, and the greater the distance to the distant objects, the smaller the parallax angle. The same principle is used to measure the distances to stars, although the apparent shift in position of even relatively close stars is very small, just a few seconds of arc.</p>
+	<p>In the diagram below the Earth orbits the Sun and the position of the nearby star is measured against the distant background stars. As the distant stars are so much further away than the nearby star their position appears not to change. The nearby star is then measured again six months later and the parallax angle is measured.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/parallax.svg') }}" alt="parallax angles to measure distances to stars" class="size800">
+		<figcaption><b>Figure 4:</b>&nbsp;The parallax effect can be used to measure the distance to stars. The closer star appears to move in front of the much more distant stars.</figcaption>
+	</figure>
+	<div class="callout callout-definition">
+		<p class="callout-label"><i class="fas fa-lightbulb"></i> Worth remembering</p>
+		<p>The <b>parallax angle</b>, $\theta$, is defined as the angle subtended by <b>1 AU</b> (the Earth&ndash;Sun distance) at the star &mdash; not the full angle the star appears to shift through between the two observations six months apart. Since the two observation points are on opposite sides of the Sun's orbit (a baseline of 2 AU), the total observed shift is <b>twice</b> $\theta$. Always use half the total observed shift as the parallax angle in calculations.</p>
+	</div>
+	<p>The parallax angle can then be used to measure the distance to the star. The mean distance between the Earth and the Sun is called the astronomical unit (<span>$\units{AU}$</span>) and is <span>$\quantity{1.50\times 10^{11}}{m}$</span>. (This was originally measured using parallax techniques during a rare event known as the transit of Venus and then applying Kepler&rsquo;s laws.) This distance makes up one side of the triangle created by the Earth, the Sun and the nearby star. As the angle <span>$\theta$</span> is so small, when measured in radians, the <i>small angle approximation</i> can be used where:</p>
+	<div class="formula">$$\tan \theta\approx \theta$$</div>
+	<p>As for every star measured in this way, the side of the triangle opposite the parallax angle will have the same length, <span>$\quantity{1}{AU}$</span>, the angle will correspond directly to a distance. The smaller the parallax angle, the greater the distance to the star. This has allowed astronomers to use a new unit of distance, which can be defined in terms of the parallax angle the star makes. This unit is called the <span>$\units{parsec}$</span>, and is the distance to a star if the parallax angle it makes is equal to <span>$\quantity{1}{arcsec}$</span> when the baseline is <span>$\quantity{1}{AU}$</span>. Or the distance to a star that <span>$\quantity{1}{AU}$</span> subtends an angle of 1 second of arc.</p>
+	<p>Looking at the diagram below we can see that a distance of <span>$\quantity{1}{pc}$</span> can be calculated in terms of astronomical units. As the angle &theta; is very small both $D$ and $D^{\prime}$ are approximately the same distance.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/parallax_2.svg') }}" alt="defining the parsec" class="size200">
+		<figcaption><b>Figure 5:</b>&nbsp;A star that has a parallax angle of 1 second of arc will be a distance on 1 parsec from Earth.</figcaption>
+	</figure>
+	<div class="formula">$$\theta=\frac{\quantity{1}{AU}}{D}$$</div>
+	<p>Since:</p>
+	<div class="formula">$$\quantity{1}{rad}=\frac{180}{\pi}\times 3600=\quantity{2.063\times 10^{5}}{arcsec}$$</div>
+	<p>the parallax angle $p$ (in arcsec) is related to the distance $D$ by:</p>
+	<div class="formula">$$p=2.063\times 10^{5}\times\frac{\quantity{1}{AU}}{D}$$</div>
+	<p>As the angle is <span>$\quantity{1}{arcsec}$</span> and the distances are both 1, a distance of <span>$\quantity{1}{pc}$</span> is equal to:</p>
+	<div class="formula">$$\quantity{2.063\times 10^{5}}{AU}=\quantity{3.095\times 10^{16}}{m}=\quantity{3.262}{ly}$$</div>
+	<p>The first parallax angle measured was in 1838, by Friedrich Bessel, however this method does have its limitations. Due to the distortions of light due to the atmosphere, the parallax angle can only be measured down to angles of <span>$\quantity{0.01}{arcsec}$</span> which corresponds to distances of <span>$\quantity{100}{pc}$</span>. Space telescopes can improve upon this, but nevertheless, this method of measuring the distances to stars is limited.</p>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="4">
+	<h3>The magnitude scale</h3>
+	<p>As we saw earlier, stars appear to be a range of brightnesses. The first attempt to catalogue stars in terms of their brightness was by <i>Hipparcos</i>, an ancient Greek astronomer. He observed over 850 stars and assigned them a <i>magnitude</i> based on how bright they appeared.</p>
+	<ul class="page_list">
+		<li>Magnitude 1 - The brightest stars</li>
+		<li>Magnitude 6 - The stars that were just visible to the unaided eye</li>
+	</ul>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>The magnitude scale runs <b>backwards</b> from what feels intuitive: a <b>lower</b> (or more negative) magnitude means a <b>brighter</b> object. Magnitude 1 stars are brighter than magnitude 6 stars, and very bright objects like the Sun have large negative magnitudes. Always double-check which direction "brighter" points on this scale before comparing two values.</p>
+	</div>
+	<p>These magnitudes are called <b>apparent magnitudes</b> (<b>m</b>) and are how bright a star appears from Earth. In the 18th century, this system was formalised when it was discovered that the eye has a logarithmic response to light. The brightness, or intensity of a magnitude 1 star is 100 times greater than a magnitude 6 star, and as there is a difference of 5 magnitudes between them each magnitude corresponds to a an increase in brightness of <span>$100^{\frac{1}{5}}\approx 2.51$</span> times. This means that each order of magnitude is 2.51 times brighter than the previous one. So a magnitude 1 star is 2.51 times brighter than a magnitude 2 star, and 2.51<sup>3</sup> than a star with an apparent magnitude of 4.</p>
+	<p>In modern astronomy, we are able to observe stars with much dimmer magnitudes than 6 by using telescopes to collect the light and using computers to process the data. The scale even allows for negative magnitudes, for very bright objects.</p>
+	<div>
+		<table class="center">
+			<tr>
+				<th class="evenspread">Object</th>
+				<th class="evenspread">Apparent magnitude</th>
+			</tr>
+			<tr>
+				<td>The Sun</td>
+				<td>-26</td>
+			</tr>
+			<tr>
+				<td>The full Moon</td>
+				<td>-19</td>
+			</tr>
+			<tr>
+				<td>Venus</td>
+				<td>-4</td>
+			</tr>
+			<tr>
+				<td>Sirius</td>
+				<td>-1.4</td>
+			</tr>
+			<tr>
+				<td>Polaris</td>
+				<td>2.0</td>
+			</tr>
+			<tr>
+				<td>Aldebaran</td>
+				<td>0.86</td>
+			</tr>
+			<tr>
+				<td>Barnard's Star</td>
+				<td>9.5</td>
+			</tr>
+		</table>
+	</div>
+	<br>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/apparent_magnitude.svg') }}" alt="two stars with different brightness but the same apparent magnitude" class="size800">
+		<figcaption><b>Figure 6:</b>&nbsp;Two stars can appear to be the same brightness, even though they are different distances from Earth.</figcaption>
+	</figure>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p><b>Luminosity</b> (total power output, in watts &mdash; an intrinsic property of the star) and <b>brightness/intensity</b> (what we actually observe, which also depends on distance) are different things. Two stars can have identical luminosity but very different apparent brightness if they're at different distances, or identical apparent brightness despite very different luminosities, as shown below. Don't use the two terms interchangeably.</p>
+	</div>
+	<p>Obviously, as can be seen from the diagram above, two stars can have the same apparent magnitude, despite having a very different intrinsic brightness, due to their differing distances from Earth. The total power output of a star, or its intrinsic brightness is called its luminosity, and is measured in <span>$\units{watts}$</span>. The energy radiated by a star spreads out in all directions into space across the surface of an ever-increasing sphere. Therefore, as the area of a sphere is related to the square of the radius, the intensity decays in proportion to the reciprocal of the radius squared. So if we double the distance to a star, its intensity decreases by a factor of 4, and if we triple the distance to a star, its intensity decreases by a factor of 9. This is known as the inverse square law, and you will have already studied it in relation to gravitational fields and gamma radiation.</p>
+	<p>Using the inverse square law we can calculate the intensity of a star if its luminosity is known by:</p>
+	<div class="formula">$$I=\frac{L}{4\pi r^{2}}$$</div>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/inverse_square_law.svg') }}" alt="the inverse square law of electromagnetic radiation" class="size600">
+		<figcaption><b>Figure 7:</b>&nbsp;As light moves out from the source, its intensity drops according to the inverse square law.</figcaption>
+	</figure>
+	<p>It is important, therefore, to be able to compare stars under similar conditions, so we define the absolute magnitude (M) of a star as being its apparent magnitude when viewed from a distance of <span>$\quantity{10}{pc}$</span>. This is an important definition and one that you have to learn. The scale used is the same as the Hipparcos scale, so each difference in magnitude corresponds to a difference in brightness of 2.51 times. The Sun has an absolute magnitude of 4.83, and the large star Betelgeuse has an absolute magnitude of -5.85. This means that when viewed under the same conditions, i.e. at a distance of <span>$\quantity{10}{pc}$</span>, Betelgeuse would be:</p>
+	<div class="formula">
+		$$4.83-\,-5.85=10.68$$
+		$$100^{\frac{10.68}{5}}=1.87\times 10^{4}$$
+	</div>
+	<p><span>$1.87\times 10^{4}$</span> times brighter than the Sun.</p>
+	<p>You may well be expected to compare the apparent and absolute magnitudes of two different stars and comment on their relative distances from Earth. For example, the table below shows the apparent magnitude and the absolute magnitude for two stars.</p>
+	<div>
+		<table class="center">
+			<tr>
+				<th class="column30">Star</th>
+				<th class="column30">Apparent magnitude</th>
+				<th class="column30">Absolute magnitude</th>
+			</tr>
+			<tr>
+				<td>Bellatrix</td>
+				<td>1.64</td>
+				<td>-2.72</td>
+			</tr>
+			<tr>
+				<td>Alioth</td>
+				<td>1.76</td>
+				<td>-0.21</td>
+			</tr>
+		</table>
+	</div>
+	<p>Both of the stars have similar apparent magnitudes, so appear to be the same brightness in the night sky. However, Bellatrix is a more luminous star as it has a brighter absolute magnitude. So when both of the stars are viewed from the same distance Bellatrix would be brighter. From this we can conclude that Alioth must be closer to Earth than Bellatrix.</p>
+	<p>We can use the definitions for absolute magnitude and apparent magnitude to derive an equation to allow us to calculate the distance to stars.</p>
+	<ul class="page_list">
+		<li>The absolute magnitude is the intensity at <span>$\quantity{10}{pc}$</span>, so we will can also call it <span>$I_{10}$</span></li>
+		<li>The apparent magnitude is the intensity at the star&rsquo;s distance (in <span>$\units{parsecs}$</span>) from Earth so we can call it <span>$I_{d}$</span></li>
+	</ul>
+	<p>So</p>
+	<div class="formula">$$\frac{I_{10}}{I_{d}}=a^{m-M}$$</div>
+	<p>Where</p>
+	<ul class="page_list">
+		<li><i>m</i> is the apparent magnitude</li>
+		<li><i>M</i> is the absolute magnitude</li>
+		<li><i>a</i> is <span>$100^{\frac{1}{5}}$</span></li>
+	</ul>
+	<p>We can apply the inverse square law to the left-hand side. The luminosity, $L$, and the $4\pi$ terms are common to both the numerator and denominator, so they cancel, leaving:</p>
+	<div class="formula">
+		$$\frac{I_{10}}{I_{d}}=\frac{L / 4\pi d^{2}}{L / 4\pi\left(\quantity{10}{pc}\right)^{2}}$$
+		$$=\frac{d^{2}}{\left(\quantity{10}{pc}\right)^{2}}=\left(\frac{d}{10}\right)^{2}$$
+	</div>
+	<p>So,</p>
+	<div class="formula">$$a^{m-M}=\left(\frac{d}{\quantity{10}{pc}}\right)^{2}$$</div>
+	<p>Taking logs on both sides gives:</p>
+	<div class="formula">$$(m-M) \log a=2 \log\left(\frac{d}{\quantity{10}{pc}}\right)$$</div>
+	<p>As <span>$\log a=0.4$</span>, we can divide both sides by <span>$0.4$</span> to give:</p>
+	<div class="formula">$$m-M=5\log\left(\frac{d}{10}\right)$$</div>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>The sign of the <b>distance modulus</b>, $m-M$, tells you whether a star is closer or further than $\quantity{10}{pc}$: a <b>negative</b> value means the star is <b>closer</b> than $\quantity{10}{pc}$ (it looks brighter than its absolute magnitude suggests), and a <b>positive</b> value means it's <b>further</b> than $\quantity{10}{pc}$. Working out the sign of $m-M$ before doing any further calculation is a quick way to sanity-check your final answer for distance.</p>
+	</div>
+	<p>The term <span>$m-M$</span> is known as the distance modulus, and is often quoted on its own in tables of star data. It is often worth calculating the distance modulus when trying to solve questions which use this equation.</p>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="5">
+	<h3>Worked example</h3>
+	<p>The Summer Triangle consists of three stars, Altair, Deneb and Vega.</p>
+	<p>Some of the properties of the three stars are summarised in the table below.</p>
+	<div>
+		<table class="center">
+			<tr>
+				<th class="column25"></th>
+				<th class="column25">Altair</th>
+				<th class="column25">Deneb</th>
+				<th class="column25">Vega</th>
+			</tr>
+			<tr>
+				<td>surface temperature / <span>$\units{K}$</span></td>
+				<td>7700</td>
+				<td>8500</td>
+				<td>9600</td>
+			</tr>
+			<tr>
+				<td>apparent magnitude</td>
+				<td>0.77</td>
+				<td>1.25</td>
+				<td>0.03</td>
+			</tr>
+			<tr>
+				<td>absolute magnitude</td>
+				<td>2.21</td>
+				<td>-8.38</td>
+				<td>0.60</td>
+			</tr>
+		</table>
+	</div>
+	<ol class="page_list" type="A">
+		<li>Deduce which of the three stars appears brightest.</li>
+		<p class="workex">How bright a star appears from Earth is the apparent magnitude, and the lower the value the brighter the star. Vega has the lowest apparent magnitude so must be the brightest star.</p>
+		<li>Calculate the distance from Earth to the closest of the three stars.</li>
+		<p class="workex">Before we do any calculations we must estimate the distances to each of the stars to determine which one is the closest to Earth.</p>
+		<p class="workex">Altair has an absolute magnitude of 2.21, which is its brightness when viewed from <span>$\quantity{10}{pc}$</span>, but from Earth is has a brighter magnitude of 0.77, so it must be closer than <span>$\quantity{10}{pc}$</span></p>
+		<p class="workex">Deneb has a very bright magnitude of -8.38, but when viewed from Earth has a dimmer magnitude, so it must be much further from Earth than <span>$\quantity{10}{pc}$</span>.</p>
+		<p class="workex">Vega&rsquo;s absolute and apparent magnitudes are similar, so we can estimate than it is roughly <span>$\quantity{10}{pc}$</span> from Earth. Therefore Altair is the closest to Earth.</p>
+		<p class="workex">To calculate the distance to Altair we need to use the equation:</p>
+		<div class="formula">$$m-M=5\log\left(\frac{d}{10}\right)$$</div>
+		<p class="workex">The first step in this calculation is to find the distance modulus <span>$m-M$</span>:</p>
+		<div class="formula">$$m-M=0.77-2.21=-1.44$$</div>
+		<p class="workex">And write the first equation as:</p>
+		<div class="formula">$$-1.44=5\log\left(\frac{d}{10}\right)$$</div>
+		<p class="workex">Then divide both sides by 5,</p>
+		<div class="formula">$$-0.288=\log\left(\frac{d}{10}\right)$$</div>
+		<p class="workex">As the <span>$\log$</span> is to the base 10, if we write both sides of the equation as 10 raised to a power to give:</p>
+		<div class="formula">
+			\begin{align}
+			10^{-0.288}&=\frac{d}{10}\\
+			\\
+			0.51522864&=\frac{d}{10}
+			\end{align}
+		</div>
+		<p class="workex">Finally we can rearrange the equation to make <span>$d$</span> the subject:</p>
+		<div class="formula">$$d=10\times 0.51522864=\quantity{5.2}{pc}$$</div>
+		<p class="workex">Note that for all of the intermediate stages I have written out the full, unrounded figure, and only rounded it for the final answer.</p>
+	</ol>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="6">
+	<h3>Standard candles</h3>
+	<p>There are some types of stars, and astronomical events whose absolute magnitude is either known or can be found from other observable properties. There are two main standard candles that astronomers use:</p>
+	<ul class="page_list">
+		<li><b>Variable stars</b> - Some larger, old stars exhibit a periodic variation in their brightness. The period of this variation can be from a few hours to many weeks, but importantly there is a direct relationship between the period of the variation in luminosity and the peak absolute magnitude. Therefore, if the period can be measured, along with the apparent magnitude, the distance to the star can be found. There are three types of variable star, and it is one of these, Cepheid variables, that were identified by Edwin Hubble in M31, which allowed him to discover that there were other galaxies that lay far beyond the edge of the Milky way.</li>
+		<figure>
+			<img src="{{ url_for('static', filename='images/astrophysics/delta_cephei.svg') }}" alt="light curve for Delta Cephei" class="size600">
+			<figcaption><b>Figure 8:</b>&nbsp;A typical light curve from a Cepheid variable, a star whose intrinsic, or absolute magnitude varies regularly.</figcaption>
+		</figure>
+		<br>
+		<li><b>Type 1a supernovae</b> - Supernovae are violent explosions that the largest stars undergo at the end of their lives. There are different types of supernova, but these, type 1a, are very luminous, and always have the same <b>peak</b> absolute magnitude, around -19, which is the same as the apparent magnitude as the full moon! Again, their apparent magnitude can be measured and thus, their distance can be calculated using either the inverse square law or <span>$m-M=5\log\left(\frac{d}{10}\right)$</span>. Type 1a supernovae are so bright that they can be seen from millions of light years away, and are therefore can be used to measure the large scale size of the universe or its expansion rate.</li>
+		<figure>
+			<img src="{{ url_for('static', filename='images/astrophysics/type_1a_supernova.svg') }}" alt="light curve for a type 1a supernova" class="size600">
+			<figcaption><b>Figure 9:</b>&nbsp;A type 1a Supernova is a type of exploding star that always has the same peak absolute magnitude.</figcaption>
+		</figure>
+	</ul>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="7">
+	<h3>Test yourself</h3>
+	<p>Try the questions below to check your understanding of this topic. Numerical questions use different numbers each time, so you can attempt them more than once.</p>
+	<div id="quiz-root"></div>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+
+{% endblock %}
+
+{% block resources %}
+	<li><a href="{{ url_for('static', filename='summaries/astrophysics/classification_summary.html') }}" target="_blank"><i class="fas fa-file-alt"></i> Printable revision sheet</a></li>
+{% endblock %}
+
+{% block prev_link %}
+	<a href="{{ url_for('non_optical_telescopes') }}"><i class="fas fa-chevron-circle-left"></i><span class="nav_link">Previous topic</span></a>
+{% endblock %}
+
+{% block next_link %}
+	<a href="/astrophysics/classification-by-temperature"><span class="nav_link">Next topic</span><i class="fas fa-chevron-circle-right"></i></a>
+{% endblock %}
+
+{% block extra_scripts %}
+	<script src="{{ url_for('static', filename='js/quiz.js') }}"></script>
+	<script src="{{ url_for('static', filename='quizzes/classification_questions.js') }}"></script>
+	<script>
+		new PhysicsQuiz(document.getElementById('quiz-root'), classificationQuestions, {
+			storageKey: 'classification'
+		});
+	</script>
+{% endblock %}

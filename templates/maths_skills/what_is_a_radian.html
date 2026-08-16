@@ -1,0 +1,19 @@
+{% extends "maths_skills/_mathsbox_base.html" %}
+
+{% block title %}What is a radian?{% endblock %}
+
+{% block content %}
+<h3>What is a Radian?</h3>
+<p>When an object moves in a circular path about some axis we can see that the arc which it travels is proportional to the angle it subtends. If the object completes one whole path of the circumference of the circle its path length is <i>2&pi;r</i>.</p>
+<figure>
+	<img class="displayed size550" src="{{ url_for('static', filename='images/maths_skills/understanding_the_radian.svg') }}" alt="Understanding the radian">
+	<figcaption><b>Figure 1:</b>&nbsp;Defining the radian</figcaption>
+</figure>
+<p>In the diagram the arc length <i>s</i> can be calculated by $s=\frac{2\pi}{360^{\circ}}r\theta$ where <i>&theta;</i> is in degrees. This is a fairly cumbersome equation, and can be simplified if we use radians instead of degrees. A radian is equal to the angle subtended by an arc of length equal to one radius and approximates to 57.3&deg; (3 s.f.) and there are <i>2&pi;</i> radians in one complete circle so:</p>
+<div class="formula">$$\large 2\pi\,(\mathrm{radians}) = 360^{\circ}$$</div>
+<p>and an angle measured in radians can be related to one measured in degrees by the equation:</p>
+<img class="displayed" src="{{ url_for('static', filename='images/maths_skills/degrees_and_radians.svg') }}" alt="converting between degrees and radians" style="max-width:305px; max-height:auto;">
+<p>Therefore measuring our angles in radians results in the much simpler equation:</p>
+<div class="formula">$$\large s=r\theta$$</div>
+<p>Where <i>&theta;</i> is in radians.</p>
+{% endblock %}

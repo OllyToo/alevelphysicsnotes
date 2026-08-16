@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<title>Simple Harmonic Systems — Quick Summary | Mr Toogood's Physics</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,600,700|Noto+Sans:400,600|Roboto+Mono:500,700" rel="stylesheet">
+<style>
+  :root{
+    --teal:#008080;
+    --teal-dark:#00595a;
+    --maroon:#800040;
+    --sand:#f4cf8d;
+    --sky:#a6d9ea;
+    --ink:#232426;
+    --paper:#ffffff;
+    --line:#d8d3c4;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;background:#e9e6dd;}
+  body{
+    font-family:'Noto Sans', sans-serif;
+    color:var(--ink);
+    display:flex;
+    justify-content:center;
+    padding:18px 0 40px;
+  }
+  .sheet{
+    background:var(--paper);
+    width:210mm;
+    min-height:297mm;
+    padding:11mm 12mm 9mm;
+    box-shadow:0 4px 24px rgba(0,0,0,0.18);
+  }
+
+  /* ---------- Header ---------- */
+  .head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    border-bottom:3px solid var(--teal);
+    padding-bottom:6px;
+    margin-bottom:9px;
+  }
+  .head .titles h1{
+    font-family:'Titillium Web', sans-serif;
+    font-weight:700;
+    font-size:21px;
+    margin:0;
+    color:var(--teal-dark);
+    letter-spacing:0.2px;
+  }
+  .head .titles p{
+    margin:2px 0 0;
+    font-size:11px;
+    color:#6b6f6e;
+    font-family:'Titillium Web', sans-serif;
+  }
+  .spec-chip{
+    font-family:'Roboto Mono', monospace;
+    font-size:10.5px;
+    background:var(--sand);
+    color:#4a3a10;
+    padding:4px 9px;
+    border-radius:3px;
+    white-space:nowrap;
+    margin-left:12px;
+  }
+
+  /* ---------- Equation strip ---------- */
+  .eq-strip{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:8px;
+    margin-bottom:11px;
+  }
+  .eq-box{
+    background:var(--teal);
+    color:#fff;
+    border-radius:5px;
+    padding:8px 6px 7px;
+    text-align:center;
+  }
+  .eq-box .formula{
+    font-family:'Roboto Mono', monospace;
+    font-weight:700;
+    font-size:14px;
+    letter-spacing:0.1px;
+  }
+  .eq-box .label{
+    font-family:'Titillium Web', sans-serif;
+    font-size:9.5px;
+    opacity:0.92;
+    margin-top:3px;
+    text-transform:uppercase;
+    letter-spacing:0.4px;
+  }
+
+  /* ---------- Section headers ---------- */
+  h2.sec{
+    font-family:'Titillium Web', sans-serif;
+    font-weight:700;
+    font-size:13px;
+    color:var(--maroon);
+    text-transform:uppercase;
+    letter-spacing:0.5px;
+    margin:0 0 5px;
+    padding-bottom:3px;
+    border-bottom:1.5px solid var(--line);
+  }
+
+  p{margin:0 0 6px; font-size:10.4px; line-height:1.37;}
+  ul.tight{margin:0 0 6px; padding-left:16px; font-size:10.4px; line-height:1.35;}
+  ul.tight li{margin-bottom:2px;}
+  .key{font-family:'Roboto Mono', monospace; font-weight:600; color:var(--teal-dark);}
+
+  /* ---------- Two column layout ---------- */
+  .columns{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+    margin-bottom:10px;
+  }
+  .card{
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:8px 9px 7px;
+    margin-bottom:6px;
+  }
+  .card img{
+    display:block;
+    width:100%;
+    max-height:150px;
+    object-fit:contain;
+    margin:2px 0 4px;
+  }
+  .figcap{
+    font-size:8.7px;
+    color:#767a79;
+    text-align:center;
+    font-style:italic;
+    margin-top:-2px;
+  }
+
+  .law{
+    background:#fbf6ea;
+    border-left:4px solid var(--sand);
+    padding:5px 8px;
+    font-size:10px;
+    border-radius:0 4px 4px 0;
+    margin:4px 0 6px;
+  }
+  .law b{color:var(--maroon);}
+
+  .mini-formula{
+    font-family:'Roboto Mono', monospace;
+    font-weight:600;
+    font-size:11px;
+    color:var(--teal-dark);
+    text-align:center;
+    margin:3px 0 5px;
+  }
+
+  .step{
+    font-size:10.2px;
+    line-height:1.5;
+    margin:0 0 6px;
+    padding-left:2px;
+  }
+  .step .mini-formula{margin:2px 0;}
+
+  /* ---------- Essentials footer strip ---------- */
+  .essentials{
+    background:var(--teal-dark);
+    color:#fff;
+    border-radius:6px;
+    padding:9px 12px 8px;
+    margin-top:2px;
+  }
+  .essentials h2{
+    color:#fff;
+    border-bottom:1.5px solid rgba(255,255,255,0.35);
+    font-size:12.5px;
+  }
+  .ess-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    gap:10px;
+  }
+  .ess-grid ul{margin:0; padding-left:15px; font-size:10px; line-height:1.35;}
+  .ess-grid li{margin-bottom:2px;}
+  .ess-grid h4{
+    font-family:'Titillium Web', sans-serif;
+    font-size:10.5px;
+    margin:0 0 3px;
+    color:var(--sky);
+    text-transform:uppercase;
+  }
+  .essentials .key{
+    color:var(--sky);
+  }
+
+  footer.foot{
+    display:flex;
+    justify-content:space-between;
+    margin-top:8px;
+    font-size:8.5px;
+    color:#9a9d9c;
+    font-family:'Titillium Web', sans-serif;
+  }
+
+  /* ---------- Print controls (screen only) ---------- */
+  .print-bar{
+    position:fixed;
+    top:14px;
+    right:14px;
+    display:flex;
+    gap:8px;
+  }
+  .print-bar button{
+    font-family:'Titillium Web', sans-serif;
+    font-weight:600;
+    font-size:12px;
+    background:var(--teal);
+    color:#fff;
+    border:none;
+    border-radius:5px;
+    padding:9px 14px;
+    cursor:pointer;
+    box-shadow:0 2px 8px rgba(0,0,0,0.2);
+  }
+  .print-bar button:hover{background:var(--teal-dark);}
+
+  @media print{
+    body{background:#fff; padding:0;}
+    .sheet{box-shadow:none; width:auto; min-height:auto; margin:0; padding:6mm 8mm;}
+    .print-bar{display:none;}
+    @page{size:A4; margin:8mm;}
+  }
+</style>
+</head>
+<body>
+
+<div class="print-bar">
+  <button onclick="window.print()">Print / Save as PDF</button>
+</div>
+
+<div class="sheet">
+
+  <div class="head">
+    <div class="titles">
+      <h1>Simple Harmonic Systems — Quick Summary</h1>
+      <p>Mr Toogood's Physics · Periodic motion</p>
+    </div>
+    <div class="spec-chip">AQA 3.6.1.3</div>
+  </div>
+
+  <div class="eq-strip">
+    <div class="eq-box">
+      <div class="formula">T = 2π√(l/g)</div>
+      <div class="label">Simple pendulum</div>
+    </div>
+    <div class="eq-box">
+      <div class="formula">T = 2π√(m/k)</div>
+      <div class="label">Mass–spring</div>
+    </div>
+    <div class="eq-box">
+      <div class="formula">a = −g sinθ</div>
+      <div class="label">Restoring accel.</div>
+    </div>
+    <div class="eq-box">
+      <div class="formula">θ ≤ 10°</div>
+      <div class="label">Small-angle limit</div>
+    </div>
+  </div>
+
+  <div class="columns">
+    <div>
+      <h2 class="sec">The simple pendulum</h2>
+      <div class="card">
+        <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJ5ZXMiPz4KCjxzdmcgdmVyc2lvbj0iMS4xIiB2aWV3Qm94PSIwLjAgMC4wIDQxMy41OTMxNzU4NTMwMTgzNSA0MDEuMjA3MzQ5MDgxMzY0ODQiIGZpbGw9Im5vbmUiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLWxpbmVjYXA9InNxdWFyZSIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48Y2xpcFBhdGggaWQ9InAuMCI+PHBhdGggZD0ibTAgMGw0MTMuNTkzMTcgMGwwIDQwMS4yMDczNGwtNDEzLjU5MzE3IDBsMCAtNDAxLjIwNzM0eiIgY2xpcC1ydWxlPSJub256ZXJvIj48L3BhdGg+PC9jbGlwUGF0aD48ZyBjbGlwLXBhdGg9InVybCgjcC4wKSI+PHBhdGggZmlsbD0iIzAwMDAwMCIgZmlsbC1vcGFjaXR5PSIwLjAiIGQ9Im0wIDBsNDEzLjU5MzE3IDBsMCA0MDEuMjA3MzRsLTQxMy41OTMxNyAweiIgZmlsbC1ydWxlPSJldmVub2RkIj48L3BhdGg+PHBhdGggZmlsbD0iIzAwMDAwMCIgZmlsbC1vcGFjaXR5PSIwLjAiIGQ9Im0zNjQuNDI1MTQgMjEyLjUyMjMxbDAgMGMtNDEuNDM2NCA0MS40MzY0MTcgLTk3LjYzNjI2IDY0LjcxNTE1IC0xNTYuMjM2MiA2NC43MTUxNWMtNTguNTk5OTQ1IDAgLTExNC43OTk4MDUgLTIzLjI3ODczMiAtMTU2LjIzNjIyIC02NC43MTUxNWwxNTYuMjM2MjIgLTE1Ni4yMzYyMnoiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PC9wYXRoPjxwYXRoIGZpbGw9IiMwMDAwMDAiIGZpbGwtb3BhY2l0eT0iMC4wIiBkPSJtMzY0LjQyNTE0IDIxMi41MjIzMWwwIDBjLTQxLjQzNjQgNDEuNDM2NDE3IC05Ny42MzYyNiA2NC43MTUxNSAtMTU2LjIzNjIgNjQuNzE1MTVjLTU4LjU5OTk0NSAwIC0xMTQuNzk5ODA1IC0yMy4yNzg3MzIgLTE1Ni4yMzYyMiAtNjQuNzE1MTUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PC9wYXRoPjxwYXRoIHN0cm9rZT0iIzAwMDAwMCIgc3Ryb2tlLXdpZHRoPSIxLjAiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS1saW5lY2FwPSJidXR0IiBzdHJva2UtZGFzaGFycmF5PSIxLjAsMy4wIiBkPSJtMzY0LjQyNTE0IDIxMi41MjIzMWwwIDBjLTQxLjQzNjQgNDEuNDM2NDE3IC05Ny42MzYyNiA2NC43MTUxNSAtMTU2LjIzNjIgNjQuNzE1MTVjLTU4LjU5OTk0NSAwIC0xMTQuNzk5ODA1IC0yMy4yNzg3MzIgLTE1Ni4yMzYyMiAtNjQuNzE1MTUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PC9wYXRoPjxwYXRoIGZpbGw9IiMwMDAwMDAiIGZpbGwtb3BhY2l0eT0iMC4wIiBkPSJtMjA4LjE4ODk4IDI0OC45NzM3NWwwIC0yMjguMTI1OTkiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PC9wYXRoPjxwYXRoIHN0cm9rZT0iIzY2NjY2NiIgc3Ryb2tlLXdpZHRoPSIyLjAiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS1saW5lY2FwPSJidXR0IiBzdHJva2UtZGFzaGFycmF5PSI4LjAsNi4wIiBkPSJtMjA4LjE4ODk4IDI0OC45NzM3NWwwIC0yMjguMTI1OTkiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PC9wYXRoPjxkZWZzPjxyYWRpYWxHcmFkaWVudCBpZD0icC4xIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgZ3JhZGllbnRUcmFuc2Zvcm09Im1hdHJpeCg2LjAxMjE1MTE1MzM4NDQzIDAuMCAwLjAgNi4wMTIxNTExNTMzODQ0MyAwLjAgMC4wKSIgc3ByZWFkTWV0aG9kPSJwYWQiIGN4PSI2MS4wMDQxODg4MjM5OTY5OSIgY3k9IjM0LjY1NTEwMTA5Nzk1ODUzIiBmeD0iNjEuMDA0MTg4ODIzOTk2OTkiIGZ5PSIzNC42NTUxMDEwOTc5NTg1MyIgcj0iNi4wMTIxNTEyNDEzMDI0OSI+PHN0b3Agb2Zmc2V0PSIwLjAiIHN0b3AtY29sb3I9IiM1MWFiMmEiPjwvc3RvcD48c3RvcCBvZmZzZXQ9IjEuMCIgc3RvcC1jb2xvcj0iIzIwM2UxMyI+PC9zdG9wPjwvcmFkaWFsR3JhZGllbnQ+PC9kZWZzPjxwYXRoIGZpbGw9InVybCgjcC4xKSIgZD0ibTM0MS4yMDczNCAyMDguMzUxN2wwIDBjMCAtMTQuMTE1ODc1IDExLjQ0MzE3NiAtMjUuNTU5MDUyIDI1LjU1OTA4MiAtMjUuNTU5MDUybDAgMGM2Ljc3ODY1NiAwIDEzLjI3OTcyNCAyLjY5MjgyNTMgMTguMDcyOTY4IDcuNDg2MDg0YzQuNzkzMjQzNCA0Ljc5MzI0MzQgNy40ODYwODQgMTEuMjk0Mjk2IDcuNDg2MDg0IDE4LjA3Mjk2OGwwIDBjMCAxNC4xMTU4NzUgLTExLjQ0MzE3NiAyNS41NTkwNjcgLTI1LjU1OTA1MiAyNS41NTkwNjdsMCAwYy0xNC4xMTU5MDYgMCAtMjUuNTU5MDgyIC0xMS40NDMxOTIgLTI1LjU1OTA4MiAtMjUuNTU5MDY3eiIgZmlsbC1ydWxlPSJldmVub2RkIj48L3BhdGg+PHBhdGggc3Ryb2tlPSIjMDAwMDAwIiBzdHJva2Utd2lkdGg9IjEuMCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLWxpbmVjYXA9ImJ1dHQiIGQ9Im0zNDEuMjA3MzQgMjA4LjM1MTdsMCAwYzAgLTE0LjExNTg3NSAxMS40NDMxNzYgLTI1LjU1OTA1MiAyNS41NTkwODIgLTI1LjU1OTA1MmwwIDBjNi43Nzg2NTYgMCAxMy4yNzk3MjQgMi42OTI4MjUzIDE4LjA3Mjk2OCA3LjQ4NjA4NGM0Ljc5MzI0MzQgNC43OTMyNDM0IDcuNDg2MDg0IDExLjI5NDI5NiA3LjQ4NjA4NCAxOC4wNzI5NjhsMCAwYzAgMTQuMTE1ODc1IC0xMS40NDMxNzYgMjUuNTU5MDY3IC0yNS41NTkwNTIgMjUuNTU5MDY3bDAgMGMtMTQuMTE1OTA2IDAgLTI1LjU1OTA4MiAtMTEuNDQzMTkyIC0yNS41NTkwODIgLTI1LjU1OTA2N3oiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PC9wYXRoPjxkZWZzPjxyYWRpYWxHcmFkaWVudCBpZD0icC4yIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgZ3JhZGllbnRUcmFuc2Zvcm09Im1hdHJpeCg2LjAxMjE1MTE1MzM4NDQzIDAuMCAwLjAgNi4wMTIxNTExNTMzODQ0MyAwLjAgMC4wKSIgc3ByZWFkTWV0aG9kPSJwYWQiIGN4PSI4LjI1MTg3OTc4MzI0NTcyNSIgY3k9IjM0LjY1NTEwMTA5Nzk1ODUzIiBmeD0iOC4yNTE4Nzk3ODMyNDU3MjUiIGZ5PSIzNC42NTUxMDEwOTc5NTg1MyIgcj0iNi4wMTIxNTEyNDEzMDI0OSI+PHN0b3Agb2Zmc2V0PSIwLjAiIHN0b3AtY29sb3I9IiNkY2VjZDUiPjwvc3RvcD48c3RvcCBvZmZzZXQ9IjEuMCIgc3RvcC1jb2xvcj0iIzkzYmM4MSI+PC9zdG9wPjwvcmFkaWFsR3JhZGllbnQ+PC9kZWZzPjxwYXRoIGZpbGw9InVybCgjcC4yKSIgZD0ibTI0LjA1MjQ5NCAyMDguMzUxN2wwIDBjMCAtMTQuMTE1ODc1IDExLjQ0MzE3NiAtMjUuNTU5MDUyIDI1LjU1OTA1NSAtMjUuNTU5MDUybDAgMGM2Ljc3ODY4MjcgMCAxMy4yNzk3MjggMi42OTI4MjUzIDE4LjA3Mjk4MyA3LjQ4NjA4NGM0Ljc5MzI1MSA0Ljc5MzI0MzQgNy40ODYwNjg3IDExLjI5NDI5NiA3LjQ4NjA2ODcgMTguMDcyOTY4bDAgMGMwIDE0LjExNTg3NSAtMTEuNDQzMTc2IDI1LjU1OTA2NyAtMjUuNTU5MDUyIDI1LjU1OTA2N2wwIDBjLTE0LjExNTg3OSAwIC0yNS41NTkwNTUgLTExLjQ0MzE5MiAtMjUuNTU5MDU1IC0yNS41NTkwNjd6IiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjwvcGF0aD48cGF0aCBzdHJva2U9IiM2NjY2NjYiIHN0cm9rZS13aWR0aD0iMS4wIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2UtbGluZWNhcD0iYnV0dCIgc3Ryb2tlLWRhc2hhcnJheT0iNC4wLDMuMCIgZD0ibTI0LjA1MjQ5NCAyMDguMzUxN2wwIDBjMCAtMTQuMTE1ODc1IDExLjQ0MzE3NiAtMjUuNTU5MDUyIDI1LjU1OTA1NSAtMjUuNTU5MDUybDAgMGM2Ljc3ODY4MjcgMCAxMy4yNzk3MjggMi42OTI4MjUzIDE4LjA3Mjk4MyA3LjQ4NjA4NGM0Ljc5MzI1MSA0Ljc5MzI0MzQgNy40ODYwNjg3IDExLjI5NDI5NiA3LjQ4NjA2ODcgMTguMDcyOTY4bDAgMGMwIDE0LjExNTg3NSAtMTEuNDQzMTc2IDI1LjU1OTA2NyAtMjUuNTU5MDUyIDI1LjU1OTA2N2wwIDBjLTE0LjExNTg3OSAwIC0yNS41NTkwNTUgLTExLjQ0MzE5MiAtMjUuNTU5MDU1IC0yNS41NTkwNjd6IiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjwvcGF0aD48ZGVmcz48cmFkaWFsR3JhZGllbnQgaWQ9InAuMyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIGdyYWRpZW50VHJhbnNmb3JtPSJtYXRyaXgoNi4wMTIxNTExNTMzODQ0MyAwLjAgMC4wIDYuMDEyMTUxMTUzMzg0NDMgMC4wIDAuMCkiIHNwcmVhZE1ldGhvZD0icGFkIiBjeD0iMzQuNjI4MDM0MzAzNjIxMzU1IiBjeT0iNDUuNjYyOTkxNzMwNDA3IiBmeD0iMzQuNjI4MDM0MzAzNjIxMzU1IiBmeT0iNDUuNjYyOTkxNzMwNDA3IiByPSI2LjAxMjE1MTI0MTMwMjQ5Ij48c3RvcCBvZmZzZXQ9IjAuMCIgc3RvcC1jb2xvcj0iI2RjZWNkNSI+PC9zdG9wPjxzdG9wIG9mZnNldD0iMS4wIiBzdG9wLWNvbG9yPSIjOTNiYzgxIj48L3N0b3A+PC9yYWRpYWxHcmFkaWVudD48L2RlZnM+PHBhdGggZmlsbD0idXJsKCNwLjMpIiBkPSJtMTgyLjYyOTkzIDI3NC41MzI4bDAgMGMwIC0xNC4xMTU4NzUgMTEuNDQzMTc2IC0yNS41NTkwNTIgMjUuNTU5MDUyIC0yNS41NTkwNTJsMCAwYzYuNzc4Njg2NSAwIDEzLjI3OTcyNCAyLjY5MjgyNTMgMTguMDcyOTgzIDcuNDg2MDg0YzQuNzkzMjQzNCA0Ljc5MzI0MzQgNy40ODYwNjg3IDExLjI5NDI4MSA3LjQ4NjA2ODcgMTguMDcyOTY4bDAgMGMwIDE0LjExNTg3NSAtMTEuNDQzMTc2IDI1LjU1OTA1MiAtMjUuNTU5MDUyIDI1LjU1OTA1MmwwIDBjLTE0LjExNTg3NSAwIC0yNS41NTkwNTIgLTExLjQ0MzE3NiAtMjUuNTU5MDUyIC0yNS41NTkwNTJ6IiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjwvcGF0aD48cGF0aCBzdHJva2U9IiM2NjY2NjYiIHN0cm9rZS13aWR0aD0iMS4wIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2UtbGluZWNhcD0iYnV0dCIgc3Ryb2tlLWRhc2hhcnJheT0iNC4wLDMuMCIgZD0ibTE4Mi42Mjk5MyAyNzQuNTMyOGwwIDBjMCAtMTQuMTE1ODc1IDExLjQ0MzE3NiAtMjUuNTU5MDUyIDI1LjU1OTA1MiAtMjUuNTU5MDUybDAgMGM2Ljc3ODY4NjUgMCAxMy4yNzk3MjQgMi42OTI4MjUzIDE4LjA3Mjk4MyA3LjQ4NjA4NGM0Ljc5MzI0MzQgNC43OTMyNDM0IDcuNDg2MDY4NyAxMS4yOTQyODEgNy40ODYwNjg3IDE4LjA3Mjk2OGwwIDBjMCAxNC4xMTU4NzUgLTExLjQ0MzE3NiAyNS41NTkwNTIgLTI1LjU1OTA1MiAyNS41NTkwNTJsMCAwYy0xNC4xMTU4NzUgMCAtMjUuNTU5MDUyIC0xMS40NDMxNzYgLTI1LjU1OTA1MiAtMjUuNTU5MDUyeiIgZmlsbC1ydWxlPSJldmVub2RkIj48L3BhdGg+PHBhdGggZmlsbD0iIzAwMDAwMCIgZmlsbC1vcGFjaXR5PSIwLjAiIGQ9Im0zNDguNjkzNDIgMTkwLjI3ODczbC0xNDAuMTI1OTggLTE2OS4xMzM4NyIgZmlsbC1ydWxlPSJldmVub2RkIj48L3BhdGg+PHBhdGggc3Ryb2tlPSIjMDAwMDAwIiBzdHJva2Utd2lkdGg9IjIuMCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLWxpbmVjYXA9ImJ1dHQiIGQ9Im0zNDguNjkzNDIgMTkwLjI3ODczbC0xNDAuMTI1OTggLTE2OS4xMzM4NyIgZmlsbC1ydWxlPSJldmVub2RkIj48L3BhdGg+PHBhdGggZmlsbD0iIzAwMDAwMCIgZmlsbC1vcGFjaXR5PSIwLjAiIGQ9Im02Ny42ODQ1MyAxOTAuMjc4NzNsMTQwLjg4MTkgLTE2OS44ODk3NyIgZmlsbC1ydWxlPSJldmVub2RkIj48L3BhdGg+PHBhdGggc3Ryb2tlPSIjNjY2NjY2IiBzdHJva2Utd2lkdGg9IjIuMCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLWxpbmVjYXA9ImJ1dHQiIHN0cm9rZS1kYXNoYXJyYXk9IjguMCw2LjAiIGQ9Im02Ny42ODQ1MyAxOTAuMjc4NzNsMTQwLjg4MTkgLTE2OS44ODk3NyIgZmlsbC1ydWxlPSJldmVub2RkIj48L3BhdGg+PHBhdGggZmlsbD0iIzAwMDAwMCIgZmlsbC1vcGFjaXR5PSIwLjAiIGQ9Im0yNDcuOTE2OCA2OC42NDkwMjVsMCAwYy0zLjI3ODY3MTMgNy4yNjczNDkyIC05LjMwOTk4MiAxMi45MzQ2MDggLTE2Ljc2NzEzNiAxNS43NTUwMzVjLTcuNDU3MTUzMyAyLjgyMDQyNyAtMTUuNzI5Mjk0IDIuNTYyOTk2IC0yMi45OTY2NDMgLTAuNzE1NjY3N2wxMi4zNjIxOTggLTI3LjQwMTU3M3oiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PC9wYXRoPjxwYXRoIGZpbGw9IiMwMDAwMDAiIGZpbGwtb3BhY2l0eT0iMC4wIiBkPSJtMjQ3LjkxNjggNjguNjQ5MDI1bDAgMGMtMy4yNzg2NzEzIDcuMjY3MzQ5MiAtOS4zMDk5ODIgMTIuOTM0NjA4IC0xNi43NjcxMzYgMTUuNzU1MDM1Yy03LjQ1NzE1MzMgMi44MjA0MjcgLTE1LjcyOTI5NCAyLjU2Mjk5NiAtMjIuOTk2NjQzIC0wLjcxNTY2NzciIGZpbGwtcnVsZT0iZXZlbm9kZCI+PC9wYXRoPjxwYXRoIHN0cm9rZT0iIzAwMDAwMCIgc3Ryb2tlLXdpZHRoPSIyLjAiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS1saW5lY2FwPSJidXR0IiBkPSJtMjQ3LjkxNjggNjguNjQ5MDI1bDAgMGMtMy4yNzg2NzEzIDcuMjY3MzQ5MiAtOS4zMDk5ODIgMTIuOTM0NjA4IC0xNi43NjcxMzYgMTUuNzU1MDM1Yy03LjQ1NzE1MzMgMi44MjA0MjcgLTE1LjcyOTI5NCAyLjU2Mjk5NiAtMjIuOTk2NjQzIC0wLjcxNTY2NzciIGZpbGwtcnVsZT0iZXZlbm9kZCI+PC9wYXRoPjxwYXRoIGZpbGw9IiMwMDAwMDAiIGZpbGwtb3BhY2l0eT0iMC4wIiBkPSJtMjIwLjU3NDggNzUuMjU0NTlsMzIuMTg4OTggMGwwIDMzLjgyNjc3NWwtMzIuMTg4OTggMHoiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PC9wYXRoPjxwYXRoIGZpbGw9IiMwMDAwMDAiIGQ9Im0yMzAuNzc3OTIgOTcuNjQzMzRxMCAtMy4yNjU2MjUgMS41NzgxMjUgLTYuMjgxMjVxMS41OTM3NSAtMy4wMzEyNSA0LjE3MTg3NSAtMy4wMTU2MjVxMS42MDkzNzUgLTAuMDQ2ODc1IDIuNjI1IDEuMDkzNzVxMS4wMzEyNSAxLjE0MDYyNSAxLjAzMTI1IDMuNXEwIDMuNDg0Mzc1IC0xLjU5Mzc1IDYuNDY4NzVxLTEuNTc4MTI1IDIuOTg0Mzc1IC00LjE0MDYyNSAyLjk4NDM3NXEtMS42MjUgMCAtMi42NTYyNSAtMS4yNXEtMS4wMTU2MjUgLTEuMjY1NjI1IC0xLjAxNTYyNSAtMy41em0yLjEyNSAtMi44OTA2MjVsNS40NTMxMjUgMHEwLjIzNDM3NSAtMS40MjE4NzUgMC4yMzQzNzUgLTIuMjk2ODc1cTAgLTEuMjUgLTAuNTkzNzUgLTEuOTg0Mzc1cS0wLjU3ODEyNSAtMC43NSAtMS41MzEyNSAtMC43NXEtMi4zOTA2MjUgMCAtMy41NjI1IDUuMDMxMjV6bTUuMTcxODc1IDEuMzkwNjI1bC01LjQ2ODc1IDBxLTAuMTcxODc1IDEuMjUgLTAuMTcxODc1IDEuOTM3NXEwIDEuMzI4MTI1IDAuNTYyNSAyLjE0MDYyNXEwLjU2MjUgMC43OTY4NzUgMS41NDY4NzUgMC43OTY4NzVxMS4xNDA2MjUgMCAyLjA3ODEyNSAtMS4yOTY4NzVxMC45Mzc1IC0xLjMxMjUgMS40NTMxMjUgLTMuNTc4MTI1eiIgZmlsbC1ydWxlPSJub256ZXJvIj48L3BhdGg+PHBhdGggZmlsbD0iIzAwMDAwMCIgZmlsbC1vcGFjaXR5PSIwLjAiIGQ9Im0zNjYuNzY2NDIgMjMzLjkxMDc3bDAgMTI0Ljk0NDg4NSIgZmlsbC1ydWxlPSJldmVub2RkIj48L3BhdGg+PHBhdGggc3Ryb2tlPSIjZmYwMDAwIiBzdHJva2Utd2lkdGg9IjQuMCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLWxpbmVjYXA9ImJ1dHQiIGQ9Im0zNjYuNzY2NDIgMjMzLjkxMDc3bDAgMTAwLjk0NDg4NSIgZmlsbC1ydWxlPSJldmVub2RkIj48L3BhdGg+PHBhdGggZmlsbD0iI2ZmMDAwMCIgc3Ryb2tlPSIjZmYwMDAwIiBzdHJva2Utd2lkdGg9IjQuMCIgc3Ryb2tlLWxpbmVjYXA9ImJ1dHQiIGQ9Im0zNjAuMTU5NSAzMzQuODU1NjVsNi42MDY5MzM2IDE4LjE1MjM3NGw2LjYwNjkwMyAtMTguMTUyMzc0eiIgZmlsbC1ydWxlPSJldmVub2RkIj48L3BhdGg+PHBhdGggZmlsbD0iIzAwMDAwMCIgZmlsbC1vcGFjaXR5PSIwLjAiIGQ9Im0zNDguNjkzNDIgMTkwLjI3ODczbC01NS41NTkwNSAtNjcuNDAxNTgiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PC9wYXRoPjxwYXRoIHN0cm9rZT0iI2ZmMDAwMCIgc3Ryb2tlLXdpZHRoPSI0LjAiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS1saW5lY2FwPSJidXR0IiBkPSJtMzQ4LjY5MzQyIDE5MC4yNzg3M2wtNDAuMjkzNTggLTQ4Ljg4MjI0OCIgZmlsbC1ydWxlPSJldmVub2RkIj48L3BhdGg+PHBhdGggZmlsbD0iI2ZmMDAwMCIgc3Ryb2tlPSIjZmYwMDAwIiBzdHJva2Utd2lkdGg9IjQuMCIgc3Ryb2tlLWxpbmVjYXA9ImJ1dHQiIGQ9Im0zMTMuNDk4IDEzNy4xOTQwOGwtMTYuNjQ0MTY1IC05LjgwNDY4bDYuNDQ3ODQ1NSAxOC4yMDk0OTZ6IiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjwvcGF0aD48cGF0aCBmaWxsPSIjMDAwMDAwIiBmaWxsLW9wYWNpdHk9IjAuMCIgZD0ibTM0OC42OTM0MiAyMjYuNDI0NjhsLTQyLjA0NzI0IDM3Ljc2Mzc5NCIgZmlsbC1ydWxlPSJldmVub2RkIj48L3BhdGg+PHBhdGggc3Ryb2tlPSIjZmY5OTAwIiBzdHJva2Utd2lkdGg9IjQuMCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLWxpbmVjYXA9ImJ1dHQiIGQ9Im0zNDguNjkzNDIgMjI2LjQyNDY4bC0yNC4xOTE1OSAyMS43MjcwOTciIGZpbGwtcnVsZT0iZXZlbm9kZCI+PC9wYXRoPjxwYXRoIGZpbGw9IiNmZjk5MDAiIHN0cm9rZT0iI2ZmOTkwMCIgc3Ryb2tlLXdpZHRoPSI0LjAiIHN0cm9rZS1saW5lY2FwPSJidXR0IiBkPSJtMzIwLjA4NzEzIDI0My4yMzYzM2wtOS4wOTAzOTMgMTcuMDQ0OGwxNy45MTk4MyAtNy4yMTM4Njd6IiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjwvcGF0aD48cGF0aCBmaWxsPSIjMDAwMDAwIiBmaWxsLW9wYWNpdHk9IjAuMCIgZD0ibTMzOC45ODY4OCAzNTguODU1NjVsNTUuNTU5MDUgMGwwIDU0LjExMDIzbC01NS41NTkwNSAweiIgZmlsbC1ydWxlPSJldmVub2RkIj48L3BhdGg+PHBhdGggZmlsbD0iIzAwMDAwMCIgZD0ibTM1NC40MzMxNCAzODUuNzc1NjNsMi4wNjI1IC05Ljg1OTM3NWwxLjY3MTg3NSAwbC0wLjM0Mzc1IDEuNjI1cTAuOTM3NSAtMS4wNDY4NzUgMS42NzE4NzUgLTEuNDM3NXEwLjczNDM3NSAtMC40MDYyNSAxLjYwOTM3NSAtMC40MDYyNXEwLjkwNjI1IDAgMS41MTU2MjUgMC41cTAuNjI1IDAuNDg0Mzc1IDAuODI4MTI1IDEuMzQzNzVxMC43NSAtMC45MjE4NzUgMS41NzgxMjUgLTEuMzc1cTAuODI4MTI1IC0wLjQ2ODc1IDEuNzUgLTAuNDY4NzVxMS4yMzQzNzUgMCAxLjg0Mzc1IDAuNTkzNzVxMC42MjUgMC41NzgxMjUgMC42MjUgMS42NDA2MjVxMCAwLjQ1MzEyNSAtMC4yMTg3NSAxLjVsLTEuMzI4MTI1IDYuMzQzNzVsLTEuNjcxODc1IDBsMS4zNTkzNzUgLTYuNTE1NjI1cTAuMTcxODc1IC0wLjc5Njg3NSAwLjE3MTg3NSAtMS4xNDA2MjVxMCAtMC40ODQzNzUgLTAuMzEyNSAtMC43NXEtMC4yOTY4NzUgLTAuMjgxMjUgLTAuODU5Mzc1IC0wLjI4MTI1cS0wLjc1IDAgLTEuNTMxMjUgMC40NTMxMjVxLTAuNzgxMjUgMC40NTMxMjUgLTEuMjE4NzUgMS4xODc1cS0wLjQyMTg3NSAwLjczNDM3NSAtMC43NSAyLjI2NTYyNWwtMS4wIDQuNzgxMjVsLTEuNjcxODc1IDBsMS4zOTA2MjUgLTYuNjU2MjVxMC4xNDA2MjUgLTAuNjcxODc1IDAuMTQwNjI1IC0wLjk1MzEyNXEwIC0wLjQ4NDM3NSAtMC4yOTY4NzUgLTAuNzgxMjVxLTAuMjk2ODc1IC0wLjI5Njg3NSAtMC43ODEyNSAtMC4yOTY4NzVxLTAuNzE4NzUgMCAtMS41IDAuNDUzMTI1cS0wLjc4MTI1IDAuNDUzMTI1IC0xLjI4MTI1IDEuMjY1NjI1cS0wLjQ4NDM3NSAwLjgxMjUgLTAuNzk2ODc1IDIuMzEyNWwtMC45ODQzNzUgNC42NTYyNWwtMS42NzE4NzUgMHptMTUuNDQ3MDUyIDAuODkwNjI1bDEuNzAzMTI1IDAuMTU2MjVxLTAuMDE1NjI1IDAuNTc4MTI1IDAuMTQwNjI1IDAuODU5Mzc1cTAuMTU2MjUgMC4yOTY4NzUgMC41IDAuNDUzMTI1cTAuNDUzMTI1IDAuMjAzMTI1IDEuMTcxODc1IDAuMjAzMTI1cTEuNTMxMjUgMCAyLjIwMzEyNSAtMC43OTY4NzVxMC40Mzc1IC0wLjUxNTYyNSAwLjc5Njg3NSAtMi4yOTY4NzVsMC4xNzE4NzUgLTAuNzk2ODc1cS0xLjMxMjUgMS4zMjgxMjUgLTIuNzgxMjUgMS4zMjgxMjVxLTEuNSAwIC0yLjUxNTYyNSAtMS4wOTM3NXEtMS4wIC0xLjEwOTM3NSAtMS4wIC0zLjEyNXEwIC0xLjY1NjI1IDAuNzk2ODc1IC0zLjA0Njg3NXEwLjc5Njg3NSAtMS4zOTA2MjUgMS44OTA2MjUgLTIuMDkzNzVxMS4wOTM3NSAtMC43MTg3NSAyLjI1IC0wLjcxODc1cTEuOTM3NSAwIDIuOTg0Mzc1IDEuODQzNzVsMC4zNDM3NSAtMS42MjVsMS41MzEyNSAwbC0xLjk4NDM3NSA5LjUxNTYyNXEtMC4zMTI1IDEuNTYyNSAtMC44NDM3NSAyLjQzNzVxLTAuNTMxMjUgMC44OTA2MjUgLTEuNDg0Mzc1IDEuMzU5Mzc1cS0wLjkzNzUgMC40ODQzNzUgLTIuMTcxODc1IDAuNDg0Mzc1cS0xLjE4NzUgMCAtMi4wNDY4NzUgLTAuMzEyNXEtMC44NDM3NSAtMC4yOTY4NzUgLTEuMjgxMjUgLTAuODkwNjI1cS0wLjQyMTg3NSAtMC41NzgxMjUgLTAuNDIxODc1IC0xLjM0Mzc1cTAgLTAuMjM0Mzc1IDAuMDQ2ODc1IC0wLjV6bTIuMTA5Mzc1IC01LjI1cTAgMS4wMTU2MjUgMC4xODc1IDEuNTE1NjI1cTAuMjgxMjUgMC43MTg3NSAwLjc5Njg3NSAxLjA5Mzc1cTAuNTE1NjI1IDAuMzc1IDEuMTQwNjI1IDAuMzc1cTAuODI4MTI1IDAgMS42NDA2MjUgLTAuNTc4MTI1cTAuODI4MTI1IC0wLjU3ODEyNSAxLjMyODEyNSAtMS43OTY4NzVxMC41IC0xLjIxODc1IDAuNSAtMi4zMTI1cTAgLTEuMjE4NzUgLTAuNjcxODc1IC0xLjkzNzVxLTAuNjcxODc1IC0wLjcxODc1IC0xLjY1NjI1IC0wLjcxODc1cS0wLjYyNSAwIC0xLjIwMzEyNSAwLjMyODEyNXEtMC41NjI1IDAuMzI4MTI1IC0xLjA2MjUgMS4wcS0wLjUgMC42NzE4NzUgLTAuNzUgMS42MDkzNzVxLTAuMjUgMC45Mzc1IC0wLjI1IDEuNDIxODc1eiIgZmlsbC1ydWxlPSJub256ZXJvIj48L3BhdGg+PHBhdGggZmlsbD0iIzAwMDAwMCIgZmlsbC1vcGFjaXR5PSIwLjAiIGQ9Im0yNzIuODQ3NzggODguNzc2OWw1NS41NTkwNSAwbDAgNTQuMTEwMjQ1bC01NS41NTkwNSAweiIgZmlsbC1ydWxlPSJldmVub2RkIj48L3BhdGg+PHBhdGggZmlsbD0iIzAwMDAwMCIgZD0ibTI5OS4yNDE4MiAxMTUuNjk2OWwyLjUxNTYyNSAtMTIuMDQ2ODc1bC00LjQ2ODc1IDBsMC4zMjgxMjUgLTEuNTQ2ODc1bDEwLjcwMzA5NDUgMGwtMC4zMTI1IDEuNTQ2ODc1bC00LjQzNzQ2OTUgMGwtMi41MTU2MjUgMTIuMDQ2ODc1bC0xLjgxMjUgMHoiIGZpbGwtcnVsZT0ibm9uemVybyI+PC9wYXRoPjxwYXRoIGZpbGw9IiMwMDAwMDAiIGZpbGwtb3BhY2l0eT0iMC4wIiBkPSJtMjY3LjQyNzgzIDI1Mi42MTY3OWw1NS41NTkwNSAwbDAgNTQuMTEwMjNsLTU1LjU1OTA1IDB6IiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjwvcGF0aD48cGF0aCBmaWxsPSIjMDAwMDAwIiBkPSJtMjkwLjM2ODc0IDI3OS41MzY4bDIuODQzNzUgLTEzLjU5Mzc1bDguODQzNzUgMGwtMC4zMjgxMjUgMS41NDY4NzVsLTcuMDE1NjI1IDBsLTAuOTA2MjUgNC4zMjgxMjVsNy4xNTYyNSAwbC0wLjMyODEyNSAxLjU0Njg3NWwtNy4xNTYyNSAwbC0xLjI4MTI1IDYuMTcxODc1bC0xLjgyODEyNSAweiIgZmlsbC1ydWxlPSJub256ZXJvIj48L3BhdGg+PHBhdGggZmlsbD0iIzAwMDAwMCIgZmlsbC1vcGFjaXR5PSIwLjAiIGQ9Im0xODcuNDY3MiAtOS40NjQ1NjdsNTUuNTU5MDUgMGwwIDU0LjExMDIzN2wtNTUuNTU5MDUgMHoiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PC9wYXRoPjxwYXRoIGZpbGw9IiMwMDAwMDAiIGQ9Im0yMDkuNzI1MzcgMTEuNzUyMzA2cTAgLTMuNjI1IDIuMDkzNzUgLTUuODc0OTk5NXEyLjEwOTM3NSAtMi4yNTAwMDAyIDUuMTA5Mzc1IC0yLjI1MDAwMDJxMi41MzEyNSAwIDQuMTI1IDEuNjU2MjUwMnExLjYwOTM3NSAxLjY1NjI1IDEuNjA5Mzc1IDQuNDM3NDk5NXEwIDEuOTg0Mzc1IC0wLjc5Njg3NSAzLjY4NzVxLTAuNjA5Mzc1IDEuMjY1NjI1IC0xLjUzMTI1IDIuMTg3NXEtMC45MDYyNSAwLjkyMTg3NSAtMS45Njg3NSAxLjQyMTg3NXEtMS4zOTA2MjUgMC42NzE4NzUgLTIuOTM3NSAwLjY3MTg3NXEtMS42NDA2MjUgMCAtMi45ODQzNzUgLTAuNzgxMjVxLTEuMzI4MTI1IC0wLjc4MTI1IC0yLjAzMTI1IC0yLjE3MTg3NXEtMC42ODc1IC0xLjQwNjI1IC0wLjY4NzUgLTIuOTg0Mzc1em0xLjc5Njg3NSAwLjA5Mzc1cTAgMS4yMDMxMjUgMC40ODQzNzUgMi4yMDMxMjVxMC41IDEuMCAxLjQ4NDM3NSAxLjU3ODEyNXEwLjk4NDM3NSAwLjU2MjUgMi4wNzgxMjUgMC41NjI1cTEuMDQ2ODc1IDAgMS45ODQzNzUgLTAuNXEwLjk1MzEyNSAtMC41IDEuNjg3NSAtMS4zNzVxMC43NSAtMC44OTA2MjUgMS4xODc1IC0yLjE4NzVxMC40Mzc1IC0xLjI5Njg3NSAwLjQzNzUgLTIuNTQ2ODc1cTAgLTIuMDMxMjQ5NSAtMS4xNDA2MjUgLTMuMjM0Mzc0NXEtMS4xNDA2MjUgLTEuMjE4NzUgLTIuODEyNSAtMS4yMTg3NXEtMi4xMjUgMCAtMy43NjU2MjUgMS44MjgxMjVxLTEuNjI1IDEuODI4MTI0NSAtMS42MjUgNC44OTA2MjQ1eiIgZmlsbC1ydWxlPSJub256ZXJvIj48L3BhdGg+PHBhdGggZmlsbD0iIzAwMDAwMCIgZD0ibTIwNC40MjUyIDIxLjc5MDAyNmwwIDBjMCAtMi4wNzg2NzgxIDEuNjg1MTA0NCAtMy43NjM3Nzg3IDMuNzYzNzc4NyAtMy43NjM3Nzg3bDAgMGMwLjk5ODIxNDcgMCAxLjk1NTU1MTEgMC4zOTY1Mzk3IDIuNjYxMzkyMiAxLjEwMjM4NDZjMC43MDU4NDEwNiAwLjcwNTg0NjggMS4xMDIzODY1IDEuNjYzMTc3NSAxLjEwMjM4NjUgMi42NjEzOTQxbDAgMGMwIDIuMDc4Njc4MSAtMS42ODUxMDQ0IDMuNzYzNzgwNiAtMy43NjM3Nzg3IDMuNzYzNzgwNmwwIDBjLTIuMDc4Njc0MyAwIC0zLjc2Mzc3ODcgLTEuNjg1MTAyNSAtMy43NjM3Nzg3IC0zLjc2Mzc4MDZ6IiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjwvcGF0aD48cGF0aCBzdHJva2U9IiMwMDAwMDAiIHN0cm9rZS13aWR0aD0iMS4wIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2UtbGluZWNhcD0iYnV0dCIgZD0ibTIwNC40MjUyIDIxLjc5MDAyNmwwIDBjMCAtMi4wNzg2NzgxIDEuNjg1MTA0NCAtMy43NjM3Nzg3IDMuNzYzNzc4NyAtMy43NjM3Nzg3bDAgMGMwLjk5ODIxNDcgMCAxLjk1NTU1MTEgMC4zOTY1Mzk3IDIuNjYxMzkyMiAxLjEwMjM4NDZjMC43MDU4NDEwNiAwLjcwNTg0NjggMS4xMDIzODY1IDEuNjYzMTc3NSAxLjEwMjM4NjUgMi42NjEzOTQxbDAgMGMwIDIuMDc4Njc4MSAtMS42ODUxMDQ0IDMuNzYzNzgwNiAtMy43NjM3Nzg3IDMuNzYzNzgwNmwwIDBjLTIuMDc4Njc0MyAwIC0zLjc2Mzc3ODcgLTEuNjg1MTAyNSAtMy43NjM3Nzg3IC0zLjc2Mzc4MDZ6IiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjwvcGF0aD48L2c+PC9zdmc+Cgo=" alt="Forces on a simple pendulum, weight resolved into components along and perpendicular to the swing">
+        <p class="figcap">Weight resolves into a component along the path (restoring force) and one perpendicular to it.</p>
+      </div>
+      <div class="step">
+        The weight's component along the swing, <span class="key">−mg sinθ</span>, is the restoring force. By Newton's 2nd law:
+        <div class="mini-formula">a = −g sinθ</div>
+        For small angles (θ ≤ 10°), <span class="key">sinθ ≈ s/L</span>, and arc length s ≈ x, giving:
+        <div class="mini-formula">a = −gx/L = −(2πf)²x</div>
+        Comparing with <span class="key">T = 1/f</span> gives the pendulum period:
+        <div class="mini-formula">T = 2π√(l/g)</div>
+      </div>
+      <div class="law"><b>Finding g:</b> squaring gives <span class="key">T² = 4π²(l/g)</span> — a graph of T² against l is a straight line through the origin with gradient <span class="key">4π²/g</span>.</div>
+    </div>
+
+    <div>
+      <h2 class="sec">Mass–spring systems</h2>
+      <p>The same logic applies to a mass on a spring, combining three equations:</p>
+      <div class="mini-formula">F = ma &nbsp;&nbsp; F = ke &nbsp;&nbsp; a = −(2πf)²x</div>
+      <div class="step">
+        Substituting gives:
+        <div class="mini-formula">−ke = −m(2πf)²x</div>
+        Extension <i>e</i> and displacement <i>x</i> are both lengths and cancel, rearranging to:
+        <div class="mini-formula">T = 2π√(m/k)</div>
+      </div>
+      <div class="law"><b>Key difference:</b> unlike the pendulum, the spring's period depends on <i>mass</i> (not gravity) — this is why mass–spring oscillators can be used to measure mass in space, where weighing scales don't work.</div>
+
+      <h2 class="sec">Quick contrast</h2>
+      <ul class="tight">
+        <li><b>Pendulum</b>: T depends on l and g only — independent of mass and amplitude (for small angles).</li>
+        <li><b>Spring</b>: T depends on m and k only — independent of g and amplitude.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="essentials">
+    <h2 class="sec">Exam essentials</h2>
+    <div class="ess-grid">
+      <div>
+        <h4>Key equations</h4>
+        <ul>
+          <li><span class="key">T = 2π√(l/g)</span> — pendulum.</li>
+          <li><span class="key">T = 2π√(m/k)</span> — mass–spring.</li>
+          <li>Small-angle condition: θ ≤ 10° (≈0.17 rad).</li>
+        </ul>
+      </div>
+      <div>
+        <h4>What each depends on</h4>
+        <ul>
+          <li>Pendulum: length &amp; g only — <i>not</i> mass or amplitude.</li>
+          <li>Spring: mass &amp; spring constant only — <i>not</i> g or amplitude.</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Common slips</h4>
+        <ul>
+          <li>Pendulum formula only holds within the small-angle approximation.</li>
+          <li>On a T²–l graph, the gradient is <span class="key">4π²/g</span>, not g itself.</li>
+          <li>Don't confuse extension <i>e</i> with displacement <i>x</i> — equal in magnitude here, but conceptually different quantities.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <footer class="foot">
+    <span>Mr Toogood's Physics — alevelphysicsnotes.com</span>
+    <span>Quick-revision summary · see full notes page for worked examples</span>
+  </footer>
+
+</div>
+
+</body>
+</html>

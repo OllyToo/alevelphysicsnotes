@@ -1,0 +1,222 @@
+{% extends "base.html" %}
+
+{% block title %}Newton's laws of motion{% endblock %}
+{% block page_h1 %}Newton's laws of motion{% endblock %}
+
+{% block meta_description %}A Level Physics notes and worked examples to help students with their exams and learning. This topic describes Newton's laws of motion and how to apply them.{% endblock %}
+{% block meta_keywords %}Newton, laws of motion, inertia, balanced forces, equal and opposite, action-reaction, acceleration, force, resultant force, worked examples, exam questions, A level, physics{% endblock %}
+
+{% block extra_head %}
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/quiz.css') }}">
+{% endblock %}
+
+{% block page_boxes %}
+		<a href="#1"><button class="button">Newton's 1st Law</button></a>
+		<a href="#2"><button class="button">Newton's 2nd Law</button></a>
+		<a href="#3"><button class="button">Newton's 3rd Law</button></a>
+		<a href="#4"><button class="button">The three laws at a glance</button></a>
+		<a href="#5"><button class="button">Worked example</button></a>
+		<a href="#6"><button class="button">Test yourself</button></a>
+{% endblock %}
+
+{% block spec %}
+	<div id="spec">
+		<p class="spec_ref"><b>3.4.1.5 Newton's laws of motion</b></p>
+
+		<p class="spec_box">Knowledge and application of the three laws of motion in appropriate situations.</p>
+		<p class="spec_box">$F = ma$ for situations where the mass is constant.</p>
+	</div>
+{% endblock %}
+
+{% block content %}
+
+		<section class="top_section" id="1">
+			<h3>Newton's 1st Law</h3>
+
+			<p>What keeps something moving once it's started? It's tempting to say a moving object has kinetic energy, so energy must be causing the motion, but where did that energy come from in the first place? Imagine throwing a ball: the force from your arm starts it moving, but that force disappears the instant it leaves your hand. If forces cause motion, shouldn't the ball stop moving as soon as the force does?</p>
+
+			<figure>
+				<img src="{{ url_for('static', filename='images/mechanics/galileo_thought_experiment.svg') }}" alt="Galileo's thought experiment with a ball rolling down slopes of decreasing steepness" class="size1000">
+				<figcaption><b>Figure 1:</b>&nbsp;Galileo's thought experiment: a ball rolled down one slope always rises to roughly the same height on the other, however shallow it is.</figcaption>
+			</figure>
+
+			<p>Galileo explored this with a thought experiment: imagine rolling a ball down a slope, with no friction anywhere. It always rises to roughly the same height on the far side, no matter how steep or shallow that far slope is. Make the far slope shallower, and the ball has to travel further to reach that height. Make it perfectly flat, and the ball never reaches that height at all; it just keeps rolling, forever, at a constant velocity.</p>
+			<p>This leads to the conclusion that forces are needed to <i>change</i> motion, not to sustain it; once a force has caused an object to start moving, it will carry on moving unless something acts to stop it. This is usually hard to notice in everyday life, since friction and air resistance are almost always present, quietly acting as that "something". This is the idea behind Newton's 1st law of motion:</p>
+
+			<p class="equation">Every body continues in its state of rest, or of uniform motion in a straight line, unless acted on by some external resultant force.</p>
+
+			<p>When an object moves at constant velocity, or is at rest, the forces acting on it must sum to zero. It's sometimes necessary to resolve these forces into horizontal and vertical components to check this, exactly as with the equilibrium problems met earlier in <a href="{{ url_for('statics') }}">Statics</a>; Newton's 1st law is really just an extension of that same idea of balanced forces, now applied to moving objects as well as stationary ones.</p>
+
+			<div class="callout callout-mistake">
+				<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+				<p>"Balanced forces" does not mean "no motion" &mdash; it means <b>no change</b> in motion. An object moving in a straight line at a constant speed has balanced forces acting on it, just as much as an object sitting still. Don't assume balanced forces implies an object must be at rest.</p>
+			</div>
+			<p>This law also defines what a force actually <i>does</i>: it causes acceleration. Because of this, the law is sometimes called the <b>law of inertia</b>, inertia being an object's reluctance to change its state of motion, whether that means starting to move, stopping, or changing direction. A body with a large mass needs a larger force to produce the same change in velocity as a body with a small mass, so an object's mass is really just a measure of its inertia.</p>
+			<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>	
+		</section>
+	<br>
+	<br>
+	<hr>
+		<section id="2">
+			<h3>Newton's 2nd Law</h3>
+			<p>The 2nd law can be stated as:</p>
+			<p class="equation">The rate of change of momentum of a body is directly proportional to the resultant external force acting on it, and takes place in the direction of that force.</p>
+
+			<p>This defines the idea of a <b>resultant force</b>, the overall force left over once every other force acting on an object has been combined. When the resultant force on an object is not zero, it will accelerate. Looking at this mathematically, we can derive a familiar equation from the law above:</p>
+			<div class="formula">
+				$$\large F\propto \frac{\mathrm{d} }{\mathrm{d} t}\left ( mv \right )$$
+			</div>
+			<p>where $F$ is the resultant force, and $\frac{\mathrm{d} }{\mathrm{d} t}\left ( mv \right )$ is the rate of change of momentum. Turning this into an equation means introducing a constant of proportionality, $k$:</p>
+			<div class="formula">
+				$$\large F= k \frac{\mathrm{d} }{\mathrm{d} t}\left ( mv \right )$$
+			</div>
+			<p>The unit of force is defined so that one unit accelerates a mass of one kilogram by one metre per second squared, which makes $k=1$ (and dimensionless, so it needs no units of its own). Considering only situations where the mass stays constant:</p>
+			<div class="formula">
+				$$\large F= m\frac{\mathrm{d}v }{\mathrm{d} t}$$
+			</div>
+			<p>Since $\frac{\mathrm{d}v }{\mathrm{d} t}$ is acceleration, this gives the familiar equation for the second law:</p>
+			<div class="formula">
+				$$\large F=ma$$
+			</div>
+			<p>It's worth remembering that $F$ here is always the <i>resultant</i> force, not any single force acting on the object; it's essential to identify every force acting on a body, often with a free-body diagram, before applying this equation.</p>
+
+			<div class="callout callout-mistake">
+				<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+				<p>The $F$ in $F=ma$ is always the <b>resultant</b> force, never a single individual force acting on the object. If several forces act on a body, they must be combined (added as vectors, accounting for direction) before this equation can be used. Substituting just one applied force, such as thrust or driving force alone, without accounting for opposing forces like friction or air resistance, is a very common source of error.</p>
+			</div>
+			<p>One of the most common applications of the second law is finding an object's weight, since weight is simply the resultant force due to gravity acting on a mass:</p>
+			<div class="formula">
+				$$\large W=mg$$
+			</div>
+			<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>	
+		</section>
+	<br>
+	<br>
+	<hr>
+		<section id="3">
+			<h3>Newton's 3rd Law</h3>
+			<p>You may know this law as "every action has an equal and opposite reaction", but that phrasing is easy to misunderstand. A more precise statement is:</p>
+			<p class="equation">If a body A exerts a force on a body B, then B exerts an equal and oppositely directed force on A.</p>
+			<p>Whenever one force exists, a second one arises alongside it. These are called <b>Newton pairs</b>, or action-reaction pairs, and they always act on two <i>different</i> bodies, never on the same one.</p>
+
+			<figure>
+				<img src="{{ url_for('static', filename='images/mechanics/newton_pair_book_on_table.svg') }}" alt="a book resting on a table, showing the weight and normal contact force acting on the book, and the true Newton pair of contact forces between the book and the table" class="size800">
+				<figcaption><b>Figure 2:</b>&nbsp;The weight and normal contact force acting on the book are <i>not</i> a Newton pair; the true pair is the two contact forces between the book and the table.</figcaption>
+			</figure>
+
+			<p>A common mistake is to assume that any two equal and opposite forces acting on the same object must be a Newton pair, such as an object's weight and the normal contact force supporting it. They aren't: both of those forces act on the <i>same</i> body, so they can't be a Newton pair, they simply happen to be balanced, as in Newton's 1st law. Use this checklist to identify genuine Newton pairs:</p>
+			<ol class="page_list">
+			<li>They're equal in size, along the same line of action.</li>
+			<li>They act on two <i>different</i> bodies, never the same one; otherwise, they'd simply cancel out and nothing would ever happen.</li>
+			<li>They're always the same <i>type</i> of force. In the book-on-table example, both forces in the true pair are contact forces; weight, by contrast, is a gravitational force, so it can never be part of a Newton pair with a contact force.</li>
+			</ol>
+
+			<div class="callout callout-mistake">
+				<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+				<p>An object's weight and the normal contact force supporting it are <b>not</b> a Newton pair, even though they're equal and opposite &mdash; both act on the <i>same</i> body (the book), so they're just balanced forces under Newton's 1st law. A genuine Newton pair must satisfy all three checklist points above: equal magnitude and same line of action, acting on <i>different</i> bodies, and the <i>same type</i> of force. Miss any one of these and it isn't a real Newton pair.</p>
+			</div>
+			<p>A useful test case is a person standing in a stationary lift, where the only forces acting on the person are their weight, $W$, and the contact force from the floor, $N$; here, $W=N$. If the lift accelerates, there must be a resultant force acting on the person, so $N$ and $W$ can no longer be equal, which confirms they were never a Newton pair to begin with, just two forces that happened to balance while the lift was still.</p>
+			<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+		</section>
+	<br>
+	<br>
+	<hr>
+		<section id="4">
+			<h3>The three laws at a glance</h3>
+
+			<div>
+			<table class="center" style="width: 95%">
+				<tr>
+					<th></th>
+					<th><b>In short</b></th>
+					<th><b>Key idea</b></th>
+				</tr>
+				<tr>
+					<td><b>1st Law</b></td>
+					<td>An object's velocity won't change unless a resultant force acts on it.</td>
+					<td>Balanced forces &#8594; constant velocity (or rest)</td>
+				</tr>
+				<tr>
+					<td><b>2nd Law</b></td>
+					<td>A resultant force causes an object to accelerate.</td>
+					<td>$F=ma$</td>
+				</tr>
+				<tr>
+					<td><b>3rd Law</b></td>
+					<td>Forces always come in equal, opposite, same-type pairs, acting on two different bodies.</td>
+					<td>Newton pairs never cancel, since they act on different objects</td>
+				</tr>
+			</table>
+			</div>
+			<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+		</section>
+	<br>
+	<br>
+	<hr>
+		<section id="5">
+			<h3>Worked example</h3>
+
+			<p>A car is designed to break the land speed record. At one instant of its motion, the thrust exerted on the car is 230 kN, and its mass at this instant is 11 000 kg.</p>
+
+			<div>
+				<ol class="page_list" type="A">
+					<li>The acceleration of the car at this instant is 2.9 m s<sup>−2</sup>. Calculate the air resistance acting on the car.</li>
+					<p class="workex">The resultant force is found first, using Newton's 2nd law:</p>
+					<div class="formula">
+						$$F_{resultant}=ma=11\,000\times2.9=\quantity{31\,900}{N}$$
+					</div>
+					<p class="workex">The resultant force is the difference between the two horizontal forces acting on the car, the thrust driving it forward and the air resistance opposing it:</p>
+					<div class="formula">
+						$$F_{resultant}=\text{thrust}-\text{air resistance}$$
+					</div>
+					<div class="formula">
+						$$\text{air resistance}=230\,000-31\,900=\quantity{1.98\times10^{5}}{N}$$
+					</div>
+
+					<li>The thrust on the car remains constant as its speed increases. Explain why the acceleration decreases, and eventually reaches zero.</li>
+					<p class="workex">Air resistance increases as speed increases, so as the car speeds up, the resultant force (thrust minus air resistance) gets smaller, and by Newton's 2nd law, the acceleration decreases along with it. Eventually, the car reaches a speed at which air resistance exactly equals the thrust; at that point the resultant force is zero, so the acceleration is also zero, and the car has reached its maximum possible speed. This is exactly the same idea as the <a href="{{ url_for('projectiles') }}">terminal velocity</a> reached by a falling object once drag balances weight.</p>
+
+					<div class="callout callout-mistake">
+						<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+						<p>"Maximum speed" doesn't mean the driving force disappears or drops to zero &mdash; the thrust stays exactly the same throughout. What changes is the <b>resultant</b> force: as air resistance grows to match the constant thrust, the resultant (and therefore the acceleration) shrinks to zero, even though the car is still being driven forwards at full thrust. It's a common mistake to think a vehicle at its top speed must have "run out of force" somehow, rather than reaching a balance between two forces that are both still fully present.</p>
+					</div>
+				</ol>
+			</div>
+
+			<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+		</section>
+	<br>
+	<br>
+	<hr>
+		<section id="6">
+			<h3>Test yourself</h3>
+			<p>Try the questions below to check your understanding of this topic. Numerical questions use different numbers each time, so you can attempt them more than once.</p>
+			<div id="quiz-root"></div>
+			<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+		</section>
+
+	{% endblock %}
+
+	{% block resources_heading %}One page summary{% endblock %}
+
+{% block resources %}
+	<li><a href="{{ url_for('static', filename='summaries/mechanics/newtonlaws_summary.html') }}" target="_blank"><i class="fas fa-file-alt"></i> Printable revision sheet</a></li>
+{% endblock %}
+
+{% block prev_link %}
+	<a href="{{ url_for('projectiles') }}"><i class="fas fa-chevron-circle-left"></i><span class="nav_link">Previous topic</span></a>
+{% endblock %}
+
+{% block next_link %}
+	<a href="{{ url_for('energy') }}"><span class="nav_link">Next topic</span><i class="fas fa-chevron-circle-right"></i></a>
+{% endblock %}
+
+{% block extra_scripts %}
+	<script src="{{ url_for('static', filename='js/quiz.js') }}"></script>
+	<script src="{{ url_for('static', filename='quizzes/newtonlaws_questions.js') }}"></script>
+	<script>
+		new PhysicsQuiz(document.getElementById('quiz-root'), newtonLawsQuestions, {
+			storageKey: 'newtonlaws'
+		});
+	</script>
+{% endblock %}

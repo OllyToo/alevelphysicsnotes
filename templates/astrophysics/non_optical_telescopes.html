@@ -1,0 +1,258 @@
+{% extends "base.html" %}
+
+{% block title %}Non-optical telescopes{% endblock %}
+{% block page_h1 %}Non-optical telescopes{% endblock %}
+
+{% block meta_description %}A Level Physics notes and worked examples to help students with their exams and learning. After learning about the structure of optical telescopes we move on to look at radio telescopes and other methods of viewing the cosmos.{% endblock %}
+{% block meta_keywords %}radio telescopes, radio, telescope, x-ray, infrared, infra-red, ultra violet, gamma, interferometer, collecting power, worked examples, exam questions, A level, physics{% endblock %}
+
+{% block extra_head %}
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/quiz.css') }}">
+{% endblock %}
+
+{% block page_boxes %}
+	<a href="#1"><button class="button">Radio telescopes</button></a>
+	<a href="#2"><button class="button">Radio telescope arrays</button></a>
+	<a href="#3"><button class="button">InfraRed Telescopes</button></a>
+	<a href="#4"><button class="button">Ultra-Violet Telescopes</button></a>
+	<a href="#5"><button class="button">X-Ray Telescopes</button></a>
+	<a href="#6"><button class="button">Gamma Ray Telescopes</button></a>
+	<a href="#7"><button class="button">Test yourself</button></a>
+{% endblock %}
+
+{% block spec %}
+<div id="spec">
+	<p class="spec_ref"><b>3.9.1.4 Advantages of large diameter telescopes</b></p>
+	<p class="spec_box">Minimum angular resolution of telescope.</p>
+	<p class="spec_box">Rayleigh criterion,</p>
+	<div class="formula">$$\theta \approx \frac{\lambda}{D}$$</div>
+	<p class="spec_box">Collecting power is proportional to <i>diameter<sup>2</sup></i>.</p>
+	<p class="spec_box">Students should be familiar with the rad as the unit of angle.</p>
+	<p class="spec_box">Comparison of the eye and CCD as detectors in terms of quantum efficiency, resolution, and convenience of use.</p>
+	<p class="spec_box">No knowledge of the structure of the CCD is required.</p>
+	<p class="spec_box"><b>3.9.1.3 Single dish radio telescopes, I-R, U-V and X-ray telescopes</b></p>
+	<p class="spec_box">Similarities and differences of radio telescopes compared to optical telescopes. Discussion should include structure, positioning and use, together with comparisons of resolving and collecting powers.</p>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<section class="top_section" id="1">
+	<h3>Radio telescopes</h3>
+	<p>Until the 1930&rsquo;s, all astronomical observations had been made in the visible region of the electromagnetic spectrum, although some scientists had predicted that some objects in space should produce a continuous spectrum beyond the visible, no one had observed them. The discovery of extraterrestrial radio sources was made by accident by Karl Jansky who was working for the famous Bell Laboratories in 1933. He was investigating a source of radio interference in short-wave radio transmissions across the Atlantic when he discovered that the noise was coming from the direction of the centre of the Milky way, in the constellation Sagittarius. The first purpose built radio-telescope for observing radio sources emanating from space was in 1937 and since then the field of radio astronomy has become a fundamental area of research.</p>
+	<p>Most radio telescopes are based around a large parabolic collecting dish, usually made from metal sheet or a wire mesh. An aerial or receiver is placed at the focus of the dish which collects the signal and sends it to be processed, usually by a computer.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/radio_telescope_flow_diagram.svg') }}" alt="flow diagram showing the operation of a radio telescope" class="size700">
+		<figcaption><b>Figure 1:</b>&nbsp;A radio telescope usually consists of a large parabolic dish connected to a tuner and, importantly, a computer.</figcaption>
+	</figure>
+	<p>Unlike optical telescopes, which view a range of wavelengths, radio telescopes view one wavelength at a time, and build up a contour map of the intensity of each wavelength. The image below shows a radio contour map of the M51 galaxy overlaid on the optical image of the galaxy taken by the HST. The radio signals are being measured at a wavelength of <span>$\quantity{8}{cm}$</span>.</p>
+	<figure>
+		<a href="https://arxiv.org/pdf/1001.5230.pdf" target="_blank"><img src="{{ url_for('static', filename='images/astrophysics/radio_map_of_m51.svg') }}" alt="Radio map of Galaxy M51" class="size500"></a>
+		<figcaption><b>Figure 2:</b>&nbsp;Radio image of galaxy M51 overlaid on the optical image of the same galaxy.</figcaption>
+	</figure>
+	<p>Radio telescopes typically observe signals between <span>$\quantity{30}{MHz}$</span> and <span>$\quantity{600}{GHz}$</span>, which corresponds to wavelengths from <span>$\quantity{10}{m}$</span> to <span>$\quantity{0.5}{mm}$</span>. However, different telescopes will be designed to listen to more specific bands of wavelengths, for example the <span>$\quantity{21}{cm}$</span> Hydrogen line is regularly used for observations both within and without our own galaxy. Although these devices are called radio telescopes, they are designed to observe signals in both the radio, and the microwave part of the electromagnetic spectrum.</p>
+	<p>As radio signals are generally made by quite cool, low energy objects, they tend not to vary too much over time which makes them suitable for extended observations. However, they can also be very quiet signals, which can be disrupted by terrestrial noise from mobile telephones, T.V. and radio broadcasts as well as microwave ovens.</p>
+	<p>Just like optical reflectors, larger dishes are desirable. They enable fainter signals to be detected as the collecting power of the dish is proportional to the square of its diameter. The size of radio dishes and the need for radio quiet means that they tend to be built away from centers of habitation.</p>
+	<p>As radio sources are not obscured by sunlight, unlike the visible light from stars, radio telescopes can operate 24 hours a day, and can even be used when it is cloudy if the wavelength being observed is not absorbed by water in the clouds.</p>
+	<p>However, as the wavelengths being observed are some much longer than visible light, the minimum angular resolution of most radio telescopes is very poor. For example, a simple reflecting telescope for amature use might have a primary mirror with a diameter of $\quantity{0.15}{m}$, which would have a minimum angular resolution, when viewing green light with a wavelength of <span>$\quantity{300\times 10^{-9}}{m}$</span> of:</p>
+	<div class="formula">$$\theta=\frac{\quantity{300\times 10^{-9}}{m}}{\quantity{0.15}{m}}=\quantity{2.0\times 10^{-6}}{rad}$$</div>
+	<p>Whereas the much larger Lovell telescope at Jodrell bank which has a diameter of <span>$\quantity{76}{m}$</span>, and can be used for observing the <span>$\quantity{21}{cm}$</span> hydrogen line, has a minimum angular resolution of:</p>
+	<div class="formula">$$\theta=\frac{\quantity{21}{cm}}{\quantity{76}{m}}=\quantity{2.8\times 10^{-3}}{rad}$$</div>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>A telescope's raw size doesn't tell you its resolving power on its own &mdash; wavelength matters just as much. In the comparison below, the huge Lovell telescope actually has a <i>worse</i> (larger) minimum angular resolution than a small amateur telescope, purely because it's observing a much longer wavelength.</p>
+	</div>
+	<p>It is important to recognise here that the larger the minimum angular resolution of the telescope the <b>less</b> detail it can see. So the Lovell telescope in this example has a minimum angular resolution 1000 times smaller so the smallest detail it can resolve, will, correspondingly, be 1000 times smaller in size. Another way of thinking about it is that the Lovell telescope would have to have a diameter 1000 times greater, <span>$\quantity{76}{km}$</span> to achieve the same minimum angular resolution.</p>
+	<figure>
+		<a href="https://commons.wikimedia.org/wiki/File%3AGMRT_antenna_at_sunset.jpg" target="_blank"><img src="{{ url_for('static', filename='images/astrophysics/mesh_radio_telescope.svg') }}" alt="The Giant metrewave Radio telescope (GMRT)" class="size500"></a>
+		<figcaption><b>Figure 3:</b>&nbsp;The Giant Metrewave Radio Telescope in India uses a mesh rather than a solid dish.</figcaption>
+	</figure>
+	<p>Many radio telescopes are made from wire meshes instead of a metal sheet, such as the Giant Metrewave Radio Telescope in the picture above. This had advantages in that the dish can be much lighter. These mesh telescopes still work by reflecting signals, but in this case signal is only reflected by the mesh if the gaps between the mesh are less than <span>$\frac{\lambda}{20}$</span>, where <span>$\lambda$</span> is the wavelength being observed by the telescope. If the mesh size is larger than this the signal is diffracted rather than reflected onto the aerial.</p>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>The mesh-gap threshold is $\frac{\lambda}{20}$, not $\lambda$ or some other fraction &mdash; this specific number is worth remembering precisely if a question asks you to calculate whether a given mesh will work effectively as a reflector for a given wavelength.</p>
+	</div>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/maximum_mesh_size.svg') }}" alt="maximum mesh size of a radio telescope" class="size400">
+		<figcaption><b>Figure 4:</b>&nbsp;If the gaps in the mesh are larger than <span>$\frac{\lambda}{20}$</span> then significant diffraction effects will occur.</figcaption>
+	</figure>
+	<p>This relation also means that the exact parabolic shape of the dish is not so crucial. Small deviations from the perfect shape have a much smaller effect. In fact, if the imperfection is less than <span>$\frac{\lambda}{20}$</span> then no significant diffraction effects will occur.</p>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="2">
+	<h3>Radio telescope arrays</h3>
+	<p>It is possible to link together several radio dishes into an array, and combine the signals that they receive. This has the same effect as increasing the diameter of the telescope, which leads to an improved minimum angular resolution and collecting power. The picture below shows the Very Large Array in the USA which comprises of 27 dishes each with a diameter of <span>$\quantity{25}{m}$</span>. The dishes can be arranged to give an effective diameter of over <span>$\quantity{30}{km}$</span>, and can be combined with radio telescopes on the other side of the planet of further increase the diameter of the aperture.</p>
+	<figure>
+		<a href="https://commons.wikimedia.org/wiki/File%3AKarl_G._Jansky_Very_Large_Array.jpg" target="_blank"><img src="{{ url_for('static', filename='images/astrophysics/very_large_array.svg') }}" alt="Karl Jansky Very Large Array" class="size600"></a>
+		<figcaption><b>Figure 5:</b>&nbsp;The Very Large Array in The USA.</figcaption>
+	</figure>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>The improved resolution of a radio telescope array does <b>not</b> come from simply adding up the collecting area of each dish &mdash; it comes from the <em>baseline</em>, the distance between the dishes, analysed through interferometry. A wider-spaced array of small dishes can out-resolve a more tightly-packed array with the same total collecting area, because it's the separation that sets the effective diameter for resolution purposes.</p>
+	</div>
+	<p>This increased resolution does not come from the sum of the size of each disk, but rather from clever application of diffraction effects and analysis of the diffraction pattern created by the signal arriving at different dishes at slightly different times as it moves overhead, as in the diagram below. When the object is directly overhead, the signals arrive at the two dishes at the same time, and they are in phase. As the Earth rotates the object appears to move over head, and the signal arrives at the dishes out of phase and a diffraction pattern is built up. The greater the distance between telescopes, the longer the baseline of the telescope and the greater the resolution of the telescope. This technique is known as interferometry, and although it is beyond the scope of this course, it is worth knowing about as it is such a fundamental part of modern radio astronomy.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/astrophysics/radio_telescope_baseline.svg') }}" alt="Large baseline array telescope diagram" class="size600">
+		<figcaption><b>Figure 6:</b>&nbsp;Using long baseline arrays radio telescope dishes a long distance apart can be used to produce much higher resolution images.</figcaption>
+	</figure>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="3">
+	<h3>InfraRed Telescopes</h3>
+	<p>Infrared telescopes function in a very similar way to reflecting telescopes used to observe visible light. Incoming infrared waves are reflected by a paraboloid primary mirror onto a smaller secondary mirror which focusses the rays onto a detector which records the image. One unique problem of IR telescopes is that they can produce their own IR radiation from their heat, so must cooled to very low temperatures.</p>
+	<div class="callout callout-definition">
+		<p class="callout-label"><i class="fas fa-lightbulb"></i> Worth remembering</p>
+		<p>IR telescopes must be cooled because any warm object &mdash; including the telescope itself &mdash; emits its own IR radiation. Without cooling, the telescope's own heat would swamp the faint IR signal it's trying to detect from space. This is a different problem from the atmospheric absorption issue described below; both apply to IR telescopes, but for different reasons.</p>
+	</div>
+	<p>Water vapour in the Earth&rsquo;s atmosphere absorbs some of the incoming IR radiation, which limits the places where IR telescopes can be used for scientific measurement. IR telescopes are usually built very high up on mountains or in very dry areas like deserts to avoid this problem. Some are placed on balloons, in planes (e.g. SOFIA) or even into orbit to get clearer images.</p>
+	<p>IR telescopes are used to observe objects that are too cool to be observed in shorter wavelengths of radiation. This includes planets, some nebulae and brown dwarf stars. It allows astronomers to measure the temperature of astronomical bodies and judge their composition by how much IR radiation they absorb. It also allows us to view light from the early universe that has only just reached the Earth, which was originally in the visible part of the spectrum, but has since &lsquo;redshifted&rsquo; into the IR part of the spectrum.</p>
+	<br>
+	<div>
+		<table class="center">
+			<tr>
+				<th class="evenspread">Advantages</th>
+				<th class="evenspread">Disadvantages</th>
+			</tr>
+			<tr>
+				<td>As IR radiation has a longer wavelength, the mirrors used in IR telescopes don&rsquo;t need to be as perfectly shaped as those in visible telescopes.</td>
+				<td>IR telescopes have to be kept at very cool temperatures, which can be very difficult and costly, especially if they are in hot locations such as deserts.</td>
+			</tr>
+			<tr>
+				<td>IR astronomy allows for observations to be made that cannot be made with other parts of the E.M. spectrum.</td>
+				<td>Can only be used in very specific types of place (high altitude and dry).</td>
+			</tr>
+			<tr>
+				<td>IR telescopes can be much smaller than radio telescopes to have the same resolving power.</td>
+				<td>IR telescopes have lower resolving powers than those of optical telescopes of the same size.</td>
+			</tr>
+		</table>
+	</div>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="4">
+	<h3>Ultra-Violet Telescopes</h3>
+	<p>U-V telescopes work in a very similar way to optical and IR refracting telescopes. Incoming rays are reflected by a paraboloid mirror either directly onto a detector or onto a secondary mirror which directs them onto detector. Given that the wavelength of U-V light is smaller than that of visible and IR light, there is even less room for imperfections and the mirror must be even more perfectly shaped.</p>
+	<p>Much like IR radiation, U-V radiation is absorbed by moisture in the Earth&rsquo;s atmosphere and as such U-V telescopes must be placed in orbit to make observations. U-V telescopes can make observations of hot and energetic objects that don&rsquo;t emit visible light. This is allows a more detailed study of hot stars, the processes of their formation and the centres of galaxies, for example.</p>
+	<div>
+		<table class="center">
+			<tr>
+				<th class="evenspread">Advantages</th>
+				<th class="evenspread">Disadvantages</th>
+			</tr>
+			<tr>
+				<td>Can detect objects not visible at other wavelengths.</td>
+				<td>U-V telescopes need to be placed in orbit to make observations.</td>
+			</tr>
+			<tr>
+				<td>Ultra-Violet telescopes have higher resolving powers than optical telescopes of the same size.</td>
+				<td>U-V telescopes must have mirrors with even smaller impurities than acceptable for optical telescopes.</td>
+			</tr>
+			<tr>
+				<td>U-V telescopes are much smaller than radio telescopes for the same resolving power.</td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>Notice a pattern across this page: radio (long wavelength) telescopes need to be huge to achieve decent resolution, while IR, UV, X-ray and gamma-ray telescopes (all much shorter wavelengths) can be far smaller for the <b>same</b> resolving power. This all comes from the same relationship, $\theta\approx\frac{\lambda}{D}$ &mdash; a shorter $\lambda$ needs a smaller $D$ to reach the same $\theta$. It's worth connecting this single equation to the qualitative comparisons made throughout this page, rather than memorising each comparison separately.</p>
+	</div>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="5">
+	<h3>X-Ray Telescopes</h3>
+	<p>The usual structure of a reflecting telescope used for other wavelengths would not work for X-rays as they would simply pass through or be absorbed by a paraboloid reflector. X-rays will only deflect off a mirror if they only graze its surface, so X-ray telescopes must use multiple mirrors at slightly increasing shallow angles to gradually deflect the X-rays onto a detector. This means X-ray telescopes must be several metres long to accommodate for this long focal length. The detectors used can include modified Geiger counters, fine wire meshes or very sensitive CCDs.</p>
+	<p>X-rays are unable to pass through Earth&rsquo;s atmosphere so telescopes must be placed on satellites in orbit. X-ray telescopes are used to study areas such as the distribution of hot gasses between galaxies and supernova remnants which would be otherwise unobservable. Studying X-ray images can also help us to understand the age, composition and expansion rate of the universe.</p>
+	<div>
+		<table class="center">
+			<tr>
+				<th class="evenspread">Advantages</th>
+				<th class="evenspread">Disadvantages</th>
+			</tr>
+			<tr>
+				<td>X-ray telescopes can observe otherwise unobservable objects.</td>
+				<td>X-ray telescopes need to be placed in orbit to capture X-rays.</td>
+			</tr>
+			<tr>
+				<td>X-ray telescopes can be made much smaller than radio telescopes for the same resolving power.</td>
+				<td>Need to be built several metres long due to long focal length.</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>X-ray telescopes generally have much lower collecting powers than other types of telescope.</td>
+			</tr>
+		</table>
+	</div>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="6">
+	<h3>Gamma Ray Telescopes</h3>
+	<p>Much like X-rays, gamma rays are very difficult to focus as they pass through mirrors unless they are at a very shallow angle. But Gamma rays are so energetic that even the method used to focus X-rays would be impractical as the mirrors would have to be at incredibly shallow angles. As such gamma ray telescopes don&rsquo;t focus gamma rays. Gamma ray telescopes use various methods to collect gamma ray data from one are of the sky.</p>
+	<p>Some telescopes use collimators, a honeycomb of tubes made from materials that gamma rays cannot pass through. Only gamma rays coming from a certain part of the sky will be able to pass through the tubes without colliding and being absorbed by the walls to reach the detector.</p>
+	<p>Some telescopes use coded aperture masks. These are patterns made from materials that stop gamma ray that are placed above detectors. They will cast a gamma ray shadow on the detector which can be interpreted through computer analysis to determine the direction of the incoming gamma rays.</p>
+	<p>Gamma rays are absorbed by the atmosphere so gamma ray telescopes are usually placed in orbit. However, there are some gamma ray telescopes on the Earth&rsquo;s surface that detect the interactions between high energy gamma rays and the atmosphere rather than the gamma rays themselves.</p>
+	<p>Gamma ray telescopes can observe objects/events such as including pulsars, black holes, supernova explosions and gamma ray bursts.</p>
+	<div>
+		<table class="center">
+			<tr>
+				<th class="evenspread">Advantages</th>
+				<th class="evenspread">Disadvantages</th>
+			</tr>
+			<tr>
+				<td>Can detect objects and phenomenon that cannot be detected in other wavelengths.</td>
+				<td>Cannot focus gamma rays into images with same level of clarity as other forms of telescope.</td>
+			</tr>
+			<tr>
+				<td>Are smaller than most other telescopes as they don&rsquo;t need to focus light.</td>
+				<td>Many telescopes have to be placed in orbit.</td>
+			</tr>
+			<tr>
+				<td>Some observations can be made from Earth&rsquo;s surface.</td>
+				<td>Gamma rays come from all directions and can penetrate satellites to reach the detector, so satellites need to be shielded or incorporate sensors to detect and account for rays coming in from other directions.</td>
+			</tr>
+		</table>
+	</div>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="7">
+	<h3>Test yourself</h3>
+	<p>Try the questions below to check your understanding of this topic. Numerical questions use different numbers each time, so you can attempt them more than once.</p>
+	<div id="quiz-root"></div>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+
+{% endblock %}
+
+{% block resources %}
+	<li><a href="{{ url_for('static', filename='summaries/astrophysics/non_optical_telescopes_summary.html') }}" target="_blank"><i class="fas fa-file-alt"></i> Printable revision sheet</a></li>
+{% endblock %}
+
+{% block prev_link %}
+	<a href="{{ url_for('telescopes') }}"><i class="fas fa-chevron-circle-left"></i><span class="nav_link">Previous topic</span></a>
+{% endblock %}
+
+{% block next_link %}
+	<a href="/astrophysics/classification"><span class="nav_link">Next topic</span><i class="fas fa-chevron-circle-right"></i></a>
+{% endblock %}
+
+{% block extra_scripts %}
+	<script src="{{ url_for('static', filename='js/quiz.js') }}"></script>
+	<script src="{{ url_for('static', filename='quizzes/non_optical_telescopes_questions.js') }}"></script>
+	<script>
+		new PhysicsQuiz(document.getElementById('quiz-root'), nonOpticalTelescopesQuestions, {
+			storageKey: 'non_optical_telescopes'
+		});
+	</script>
+{% endblock %}

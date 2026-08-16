@@ -1,0 +1,64 @@
+{% extends "maths_skills/_mathsbox_base.html" %}
+
+{% block title %}Deriving the equations of motion{% endblock %}
+
+{% block content %}
+<h3>Deriving the equations of motion</h3>
+
+<p>You are only expected to know how to <i>use</i> the four suvat equations, and you don't need to know how to derive them from first principles for the exam. However, seeing where they come from can help you understand them fully, and remember them more easily.</p>
+
+<p>The term <i>first principles</i> means starting from the most basic assumptions we can make about a physical system &mdash; in this case, a physical law such as Newton's laws of motion, and the basic definitions of velocity and acceleration:</p>
+<div class="formula">$$\large v=\frac{\Delta s}{\Delta t}$$</div>
+<div class="formula">$$\large a=\frac{\Delta v}{\Delta t}$$</div>
+
+<p><b>Equation 1</b></p>
+<p>This is the simplest to derive, and comes straight from the definition of acceleration:</p>
+<div class="formula">$$a=\frac{\Delta v}{\Delta t}$$</div>
+
+<p>$\Delta v$ can be written as $(v-u)$, the final velocity minus the initial velocity, so:</p>
+<div class="formula">$$a=\frac{(v-u)}{t}$$</div>
+
+<p>Multiplying both sides by $t$:</p>
+<div class="formula">$$at=(v-u)$$</div>
+
+<p>Adding $u$ to both sides gives the final equation:</p>
+<div class="formula">$$\large v=u+at$$</div>
+
+<p><b>Equation 2</b></p>
+<p>If an object travels from point <b>a</b> to point <b>b</b>, its velocity may vary along the way. Its <i>average</i> velocity between the two points can be found by adding the <i>instantaneous</i> velocity at <b>a</b> ($u$) to the instantaneous velocity at <b>b</b> ($v$), and dividing by two:</p>
+<div class="formula">$$\frac{(u+v)}{2}$$</div>
+
+<p>Combining this average velocity with $s=vt$ (using this average in place of a single velocity) gives:</p>
+<div class="formula">$$\large s=\frac{(u+v)t}{2}$$</div>
+
+<p><b>Equation 3</b></p>
+<p>We know that on a <i>velocity-time</i> graph, displacement is represented by the area underneath the line.</p>
+<figure>
+	<img src="{{ url_for('static', filename='images/mechanics/v_t_graph_1.svg') }}" alt="velocity time graph" class="size300">
+	<figcaption><b>Figure 1:</b>&nbsp;Using a velocity-time graph to derive the suvat equations.</figcaption>
+</figure>
+<p>The area under the bottom (rectangular) section of the graph is the initial velocity, $u$, multiplied by the time, $t$:</p>
+<div class="formula">$$s=ut$$</div>
+
+<p>The area under the top (triangular) section is found by subtracting the initial velocity from the final velocity, and multiplying by the time:</p>
+<div class="formula">$$s=\frac{1}{2}(v-u)t$$</div>
+
+<p>So the total displacement is the sum of the two areas:</p>
+<div class="formula">$$s=ut+\frac{1}{2}(v-u)t$$</div>
+
+<p>The term $(v-u)$ also appears in the equation for acceleration, where $(v-u)=at$, so it can be substituted in directly, giving:</p>
+<div class="formula">$$\large s=ut+\frac{1}{2}at^{2}$$</div>
+
+<p><b>Equation 4</b></p>
+<p>This is the hardest to derive, but often the most useful of the four. Starting with <b>equation 2</b>, $s=\frac{(u+v)}{2}t$, and substituting $t=\frac{(v-u)}{a}$ (rearranged from the definition of acceleration) gives:</p>
+<div class="formula">$$s=\frac{(u+v)}{2}\times\frac{(v-u)}{a}$$</div>
+
+<p>This can be rearranged to:</p>
+<div class="formula">$$2as=(v+u)\times(v-u)$$</div>
+
+<p>Multiplying out the brackets:</p>
+<div class="formula">$$2as=v^{2}-vu+uv-u^{2}\rightarrow 2as=v^{2}-u^{2}$$</div>
+
+<p>Which finally gives:</p>
+<div class="formula">$$\large v^{2}=u^{2}+2as$$</div>
+{% endblock %}

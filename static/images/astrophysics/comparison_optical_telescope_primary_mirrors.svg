@@ -1,0 +1,520 @@
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="-1056 -1980 2112 2112">
+ <title>Comparison optical telescope primary mirrors</title>
+ <desc>Comparison of nominal sizes of primary mirrors of notable optical telescopes, by CMG Lee. Dotted lines show mirrors with equivalent light-gathering ability. Thanks to user at 71.41.210.146 for data on holes in mirrors.</desc>
+ <style type="text/css">
+.bg { fill:#666666; }
+.eq { stroke:#333333;stroke-width:4;stroke-dasharray:4,4;fill:none; }
+.uc { fill-opacity:0.5; }
+.ds { fill-opacity:0.5;stroke-dasharray:8,2; }
+.us { stroke:#000000;fill:#0099ff; }
+.cl { stroke:#000000;fill:#006600; }
+.es { stroke:#000000;fill:#ffff00; }
+.ca { stroke:#000000;fill:#ff6666; }
+.cn { stroke:#000000;fill:#ff0000; }
+.fr { stroke:#000000;fill:#cc00ff; }
+.ru { stroke:#000000;fill:#0000ff; }
+.za { stroke:#000000;fill:#ff9900; }
+.sp { stroke:#cccccc;fill:#000000; }
+.o_ { stroke:#999999;fill:url(#grad_owl); }
+.a_ { stroke:#333333;fill:#ffffff; }
+#man        { fill:#000000; }
+#scale      { stroke:#000000;stroke-width:100; }
+#basketball { stroke:#ffffff;stroke-width:100;fill:#cc6633;fill-opacity:0.8; }
+#tennis     { stroke:#ffffff;stroke-width:100;fill:#669900;fill-opacity:0.8; }
+.title { font-weight:bold; }
+.comp  { fill:#ffffff; }
+ </style>
+ <defs>
+  <radialGradient id="grad_owl" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+   <stop offset="35%" stop-opacity="0"/>
+   <stop offset="35%" stop-color="#dddddd"/>
+   <stop offset="50%" stop-color="#ffffff"/>
+   <stop offset="90%" stop-color="#ffffff"/>
+   <stop offset="95%" stop-color="#eeeeee"/>
+   <stop offset="99%" stop-color="#cccccc"/>
+  </radialGradient>
+
+  <path id="hex_1" d="M -6.667,0 L -3.333,5 H 3.333 L 6.667,0 L 3.333,-5 H -3.333 Z"/>
+  <g id="hex_2">
+   <use xlink:href="#hex_1"/>
+   <use xlink:href="#hex_1" transform="translate(0,10)"/>
+  </g>
+  <g id="hex_3">
+   <use xlink:href="#hex_2"/>
+   <use xlink:href="#hex_1" transform="translate(0,20)"/>
+  </g>
+  <g id="hex_4">
+   <use xlink:href="#hex_2"/>
+   <use xlink:href="#hex_2" transform="translate(0,20)"/>
+  </g>
+  <g id="hex_5">
+   <use xlink:href="#hex_3"/>
+   <use xlink:href="#hex_2" transform="translate(0,30)"/>
+  </g>
+  <g id="hex_10">
+   <use xlink:href="#hex_5"/>
+   <use xlink:href="#hex_5" transform="translate(0,50)"/>
+  </g>
+
+  <g id="lamost_half" transform="scale(1.1)">
+   <use xlink:href="#hex_3"  transform="translate(0,   5)"/>
+   <use xlink:href="#hex_5"  transform="translate(10,-20)"/>
+   <use xlink:href="#hex_4"  transform="translate(20,-15)"/>
+  </g>
+  <g id="lamost" transform="scale(1.732,2)">
+   <use xlink:href="#lamost_half"/>
+   <use xlink:href="#lamost_half" transform="scale(-1)"/>
+  </g>
+
+  <g id="jwst_half" transform="scale(1.32)">
+   <use xlink:href="#hex_2"  transform="translate(0,  10)"/>
+   <use xlink:href="#hex_4"  transform="translate(10,-15)"/>
+   <use xlink:href="#hex_3"  transform="translate(20,-10)"/>
+  </g>
+  <g id="jwst" transform="scale(1.732,2)">
+   <use xlink:href="#jwst_half"/>
+   <use xlink:href="#jwst_half" transform="scale(-1)"/>
+  </g>
+
+  <g id="hex_36_half" transform="scale(0.866)">
+   <use xlink:href="#hex_3"  transform="translate(0,  10)"/>
+   <use xlink:href="#hex_3"  transform="translate(10, 5)"/>
+   <use xlink:href="#hex_3"  transform="translate(10,-25)"/>
+   <use xlink:href="#hex_5"  transform="translate(20,-20)"/>
+   <use xlink:href="#hex_4"  transform="translate(30,-15)"/>
+  </g>
+  <g id="hex_36" transform="scale(1.732,2)">
+   <use xlink:href="#hex_36_half"/>
+   <use xlink:href="#hex_36_half" transform="scale(-1)"/>
+  </g>
+  <use id="gtc"  xlink:href="#hex_36" transform="scale(1.9)"/>
+  <use id="keck" xlink:href="#hex_36" transform="scale(1.8)"/>
+
+  <g id="hex_91_half">
+   <use xlink:href="#hex_5"  transform="translate(0,  10)"/>
+   <use xlink:href="#hex_10" transform="translate(10,-45)"/>
+   <use xlink:href="#hex_4"  transform="translate(20, 10)"/>
+   <use xlink:href="#hex_5"  transform="translate(20,-40)"/>
+   <use xlink:href="#hex_3"  transform="translate(30, 15)"/>
+   <use xlink:href="#hex_5"  transform="translate(30,-35)"/>
+   <use xlink:href="#hex_2"  transform="translate(40, 20)"/>
+   <use xlink:href="#hex_5"  transform="translate(40,-30)"/>
+   <use xlink:href="#hex_1"  transform="translate(50, 25)"/>
+   <use xlink:href="#hex_5"  transform="translate(50,-25)"/>
+  </g>
+  <g id="hex_91" transform="scale(1.732,2)">
+   <use xlink:href="#hex_91_half"/>
+   <use xlink:href="#hex_91_half" transform="scale(-1)"/>
+   <use xlink:href="#hex_1"/>
+  </g>
+
+  <g id="eelt_quadrant">
+   <use xlink:href="#hex_3"  transform="translate(10, 155)"/>
+   <use xlink:href="#hex_10" transform="translate(10,  55)"/>
+   <use xlink:href="#hex_3"  transform="translate(20, 150)"/>
+   <use xlink:href="#hex_10" transform="translate(20,  50)"/>
+   <use xlink:href="#hex_4"  transform="translate(30, 145)"/>
+   <use xlink:href="#hex_10" transform="translate(30,  45)"/>
+   <use xlink:href="#hex_4"  transform="translate(40, 140)"/>
+   <use xlink:href="#hex_10" transform="translate(40,  40)"/>
+   <use xlink:href="#hex_5"  transform="translate(50, 125)"/>
+   <use xlink:href="#hex_10" transform="translate(50,  25)"/>
+   <use xlink:href="#hex_1"  transform="translate(60, 160)"/>
+   <use xlink:href="#hex_5"  transform="translate(60, 110)"/>
+   <use xlink:href="#hex_10" transform="translate(60,  10)"/>
+   <use xlink:href="#hex_2"  transform="translate(70, 155)"/>
+   <use xlink:href="#hex_5"  transform="translate(70, 105)"/>
+   <use xlink:href="#hex_10" transform="translate(70,   5)"/>
+   <use xlink:href="#hex_1"  transform="translate(80, 160)"/>
+   <use xlink:href="#hex_5"  transform="translate(80, 110)"/>
+   <use xlink:href="#hex_10" transform="translate(80,  10)"/>
+   <use xlink:href="#hex_1"  transform="translate(90, 155)"/>
+   <use xlink:href="#hex_5"  transform="translate(90, 105)"/>
+   <use xlink:href="#hex_10" transform="translate(90,   5)"/>
+   <use xlink:href="#hex_5"  transform="translate(100,110)"/>
+   <use xlink:href="#hex_10" transform="translate(100, 10)"/>
+   <use xlink:href="#hex_5"  transform="translate(110,105)"/>
+   <use xlink:href="#hex_10" transform="translate(110,  5)"/>
+   <use xlink:href="#hex_4"  transform="translate(120,110)"/>
+   <use xlink:href="#hex_10" transform="translate(120, 10)"/>
+   <use xlink:href="#hex_4"  transform="translate(130,105)"/>
+   <use xlink:href="#hex_10" transform="translate(130,  5)"/>
+   <use xlink:href="#hex_2"  transform="translate(140,110)"/>
+   <use xlink:href="#hex_10" transform="translate(140, 10)"/>
+   <use xlink:href="#hex_2"  transform="translate(150,105)"/>
+   <use xlink:href="#hex_10" transform="translate(150,  5)"/>
+   <use xlink:href="#hex_1"  transform="translate(160,110)"/>
+   <use xlink:href="#hex_10" transform="translate(160, 10)"/>
+   <use xlink:href="#hex_10" transform="translate(170,  5)"/>
+   <use xlink:href="#hex_3"  transform="translate(180, 60)"/>
+   <use xlink:href="#hex_5"  transform="translate(180, 10)"/>
+   <use xlink:href="#hex_2"  transform="translate(190, 55)"/>
+   <use xlink:href="#hex_5"  transform="translate(190,  5)"/>
+   <use xlink:href="#hex_3"  transform="translate(200, 10)"/>
+  </g>
+  <g id="eelt_half" transform="scale(1.075)">
+   <use xlink:href="#eelt_quadrant"/>
+   <use xlink:href="#eelt_quadrant" transform="scale(1,-1)"/>
+   <use xlink:href="#hex_3"  transform="translate(0,150)"/>
+   <use xlink:href="#hex_10" transform="translate(0, 50)"/>
+   <use xlink:href="#hex_1"  transform="translate(60, 0)"/>
+   <use xlink:href="#hex_1"  transform="translate(80, 0)"/>
+   <use xlink:href="#hex_1"  transform="translate(100,0)"/>
+   <use xlink:href="#hex_1"  transform="translate(120,0)"/>
+   <use xlink:href="#hex_1"  transform="translate(140,0)"/>
+   <use xlink:href="#hex_1"  transform="translate(160,0)"/>
+   <use xlink:href="#hex_1"  transform="translate(180,0)"/>
+   <use xlink:href="#hex_1"  transform="translate(200,0)"/>
+  </g>
+  <g id="eelt" transform="scale(1.732,2)">
+   <use xlink:href="#eelt_half"/>
+   <use xlink:href="#eelt_half" transform="scale(-1)"/>
+  </g>
+
+  <g id="tmt_quadrant">
+   <use xlink:href="#hex_1"  transform="translate(10,115)"/>
+   <use xlink:href="#hex_10" transform="translate(10, 15)"/>
+   <use xlink:href="#hex_1"  transform="translate(20,110)"/>
+   <use xlink:href="#hex_10" transform="translate(20, 10)"/>
+   <use xlink:href="#hex_1"  transform="translate(30,105)"/>
+   <use xlink:href="#hex_10" transform="translate(30,  5)"/>
+   <use xlink:href="#hex_1"  transform="translate(40,110)"/>
+   <use xlink:href="#hex_10" transform="translate(40, 10)"/>
+   <use xlink:href="#hex_1"  transform="translate(50,105)"/>
+   <use xlink:href="#hex_10" transform="translate(50,  5)"/>
+   <use xlink:href="#hex_10" transform="translate(60, 10)"/>
+   <use xlink:href="#hex_10" transform="translate(70,  5)"/>
+   <use xlink:href="#hex_4"  transform="translate(80, 60)"/>
+   <use xlink:href="#hex_5"  transform="translate(80, 10)"/>
+   <use xlink:href="#hex_4"  transform="translate(90, 55)"/>
+   <use xlink:href="#hex_5"  transform="translate(90,  5)"/>
+   <use xlink:href="#hex_2"  transform="translate(100,60)"/>
+   <use xlink:href="#hex_5"  transform="translate(100,10)"/>
+   <use xlink:href="#hex_2"  transform="translate(110,55)"/>
+   <use xlink:href="#hex_5"  transform="translate(110, 5)"/>
+   <use xlink:href="#hex_5"  transform="translate(120,10)"/>
+   <use xlink:href="#hex_3"  transform="translate(130, 5)"/>
+  </g>
+  <g id="tmt_half" transform="scale(1.24)">
+   <use xlink:href="#tmt_quadrant"/>
+   <use xlink:href="#tmt_quadrant" transform="scale(1,-1)"/>
+   <use xlink:href="#hex_10" transform="translate(0, 20)"/>
+   <use xlink:href="#hex_1"  transform="translate(20, 0)"/>
+   <use xlink:href="#hex_1"  transform="translate(40, 0)"/>
+   <use xlink:href="#hex_1"  transform="translate(60, 0)"/>
+   <use xlink:href="#hex_1"  transform="translate(80, 0)"/>
+   <use xlink:href="#hex_1"  transform="translate(100,0)"/>
+   <use xlink:href="#hex_1"  transform="translate(120,0)"/>
+  </g>
+  <g id="tmt" transform="scale(1.732,2)">
+   <use xlink:href="#tmt_half"/>
+   <use xlink:href="#tmt_half" transform="scale(-1)"/>
+  </g>
+
+  <g id="vlt_1">
+   <circle cx="0" cy="0" r="82" class="cl"/>
+   <circle cx="0" cy="0" r="10" class="a_"/>
+  </g>
+
+  <g id="lbt_1">
+   <circle cx="0" cy="0" r="84"   class="us"/>
+   <circle cx="0" cy="0" r="8.89" class="a_"/>
+  </g>
+
+  <circle id="gmt_1" cx="0" cy="0" r="84" class="cl uc"/>
+
+  <rect id="gaia" x="-14.9" y="-5.4" width="29.8" height="9.8"/>
+
+  <g id="man">
+   <path d="M -6,-25 L 0,0 L 6,-25 Z"/>
+   <ellipse cx="0" cy="-30" rx="3" ry="4"/>
+  </g>
+  <path id="basketball_ticks" transform="translate(-3000,14000) rotate(11.69)" d="M 0,-1750 H -100 M 0,-2650 H -100 V -3050 H -65 V -2650 H -30 V -3050 M 0,-3950 H -100 M 0,-4850 H -100"/>
+  <g id="basketball_end" fill="none">
+   <path d="M -3000,14000 L -1800,8200 H 1800 L 3000,14000 M -1800,8200 A 1800,1800 0 0 1 1800,8200 M -6250,14000 V 12430 A 6250,6250 0 0 1 6250,12430 V 14000"/>
+   <path d="M -1800,8200 A 1800,1800 0 0 0 1800,8200" stroke-dasharray="200,200"/>
+   <use xlink:href="#basketball_ticks"/>
+   <use xlink:href="#basketball_ticks" transform="scale(-1,1)"/>
+  </g>
+  <g id="basketball">
+   <rect x="-7500" y="-14000" width="15000" height="28000"/>
+   <path d="M -7650,0 H 7650"/>
+   <circle cx="0" cy="0" r="1800" fill="none"/>
+   <use xlink:href="#basketball_end"/>
+   <use xlink:href="#basketball_end" transform="scale(-1)"/>
+  </g>
+  <g id="tennis">
+   <rect x="-5486" y="-11887" width="10972" height="23774"/>
+   <path d="M -4115,-6401 H 4115 M -4115,6401 H 4115 M -4115,-11887 V 11887 M 4115,-11887 V 11887 M 0,-6401 V 6401 M 0,-11887 V -11785 M 0,11887 V 11785"/>
+   <path d="M -5486,0 H 5486" stroke-dasharray="300,200"/>
+  </g>
+  <g id="scale">
+   <g font-size="1200" stroke="none" fill-opacity="1">
+    <text x="0"     y="-500">0</text>
+    <text x="5000"  y="-500">5</text>
+    <text x="10000" y="-500">10 m</text>
+    <text x="0"     y="1500">0</text>
+    <text x="3048"  y="1500">10</text>
+    <text x="6096"  y="1500">20</text>
+    <text x="9844"  y="1500">30 ft</text>
+   </g>
+   <path d="M 0,0 H 10000 V -400 M 0,-400 V 400 M 1000,-300 V 0 M 2000,-300 V 0 M 3000,-300 V 0 M 4000,-300 V 0 M 5000,-400 V 0 M 6000,-300 V 0 M 7000,-300 V 0 M 8000,-300 V 0 M 9000,-300 V 0 M 1524,300 V 0 M 3048,400 V 0 M 4572,300 V 0 M 6096,400 V 0 M 7620,300 V 0 M 9144,400 V 0" fill="none"/>
+  </g>
+
+  <g id="main" font-family="sans-serif" font-size="32" letter-spacing="-1" text-anchor="middle" stroke="none" stroke-width="0.5">
+   <rect x="-9999" y="-9999" width="19999" height="19999" class="bg"/>
+   <g transform="translate(0,90)">
+    <circle cx="0" cy="-3040" r="3050" class="a_"/>
+    <text x="0" y="1em" class="comp">Arecibo radio telescope at the same scale</text>
+   </g>
+   <g transform="translate(0,25)">
+    <circle cx="0" cy="-995" r="1000" class="o_"/>
+    <!-- <circle cx="0" cy="-1000" r="350"  class="a_"/> -->
+    <text x="0" y="1em" class="title">Overwhelmingly Large Telescope</text>
+    <text x="0" y="2em">(cancelled)</text>
+   </g>
+   <g transform="translate(650,-450)">
+    <use xlink:href="#eelt" transform="translate(0,-400)" class="cl uc"/>
+    <text x="-50" y="1em" class="title">European Extremely</text>
+    <text x="-50" y="2em" class="title">Large Telescope</text>
+    <text x="-50" y="3em">Cerro Armazones,</text>
+    <text x="-50" y="4em">Chile (planned 2022)</text>
+   </g>
+   <g transform="translate(740,-1340)">
+    <use xlink:href="#tmt" transform="translate(0,-300)" class="us uc"/>
+    <text x="0" y="1em" class="title">Thirty Meter Telescope</text>
+    <text x="0" y="2em">Mauna Kea, Hawaii (planned 2022)</text>
+   </g>
+   <g transform="translate(140,-120)">
+    <g transform="translate(0,-250)">
+     <use xlink:href="#gmt_1" transform="translate(-146,-84)"/>
+     <use xlink:href="#gmt_1" transform="translate(-146, 84)"/>
+     <use xlink:href="#gmt_1" transform="translate(146, -84)"/>
+     <use xlink:href="#gmt_1" transform="translate(146,  84)"/>
+     <use xlink:href="#gmt_1" transform="translate(0,  -168)"/>
+     <use xlink:href="#gmt_1" transform="translate(0,   168)"/>
+     <use xlink:href="#gmt_1" transform="translate(0,     0)"/>
+     <circle cx="0" cy="0" r="25"  class="a_"/>
+     <circle cx="0" cy="0" r="220" class="eq"/>
+    </g>
+    <text x="0" y="1em" class="title">Giant Magellan Telescope</text>
+    <text x="0" y="2em">Las Campanas Observatory,</text>
+    <text x="0" y="3em">Chile (planned 2020)</text>
+   </g>
+   <g transform="translate(190,-1660)">
+    <use xlink:href="#keck" transform="translate(-110,-140)" class="us"/>
+    <use xlink:href="#keck" transform="translate(110, -140)" class="us"/>
+    <circle cx="0" cy="-140" r="140" class="eq"/>
+    <text x="0" y="1em" class="title">Keck Telescope</text>
+    <text x="0" y="2em">Mauna Kea, Hawaii</text>
+    <text x="0" y="3em">(1993/1996)</text>
+   </g>
+   <g transform="translate(-180,-1680)">
+    <use xlink:href="#gtc" transform="translate(0,-120)" class="es"/>
+    <text x="0" y="1em" class="title">Gran Telescopio</text>
+    <text x="0" y="2em" class="title">Canarias</text>
+    <text x="0" y="3em">La Palma,</text>
+    <text x="0" y="4em">Canary Islands,</text>
+    <text x="0" y="5em">Spain (2007)</text>
+   </g>
+   <g transform="translate(-310,-370)">
+    <g transform="translate(0,-180)">
+     <use xlink:href="#vlt_1" transform="translate(-90,-90)"/>
+     <use xlink:href="#vlt_1" transform="translate(-90, 90)"/>
+     <use xlink:href="#vlt_1" transform="translate(90, -90)"/>
+     <use xlink:href="#vlt_1" transform="translate(90,  90)"/>
+     <circle cx="0"   cy="0"   r="164" class="eq"/>
+    </g>
+    <text x="0" y="1em" class="title">Very Large Telescope</text>
+    <text x="0" y="2em">Cerro Paranal, Chile</text>
+    <text x="0" y="3em">(1998-2000)</text>
+   </g>
+   <g transform="translate(-180,-1280)">
+    <use xlink:href="#hex_91" transform="translate(0,-110)" class="za"/>
+    <text x="0" y="1em" class="title">Southern African</text>
+    <text x="0" y="2em" class="title">Large Telescope</text>
+    <text x="0" y="3em">Sutherland,</text>
+    <text x="0" y="4em">South Africa</text>
+    <text x="0" y="5em">(2005)</text>
+   </g>
+   <g transform="translate(-480,-1280)">
+    <use xlink:href="#hex_91" transform="translate(0,-110)" class="us"/>
+    <text x="0" y="1em" class="title">Hobby-Eberly</text>
+    <text x="0" y="2em" class="title">Telescope</text>
+    <text x="0" y="3em">Davis</text>
+    <text x="0" y="4em">Mountains,</text>
+    <text x="0" y="5em">Texas (1996)</text>
+   </g>
+   <g transform="translate(-310,-860)">
+    <use xlink:href="#lbt_1" transform="translate(-144,-120)"/>
+    <use xlink:href="#lbt_1" transform="translate(144, -120)"/>
+    <circle cx="0"    cy="-120" r="118" class="eq"/>
+    <text x="0" y="1em" class="title">Large Binocular Telescope</text>
+    <text x="0" y="2em">Mount Graham,</text>
+    <text x="0" y="3em">Arizona (2005)</text>
+   </g>
+   <g transform="translate(100,-780)">
+    <circle cx="0" cy="-85" r="83.6"  class="cl uc"/>
+    <circle cx="0" cy="-85" r="50.66" class="a_"/>
+    <text x="0" y="1em" class="title">Large Synoptic</text>
+    <text x="0" y="2em" class="title">Survey Telescope</text>
+    <text x="0" y="3em">El Pe&#241;&#243;n, Chile</text>
+    <text x="0" y="4em">(planned 2020)</text>
+   </g>
+   <g transform="translate(340,-1370)">
+    <circle cx="0" cy="-85" r="82" class="us"/>
+    <circle cx="0" cy="-85" r="12" class="a_"/>
+    <text x="0" y="1em" class="title">Subaru</text>
+    <text x="0" y="2em" class="title">Telescope</text>
+    <text x="0" y="3em">Mauna Kea,</text>
+    <text x="0" y="4em">Hawaii (1999)</text>
+   </g>
+   <g transform="translate(100,-1370)">
+    <circle cx="0" cy="-85" r="81"   class="us"/>
+    <circle cx="0" cy="-85" r="11.8" class="a_"/>
+    <text x="0" y="1em" class="title">Gemini North</text>
+    <text x="0" y="2em">Mauna Kea,</text>
+    <text x="0" y="3em">Hawaii (1999)</text>
+   </g>
+   <g transform="translate(100,-1080)">
+    <circle cx="0" cy="-85" r="81"   class="cl"/>
+    <circle cx="0" cy="-85" r="11.8" class="a_"/>
+    <text x="0" y="1em" class="title">Gemini South</text>
+    <text x="0" y="2em">Cerro Pach&#243;n,</text>
+    <text x="0" y="3em">Chile (2000)</text>
+   </g>
+   <g transform="translate(-310,-120)">
+    <circle cx="-80" cy="-65" r="65"   class="cl"/>
+    <circle cx="80"  cy="-65" r="65"   class="cl"/>
+    <circle cx="-80" cy="-65" r="8.89" class="a_"/>
+    <circle cx="80"  cy="-65" r="8.89" class="a_"/>
+    <text x="0" y="1em" class="title">Magellan Telescopes</text>
+    <text x="0" y="2em">Las Campanas,</text>
+    <text x="0" y="3em">Chile (2000/2002)</text>
+   </g>
+   <g transform="translate(-830,-1210)">
+    <g transform="translate(-90,0)">
+     <g transform="translate(0,-65)" class="us ds">
+      <circle cx="-37" cy="-22" r="18"/>
+      <circle cx="-37" cy="22"  r="18"/>
+      <circle cx="0"   cy="-44" r="18"/>
+      <circle cx="0"   cy="44"  r="18"/>
+      <circle cx="37"  cy="-22" r="18"/>
+      <circle cx="37"  cy="22"  r="18"/>
+      <circle cx="0"   cy="0"   r="45" class="eq"/>
+     </g>
+     <text x="0" y="1em">(1979-1998)</text>
+    </g>
+    <g transform="translate(100,0)">
+     <circle cx="0" cy="-65" r="65"   class="us"/>
+     <circle cx="0" cy="-65" r="8.89" class="a_"/>
+     <text x="0" y="1em">(1999-)</text>
+    </g>
+    <text x="0" y="2em" class="title">Multi Mirror Telescope</text>
+    <text x="0" y="3em">Mount Hopkins, Arizona</text>
+   </g>
+   <g transform="translate(-800,-970)">
+    <circle cx="0" cy="-60" r="60"  class="ru"/>
+    <circle cx="0" cy="-60" r="3.8" class="a_"/>
+    <text x="0" y="1em" class="title">BTA-6 (Large</text>
+    <text x="0" y="2em" class="title">Altazimuth Telescope)</text>
+    <text x="0" y="3em">Zelenchuksky, Russia</text>
+    <text x="0" y="4em">(1975)</text>
+   </g>
+   <g transform="translate(-800,-710)">
+    <circle cx="0" cy="-60" r="60" class="ca"/>
+    <text x="0" y="1em" class="title">Large Zenith Telescope</text>
+    <text x="0" y="2em">British Columbia, Canada</text>
+    <text x="0" y="3em">(2003)</text>
+   </g>
+   <g transform="translate(-480,-1760)">
+    <use xlink:href="#lamost" transform="translate(0,-70)" class="cn"/>
+    <text x="0" y="1em" class="title">Large Sky Area</text>
+    <text x="0" y="2em" class="title">Multi-Object Fiber</text>
+    <text x="0" y="3em" class="title">Spectroscopic</text>
+    <text x="0" y="4em" class="title">Telescope</text>
+    <text x="0" y="5em">Hebei, China</text>
+    <text x="0" y="6em">(2009)</text>
+   </g>
+   <g transform="translate(-720,-1490)">
+    <circle cx="0" cy="-51" r="51"     class="us"/>
+    <circle cx="0" cy="-51" r="15.748" class="a_"/>
+    <text x="0" y="1em" class="title">Hale (200&quot;)</text>
+    <text x="0" y="2em">Mt Palomar,</text>
+    <text x="0" y="3em">California</text>
+    <text x="0" y="4em">(1948)</text>
+   </g>
+   <g transform="translate(-940,-1520)">
+    <circle cx="0" cy="-25.4" r="25.4" class="us"/>
+    <text x="0" y="1em" class="title">Hooker</text>
+    <text x="0" y="2em" class="title">(100&quot;)</text>
+    <text x="0" y="3em">Mt Wilson,</text>
+    <text x="0" y="4em">California</text>
+    <text x="0" y="5em">(1917)</text>
+   </g>
+   <g transform="translate(-840,-1940)">
+    <circle cx="0" cy="-12.5" r="12.5" class="fr ds"/>
+    <text x="0" y="1em" class="title">Great Paris Exhibition</text>
+    <text x="0" y="2em" class="title">Telescope</text>
+    <text x="0" y="3em">(lens at the same scale)</text>
+    <text x="0" y="4em">Paris, France (1900)</text>
+   </g>
+   <g transform="translate(-840,-1770)">
+    <circle cx="0" cy="-10" r="10" class="us"/>
+    <text x="0" y="1em" class="title">Yerkes Observatory</text>
+    <text x="0" y="2em">(40&quot; refractor</text>
+    <text x="0" y="3em">lens at the same scale)</text>
+    <text x="0" y="4em">Williams Bay,</text>
+    <text x="0" y="5em">Wisconsin (1893)</text>
+   </g>
+   <g transform="translate(-890,-280)">
+    <use xlink:href="#jwst" transform="translate(0,-65)" class="sp uc"/>
+    <text x="0" y="1em" class="title">James Webb</text>
+    <text x="0" y="2em" class="title">Space Telescope</text>
+    <text x="0" y="3em">Earth-Sun L2 point</text>
+    <text x="0" y="4em">(planned 2018)</text>
+   </g>
+   <g transform="translate(-620,-315)">
+    <circle cx="0" cy="-30" r="24" class="sp"/>
+    <circle cx="0" cy="-30" r="7"  class="a_"/>
+    <text x="0" y="1em" class="title">Hubble Space</text>
+    <text x="0" y="2em" class="title">Telescope</text>
+    <text x="0" y="3em">Low Earth</text>
+    <text x="0" y="4em">Orbit</text>
+    <text x="0" y="5em">(1990)</text>
+   </g>
+   <g transform="translate(-620,-550)">
+    <circle cx="0" cy="-20" r="14" class="sp"/>
+    <text x="0" y="1em" class="title">Kepler</text>
+    <text x="0" y="2em">Earth-trailing</text>
+    <text x="0" y="3em">solar orbit</text>
+    <text x="0" y="4em">(2009)</text>
+   </g>
+   <g transform="translate(-890,-550)">
+    <use xlink:href="#gaia" transform="translate(-20,-20)" class="sp"/>
+    <use xlink:href="#gaia" transform="translate(20,-20)" class="sp"/>
+    <text x="0" y="1em" class="title">Gaia</text>
+    <text x="0" y="2em">Earth-Sun L2 point</text>
+    <text x="0" y="3em">(2014)</text>
+   </g>
+
+   <g transform="translate(720,90)">
+    <use xlink:href="#basketball" transform="translate(0,-150) scale(0.02) rotate(90)"/>
+    <text x="0" y="1em" class="comp">Basketball court at the same scale</text>
+   </g>
+   <g transform="translate(-760,90)">
+    <use xlink:href="#tennis" transform="translate(0,-110) scale(0.02) rotate(90)"/>
+    <text x="0" y="1em" class="comp">Tennis court at the same scale</text>
+   </g>
+   <g transform="translate(930,-430)">
+    <use xlink:href="#man"/>
+    <text x="0" y="1em">Human</text>
+    <text x="0" y="2em">at the</text>
+    <text x="0" y="3em">same scale</text>
+   </g>
+   <use xlink:href="#scale" transform="translate(780,-270) scale(0.02,0.02)"/>
+  </g>
+ </defs>
+ <use xlink:href="#main"/>
+</svg>

@@ -1,0 +1,253 @@
+{% extends "base.html" %}
+
+{% block title %}Potential dividers{% endblock %}
+{% block page_h1 %}Potential dividers{% endblock %}
+
+{% block meta_description %}A Level Physics notes and worked examples to help students with their exams and learning. In the final section of this topic we use our understanding of resistance and potential difference and apply it to create useful circuits.{% endblock %}
+{% block meta_keywords %}potential divider, potential, resistance, voltage, current, brightness, control circuit, LDR, LED, worked examples, exam questions, A level, physics{% endblock %}
+
+{% block extra_head %}
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/quiz.css') }}">
+{% endblock %}
+
+{% block page_boxes %}
+	<a href="#1"><button class="button">Potential dividers</button></a>
+	<a href="#2"><button class="button">The Potential divider equation</button></a>
+	<a href="#3"><button class="button">Using a potential divider with a varying voltage</button></a>
+	<a href="#4"><button class="button">Worked example 1</button></a>
+	<a href="#5"><button class="button">Worked example 2</button></a>
+	<a href="#6"><button class="button">Test yourself</button></a>
+{% endblock %}
+
+{% block spec %}
+<div id="spec">
+	<p class="spec_ref"><b>3.5.1.5 Potential divider</b></p>
+	<p class="spec_box">The potential divider used to supply constant or variable potential difference from a power supply.</p>
+	<p class="spec_box">The use of the potentiometer as a measuring instrument is not required.</p>
+	<p class="spec_box">Examples should include the use of variable resistors, thermistors, and light dependent resistors (LDR) in the potential divider.</p>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<section class="top_section" id="1">
+	<h3>Potential dividers</h3>
+	<p>We have already seen that the emf of a cell or power supply is shared proportionally across the resistance in a circuit, the greater the resistance, the greater the potential difference across it. As well as being important for understanding calculations, this can be usefully applied in control circuits called <em>potential dividers</em>.</p>
+	<p>A potential divider is a simple circuit with either two series resistors or one variable resistor which can <em>tap</em> some current from the circuit.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/electricity/potential_dividers.svg') }}" alt="two examples of potential divider circuits" class="size600">
+		<figcaption><b>Figure 1:</b>&nbsp;Two very simple potential divider circuits.</figcaption>
+	</figure>
+	<p>The two circuits above show two very simple potential dividers. Diagram a, shows two resistors, one of them variable. When the resistance of the variable resistor is increased the potential difference across it will increase as will the reading on the voltmeter. Diagram b, shows a variable resistor which can be tapped, such as a potentiometer or rheostat. As the slider is brought down, the potential difference across the lower side decreases and the reading on the voltmeter decreases.</p>
+	<p>If the variable resistors in the examples above are replaced with components such as thermistors or LDRs, whose value depends on an external conditions, the potential difference across it will vary depending on those conditions and a control circuit can be created. An LDR is a semiconducting resistor whose value decreases as light is shone on it. It can be used to create a sensing circuit which outputs a varying potential difference across it in response to light conditions.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/electricity/potential_divider_ldr_1.svg') }}" alt="using an LDR in a potential divider circuit 1" class="size400">
+		<figcaption><b>Figure 2:</b>&nbsp;Using a potential divider circuit and an LDR to make a light controlled circuit.</figcaption>
+	</figure>
+	<p>In this example as the light on the LDR is increased it resistance falls and the potential difference across it would also fall. This would cause the bulb to dim. If the LDR was completely covered, its resistance would be at its maximum value, the potential difference would also be at the maximum value and the bulb would shine brightly. Clearly this could be used as a simple light operated circuit for the bulb.</p>
+	<p>If the position of the two resistors was reversed and the fixed resistor was placed in parallel with the bulb the opposite effect would be observed. As the light intensity increased the value of the LDR would drop and a greater proportion of the cell&rsquo;s emf would be used up over the fixed resistor; therefore the bulb would be brighter when the incident light is brighter.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/electricity/potential_divider_ldr_2.svg') }}" alt="using an LDR in a potential divider circuit 2" class="size400">
+		<figcaption><b>Figure 3:</b>&nbsp;Putting the LDR in a different place would make the bulb get brighter as the Sunlight gets brighter, which is less useful!</figcaption>
+	</figure>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>There is no single "LDR circuits get brighter/dimmer with light" rule &mdash; it depends entirely on <b>where in the divider</b> the LDR sits, as Figures 2 and 3 show. Swapping the LDR and the fixed resistor completely reverses the behaviour. Always trace through the specific circuit given in the question rather than recalling a memorised outcome from a different circuit.</p>
+	</div>
+	<p>If the LDR was swapped with a thermistor in the first example a circuit for controlling the brightness of a bulb with temperature could be built. As old filament bulbs produce a lot of heat, this circuit could be used for controlling the temperature in a reptile house. The exact temperature/brightness controls would be adjusted by adjusting the ratio of the variable resistor and the resistance of the thermistor at the desired temperature.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/electricity/potential_divider_thermistor.svg') }}" alt="using a thermistor in a potential divider to control temperature" class="size400">
+		<figcaption><b>Figure 4:</b>&nbsp;Using a thermistor in a potential divider to control temperature</figcaption>
+	</figure>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="2">
+	<h3>The Potential divider equation</h3>
+	<p>In a potential divider circuit, the potential difference across each resistor is proportional to the ratio of the resistor's value to the total resistance of the circuit.</p>
+	<div class="formula">$$\frac{R_{1}}{R_{1}+R_{2}}$$</div>
+	<figure>
+		<img src="{{ url_for('static', filename='images/electricity/potential_dividers_equation.svg') }}" alt="potential divider equation definitions" class="size400">
+		<figcaption><b>Figure 5:</b>&nbsp;A simple potential divider circuit.</figcaption>
+	</figure>
+	<p>Therefore the potential difference across one of the resistors can be found by finding the product of this ratio and the emf of the power source. This is called the <em>potential divider equation</em>.</p>
+	<div class="formula">$$V_{out}=V_{in}\times\frac{R_{1}}{R_{1}+R_{2}}$$</div>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>The potential divider equation is <b>not</b> given on your equation sheet &mdash; you need to remember it, or be able to derive it on the spot. If you draw a blank in an exam, fall back on first principles: find the current with $I=\frac{V_{in}}{R_{T}}$, then find $V_{out}=IR_{1}$ for whichever resistor you need. Same answer, no equation to recall.</p>
+	</div>
+	<p>This equation is not supplied in your equation sheet, but it is worth remembering. You can still work out the p.d. across any resistor in a potential divider circuit by first calculating the current in the circuit by $I=\frac{V}{R_{T}}$ and then using $V=IR_{1}$ to find the $V_{out}$</p>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="3">
+	<h3>Using a potential divider with a varying voltage</h3>
+	<p>It may be the case, in some situations, that the emf being supplied to a circuit may vary over time. In the circuit below the power is being provided by a solar cell, whose output depends on the brightness of the sunlight at any given time.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/electricity/potential_divider_variable_voltage.svg') }}" alt="potential divider with a solar cell" class="size500">
+		<figcaption><b>Figure 6:</b>&nbsp;Potential divider circuits can be used to produce a steady voltage when the supply may, itself vary.</figcaption>
+	</figure>
+	<p>On days when it is less sunny the emf of the solar cell will drop and the power to the external circuitry would also drop. Clearly this would mean that whatever circuit is attached to this power supply would not be able to operate in cloudy conditions. To ensure a constant power supply to the external circuit, a potential divider can be utilised to ensure that the p.d. across the variable resistor remains constant and the power going to the external circuitry is also constant.</p>
+	<p>In practice extra components would be needed to adjust the resistance of the variable resistor, but this simple model demonstrates the principle.</p>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="4">
+	<h3>Worked example 1</h3>
+	<p>The circuit diagram below shows a $\quantity{6.0}{V}$ battery of negligible internal resistance connected in series to a light dependent resistor (LDR), a variable resistor and a fixed resistor, R.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/electricity/potential_divider_worked_example_1.svg') }}" alt="worked example circuit 1" class="size400">
+		<figcaption><b>Figure 7:</b>&nbsp;Circuit for the worked example.</figcaption>
+	</figure>
+	<ol class="page_list" type="a">
+		<li>For a particular light intensity the resistance of the LDR is $\quantity{50}{k\Omega}$. The resistance of R is $\quantity{5.0}{k\Omega}$ and the variable resistor is set to a value of $\quantity{35}{k\Omega}$.</li>
+		<ol class="page_list" type="i">
+			<li>Calculate the current in the circuit.</li>
+			<p class="workex">This is a simple $I=\frac{V}{R}$ calculation, but it is important to make sure that we calculate the total resistance of the three series resistors:</p>
+			<div class="formula">
+				\begin{align}
+				R_{T}&=R_{1}+R_{2}+R_{3}\\
+				R_{T}&=\quantity{50}{k\Omega}+\quantity{35}{k\Omega}+\quantity{5.0}{k\Omega}\\
+				\\
+				R_{T}&=\quantity{90}{k\Omega}
+				\end{align}
+			</div>
+			<p class="workex">We can now use the total resistance to find the current in the circuit. We know that the emf is $\quantity{6.0}{V}$ so the current is:</p>
+			<div class="formula">
+				\begin{align}
+				I&=\frac{V}{R}\\
+				I&=\frac{\quantity{6.0}{V}}{\quantity{90}{k\Omega}}\\
+				\\
+				I&=\quantity{6.7\times 10^{-5}}{A}
+				\end{align}
+			</div>
+			<div class="callout callout-mistake">
+				<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+				<p>Keep the full, unrounded value from your calculator for use in later parts of a multi-part question &mdash; here that's $\quantity{6.6666666667\times 10^{-5}}{A}$. Only round the <b>final</b> answer you report, to an appropriate number of significant figures (2 s.f. here). Rounding early and carrying the rounded value forward compounds errors through the rest of the question.</p>
+			</div>
+			<p class="workex">The calculation gives a full answer of $\quantity{6.6666666667\times 10^{-5}}{A}$, but it is important to round the answer to an appropriate number of significant figures, which in this case is two.</p>
+			<li>Calculate the reading on the voltmeter.</li>
+			<p class="workex">The voltmeter is across the resistor R, which has a resistance of $\quantity{5.0}{k\Omega}$, and we know from the previous part that the current is $\quantity{6.7\times 10^{-5}}{A}$. The voltmeter displays the potential difference across the resistor which is:</p>
+			<div class="formula">
+				\begin{align}
+				V&=IR\\
+				V&=\quantity{6.7\times 10^{-5}}{A}\times\quantity{5.0}{k\Omega}\\
+				\\
+				V&=\quantity{0.33}{V}
+				\end{align}
+			</div>
+		</ol>
+		<li>State and explain what happens to the reading on the voltmeter if the intensity of the light incident on the LDR increases.</li>
+		<p class="workex">The first two parts of this question were quite simple, especially as it was broken into intermediate steps, but students often do worse on questions that require you to explain circuits rather than just calculating with them.</p>
+		<p class="workex">If the light intensity on the LDR increases, its resistance decreases, so there will be a smaller potential difference across it. However the question is about the voltmeter, which is across a different component. As the emf of the battery is shared out across all the resistance, if the p.d. across one component decreases there must be a greater proportion used up over the other two so the reading on the voltmeter will increase.</p>
+		<li>For a certain application at a particular light intensity the pd across R needs to be $\quantity{0.75}{V}$. The resistance of the LDR at this intensity is $\quantity{5.0}{k\Omega}$.<br>
+		Calculate the required resistance of the variable resistor in this situation.</li>
+		<p class="workex">This calculation is harder as there are no intermediate stages, so we have to think carefully about how to approach the question. As we know the resistance of R we can calculate the current through it:</p>
+		<div class="formula">
+			\begin{align}
+			I&=\frac{V}{R}\\
+			I&=\frac{\quantity{0.75}{V}}{\quantity{5.0}{k\Omega}}\\
+			I&=\quantity{1.5\times 10^{-4}}{A}
+			\end{align}
+		</div>
+		<p class="workex">This is the current for the whole circuit, and we know the emf of the battery is $\quantity{6.0}{V}$. The equation $R=\frac{V}{I}$ will give the total resistance ($R_{T}$) of the circuit:</p>
+		<div class="formula">
+			\begin{align}
+			R_{T}&=\frac{V}{I}\\
+			R_{T}&=\frac{\quantity{6.0}{V}}{\quantity{1.5\times 10^{-4}}{A}}\\
+			R_{T}&=\quantity{40}{k\Omega}
+			\end{align}
+		</div>
+		<p class="workex">We know the resistances of the LDR and R, which we can subtract from the $R_{T}$:</p>
+		<div class="formula">$$R=\quantity{40}{k\Omega}-\quantity{5.0}{k\Omega}-\quantity{5.0}{k\Omega}=\quantity{30}{k\Omega}$$</div>
+	</ol>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="5">
+	<h3>Worked example 2</h3>
+	<p>The graph shows how the resistance, R<sub>R</sub>, of a metal resistor and the resistance, R<sub>Th</sub>, of a thermistor change with temperature.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/electricity/potential_dividers_worked_example_2.svg') }}" alt="potential divider graph" class="size600">
+		<figcaption><b>Figure 8:</b>&nbsp;A graph showing how the resistance of a resistor and a thermistor vary with temperature.</figcaption>
+	</figure>
+	<ol class="page_list" type="a">
+		<li>Give the values of the resistance R<sub>R</sub> and R<sub>Th</sub> at a temperature of $200^\circ\text{C}$.</li>
+		<p class="workex">This is just a matter of carefully reading the values from the graph. It is important, if you are going to annotate the graph, to use a sharp pencil and a ruler and to ensure the lines are drawn carefully.</p>
+		<p class="workex">The resistor has a value of $\quantity{130}{\Omega}$</p>
+		<p class="workex">The thermistor has a value of $\quantity{18}{\Omega}$. It is important to notice that the resistance of the thermistor lies between two lines on the graph, but we must judge its value between these two points.</p>
+		<li>The resistor and thermistor are connected in series to a $\quantity{12}{V}$ battery of negligible internal resistance, as shown below.</li>
+		<figure>
+			<img src="{{ url_for('static', filename='images/electricity/potential_divider_worked_example_3.svg') }}" alt="potential divider worked example circuit diagram" class="size400">
+			<figcaption><b>Figure 9:</b>&nbsp;Circuit for the worked example.</figcaption>
+		</figure>
+		<ol class="page_list" type="i">
+			<li>Calculate the voltage across the terminals AB when both the resistor and thermistor are at $200^\circ\text{C}$.</li>
+			<p class="workex">The easiest way to calculate the voltage across AB is to use the potential divider equation:</p>
+			<div class="formula">
+				\begin{align}
+				V_{AB}&=V\frac{R_{Th}}{R_{R}+R_{Th}}\\
+				V_{AB}&=\quantity{12}{V}\times\frac{\quantity{18}{\Omega}}{\quantity{130}{\Omega}+\quantity{18}{\Omega}}\\
+				\\
+				V_{AB}&=\quantity{1.46}{V}=\quantity{1.5}{V}
+				\end{align}
+			</div>
+			<p class="workex">This could also be calculated using a more long winded approach, find the current in the circuit, $I=\frac{V}{R}$ where R is $\quantity{18}{\Omega}+\quantity{130}{\Omega}=\quantity{148}{\Omega}$. Using this value of current the p.d. across R<sub>Th</sub> using $V=IR_{Th}$</p>
+			<li>Assuming that the temperature of the resistor always equals the temperature of the thermistor, deduce the temperature when the voltage across the resistor equals the voltage across the thermistor.</li>
+			<p class="workex">Using a little intuition and common sense this is an easy question. We know that the p.d. across a component is directly proportional to the resistance, so to have the same p.d. the resistances must be equal. On the graph, the temperature that both components have the same resistance is $50^\circ\text{C}$.</p>
+		</ol>
+		<li>A lamp and a switch are now connected across the terminals AB, as shown in diagram below.<br>
+		The temperature of the thermistor does not change from that obtained in part (b)(ii).</li>
+		<figure>
+			<img src="{{ url_for('static', filename='images/electricity/potential_divider_worked_example_4.svg') }}" alt="potential divider worked example circuit diagram 2" class="size500">
+			<figcaption><b>Figure 10:</b>&nbsp;Circuit for the worked example part c.</figcaption>
+		</figure>
+		<ol class="page_list" type="i">
+			<li>The lamp is rated at $\quantity{2.0}{W}$ at a voltage of $\quantity{6.0}{V}$. Calculate the resistance of the lamp at this rating.</li>
+			<p class="workex">This is a simple case of using $P=\frac{V^{2}}{R}$ so:</p>
+			<div class="formula">$$R=\frac{\left(\quantity{6.0}{V}\right)^{2}}{\quantity{2.0}{W}}=\quantity{18}{\Omega}$$</div>
+			<li>The switch S is now closed. Explain, without calculation, why the voltage across the thermistor will fall from the value in part (b)(ii).</li>
+			<div class="callout callout-mistake">
+				<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+				<p>Adding a component in <b>parallel</b> always <i>decreases</i> the resistance of that section of the circuit &mdash; never increases it, regardless of the new component's own resistance value. Losing sight of this is a common reason students struggle to predict how the p.d. redistributes once a switch is closed and a new parallel path opens up.</p>
+			</div>
+			<p class="workex">We can use the potential divider equation to backup our explanation, but it is better to look at the circuit and think carefully about what will happen.</p>
+			<p class="workex">At this temperature the thermistor has a resistance of just under $\quantity{90}{\Omega}$. When the switch is closed the bulb and the thermistor will be in parallel, and the resistance of the parallel network will drop to less than $\quantity{90}{\Omega}$ and therefore the total resistance of the circuit decreases. More current will now flow and the potential difference across the resistor will increase. As the emf of the battery is shared between the resistor and the parallel network, a smaller proportion of the emf will be used across the thermistor.</p>
+		</ol>
+	</ol>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="6">
+	<h3>Test yourself</h3>
+	<p>Try the questions below to check your understanding of this topic. Numerical questions use different numbers each time, so you can attempt them more than once.</p>
+	<div id="quiz-root"></div>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+
+{% endblock %}
+
+{% block resources_heading %}One page summary{% endblock %}
+
+{% block resources %}
+	<li><a href="{{ url_for('static', filename='summaries/electricity/potential_dividers_summary.html') }}" target="_blank"><i class="fas fa-file-alt"></i> Printable revision sheet</a></li>
+{% endblock %}
+
+{% block prev_link %}
+	<a href="{{ url_for('emf_and_internal_resistance') }}"><i class="fas fa-chevron-circle-left"></i><span class="nav_link">Previous topic</span></a>
+{% endblock %}
+
+{% block extra_scripts %}
+	<script src="{{ url_for('static', filename='js/quiz.js') }}"></script>
+	<script src="{{ url_for('static', filename='quizzes/potential_dividers_questions.js') }}"></script>
+	<script>
+		new PhysicsQuiz(document.getElementById('quiz-root'), potentialDividersQuestions, {
+			storageKey: 'potential_dividers'
+		});
+	</script>
+{% endblock %}

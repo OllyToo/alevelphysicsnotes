@@ -1,0 +1,298 @@
+{% extends "base.html" %}
+
+{% block title %}Momentum{% endblock %}
+{% block page_h1 %}Momentum{% endblock %}
+
+{% block meta_description %}A Level Physics notes and worked examples to help students with their exams and learning. In the last topic of this module we learn about momentum and its conservation, and relate it to Newton's laws of motion and energy.{% endblock %}
+{% block meta_keywords %}momentum, conservation of momentum, impulse, elastic, inelastic, collision, explosion, crumple zones, worked examples, exam questions, A level, physics{% endblock %}
+
+{% block extra_head %}
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/quiz.css') }}">
+{% endblock %}
+
+{% block page_boxes %}
+		<a href="#1"><button class="button">Momentum and its conservation</button></a>
+		<a href="#2"><button class="button">Elastic and inelastic collisions</button></a>
+		<a href="#3"><button class="button">Impulse</button></a>
+		<a href="#4"><button class="button">Momentum and safety</button></a>
+		<a href="#5"><button class="button">Worked example</button></a>
+		<a href="#6"><button class="button">Test yourself</button></a>
+{% endblock %}
+
+{% block spec %}
+	<div id="spec">
+		<p class="spec_ref"><b>3.4.1.6 Momentum</b></p>
+
+		<p class="spec_box">$momentum=mass\times velocity$</p>
+		<p class="spec_box">Conservation of linear momentum.</p>
+		<p class="spec_box">Principle applied quantitatively to problems in one dimension.</p>
+		<p class="spec_box">Force as the rate of change of momentum,</p>
+		<div class="formula">
+			$$F=\frac{\Delta \left (mv\right )}{\Delta t}$$
+		</div>
+		<p class="spec_box">Impulse = change in momentum</p>
+		<p class="spec_box">$F\Delta t=\Delta mv$, where <i>F</i> is constant.</p>
+		<p class="spec_box">Significance of the area under a force–time graph.</p>
+		<p class="spec_box">Quantitative questions may be set on forces that vary with time. Impact forces are related to contact times (eg kicking a football, crumple zones, packaging).</p>
+		<p class="spec_box">Elastic and inelastic collisions; explosions.</p>
+		<p class="spec_box">Appreciation of momentum conservation issues in the context of ethical transport design.</p>
+	</div>
+{% endblock %}
+
+{% block content %}
+
+		<section class="top_section" id="1">
+			<h3>Momentum and its conservation</h3>
+			<p>Momentum is an idea that should already feel fairly familiar, and the basics of it are simple. Momentum is the product of an object's mass and its velocity:</p>
+			<div class="formula">
+				$$\large p=mv$$
+			</div>
+			<p>Momentum can be thought of as a measure of an object's <i>"un-stoppability"</i>. Picture a small child running, and a large rugby player running at the same speed: the child has far less momentum, and is therefore much easier to stop.</p>
+			<figure>
+				<img src="{{ url_for('static', filename='images/mechanics/rugby_player_and_child.svg') }}" alt="rugby player and child running at the same speed" class="size600">
+				<figcaption><b>Figure 1:</b>&nbsp;They're both running at similar speeds, but one has much more momentum than the other!</figcaption>
+			</figure>
+
+			<p>If that were the whole story, momentum would be a fairly minor idea, but it's far more useful than just measuring "un-stoppability": momentum is a <b>conserved</b> quantity. Whenever two or more objects interact, the total momentum before the interaction equals the total momentum after it, provided no external resultant force acts on the system. This applies to <i>every</i> interaction: collisions, explosions, anything.</p>
+			<div class="formula">
+				$$\large m_{1}u_{1} + m_{2}u_{2}=m_{1}v_{1} + m_{2}v_{2}$$
+			</div>
+
+			<p>It's worth asking <i>why</i> momentum is conserved. The answer goes right back to <a href="{{ url_for('newtonlaws') }}">Newton's 3rd law</a>: whenever two objects interact, they exert equal and opposite forces on each other, for exactly the same length of time. Since impulse (covered below) is force multiplied by time, the two objects experience equal and opposite impulses, and therefore equal and opposite changes in momentum. Whatever momentum one object gains, the other loses, so the total is unchanged. This is also why momentum, unlike energy, can never be "lost" to heat or sound in a collision: the forces involved are internal to the system, and always come in Newton pairs that cancel out overall.</p>
+			<p>Because momentum is a vector, it's essential to assign a direction before starting any calculation. A reliable method is:</p>
+			<ol class="page_list">
+			<li>Choose a positive direction.</li>
+			<li>Write an expression for the total momentum <i>before</i> the interaction.</li>
+			<li>Write an expression for the total momentum <i>after</i> the interaction.</li>
+			<li>Set the two equal to each other, using the conservation of momentum.</li>
+			</ol>
+
+			<p>Take a simple case: two trolleys of the same mass collide and stick together, one moving, one stationary. Intuitively, the final velocity should be half the initial velocity, and it's easy to see that if the mass of the moving system doubles, the velocity halves. The situation below is a little more involved.</p>
+
+			<figure>
+				<img src="{{ url_for('static', filename='images/mechanics/momentum_1.svg') }}" alt="momentum of two trolleys colliding" class="size900">
+				<figcaption><b>Figure 2:</b>&nbsp;Applying the conservation of momentum in a collision.</figcaption>
+			</figure>
+
+			<p>Here, two trolleys of different masses move at different velocities. The faster trolley catches up to the slower one, collides, and sticks to it. What speed do they move off at? Applying the conservation of momentum:</p>
+			<div class="formula">
+				$$\large m_{1}u_{1} + m_{2}u_{2}=m_{1}v_{1} + m_{2}v_{2}$$
+			</div>
+			<p>The sum of the two trolleys' momenta before the collision is:</p>
+			<div class="formula">
+				$$\large 3\,\mathrm{kg}\times3\,\mathrm{ms}^{-1}+2\,\mathrm{kg}\times6\,\mathrm{ms}^{-1}=21\,\mathrm{kg\,ms}^{-1}$$
+			</div>
+			<p>This is also the momentum of the combined trolleys once they're moving together, so rearranging the equation for momentum gives their common velocity:</p>
+			<div class="formula">
+				$$\large v=\frac{p}{m}=\frac{21\,\mathrm{kg\,ms}^{-1}}{5\,\mathrm{kg}}=4.2\,\mathrm{ms}^{-1}$$
+			</div>
+
+			<p>That example works for objects that already have momentum, but what about objects that start at rest, with zero momentum? Below, two stationary trolleys are pushed apart by a spring released between them. If the trolleys had equal masses, $F=ma$ tells us the spring would give them equal accelerations, and therefore equal speeds; here, their masses differ, so it's worth deriving an expression for their relative velocities.</p>
+
+			<figure>
+				<img src="{{ url_for('static', filename='images/mechanics/momentum_2.svg') }}" alt="two trolleys exploding apart" class="size900">
+				<figcaption><b>Figure 3:</b>&nbsp;Applying the conservation of momentum in an explosion.</figcaption>
+			</figure>
+
+			<p>The initial momentum of the system is zero:</p>
+			<div class="formula">
+				$$\large mv+\frac{3}{2}mV=0$$
+			</div>
+			<div class="formula">
+				$$\large mv=-\frac{3}{2}mV$$
+			</div>
+			<p>The two $m$ terms cancel, leaving:</p>
+			<div class="formula">
+				$$\large v=-\frac{3}{2}V$$
+			</div>
+			<p>This tells us that the lighter trolley moves off with the greater speed, and the minus sign confirms that the two trolleys move in opposite directions.</p>
+			<p>This exact idea was tested in a notoriously difficult AQA exam question from 2016; it's worth seeing worked through in full.</p>
+			<p><a href="{{ url_for('aqa_2016_momentum_energy_q') }}" target="_blank">Conservation of momentum and energy: AQA 2016</a></p>
+			<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>	
+		</section>
+	<br>
+	<br>
+	<hr>
+		<section id="2">
+			<h3>Elastic and inelastic collisions</h3>
+			<p>So far, only explosions and "sticky" collisions have been considered, but objects can just as easily bounce off each other. Whatever happens in a collision, <b>momentum is always conserved</b> (so long as friction is negligible). Is energy always conserved too? The <i>total</i> amount of energy always is, but the objects involved aren't usually a closed system on their own, so energy can be transferred away as heat, sound, or internal energy. In these cases, the <i>kinetic</i> energy of the system decreases as a result of the collision.</p>
+			<p>"Springy" collisions, where kinetic energy is conserved as well as momentum, are properly called <a href="{{ url_for('elastic_collisions_extension') }}" target="_blank"><i>elastic collisions</i></a>. "Sticky" collisions, where kinetic energy is lost, are <i>inelastic</i>. Most real-world collisions sit somewhere between these two extremes, but perfectly elastic and perfectly inelastic (where the objects stick together) are the two cases most often considered.</p>
+			<div>
+			<table class="center" style="width:60%">
+				<tr>
+					<th></th>
+					<th><b>Momentum</b></th>
+					<th><b>Kinetic Energy</b></th>
+					<th><b>Total Energy</b></th>
+				</tr>
+				<tr>
+					<td><b>Elastic Collision</b></td>
+					<td>Conserved</td>
+					<td>Conserved</td>
+					<td>Conserved</td>
+				</tr>
+				<tr>
+					<td><b>Inelastic Collision</b></td>
+					<td>Conserved</td>
+					<td>Not conserved</td>
+					<td>Conserved</td>
+				</tr>
+			</table>
+			</div>
+			<p>Note that momentum is conserved in <i>both</i> cases; it's only kinetic energy that behaves differently. A useful check when answering "elastic or inelastic" questions is that two objects can only separate after colliding (rather than sticking together) if the collision conserves kinetic energy as well as momentum, so a collision where the objects rebound apart is a strong sign that it's elastic, or close to it.</p>
+
+			<div class="callout callout-mistake">
+				<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+				<p>Momentum is conserved in <b>every</b> collision, elastic or inelastic &mdash; it's only kinetic energy that's lost in an inelastic collision. Don't assume "inelastic" means momentum isn't conserved; the distinction between the two types of collision is entirely about kinetic energy, not momentum.</p>
+			</div>
+			<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>	
+		</section>
+	<br>
+	<br>
+	<hr>
+		<section id="3">
+			<h3>Impulse</h3>
+			<p>To understand how momentum can stay constant overall while kinetic energy is lost, it's worth looking more closely at the equations involved.</p>
+			<p>When two objects interact, their individual momenta change, usually because their velocities change. The change in momentum of a single object can be written as:</p>
+			<div class="formula">
+				$$\large \Delta p=m\Delta v=m(v-u)$$
+			</div>
+			<p>The term $(v-u)$ is also part of the definition of acceleration; dividing by $t$ gives:</p>
+			<div class="formula">
+				$$\large \frac{\Delta p}{t}=\frac{m\Delta v}{t}=F$$
+			</div>
+			<p>This shows that force can be defined as the <b>rate of change of momentum</b>, which is really just another way of stating Newton's 2nd law. Rearranging gives $\Delta p=Ft$: the change in momentum of an object depends on the force applied <i>and</i> the time for which it acts, whereas energy, from $W=Fs$, depends on the force applied and the <i>displacement</i> it causes. Momentum and energy therefore have different dimensions, those of time and length respectively, which is exactly why it's possible for one to be conserved while the other isn't.</p>
+
+			<div class="callout callout-definition">
+				<p class="callout-label"><i class="fas fa-lightbulb"></i> Worth remembering</p>
+				<p>Momentum ($\Delta p=Ft$) and energy ($W=Fs$) come from fundamentally different quantities: <b>time</b> and <b>displacement</b>. This is the deep reason a collision can conserve momentum while losing kinetic energy: the equal-and-opposite forces between the colliding objects act for exactly the same <i>time</i> on each object (guaranteeing equal and opposite impulses), but not necessarily over the same <i>distance</i>, so there's no equivalent guarantee for energy.</p>
+			</div>
+			<p>The product of force and time is called the <b>impulse</b> of the force:</p>
+			<div class="formula">
+				$$\large \text{Impulse}=F\Delta t=\Delta p$$
+			</div>
+			<p>Just as with a <a href="{{ url_for('energy') }}">force-displacement graph</a>, the area under a force-time graph is significant: it's equal to the impulse, and therefore the change in momentum, of the object.</p>
+			<figure>
+				<img src="{{ url_for('static', filename='images/mechanics/force_time_graph.svg') }}" alt="force time graph" class="size450">
+				<figcaption><b>Figure 4:</b>&nbsp;A force-time graph.</figcaption>
+			</figure>
+			<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>	
+		</section>
+	<br>
+	<br>
+	<hr>
+		<section id="4">
+			<h3>Momentum and safety</h3>
+			<p>The relationship between force, time, and momentum has a hugely important practical application: safety. Rearranging the impulse equation for force gives:</p>
+			<div class="formula">
+				$$\large F=\frac{\Delta p}{\Delta t}$$
+			</div>
+			<p>For a given change in momentum, $\Delta p$, increasing the time, $\Delta t$, over which that change happens reduces the average force needed to produce it. This single idea explains a huge range of safety technology:</p>
+
+			<div class="callout callout-mistake">
+				<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+				<p>Crumple zones, airbags, and similar safety features don't change the total change in momentum, $\Delta p$, at all &mdash; a car travelling at a given speed still has to lose exactly the same momentum whether or not it has crumple zones. What they change is $\Delta t$: by extending the time over which that momentum change happens, they <b>reduce the average force</b> required, rather than reducing the momentum change itself.</p>
+			</div>
+			<ul class="page_list">
+			<li><b>Car crumple zones</b> are designed to deform over a longer time during a collision, rather than stopping the car (and its occupants) almost instantly, reducing the peak force experienced.</li>
+			<li><b>Airbags and seatbelts</b> extend the time over which a passenger's momentum changes during a crash, again reducing the force on their body compared to hitting the dashboard or windscreen directly.</li>
+			<li><b>Cushioned trainers, running tracks, and gym mats</b> all extend the contact time of an impact, reducing the force transmitted to joints or bones.</li>
+			<li><b>Packaging materials</b>, such as bubble wrap or foam, work the same way, protecting fragile items by extending their stopping time in a fall or knock.</li>
+			</ul>
+			<p>This isn't only a matter of physics; it's also an example of <i>ethical</i> engineering design. Every safety feature added to a vehicle involves trade-offs: crumple zones and airbags add cost, weight, and complexity, which can affect fuel efficiency and price, while a vehicle designed purely to protect its own occupants may transfer more risk to pedestrians or cyclists outside it. Real transport design has to balance the physics of reducing impact forces against cost, environmental impact, and the safety of everyone involved, not just the people inside the vehicle.</p>
+			<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>	
+		</section>
+	<br>
+	<br>
+	<hr>
+		<section id="5">
+			<h3>Worked example</h3>
+
+			<figure>
+				<img src="{{ url_for('static', filename='images/mechanics/railway_trucks.svg') }}" alt="two railway trucks A and B travelling towards each other on a straight horizontal track" class="size700">
+				<figcaption><b>Figure 5:</b>&nbsp;Trucks A and B travelling towards each other before colliding.</figcaption>
+			</figure>
+
+			<p>Trucks $A$ and $B$ travel towards each other on the same straight, horizontal railway line, as shown in Figure 5. They collide, join together, and move off together, coming to rest after travelling 15 m. Truck $A$ has a mass of 16 000 kg and was moving at 2.8 m s<sup>−1</sup> just before the collision; truck $B$ has a mass of 12 000 kg and was moving at 3.1 m s<sup>−1</sup>.</p>
+
+			<div>
+				<ol class="page_list" type="A">
+					<li>State the quantity that is <i>not</i> conserved in an inelastic collision.</li>
+					<p class="workex">Total kinetic energy.</p>
+
+					<li>Show that the speed of the joined trucks immediately after the collision is about 0.3 m s<sup>−1</sup>.</li>
+					<p class="workex">Taking the direction truck $A$ is travelling in as positive, truck $B$'s velocity is $-\quantity{3.1}{ms^{-1}}$, since it's travelling the opposite way. Applying conservation of momentum, with the trucks moving together afterwards at velocity $v$:</p>
+					<div class="formula">
+						$$m_{A}u_{A}+m_{B}u_{B}=(m_{A}+m_{B})v$$
+					</div>
+					<div class="formula">
+						$$(16\,000\times2.8)+(12\,000\times(-3.1))=28\,000v$$
+					</div>
+					<div class="formula">
+						$$44\,800-37\,200=28\,000v$$
+					</div>
+					<div class="formula">
+						$$v=\frac{7\,600}{28\,000}\approx\quantity{0.27}{ms^{-1}}\approx\quantity{0.3}{ms^{-1}}$$
+					</div>
+					<p class="workex">Since this is a "show that" question, every stage of the working needs to be visible, not just the final answer; a string of numbers with no indication of what they represent won't get full credit, even if the final value is correct.</p>
+
+					<div class="callout callout-mistake">
+						<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+						<p>For a "show that" question, the target answer is already given to you, so marks come entirely from the working, not the final number. Writing down a sequence of numbers with no labels or explanation of what each line represents, even if it arrives at the right value, is a common way to lose marks on this style of question.</p>
+					</div>
+
+					<li>Calculate the impulse that acts on each truck during the collision. Give an appropriate unit for your answer.</li>
+					<p class="workex">The impulse on a single object is its change in momentum, $\Delta p=m(v-u)$. Using the more precise value of $v=\quantity{0.271}{ms^{-1}}$ found in part B, for truck $A$:</p>
+					<div class="formula">
+						$$\text{Impulse}_{A}=m_{A}(v-u_{A})=16\,000\times(0.271-2.8)\approx\quantity{-4.05\times10^{4}}{Ns}$$
+					</div>
+					<p class="workex">And for truck $B$:</p>
+					<div class="formula">
+						$$\text{Impulse}_{B}=m_{B}(v-u_{B})=12\,000\times(0.271-(-3.1))\approx\quantity{+4.05\times10^{4}}{Ns}$$
+					</div>
+					<p class="workex">The two impulses come out equal and opposite, which makes sense: this is exactly the Newton's 3rd law pairing discussed above, since the trucks exert equal and opposite forces on each other, for the same length of time, during the collision. The unit of impulse can be given as either N s or kg m s<sup>−1</sup>, since the two are equivalent.</p>
+
+					<li>Explain, without doing a calculation, how the motion of the trucks immediately after the collision would be different for a collision that is perfectly elastic.</li>
+					<p class="workex">This is a "explain" question, so it's worth reasoning through the physics rather than guessing. A perfectly elastic collision must conserve <i>both</i> momentum and kinetic energy, not just momentum. If the trucks moved off together, as they do in this inelastic case, kinetic energy would still be lost, exactly as it is here, so that can't be the elastic outcome.</p>
+					<p class="workex">The only way both momentum and kinetic energy can be conserved is if the trucks separate again after the collision, rather than sticking together, moving in opposite directions rather than jointly in one direction. The total momentum must still equal the original 7600 kg m s<sup>−1</sup> in truck $A$'s direction, so truck $B$, being the lighter truck, would need to rebound with a greater speed than truck $A$ to make up for truck $A$ having less speed (or even moving backwards) after the collision. It's a common mistake to assume both trucks simply reverse their original speeds, but that would reverse the total momentum of the system entirely, which isn't allowed; equally, assuming they simply swap velocities only works out if the two trucks happen to have equal mass, which they don't here.</p>
+
+					<div class="callout callout-mistake">
+						<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+						<p>When asked how a collision would differ if it were elastic, don't just guess a "neat" outcome like both objects reversing their speed, or simply swapping velocities. Neither is generally correct: reversing both speeds changes the total momentum of the system (not allowed), and swapping velocities only works when the two masses happen to be equal. Reason instead from the two things that <i>must</i> hold: momentum conservation, and kinetic energy conservation.</p>
+					</div>
+				</ol>
+			</div>
+
+			<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+		</section>
+	<br>
+	<br>
+	<hr>
+		<section id="6">
+			<h3>Test yourself</h3>
+			<p>Try the questions below to check your understanding of this topic. Numerical questions use different numbers each time, so you can attempt them more than once.</p>
+			<div id="quiz-root"></div>
+			<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+		</section>
+
+	{% endblock %}
+
+	{% block resources_heading %}One page summary{% endblock %}
+
+{% block resources %}
+	<li><a href="{{ url_for('static', filename='summaries/mechanics/momentum_summary.html') }}" target="_blank"><i class="fas fa-file-alt"></i> Printable revision sheet</a></li>
+{% endblock %}
+
+{% block prev_link %}
+	<a href="{{ url_for('energy') }}"><i class="fas fa-chevron-circle-left"></i><span class="nav_link">Previous topic</span></a>
+{% endblock %}
+
+{% block extra_scripts %}
+	<script src="{{ url_for('static', filename='js/quiz.js') }}"></script>
+	<script src="{{ url_for('static', filename='quizzes/momentum_questions.js') }}"></script>
+	<script>
+		new PhysicsQuiz(document.getElementById('quiz-root'), momentumQuestions, {
+			storageKey: 'momentum'
+		});
+	</script>
+{% endblock %}

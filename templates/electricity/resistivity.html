@@ -1,0 +1,249 @@
+{% extends "base.html" %}
+
+{% block title %}Resistivity{% endblock %}
+{% block page_h1 %}Resistivity{% endblock %}
+
+{% block meta_description %}A Level Physics notes and worked examples to help students with their exams and learning. Here we look at resistivity, the property of conductors that determines the resistance based on its physical properties.{% endblock %}
+{% block meta_keywords %}resistivity, resistance, resistors, superconductors, super-conductors, conductors, current, electricity, worked examples, exam questions, A level, physics{% endblock %}
+
+{% block extra_head %}
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/quiz.css') }}">
+{% endblock %}
+
+{% block page_boxes %}
+	<a href="#1"><button class="button">What is resistivity?</button></a>
+	<a href="#2"><button class="button">Worked example</button></a>
+	<a href="#3"><button class="button">Semiconductors and thermistors</button></a>
+	<a href="#4"><button class="button">Superconductors</button></a>
+	<a href="#5"><button class="button">Test yourself</button></a>
+{% endblock %}
+
+{% block spec %}
+<div id="spec">
+	<p class="spec_ref"><b>3.5.1.3 Resistivity</b></p>
+	<p class="spec_box">Resistivity,</p>
+	<p class="spec_box"><span>$\rho=\frac{RA}{l}$</span></p>
+	<p class="spec_box">Description of the qualitative effect of temperature on the resistance of metal conductors and thermistors.</p>
+	<p class="spec_box">Only negative temperature coefficient (ntc) thermistors will be considered.</p>
+	<p class="spec_box">Applications of thermistors to include temperature sensors and resistance&ndash;temperature graphs.</p>
+	<p class="spec_box">Superconductivity as a property of certain materials which have zero resistivity at and below a critical temperature which depends on the material.</p>
+	<p class="spec_box">Applications of superconductors to include the production of strong magnetic fields and the reduction of energy loss in transmission of electric power.</p>
+	<p class="spec_box">Critical field will not be assessed.</p>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<section class="top_section" id="1">
+	<h3>What is resistivity?</h3>
+	<p>The longer a conductor, the greater the number of collisions that will occur between the electrons and the metal ions. As discussed on the previous page, the collisions between these ions and the electrons give rise to the resistance of conductors, therefore the longer the conductor the greater its resistance.</p>
+	<figure>
+		<img class="size400" src="{{ url_for('static', filename='images/electricity/resistance_and_length.svg') }}" alt="resistance and length">
+		<figcaption><b>Figure 1:</b>&nbsp;The resistance of a conductor increases with length.</figcaption>
+	</figure>
+	<p>If the length of a conductor is doubled, its resistance is doubled, so the resistance is directly proportional to the length:</p>
+	<div class="formula">
+		$$R\propto l$$
+	</div>
+	<p>Conversely, if a potential difference is applied across a thick wire, and then a thin, as there are more charge carriers per metre in the the thick wire, a greater current will flow. A greater current from the same resistance suggests a lower resistance. So we can deduce that the greater the diameter of the conductor, the lower its resistance.</p>
+	<figure>
+		<img class="size300" src="{{ url_for('static', filename='images/electricity/resistance_and_thickness.svg') }}" alt="resistance and thickness">
+		<figcaption><b>Figure 2:</b>&nbsp;Resistance decreases with increasing diameter</figcaption>
+	</figure>
+	<p>In fact the resistance of a conductor will half if the cross-sectional area of it is doubled:</p>
+	<div class="formula">
+		$$R\propto\frac{1}{A}$$
+	</div>
+	<p>With two proportional relationships we can build an equation that links them by introducing a constant called the resistivity and is as follows:</p>
+	<div class="formula">
+		$$\large R=\frac{\rho l}{A}$$
+	</div>
+	<p>If we rearrange the equation above to make &rho; the subject we can see that the units of resistivity are $\units{\Omega m}$.</p>
+	<div class="formula">
+		\begin{align}
+		\rho&=\frac{RA}{l}\\
+		\\
+		\rho&=\frac{ \units{\Omega\,m^{2}}} {\units{m}}\\
+		\\
+		\rho&=\units{\Omega\,m}
+		\end{align}
+	</div>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>Always convert lengths and diameters into <b>metres</b> before substituting into $R=\frac{\rho l}{A}$ or $\rho=\frac{RA}{l}$. Values are very often given in mm, cm or km &mdash; plugging these in unconverted is one of the most common ways to lose marks on resistivity questions, since the error can be a factor of a thousand or more.</p>
+	</div>
+	<p>The resistivity of a material will remain constant under a constant temperature, and are usually given at room temperature ($\quantity{20}{^\circ\text{C}}$). The resistivities of some common conductors are given below:</p>
+	<table class="center">
+		<tr>
+			<th class="column30">Conductor</th>
+			<th class="column30">Resistivity /$\units{\Omega m}$</th>
+		</tr>
+		<tr>
+			<td>Copper</td>
+			<td>1.7&times;10<sup>-8</sup></td>
+		</tr>
+		<tr>
+			<td>Gold</td>
+			<td>2.4&times;10<sup>-8</sup></td>
+		</tr>
+		<tr>
+			<td>Carbon (graphite)</td>
+			<td>1&times;10<sup>-5</sup></td>
+		</tr>
+		<tr>
+			<td>Constantin</td>
+			<td>4.9&times;10<sup>-7</sup></td>
+		</tr>
+		<tr>
+			<td>Aluminium</td>
+			<td>2.7&times;10<sup>-8</sup></td>
+		</tr>
+		<tr>
+			<td>Silver</td>
+			<td>1.6&times;10<sup>-8</sup></td>
+		</tr>
+		<tr>
+			<td>Silicon</td>
+			<td>6.4&times;10<sup>2</sup></td>
+		</tr>
+	</table>
+	<p>The lower the resistivity of a material, the better it conducts electricity. Engineers will often have to make decisions on the use of materials as conductors based on the value of its resistivity, as well as other considerations such as its Young&rsquo;s modulus, and reactivity.</p>
+	<p>For instance, copper has a lower resistivity than aluminium, so it is a better conductor, but it has a higher Young&rsquo;s modulus, so it stretches less than aluminium. So when considering materials for long distance power lines, where there the cables may stretch and contract due to fluctuations in the temperature and be stretched by the wind, aluminium is a better choice.</p>
+	<p>Many high end audio connectors are plated with gold, again copper is a better conductor, but will tarnish over time, whereas gold is extremely unreactive so will provide a good electrical contact for a very long time. Silver, despite being the best conductor, also tarnishes so is not a good choice for this function.</p>
+	<p>You will carry out a CAP to investigate the resistivity of constantin wire.</p>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="2">
+	<h3>Worked example</h3>
+	<p>A cable used in high-voltage power transmission consists of six aluminium wires surrounding a steel wire. A cross-section is shown below.</p>
+	<figure>
+		<img class="size200" src="{{ url_for('static', filename='images/electricity/resistivity_worked_example.svg') }}" alt="power cable worked example">
+		<figcaption><b>Figure 3:</b>&nbsp;A cross section through a power transmission cable.</figcaption>
+	</figure>
+	<p>The resistance of a length of $\quantity{1.0}{km}$ of the steel wire is $\quantity{3.3}{\Omega}$. The resistance of a length of $\quantity{1.0}{km}$ of one of the aluminium wires is $\quantity{1.1}{\Omega}$.</p>
+	<ol class="page_list" type="a">
+		<li>The steel wire has a diameter of $\quantity{7.4}{mm}$.<br>
+		Calculate the resistivity of steel.</li>
+		<p class="workex">This question at first looks very simple, and it is, so long as you remember to convert all the quantities given in the question to the correct SI units.</p>
+		<ul class="page_list">
+			<li>$\quantity{1.0}{km}= \quantity{1000}{m}$</li>
+			<li>$\quantity{7.4}{mm}= \quantity{7.4\times 10^{-3}}{m}$</li>
+		</ul>
+		<p class="workex">We are given the diameter of the wire, and we need to calculate the area:</p>
+		<div class="formula">
+			$$A=\pi r^{2}$$
+		</div>
+		<p class="workex">Or</p>
+		<div class="formula">
+			$$A=\frac{\pi D^{2}}{4}$$
+		</div>
+		<p class="workex">It is better to use the second equation as it means we can use the data as it is given in the question, without any intermediate calculations to find the radius.</p>
+		<div class="callout callout-mistake">
+			<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+			<p>A very common error here is using the given diameter directly as the radius in $A=\pi r^{2}$, which overestimates the area by a factor of 4. Either halve the diameter first to get the radius, or use $A=\frac{\pi D^{2}}{4}$ directly with the diameter as given &mdash; just be consistent about which one you're using.</p>
+		</div>
+		<div class="formula">
+			$$A=\frac{\pi\times\left(\quantity{7.4\times 10^{-3}}{m}\right)^{2}}{4}=\quantity{4.3008403\times 10^{-5}}{m^{2}}$$
+		</div>
+		<p class="workex">It is good practice to write down as much of your calculator&rsquo;s display for this intermediate step to avoid any rounding errors in the final calculation. If your calculator has a memory function you can store the value in that and retrieve it when required.</p>
+		<p class="workex">Now it is just a matter of correctly substituting in the data into the equation for resistivity as it is given on your equation sheet:</p>
+		<div class="formula">
+			\begin{align}
+			\rho&=\frac{RA}{l}\\
+			\\
+			&=\frac{\quantity{3.3}{\Omega}\times\quantity{4.3008403\times 10^{-5}}{m^{2}}}{\quantity{1000}{m}}\\
+			\\
+			&=\quantity{1.4\times 10^{-7}}{\Omega m}
+			\end{align}
+		</div>
+		<li>Explain why only a small percentage of the total current in the cable passes through the steel wire.</li>
+		<p class="workex">The steel wire has a higher resistivity, so is a worse conductor than the aluminium wires, in fact the resistance of the aluminium is one third of the steel, so three times as much current will flow through each aluminium wire. There are six aluminium wires for each steel wire, so the total area of the aluminium wires is six times that of the steel, and they effectively behave like parallel resistors.</p>
+	</ol>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="3">
+	<h3>Semiconductors and thermistors</h3>
+	<p>Semiconductors are materials that do not conduct electricity like regular conductors, such as metals, but will only conduct electricity under certain conditions, either if they are given energy through heat or light, or if an electric field is applied. Semiconductors are of fundamental importance to modern electronics as the transistors and diodes which are used to construct computers are made from them. The only semiconductors that you will be using at A level are thermistors, light dependent resistors (LDRs), diodes and LEDs.</p>
+	<p>Thermistors are resistors whose resistivity varies with temperature. Of course, all resistors, and conductors, increase their resistivity as their temperature increases, but the effect in thermistors is much more dramatic. Thermistors come in two varieties, positive temperature coefficient (PTC) and negative temperature coefficient (NTC). PTC thermistors increase their resistivity as the temperature increases, whereas NTC thermistors decrease their resistivity with temperature. We will only investigate NTC thermistors at A level. Typically an NTC thermistor varies its resistance across a range of around $\quantity{200}{\Omega}$ over $\quantity{100}{^\circ\text{C}}$. This makes them very useful in temperature controlled circuits and as temperature sensors. Different thermistors have different values for resistance, and different operating temperatures, so electronics engineers can choose the most suitable for their particular application. If a change in temperature is required to measured to a high degree of accuracy, a thermistor whose value is changing rapidly at the temperature of interest.</p>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>Don&rsquo;t apply the metal-conductor rule to thermistors. A <b>metal</b> conductor's resistance <i>increases</i> with temperature (more ion vibration, more electron collisions). An <b>NTC thermistor</b> does the opposite &mdash; its resistance <i>decreases</i> with temperature, because more charge carriers are freed as heat energy excites electrons into the conduction band. These are genuinely different mechanisms, and mixing them up on an explain-style question is one of the most common errors on this topic.</p>
+	</div>
+	<figure>
+		<img class="size600" src="{{ url_for('static', filename='images/electricity/thermistor_graph.svg') }}" alt="thermistor resistance against temperature">
+		<figcaption><b>Figure 4:</b>&nbsp;A negative temperature coefficient thermistor. Resistance decreases with temperature.</figcaption>
+	</figure>
+	<p>Thermistors make very good thermometers, as they are very responsive, they change rapidly with temperature change, however, they are not the most reliable, and they need supporting circuitry and metering to make a measurement.</p>
+	<p>Thermistors are <em>intrinsic semiconductors</em> which means that the materials from which they are built are <em>undoped</em>, they are made from pure materials, such as silicon or germanium, or compounds such as gallium arsenide, that electrons that can be thermally excited from the <em>valence band</em> where they are attached to the outer layers of the atoms to the <em>conduction band</em> where they behave like free electrons in a conductor. The more energy supplied, either through heat, as for a thermistor, or light for an LDR, the more electrons are promoted from the valence band to the conduction band, there greater the number of charge carriers available and the lower the resistance. When an electron moves across the energy gap it leaves behind a <em>hole</em>. An intrinsic semiconductor has an equal number of holes and conduction electrons, and although holes are an absence of particles, they behave as if they are positively charged particles, and are treated as such in semiconductor development.</p>
+	<figure>
+		<img class="size600" src="{{ url_for('static', filename='images/electricity/intrinsic_semiconductor.svg') }}" alt="schematic of the operation of an intrinsic semiconductor">
+		<figcaption><b>Figure 5:</b>&nbsp;Electrons being excited to the conduction band in an intrinsic semiconductor.</figcaption>
+	</figure>
+	<p>Diodes and LEDs are both extrinsic semiconductors, and are made from materials which are <em>doped</em>. This means that the semiconducting material (typically silicon or germanium) have extra materials mixed with them, that either donate or accept electrons, providing either more conduction electrons or more holes. Semiconductors which have extra free electrons are called N-type and those with extra holes are called P-type. A diode is a simple combination of N-type and P-type semiconductors, when a potential difference, greater than a minimum value (around $\quantity{0.7}{V}$), is applied across it, electrons move from the N-type semiconductor across the depletion region to the P-type semiconductor creating a hole. When this happens in an LED the energy that the electron release when they re-combine with a hole is greater than the difference between the electron&rsquo;s energy and the hole&rsquo;s energy, the difference is released as a photon.</p>
+	<figure>
+		<img class="size600" src="{{ url_for('static', filename='images/electricity/diode_working.svg') }}" alt="schematic of a diode">
+		<figcaption><b>Figure 6:</b>&nbsp;A simple diode made from N-type and P-type semiconducting materials.</figcaption>
+	</figure>
+	<p>Although the details of the workings of semiconductors is beyond A level study, it is worthwhile thinking about how their function can be explained by what you have studied in other modules.</p>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="4">
+	<h3>Superconductors</h3>
+	<p>Superconductors are a special group of materials that have developed which exhibit a zero resistivity. This means that they conduct with not electrical resistance whatsoever. Clearly this is a great development for high power electrical circuits, there is, however, a drawback. The phenomenon of superconductivity only occurs at very low temperatures. The first superconductor to be discovered was mercury, which becomes a superconductor at $\quantity{4.2}{K}$ or around $\quantity{-269}{^\circ\text{C}}$. The temperature at which a material becomes a superconductor is known as the <em>critical temperature</em>. We can define a superconductor as <em>a material with zero resistance at (or below) its critical temperature</em>.</p>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>A superconductor below its critical temperature has <b>exactly zero</b> resistance &mdash; not just "very low" or "very small" resistance. In definition-recall questions, describing superconductivity as low resistance rather than zero resistance is a common way to lose an easy mark.</p>
+	</div>
+	<p>Most materials only become superconductors at very low temperatures, and this effect is destroyed in the presence of strong magnetic fields, so can only carry small currents. A new generation of ceramic, high temperature superconductors are being developed, and currently the material with the highest critical temperature is hydrogen sulfide (H<sub>2</sub>S) which becomes superconducting at $\quantity{203}{K}$ or $\quantity{-70}{^\circ\text{C}}$, although this only superconducts under very high pressures. These materials are cooled using liquid helium or liquid nitrogen, and the most usable superconductors are made from ceramic materials such as yttrium-barium-copper-oxide or YBCO, which has a critical temperature of $\quantity{92}{K}$ or $\quantity{-181}{^\circ\text{C}}$.</p>
+	<figure>
+		<img class="size600" src="{{ url_for('static', filename='images/electricity/phase_transition_ybco.svg') }}" alt="graph showing YBCO becoming a superconductor at its critical temperature">
+		<figcaption><b>Figure 7:</b>&nbsp;A graph showing yttrium-barium-copper-oxide (YBCO) becoming a superconductor at its critical temperature</figcaption>
+	</figure>
+	<p>Superconductors also exhibit some strange effects, such as the exclusion of magnetic fields, which allows them to levitate when placed near a strong magnet. This is called the Meissner effect and is utilised in modern MAGLEV trains and is neatly demonstrated in the video below. Superconductors have many potential uses, some have already been implemented. They are particularly useful in situations where there is a requirement for high current transmission as there is no energy or power loss across them due to the zero resistance. They are already in use in MRI scanners and particle accelerators where strong magnetic fields are required and very low energy dissipation. They would be useful in modern microchip and supercomputer development as they allow higher processing speeds, smaller construction all with no wasted energy. If room temperature superconductors were able to be developed then they could be used for energy transmission with no power loss across the network and they could be used for very efficient, small transformers.</p>
+	<div class="video-tray">
+		<div class="video-container">
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/zPqEEZa2Gis?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+		</div>
+	</div>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="5">
+	<h3>Test yourself</h3>
+	<p>Try the questions below to check your understanding of this topic. Numerical questions use different numbers each time, so you can attempt them more than once.</p>
+	<div id="quiz-root"></div>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+
+{% endblock %}
+
+{% block resources_heading %}One page summary{% endblock %}
+
+{% block resources %}
+	<li><a href="{{ url_for('static', filename='summaries/electricity/resistivity_summary.html') }}" target="_blank"><i class="fas fa-file-alt"></i> Printable revision sheet</a></li>
+{% endblock %}
+
+{% block prev_link %}
+	<a href="{{ url_for('resistors') }}"><i class="fas fa-chevron-circle-left"></i><span class="nav_link">Previous topic</span></a>
+{% endblock %}
+
+{% block next_link %}
+	<a href="/electricity/power-and-resistance"><span class="nav_link">Next topic</span><i class="fas fa-chevron-circle-right"></i></a>
+{% endblock %}
+
+{% block extra_scripts %}
+	<script src="{{ url_for('static', filename='js/quiz.js') }}"></script>
+	<script src="{{ url_for('static', filename='quizzes/resistivity_questions.js') }}"></script>
+	<script>
+		new PhysicsQuiz(document.getElementById('quiz-root'), resistivityQuestions, {
+			storageKey: 'resistivity'
+		});
+	</script>
+{% endblock %}

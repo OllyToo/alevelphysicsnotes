@@ -1,0 +1,214 @@
+{% extends "base.html" %}
+
+{% block title %}Specific heat capacity{% endblock %}
+{% block page_h1 %}Specific heat capacity{% endblock %}
+
+{% block meta_description %}A Level Physics notes and worked examples to help students with their exams and learning. This page is about specific heat capacity and how different materials behave when they are heated.{% endblock %}
+{% block meta_keywords %}specific heat capacity, thermal, energy, transfer, internal energy, continuous flow, worked examples, exam questions, A level, physics{% endblock %}
+
+{% block extra_head %}
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/quiz.css') }}">
+{% endblock %}
+
+{% block page_boxes %}
+	<a href="#1"><button class="button">Intro</button></a>
+	<a href="#2"><button class="button">Heat and temperature</button></a>
+	<a href="#3"><button class="button">Internal energy</button></a>
+	<a href="#4"><button class="button">Specific heat capacity</button></a>
+	<a href="#5"><button class="button">Worked example</button></a>
+	<a href="#6"><button class="button">Finding the specific heat capacity of materials experimentally.</button></a>
+	<a href="#7"><button class="button">Measuring the SHC of a material using the continuous flow method</button></a>
+	<a href="#8"><button class="button">Test yourself</button></a>
+{% endblock %}
+
+{% block spec %}
+<div id="spec">
+	<p class="spec_ref"><b>3.6.2.1 Thermal energy transfer</b></p>
+	<p class="spec_box">Internal energy is the sum of the randomly distributed kinetic energies and potential energies of the particles in a body.</p>
+	<p class="spec_box">The internal energy of a system is increased when energy is transferred to it by heating or when work is done on it (and vice versa), eg a qualitative treatment of the first law of thermodynamics.</p>
+	<p class="spec_box">For a change of temperature: <br>$Q=mc\Delta\theta$ where <i>c</i> is specific heat capacity.</p>
+	<p class="spec_box">Calculations including continuous flow.</p>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<section class="top_section" id="1">
+	<p>This module, Thermal physics, focuses on the transfer of thermal energy and its effect on temperature and the state of the material. Although brief, the module contains quite a lot of maths, especially on this page, when discussing the transfer of heat, and also when deriving the equations of kinetic theory. Stick with it as the theory behind this module is pretty simple and the maths is surprisingly satisfying.</p>
+</section>
+<br><br><hr>
+
+<section id="2">
+	<h3>Heat and temperature</h3>
+	<p>Heat and temperature are easily confused, but it is important to understand the difference. Two objects can have different amounts of heat, but have the same temperature, and vice-a-versa two object can have very different temperatures, but have the same amount of heat.</p>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>Heat and temperature are not the same thing, and mixing them up costs marks on explain-style questions. <b>Temperature</b> is a measure of the average kinetic energy of particles. <b>Heat</b> is energy flowing from one place to another because of a temperature difference. Two objects at the same temperature can hold very different amounts of internal energy (heat) if their masses or specific heat capacities differ.</p>
+	</div>
+	<p>Heat can be thought of as flowing. If we put a hot object in <i>thermal contact</i> with a cold one, heat will flow from the hot object to the cold one. It never happens the other way around.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/thermal_physics/heat_flow.svg') }}" alt="heat flow" class="size300">
+		<figcaption><b>Figure 1:</b>&nbsp;Heat always flows from hotter bodies to cooler bodies</figcaption>
+	</figure>
+	<p>Heat is defined as the flow of energy from a warmer body to a cooler one. If there is no flow of energy there is very little sense of talking about heat. If we leave a hot object and a cold object out in a room which is at normal room temperature, there will be a flow of heat from the hot object into the room and a flow of heat from the room into the cold object.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/thermal_physics/hot_and_cold.svg') }}" alt="heat flowing from hot to cold and cold to hot" class="size700">
+		<figcaption><b>Figure 2:</b>&nbsp;The hot tea will radiate heat away to the cooler room, whereas the cold ice lolly absorbs heat from the room</figcaption>
+	</figure>
+	<p>So as heat flows from the cup of tea to the room and it loses heat its temperature drops and it will reach <i>thermal equilibrium</i> with the room when they are at the same temperature. The ice lolly will absorb heat from the room and will melt as it reaches <i>thermal equilibrium</i>. Two or more bodies are said to be in thermal equilibrium if they are at the same temperature and there is no <i>net</i> flow of energy between the them. Temperature difference can be thought of as the driving force behind heat flow.</p>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="3">
+	<h3>Internal Energy</h3>
+	<p>Inside any solid, liquid or gas at any temperature above absolute zero, the particles are constantly moving; in a gas the particles move freely in random directions, in a solid they vibrate about a fixed position. Therefore the particles have kinetic energy and potential energy due to their inter-molecular bonds. The more the particles vibrate or move, the hotter the material. The <i>internal energy</i> of the material is the sum of the distribution of the kinetic energies of the particles in the material and the potential energies. Temperature is the measure of the internal energy of a substance (internal energy is sometimes called thermal energy as magnetised metals also have higher internal energies). The particles move with a range of kinetic energies so in a material such as a gas, where there are no inter-molecular bonds the temperature is directly proportional to the average kinetic energy. The internal energy of a substance can be changed by,</p>
+	<ul class="page_list">
+		<li>Transfer of heat or energy.</li>
+		<li>Doing work on the object.</li>
+	</ul>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="4">
+	<h3>Specific Heat Capacity</h3>
+	<figure>
+		<img src="{{ url_for('static', filename='images/thermal_physics/heat_capacity.svg') }}" alt="heat capacity" class="size600">
+		<figcaption><b>Figure 3:</b>&nbsp;Heat capacity is how much energy a material can absorb for a change in temperature</figcaption>
+	</figure>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p><b>Heat capacity</b> (of a specific object, in $\units{J\,^\circ C^{-1}}$) and <b>specific heat capacity</b> (per kilogram of a material, in $\units{J\,kg^{-1}\,^\circ C^{-1}}$) are different quantities, and question-writers use the distinction deliberately. If a question gives you the heat capacity of a whole object, don't divide by its mass expecting to need $c$ separately &mdash; and vice versa, don't forget to multiply by mass when using specific heat capacity.</p>
+	</div>
+	<p>If two buckets of water with equal masses and different temperatures are mixed together they will reach a thermal equilibrium. The cooler mass of water will increase in temperature and the warmer mass will decrease. As they are the same mass of the same material, they will share out their heat equally. In other words they will do an equal amount of work on each other and there will be an equal amount of heat flow between them. So as in the picture below, they will come to a thermal equilibrium at a temperature which is half of the temperature difference between them. In this case the equilibrium temperature is $\quantity{50}{^\circ C}$.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/thermal_physics/mixing1.svg') }}" alt="mixing liquids 1" class="size500">
+		<figcaption><b>Figure 4:</b>&nbsp;When mixing water at different temperatures they will reach an equilibrium temperature</figcaption>
+	</figure>
+	<p>If one of the buckets of water has a larger mass of water and a higher temperature it will be able to do more work on the cooler bucket and therefore more heat will be able to flow to the cooler bucket and it will be able to increase its temperature by a larger amount. Again, because they are both the same substance the amount of heat flow is proportional to only the temperature difference and the mass. The heat (<i>Q<sub>1</sub></i>) lost by the hotter water is equal to the heat (<i>Q<sub>2</sub></i>) gained by the cooler water.</p>
+	<div class="formula">$$Q_{1} = Q_{2}$$</div>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>$Q_1=Q_2$ assumes <b>no heat is lost to the surroundings</b> &mdash; a perfectly insulated system. In practice (and in later sections of this page) some heat always escapes to the container or the environment, which is exactly why calorimetry experiments need careful insulation, and why the continuous flow method further down this page was developed to cancel out that heat loss instead of just ignoring it.</p>
+	</div>
+	<figure>
+		<img src="{{ url_for('static', filename='images/thermal_physics/mixing2.svg') }}" alt="mixing liquids 2" class="size500">
+		<figcaption><b>Figure 5:</b>&nbsp;The equilibrium temperature shifts if the masses are not equal</figcaption>
+	</figure>
+	<p>The temperature difference between the two buckets of water is $\quantity{60}{^\circ C}$ and the larger bucket contains $\frac{3}{4}$ of the total mass of water. The cooler bucket will absorb the heat from the warmer water and they will come to thermal equilibrium. As the hotter bucket has less mass it also has less heat, so it cannot increase the temperature of the more massive cooler bucket by much so the equilibrium temperature is closer to the initial temperature of the cooler bucket at $\quantity{35}{^\circ C}$</p>
+	<div class="formula">
+		$$temperature\;change\;=\;temperature\;difference\;\times\;(1 - proportion\;of\;total\;mass)$$
+		$$\Delta\theta=\theta_{1}-\theta_{2} \times \left(1-\frac{1}{4}  \right )=\quantity{15}{^\circ C}$$
+	</div>
+	<p>However different materials can absorb different amounts of heat for the same temperature rise, even when their masses are equal. The amount of heat that needs to be supplied to increase them temperature of $\quantity{1}{kg}$ of substance by $\quantity{1}{^\circ C}$ is called its <i>specific heat capacity</i> and is defined by the equation:</p>
+	<div class="formula">$$\large Q=mc\Delta\theta$$</div>
+	<p>Where:</p>
+	<ul class="page_list">
+		<li><b><i>Q</i></b> is the heat supplied in joules (J)</li>
+		<li><b><i>m</i></b> is the mass in kilograms (kg)</li>
+		<li><b><i>c</i></b> is the specific heat capacity in J kg<sup>-1</sup> &deg;C<sup>-1</sup></li>
+		<li><b><i>&Delta;&theta;</i></b> is the change in temperature in &deg;C or kelvin (K)</li>
+	</ul>
+	<p>Water, for example has a very high specific heat capacity of $\quantity{4200}{J\,kg^{-1}\,^\circ C^{-1}}$ which means that a $\quantity{1}{kg}$ bucket of water would require $\quantity{4200}{J}$ of energy to increase its temperature by a single degree whereas copper which has a lower SHC of only $\quantity{385}{J\,kg^{-1}\,^\circ C^{-1}}$ which means that the same mass of material experiencing the same amount of heat transfer would increase its temperature by nearly 11 degrees.</p>
+	<p>We can still apply a similar logic as above when mixing two materials with different SHCs and different temperatures. The temperature difference will drive the flow of heat, and the two materials will come to a thermal equilibrium at the same temperature, even though they contain different amounts of heat. However, the material with the higher SHC will change temperature less than an equal mass of material with a lower SHC.</p>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="5">
+	<h3>Worked example</h3>
+	<p>An example of this is a simple experiment to find the temperature of a Bunsen burner flame. A $\quantity{50}{g}$ brass mass (<i>m<sub>b</sub></i>) is heated on a gauze above the flame for several minutes, until it reaches thermal equilibrium with the flame (<i>&theta;<sub>I</sub></i>). It is then quickly dropped into a bucket containing $\quantity{250}{g}$ of water (<i>m<sub>w</sub></i>) at $\quantity{23}{^\circ C}$ (<i>&theta;<sub>i</sub></i>). The brass mass needs to be dropped quickly to stop it radiating some if its heat away and to prevent too much of the water evaporating as it is introduced to the bucket. The water quickly rises in temperature to $\quantity{33}{^\circ C}$ (<i>&theta;<sub>F</sub></i>) as the two material reach thermal equilibrium. The initial temperature of the brass, and therefore the flame can be estimated by realising that the heat supplied by the brass (<i>Q<sub>1</sub></i>) is equal to the heat received by the water (<i>Q<sub>2</sub></i>)</p>
+	<div class="formula">
+		$$Q_{1}=Q_{2}$$
+		$$m_{b}c_{b}\left(\theta_{I}-\theta_{F}\right)=m_{w}c_{w}\left(\theta_{F}-\theta_{i} \right )$$
+	</div>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>Notice the order of subtraction on each side: the hot object's term uses <b>(initial &minus; final)</b> since it's cooling down, while the cold object's term uses <b>(final &minus; initial)</b> since it's warming up. This keeps both sides of the equation positive. Getting the order backwards on one side gives a negative result and an equation that doesn't balance.</p>
+	</div>
+	<p>The specific heat capacity of water (<i>c<sub>w</sub></i>) is $\quantity{4200}{J\,kg^{-1}\,^\circ C^{-1}}$ and the specific heat capacity of brass (<i>c<sub>b</sub></i>) is $\quantity{380}{J\,kg^{-1}\,^\circ C^{-1}}$. As the only unknown is the initial temperature of the brass (<i>&theta;<sub>I</sub></i>) the equation can be rearranged and solved:</p>
+	<div class="formula">
+		\begin{align}
+		\theta_{I} & =\left( \frac{m_{w}c_{w}\left(\theta_{F}-\theta_{i} \right )}{m_{b}c_{b}}\right) +\theta_{F}\\
+		\\
+		\theta_{I}&= \left( \frac{\quantity{0.5}{kg} \times \quantity{4200}{J\,kg^{-1}\,^\circ C^{-1}}\times \left(\quantity{33}{^\circ C}-\quantity{23}{^\circ C} \right )}{\quantity{0.05}{kg} \times \quantity{380}{J\,kg^{-1}\,^\circ C^{-1}}}\right) +\quantity{33}{^\circ C}\\
+		\\
+		\theta_{I}&=\quantity{586}{^\circ C}\;\left(\mathrm{2\; sig.\; fig.}\right)
+		\end{align}
+	</div>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="6">
+	<h3>Finding the specific heat capacity of materials experimentally.</h3>
+	<p>In class you will carry out two experiments to determine the specific heat capacity of water and different metals. The first, simple method, shown below is similar a known mass of water, or metal is heated by either a submerged resistor on an immersion heater. If the current (<i>I</i>) and the potential difference (<i>V</i>) across the heater are known, then the power can be calculated. The initial temperature (<i>&theta;<sub>i</sub></i>) of the material is recorded.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/thermal_physics/shc_apparatus.svg') }}" alt="Measuring SHC of a liquid" class="size450">
+		<figcaption><b>Figure 6:</b>&nbsp;Apparatus to measure the specific heat capacity of water</figcaption>
+	</figure>
+	<p>The apparatus are left so that the water or metal is heated for 10 minutes. The p.d. and current are recorded every minute so that the energy delivered by the heater can be calculated more accurately. The final temperature (<i>&theta;<sub>f</sub></i>) is also recorded and the specific heat capacity can be calculated simply. This method gives fairly accurate results, but suffers from two main problems, firstly if the material under test is not well insulated, heat is lost readily to the environment, so more heat is required to be supplied to the material giving higher than expected results. Also as the insulation or container will also absorb some of the heat, so its specific heat capacity should also considered. Fortunately the second method manages to account for these heat losses.</p>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="7">
+	<h3>Measuring the SHC of a material using the continuous flow method</h3>
+	<p>Water is made to flow through a tube containing an electric heating element. The tube is surrounded by an evacuated container to reduce an unnecessary heat losses through conduction and convection. The heater is connected to a power supply which is adjusted to give a temperature rise (<i>&Delta;&theta;=&theta;<sub>2</sub>-&theta;<sub>1</sub></i>) of a few degrees across the length of the tube. Once a steady state has been achieved the mass (<i>m</i>) of water passing through the tube across a period of time (<i>t</i>) is measured. The flow rate through the tube is then changed and the heater is adjusted so that <i>&Delta;&theta;</i> is the same as previously. This allows <a href="{{ url_for('static', filename='downloads/measuring_shc_continuous_flow_method.docx') }}" target="_blank">the SHC to be calculated</a> and the heat losses to the environment through radiation to be eliminated.</p>
+	<figure>
+		<img src="{{ url_for('static', filename='images/thermal_physics/continuous_flow.svg') }}" alt="Measuring SHC using the continuous flow method" class="size700">
+		<figcaption><b>Figure 7:</b>&nbsp;Measuring the specific heat capacity of water using the continuous flow method</figcaption>
+	</figure>
+	<p class="equation">electrical energy supplied in time t = energy transferred to fluid + energy lost to surroundings</p>
+	<p>So:</p>
+	<div class="formula">$$\large IVt=mc\Delta\theta+E$$</div>
+	<p>Where</p>
+	<ul class="page_list">
+		<li><b><i>I</i></b> is the current through the heater in A</li>
+		<li><b><i>V</i></b> is the p.d. across the heater in V</li>
+		<li><b><i>t</i></b> is the time in s for the mass <i>m</i> of fluid to flow</li>
+	</ul>
+	<p>For the second flow rate <i>m<sub>2</sub></i> in time <i>t<sub>2</sub></i>, <i>I</i> and <i>V</i> are adjusted to allow <i>&Delta;&theta;</i> to remain the same as before. Now:</p>
+	<div class="formula">$$I_{2}V_{2}t_{2}=m_{2}c\Delta\theta+E$$</div>
+	<p>As the temperature difference <i>&Delta;&theta;</i> is the same as before, the amount of heat radiated to the surroundings is also the same. Therefore <i>E</i> can be eliminated by subtracting these two equations from each other.</p>
+	<div class="callout callout-mistake">
+		<p class="callout-label"><i class="fas fa-exclamation-triangle"></i> Common exam mistake</p>
+		<p>The whole trick of this method depends on keeping $\Delta\theta$ <b>identical</b> between the two flow rates. That's what guarantees the heat lost to the surroundings, $E$, is the same in both equations, so it cancels out when you subtract them. If $\Delta\theta$ were different between the two runs, $E$ would be different too, and the subtraction wouldn't eliminate it &mdash; the whole point of the method would be lost.</p>
+	</div>
+	<div class="formula">$$IVt-I_{2}V_{2}t_{2}=mc\Delta\theta-m_{2}c\Delta\theta$$</div>
+	<p>As <i>c</i> is the only unknown in the equation it can be calculated by factorising the right-hand side to give:</p>
+	<div class="formula">$$IVt-I_{2}V_{2}t_{2}=c\Delta\theta\left(m-m_{2}\right)$$</div>
+	<div class="formula">$$c=\frac{IVt-I_{2}V_{2}t_{2}}{\Delta\theta\left(m-m_{2}\right)}$$</div>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+<br><br><hr>
+
+<section id="8">
+	<h3>Test yourself</h3>
+	<p>Try the questions below to check your understanding of this topic. Numerical questions use different numbers each time, so you can attempt them more than once.</p>
+	<div id="quiz-root"></div>
+	<p class="back-to-top"><a href="#top"><span class="back2top">Back to top</span><i class="fas fa-chevron-circle-up"></i></a></p>
+</section>
+
+{% endblock %}
+
+{% block resources_heading %}One page summary{% endblock %}
+
+{% block resources %}
+	<li><a href="{{ url_for('static', filename='summaries/thermal_physics/specific_heat_summary.html') }}" target="_blank"><i class="fas fa-file-alt"></i> Printable revision sheet</a></li>
+{% endblock %}
+
+{% block next_link %}
+	<a href="/thermal-physics/latent-heat"><span class="nav_link">Next topic</span><i class="fas fa-chevron-circle-right"></i></a>
+{% endblock %}
+
+{% block extra_scripts %}
+	<script src="{{ url_for('static', filename='js/quiz.js') }}"></script>
+	<script src="{{ url_for('static', filename='quizzes/specific_heat_questions.js') }}"></script>
+	<script>
+		new PhysicsQuiz(document.getElementById('quiz-root'), specificHeatQuestions, {
+			storageKey: 'specific_heat'
+		});
+	</script>
+{% endblock %}
