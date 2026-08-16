@@ -53,28 +53,7 @@
 <body id="top">
 
 <div id="header">
-	<div class="search">
-		<form name="jksearch" action="http://www.google.com/search" method="get" onSubmit="jksitesearch(this)" target="_blank">
-			<input id="hiddenquery" type="hidden" name="q" />
-			<input class="search_box" name="qfront" type="text" value="" />
-			<button class="myButton" type="submit"><i class="fas fa-search"></i></button><br />
-			<script type="text/javascript">
-			var domainroot="www.alevelphysicsnotes.com"
-			var searchaction=["http://www.google.com/search"]
-			var queryfieldname=["q","p","q"]
-			function switchaction(cur, index){
-				cur.form.action=searchaction[index]
-				document.getElementById("hiddenquery").name=queryfieldname[index]
-			}
-			function jksitesearch(curobj){
-				for (i=0; i< document.jksearch.se.length; i++){
-					if (document.jksearch.se[i].checked==true) switchaction(document.jksearch.se[i], i)
-				}
-				document.getElementById("hiddenquery").value="site:"+domainroot+" "+curobj.qfront.value
-			}
-			</script>
-		</form>
-	</div>
+	
 
 	<a href="{{ url_for('home') }}"><img src="{{ url_for('static', filename='images/icons/logo_circle.svg') }}" class="logo"></a>
 	<h1>{% block page_h1 %}{% endblock %}</h1>
@@ -187,9 +166,7 @@
 			</li>
 			<li><a href="#">Resources<span class="arrow">&#9660;</span></a>
 			<ul class="sub-menu">
-				<li><a href="/downloads">Downloads</a></li>
-				<li><a href="https://goo.gl/qx2cDw" target="_blank">Year 12 (Google Drive)</a></li>
-				<li><a href="https://goo.gl/M8Y8ts" target="_blank">Year 13 (Google Drive)</a></li>
+				<li><a href="/downloads">Downloads</a></li>				
 			</ul>
 			</li>
 			<li><a href="mailto:o.toogood@littleover.derby.sch.uk">Contact</a></li>
